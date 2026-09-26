@@ -1,0 +1,355 @@
+{
+  "metadata": {
+    "model_name": "MultilayerTemporalPCNetwork",
+    "suite": "symbolic",
+    "n_trials": 3,
+    "model_kwargs": {
+      "n_hidden": "128",
+      "learning_rate": "0.05",
+      "n_epochs": "100",
+      "inf_iters": "50",
+      "seed": "42"
+    },
+    "rollout_mode": "latent"
+  },
+  "metrics": {
+    "noise_epochs_to_criterion": 43.0,
+    "noise_criterion_reached": true,
+    "noise_tolerance_threshold": 0.4,
+    "mrr_high_similarity": 0.9444444444444443,
+    "mrr_low_similarity": 1.0,
+    "semantic_epochs_high": 23.0,
+    "semantic_epochs_low": 19.0,
+    "semantic_criterion_reached": true,
+    "similarity_effect_mrr_drop": 0.05555555555555569,
+    "symdis_cued_divergence_accuracy": 0.5,
+    "symdis_cued_divergence_margin": -0.03137886439633446,
+    "symdis_withdrawn_divergence_accuracy": 0.25,
+    "symdis_withdrawn_divergence_margin": -0.38700663946503266,
+    "symdis_shared_stretch_accuracy": 1.0,
+    "symdis_state_primed": true,
+    "symdis_similarity_tolerance_threshold": 0.10362632547490198,
+    "symdis_max_episodes_above_chance": 6.0,
+    "symdis_context_graded_confusion_index": 0.0036382673448171056,
+    "symdis_support_needed": NaN,
+    "symdis_max_delay_at_fixed_support": 0.0,
+    "symdis_load_orthogonal_accuracy": 0.25,
+    "symdis_load_disambiguation_cost": 0.125,
+    "symdis_middle_informative_accuracy": 0.5,
+    "symdis_middle_endogenous_accuracy": 0.25,
+    "symdis_middle_prefix_len": 3.0,
+    "symdis_epochs_to_criterion": 37.0,
+    "symdis_criterion_reached": true,
+    "symdis_exposure_mode": "criterion",
+    "exposure_baseline_epochs": 43.0,
+    "exposure_baseline_reached": true,
+    "noise_exposure_vs_baseline": 1.0,
+    "semantic_high_exposure_vs_baseline": 0.5348837209302325,
+    "semantic_low_exposure_vs_baseline": 0.4418604651162791,
+    "symdis_exposure_vs_baseline": 0.8604651162790697,
+    "exposure_deviation_max": 2.263157894736842,
+    "exposure_deviation_section": "semantic_low",
+    "exposure_within_band": true
+  },
+  "series": {
+    "noise_sweep": {
+      "noise_levels": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "mrr": [
+        1.0,
+        0.7777777777777777,
+        0.7777777777777778,
+        0.5,
+        0.4444444444444444,
+        0.5,
+        0.27777777777777773,
+        0.2222222222222222,
+        0.3333333333333333,
+        0.27777777777777773,
+        0.2222222222222222
+      ]
+    },
+    "similarity_sweep": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "cosine_similarities": [
+        0.7826821182582951,
+        0.4483011473320739,
+        0.1336741655533435,
+        -0.003984122295787815,
+        -0.01867590644487263
+      ],
+      "epochs_to_criterion": [
+        258,
+        49,
+        21,
+        17,
+        16
+      ],
+      "criterion_reached": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mrr": [
+        0.888888888888889,
+        0.9444444444444443,
+        0.9444444444444443,
+        1.0,
+        0.9444444444444445
+      ]
+    },
+    "symbolic_disambiguation": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "discriminator_similarities": [
+        0.9482190965386931,
+        0.8269897293236664,
+        0.5670570526294754,
+        0.22263308426028774,
+        0.10362632547490198
+      ],
+      "variance_accuracy": [
+        0.25,
+        0.25,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "variance_margin": [
+        -0.4664936733550852,
+        -0.3611572596151109,
+        -0.13770759620462503,
+        -0.009930079152467505,
+        -0.03137886439633446
+      ],
+      "episode_counts": [
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "load_accuracy": [
+        0.5,
+        0.6666666666666666,
+        0.5,
+        0.3333333333333333,
+        0.125
+      ],
+      "load_chance": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "load_margin": [
+        0.22334414166517452,
+        0.22565686660056897,
+        -0.009930079152467505,
+        -0.1566245830634868,
+        -0.2668829798091294
+      ],
+      "delays": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "delay_accuracy": [
+        0.5,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "delay_margin": [
+        -0.009930079152467505,
+        -0.34645666184876545,
+        -0.3942646164323644,
+        -0.38700663946503266
+      ],
+      "confusion_matrix_largest_n": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "state_primed": true,
+      "hold_delays": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "hold_accuracy": [
+        0.75,
+        0.5,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "hold_cue_duration": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "support_durations": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "support_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "support_delay": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "load_orthogonal_accuracy": [
+        0.5,
+        0.3333333333333333,
+        0.5,
+        0.3333333333333333,
+        0.25
+      ],
+      "middle_accuracy": [
+        0.5,
+        0.25
+      ],
+      "middle_modes": [
+        "category",
+        "identical"
+      ],
+      "middle_endogenous": [
+        false,
+        true
+      ],
+      "middle_prefix_len": 3
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 43,
+      "sections": [
+        "noise",
+        "semantic_high",
+        "semantic_low",
+        "symdis"
+      ],
+      "ratios": [
+        1.0,
+        0.5348837209302325,
+        0.4418604651162791,
+        0.8604651162790697
+      ],
+      "band": 8.0
+    }
+  }
+}

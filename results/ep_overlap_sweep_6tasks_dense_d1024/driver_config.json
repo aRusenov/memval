@@ -1,0 +1,7 @@
+{
+ "mode": "dense",
+ "embedding_dim": 1024,
+ "active": null,
+ "reference_dim_for_sigma_law": 100,
+ "driver": "overlap_sweep_codes.py"
+}

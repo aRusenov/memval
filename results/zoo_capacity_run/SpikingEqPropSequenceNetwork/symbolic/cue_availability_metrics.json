@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "section": "cue_availability",
+    "model": "SpikingEqPropSequenceNetwork",
+    "seed": 42
+  },
+  "metrics": {
+    "avail_seq_len": 4,
+    "avail_n_sequences": 3,
+    "avail_audio_gain": 1.0,
+    "avail_feedback_mode": "l2",
+    "avail_chance_item": 0.01818181818181818,
+    "avail_exposure_mode": "criterion",
+    "avail_single_both_recall": 0.3333333333333333,
+    "avail_single_both_margin": -0.010507514238950744,
+    "avail_single_symbolic_recall": 0.3333333333333333,
+    "avail_single_symbolic_margin": -0.010507514238950744,
+    "avail_single_symbolic_tone_cos": 0.35997379773276644,
+    "avail_single_audio_membership": 1.0,
+    "avail_single_audio_margin": 0.22313663587236054,
+    "avail_single_both_rollout": 0.3333333333333333,
+    "avail_single_symbolic_rollout": 0.3333333333333333,
+    "avail_single_audio_rollout_membership": 1.0,
+    "avail_single_audio_rollout_transition_validity": 0.0,
+    "avail_single_epochs_to_criterion": 512.0,
+    "avail_single_criterion_reached": false,
+    "avail_single_chance_membership": 0.07272727272727272,
+    "avail_single_chance_seq_id": 1.0,
+    "avail_multi_both_recall": 0.1111111111111111,
+    "avail_multi_both_margin": -0.21960627444246084,
+    "avail_multi_symbolic_recall": 0.1111111111111111,
+    "avail_multi_symbolic_margin": -0.21960627444246084,
+    "avail_multi_symbolic_tone_cos": 0.176942764487358,
+    "avail_multi_symbolic_tone_recovery": 0.3333333333333333,
+    "avail_multi_audio_membership": 0.3333333333333333,
+    "avail_multi_audio_margin": -0.09691868350291176,
+    "avail_multi_audio_seq_id": 0.3333333333333333,
+    "avail_multi_both_rollout": 0.1111111111111111,
+    "avail_multi_symbolic_rollout": 0.1111111111111111,
+    "avail_multi_audio_rollout_membership": 0.3333333333333333,
+    "avail_multi_audio_rollout_transition_validity": 0.0,
+    "avail_multi_epochs_to_criterion": 512.0,
+    "avail_multi_criterion_reached": false,
+    "avail_multi_chance_membership": 0.07272727272727272,
+    "avail_multi_chance_seq_id": 0.3333333333333333,
+    "avail_acquired": false,
+    "avail_epochs_to_criterion": 512.0,
+    "avail_criterion_reached": false
+  },
+  "series": {
+    "conditions": {
+      "single": {
+        "readouts": {
+          "both_recall": 0.3333333333333333,
+          "both_margin": -0.010507514238950744,
+          "symbolic_recall": 0.3333333333333333,
+          "symbolic_margin": -0.010507514238950744,
+          "symbolic_tone_cos": 0.35997379773276644,
+          "audio_membership": 1.0,
+          "audio_margin": 0.22313663587236054,
+          "both_rollout": 0.3333333333333333,
+          "symbolic_rollout": 0.3333333333333333,
+          "audio_rollout_membership": 1.0,
+          "audio_rollout_transition_validity": 0.0
+        },
+        "sequences": {
+          "fruit": [
+            "apple",
+            "banana",
+            "orange",
+            "grape"
+          ]
+        },
+        "tones": {
+          "fruit": 297.9591836734694
+        },
+        "geometry": {
+          "d_sym": 100,
+          "d_audio": 50,
+          "audio_gain": 1.0,
+          "n_sequences": 1,
+          "tone_cosine_between_sequences": null
+        },
+        "exposure": {
+          "epochs": 512,
+          "reached": false
+        }
+      },
+      "multi": {
+        "readouts": {
+          "both_recall": 0.1111111111111111,
+          "both_margin": -0.21960627444246084,
+          "symbolic_recall": 0.1111111111111111,
+          "symbolic_margin": -0.21960627444246084,
+          "symbolic_tone_cos": 0.176942764487358,
+          "symbolic_tone_recovery": 0.3333333333333333,
+          "audio_membership": 0.3333333333333333,
+          "audio_margin": -0.09691868350291176,
+          "audio_seq_id": 0.3333333333333333,
+          "both_rollout": 0.1111111111111111,
+          "symbolic_rollout": 0.1111111111111111,
+          "audio_rollout_membership": 0.3333333333333333,
+          "audio_rollout_transition_validity": 0.0
+        },
+        "sequences": {
+          "fruit": [
+            "apple",
+            "banana",
+            "orange",
+            "grape"
+          ],
+          "animal": [
+            "cat",
+            "dog",
+            "cow",
+            "horse"
+          ],
+          "color": [
+            "red",
+            "blue",
+            "green",
+            "yellow"
+          ]
+        },
+        "tones": {
+          "fruit": 297.9591836734694,
+          "animal": 453.0612244897959,
+          "color": 551.0204081632653
+        },
+        "geometry": {
+          "d_sym": 100,
+          "d_audio": 50,
+          "audio_gain": 1.0,
+          "n_sequences": 3,
+          "tone_cosine_between_sequences": 0.0
+        },
+        "exposure": {
+          "epochs": 512,
+          "reached": false
+        }
+      }
+    }
+  }
+}

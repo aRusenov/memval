@@ -1,0 +1,68 @@
+{
+  "stream": {
+    "items": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "gaps_preceding": [
+      0.0,
+      1.2,
+      10.0,
+      1.2
+    ]
+  },
+  "model": {
+    "class": "DTSESNSequenceNetwork",
+    "kwargs": {
+      "n_units": 400,
+      "tau_min": 0.1,
+      "tau_max": 20.0,
+      "spectral_radius": 0.9,
+      "dt": 0.05,
+      "predict_timing": true
+    },
+    "seed": 42,
+    "embedding_dim": 64,
+    "n_reps": 40
+  },
+  "steps": [
+    {
+      "step": 1,
+      "transition": "A->B",
+      "target_gap": 1.2,
+      "generated_gap": 1.2352082254900967,
+      "teacher_forced_gap": 1.2352082254900967,
+      "generated_item": "B",
+      "expected_item": "B",
+      "rel_error": 0.029340187908413938
+    },
+    {
+      "step": 2,
+      "transition": "B->C",
+      "target_gap": 10.0,
+      "generated_gap": 9.89226557885161,
+      "teacher_forced_gap": 9.893102363421882,
+      "generated_item": "C",
+      "expected_item": "C",
+      "rel_error": 0.010773442114838971
+    },
+    {
+      "step": 3,
+      "transition": "C->D",
+      "target_gap": 1.2,
+      "generated_gap": 1.2149567875379923,
+      "teacher_forced_gap": 1.2148161262029482,
+      "generated_item": "D",
+      "expected_item": "D",
+      "rel_error": 0.01246398961499362
+    }
+  ],
+  "metrics": {
+    "tempo_reproduction_error": 0.017525873212748844,
+    "item_acc": 1.0,
+    "pause_position_acc": 1.0,
+    "peak_time_error": 0.017458907800671993
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "probe": "oneshot_scale",
+  "model": "AsymmetricHopfieldNetwork",
+  "epochs": 1,
+  "n_trials": 30,
+  "word_list": [
+    "apple",
+    "banana",
+    "orange",
+    "grape",
+    "pear",
+    "peach",
+    "plum"
+  ],
+  "decoder": "SymbolicDecoder (cosine, scale-invariant)",
+  "rows": [
+    {
+      "learning_rate": 0.0001,
+      "mrr": 1.0,
+      "cos": 0.5848530557789976,
+      "mag": 8.774659222506228e-05,
+      "w_norm": 0.0002685104458753863
+    },
+    {
+      "learning_rate": 0.001,
+      "mrr": 1.0,
+      "cos": 0.5849349544509127,
+      "mag": 0.0008771246901486717,
+      "w_norm": 0.0026843799282900245
+    },
+    {
+      "learning_rate": 0.01,
+      "mrr": 1.0,
+      "cos": 0.5857507524646673,
+      "mag": 0.008737295277093254,
+      "w_norm": 0.026771812786668386
+    },
+    {
+      "learning_rate": 0.1,
+      "mrr": 1.0,
+      "cos": 0.5932639532454852,
+      "mag": 0.08414442619148232,
+      "w_norm": 0.26097348737589826
+    },
+    {
+      "learning_rate": 0.5,
+      "mrr": 1.0,
+      "cos": 0.6168774806250245,
+      "mag": 0.36541074917788346,
+      "w_norm": 1.198323354183504
+    },
+    {
+      "learning_rate": 1.0,
+      "mrr": 0.9944444444444445,
+      "cos": 0.620372759127521,
+      "mag": 0.6521204279190622,
+      "w_norm": 2.276728585912604
+    }
+  ]
+}

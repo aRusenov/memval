@@ -1,0 +1,2205 @@
+{
+  "metadata": {
+    "model_name": "MultilayerTemporalPCNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_hidden": "60",
+      "learning_rate": "0.05",
+      "n_epochs": "86",
+      "inf_iters": "100",
+      "seed": "42"
+    },
+    "rollout_mode": "latent",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 30,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 30,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cue_availability": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cognitive_phenomena": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {
+    "convergence_mrr": 1.0,
+    "convergence_span": 1,
+    "convergence_epochs": 64,
+    "converged": true,
+    "max_memory_span": 5,
+    "seqlen_epochs_to_criterion": 86.0,
+    "seqlen_max_epochs_to_criterion": 86,
+    "seqlen_criterion_reached": true,
+    "seqlen_exposure_mode": "fixed",
+    "seqlen_exposure_source": "registry",
+    "unrolling_gap": 0.3433333333333334,
+    "max_memory_span_l2": 5,
+    "max_memory_span_quantized": 10,
+    "multiple_seq_epochs_interleaved": 47.0,
+    "multiple_seq_interleaved_criterion_reached": true,
+    "multiple_seq_interleaved_mrr_A": 1.0,
+    "multiple_seq_interleaved_mrr_B": 1.0,
+    "multiple_seq_interleaved_span_A": 4,
+    "multiple_seq_blocking_cost": 0.0,
+    "multiple_seq_ingestion": "both",
+    "multiple_seq_n_lists": 5,
+    "multiple_seq_margin_before_lists": 0.45026919644268365,
+    "multiple_seq_margin_after_lists": 0.4137733174114115,
+    "delta_margin_forgetting_lists": -0.03649587903127216,
+    "multiple_seq_prob_before": 1.0,
+    "multiple_seq_prob_after": 1.0,
+    "delta_prob_forgetting": 0.0,
+    "multiple_seq_overlap_disjoint_in_span": 0.21571670592396697,
+    "multiple_seq_overlap_disjoint_prob_before": 1.0,
+    "multiple_seq_overlap_disjoint_prob_after": 1.0,
+    "multiple_seq_overlap_disjoint_delta_prob": 0.0,
+    "multiple_seq_overlap_disjoint_margin_before": 0.43999942169783124,
+    "multiple_seq_overlap_disjoint_margin_after": 0.3966178320910255,
+    "multiple_seq_overlap_disjoint_delta_margin": -0.043381589606805715,
+    "multiple_seq_overlap_same_category_in_span": 0.3702484702189596,
+    "multiple_seq_overlap_same_category_prob_before": 1.0,
+    "multiple_seq_overlap_same_category_prob_after": 1.0,
+    "multiple_seq_overlap_same_category_delta_prob": 0.0,
+    "multiple_seq_overlap_same_category_margin_before": 0.38964988224158337,
+    "multiple_seq_overlap_same_category_margin_after": 0.27178671523488274,
+    "multiple_seq_overlap_same_category_delta_margin": -0.11786316700670063,
+    "multiple_seq_overlap_cost_prob": 0.0,
+    "multiple_seq_overlap_cost_margin": -0.07448157739989492,
+    "multiple_seq_overlap_b_exposure_multiplier": 1,
+    "multiple_seq_epochs_A": 86.0,
+    "multiple_seq_epochs_B": 86.0,
+    "multiple_seq_criterion_reached": true,
+    "multiple_seq_exposure_mode": "fixed",
+    "multiple_seq_exposure_source": "registry",
+    "multiple_seq_mrr_before": 1.0,
+    "multiple_seq_mrr_after": 1.0,
+    "delta_mrr_forgetting": 0.0,
+    "multiple_seq_margin_before": 0.5201914157559709,
+    "multiple_seq_margin_after": 0.46413908772387447,
+    "delta_margin_forgetting": -0.05605232803209648,
+    "chain_n_tasks": 6,
+    "chain_epochs_to_criterion": 30.0,
+    "chain_criterion_reached": true,
+    "chain_exposure_mode": "criterion",
+    "chain_avg_accuracy": 0.6666666666666666,
+    "chain_avg_forgetting": 0.4,
+    "chain_backward_transfer": -0.4,
+    "chain_avg_learning": 1.0,
+    "chain_intransigence": 0.0,
+    "chain_learning_slope": -3.9528013340747213e-17,
+    "chain_retention_ratio": 0.6551724137931034,
+    "chain_stability_plasticity_index": 0.7916666666666666,
+    "chain_acquired": true,
+    "chain_chance_level": 0.03333333333333333,
+    "select_selectivity": 0.75,
+    "select_rehearsed_gain": 0.3333333333333333,
+    "select_unrehearsed_drift": -0.4166666666666667,
+    "select_rehearsed_recall": 1.0,
+    "select_unrehearsed_recall": 0.25,
+    "select_n_rehearsed": 3,
+    "select_rehearsal_epochs": 86,
+    "select_pressure": 0.4,
+    "select_under_pressure": true,
+    "select_rehearsal_effective": true,
+    "pa_abac_ab_recall_baseline": 1.0,
+    "pa_abac_ab_recall_final": 0.0,
+    "pa_abac_ab_retention": 0.0,
+    "pa_abac_ac_recall_final": 1.0,
+    "pa_abac_ac_trials_to_criterion": 2.0,
+    "pa_abac_ac_criterion_reached": true,
+    "pa_abac_other_rate_final": 0.0,
+    "pa_abac_ab_acquired": true,
+    "pa_abac_phase2_trials": 6,
+    "pa_abac_ab_trials": 3,
+    "pa_abac_epochs": 86,
+    "pa_control_ab_recall_baseline": 1.0,
+    "pa_control_ab_recall_final": 1.0,
+    "pa_control_ab_retention": 1.0,
+    "pa_control_ac_recall_final": 0.0,
+    "pa_control_ac_trials_to_criterion": NaN,
+    "pa_control_ac_criterion_reached": false,
+    "pa_control_other_rate_final": 0.0,
+    "pa_control_ab_acquired": true,
+    "pa_control_phase2_trials": 6,
+    "pa_control_ab_trials": 3,
+    "pa_control_epochs": 86,
+    "pa_cue_competition_cost": 1.0,
+    "noise_epochs_to_criterion": 86.0,
+    "noise_criterion_reached": true,
+    "noise_tolerance_threshold": 0.8,
+    "noise_rollout_auc": 0.506060606060606,
+    "noise_rollout_quantized_auc": 0.7020202020202021,
+    "noise_rollout_tolerance": 0.5,
+    "noise_completion_gap": 0.17020202020202035,
+    "noise_rollout_margin_auc": -0.007418052203283564,
+    "noise_rollout_margin_first_auc": 0.08586673605123736,
+    "noise_rollout_margin_later_auc": -0.026075009854187748,
+    "noise_rollout_margin_first_slope": -0.5706188598700077,
+    "noise_rollout_margin_later_slope": -0.11580833735081487,
+    "mrr_high_similarity": 1.0,
+    "mrr_low_similarity": 1.0,
+    "semantic_epochs_high": 36.0,
+    "semantic_epochs_low": 22.0,
+    "semantic_criterion_reached": true,
+    "similarity_effect_mrr_drop": 0.0,
+    "symdis_cued_divergence_accuracy": 0.25,
+    "symdis_cued_divergence_margin": -0.2936168542169637,
+    "symdis_withdrawn_divergence_accuracy": 0.25,
+    "symdis_withdrawn_divergence_margin": -0.5763694428011956,
+    "symdis_shared_stretch_accuracy": 1.0,
+    "symdis_state_primed": true,
+    "symdis_similarity_tolerance_threshold": 0.10362632547490203,
+    "symdis_max_episodes_above_chance": 0.0,
+    "symdis_context_graded_confusion_index": 0.003638267344817125,
+    "symdis_support_needed": NaN,
+    "symdis_max_delay_at_fixed_support": 0.0,
+    "symdis_load_orthogonal_accuracy": 0.125,
+    "symdis_load_disambiguation_cost": 0.0,
+    "symdis_max_shared_len_persistent": 2.0,
+    "symdis_max_shared_len_onset": 2.0,
+    "symdis_middle_informative_accuracy": 0.25,
+    "symdis_middle_endogenous_accuracy": 0.25,
+    "symdis_middle_prefix_len": 3.0,
+    "symdis_epochs_to_criterion": 86.0,
+    "symdis_criterion_reached": true,
+    "symdis_exposure_mode": "fixed",
+    "symdis_exposure_source": "registry",
+    "mask_identifiability_auc": 0.8569711538461539,
+    "mask_identifiable_to": 0.6666666666666666,
+    "mask_random_identifiable_to": 0.6666666666666666,
+    "mask_shared_identifiable_to": 0.9166666666666666,
+    "mask_identity_identifiable_to": 0.4166666666666667,
+    "mask_epochs_to_criterion": 86.0,
+    "mask_criterion_reached": true,
+    "mask_exposure_mode": "fixed",
+    "mask_random_tolerance": 0.9166666666666666,
+    "mask_random_auc": 0.8736263736263736,
+    "mask_random_margin_auc": 0.08793508747036081,
+    "mask_random_rollout_auc": 0.6304945054945055,
+    "mask_random_recall_in_bound": 0.998015873015873,
+    "mask_random_margin_in_bound": 0.09021298633234237,
+    "mask_random_in_bound_points": 9,
+    "mask_shared_tolerance": 0.9166666666666666,
+    "mask_shared_auc": 0.9230769230769231,
+    "mask_shared_margin_auc": 0.20695342887747772,
+    "mask_shared_rollout_auc": 0.6593406593406593,
+    "mask_shared_recall_in_bound": 1.0,
+    "mask_shared_margin_in_bound": 0.22419954795060085,
+    "mask_shared_in_bound_points": 12,
+    "mask_identity_tolerance": 0.4166666666666667,
+    "mask_identity_auc": 0.5686813186813187,
+    "mask_identity_margin_auc": 0.02066901749218066,
+    "mask_identity_rollout_auc": 0.4354395604395605,
+    "mask_identity_recall_in_bound": 0.9702380952380952,
+    "mask_identity_margin_in_bound": 0.05446665178054677,
+    "mask_identity_in_bound_points": 6,
+    "mask_random_completion_advantage": 0.016655219780219777,
+    "mask_shared_completion_advantage": 0.0,
+    "mask_identity_completion_advantage": 0.10714285714285714,
+    "mask_completion_gap": 0.21336996336996336,
+    "mask_block_asymmetry": -0.029761904761904767,
+    "mask_block_window_frac": 0.4166666666666667,
+    "mask_block_window_points": 6,
+    "mask_block_comparable_frac": 0.5,
+    "mask_clean_recall": 1.0,
+    "mask_chance_level": 0.041666666666666664,
+    "mask_acquired": true,
+    "mask_at_ceiling": true,
+    "mask_at_floor": false,
+    "mask_identifiable_region": true,
+    "mask_margin_ranges": true,
+    "mask_resolved": true,
+    "mask_seq_len": 8,
+    "mask_n_features": 156,
+    "mask_active_features": 12,
+    "mask_shared_features": 6,
+    "mask_identity_features": 6,
+    "mask_alpha": 0.05128205128205128,
+    "mask_list_scope": "across",
+    "mask_renormalize": true,
+    "mask_feedback_mode": "l2",
+    "mask_n_items": 24,
+    "avail_seq_len": 4,
+    "avail_n_sequences": 3,
+    "avail_audio_gain": 1.0,
+    "avail_feedback_mode": "l2",
+    "avail_chance_item": 0.01818181818181818,
+    "avail_exposure_mode": "criterion",
+    "avail_single_both_recall": 1.0,
+    "avail_single_both_margin": 0.023542325330219344,
+    "avail_single_symbolic_recall": 1.0,
+    "avail_single_symbolic_margin": 0.1139937877503336,
+    "avail_single_symbolic_tone_cos": 0.9691221445791619,
+    "avail_single_audio_membership": 1.0,
+    "avail_single_audio_margin": 0.3197780760672041,
+    "avail_single_both_rollout": 0.6666666666666666,
+    "avail_single_symbolic_rollout": 0.6666666666666666,
+    "avail_single_audio_rollout_membership": 1.0,
+    "avail_single_audio_rollout_transition_validity": 0.0,
+    "avail_single_epochs_to_criterion": 53.0,
+    "avail_single_criterion_reached": true,
+    "avail_single_chance_membership": 0.07272727272727272,
+    "avail_single_chance_seq_id": 1.0,
+    "avail_multi_both_recall": 1.0,
+    "avail_multi_both_margin": 0.10204996062225465,
+    "avail_multi_symbolic_recall": 1.0,
+    "avail_multi_symbolic_margin": 0.3045361750027001,
+    "avail_multi_symbolic_tone_cos": 0.9725745943505988,
+    "avail_multi_symbolic_tone_recovery": 1.0,
+    "avail_multi_audio_membership": 1.0,
+    "avail_multi_audio_margin": 0.2994823571368194,
+    "avail_multi_audio_seq_id": 1.0,
+    "avail_multi_both_rollout": 0.8888888888888888,
+    "avail_multi_symbolic_rollout": 0.8888888888888888,
+    "avail_multi_audio_rollout_membership": 1.0,
+    "avail_multi_audio_rollout_transition_validity": 0.16666666666666666,
+    "avail_multi_epochs_to_criterion": 96.0,
+    "avail_multi_criterion_reached": true,
+    "avail_multi_chance_membership": 0.07272727272727272,
+    "avail_multi_chance_seq_id": 0.3333333333333333,
+    "avail_acquired": true,
+    "avail_epochs_to_criterion": 74.5,
+    "avail_criterion_reached": true,
+    "schema_duplicate_projection_ratio": 1.0000000000000002,
+    "schema_within_projection_ratio": 0.8333333333333335,
+    "schema_across_projection_ratio": 0.7380952380952385,
+    "schema_random_projection_ratio": 0.3959899749373433,
+    "schema_ladder_ordered": true,
+    "schema_probe_item_accuracy": 0.6,
+    "schema_probe_category_accuracy": 1.0,
+    "schema_probe_item_chance": 0.041666666666666664,
+    "schema_probe_category_chance": 0.25,
+    "schema_acquired": true,
+    "schema_duplicate_base_mrr": 0.6000000000000001,
+    "schema_duplicate_criterion": 0.45000000000000007,
+    "schema_duplicate_trials_to_criterion": 15.0,
+    "schema_duplicate_criterion_reached": false,
+    "schema_duplicate_new_item_recall": 0.0,
+    "schema_duplicate_new_item_auc": 0.0,
+    "schema_duplicate_prefix_recall": 1.0,
+    "schema_duplicate_final_mrr": 0.8333333333333334,
+    "schema_duplicate_interference_same": -0.19999999999999996,
+    "schema_duplicate_interference_sibling": 0.0,
+    "schema_duplicate_interference_far": 0.0,
+    "schema_within_base_mrr": 0.6000000000000001,
+    "schema_within_criterion": 0.45000000000000007,
+    "schema_within_trials_to_criterion": 15.0,
+    "schema_within_criterion_reached": false,
+    "schema_within_new_item_recall": 0.0,
+    "schema_within_new_item_auc": 0.0,
+    "schema_within_prefix_recall": 0.8,
+    "schema_within_final_mrr": 0.6666666666666666,
+    "schema_within_interference_same": 0.0,
+    "schema_within_interference_sibling": 0.0,
+    "schema_within_interference_far": 0.0,
+    "schema_across_base_mrr": 0.6000000000000001,
+    "schema_across_criterion": 0.45000000000000007,
+    "schema_across_trials_to_criterion": 15.0,
+    "schema_across_criterion_reached": false,
+    "schema_across_new_item_recall": 0.0,
+    "schema_across_new_item_auc": 0.0,
+    "schema_across_prefix_recall": 1.0,
+    "schema_across_final_mrr": 0.8333333333333334,
+    "schema_across_interference_same": -0.19999999999999996,
+    "schema_across_interference_sibling": 0.2,
+    "schema_across_interference_far": 0.0,
+    "schema_random_base_mrr": 0.6000000000000001,
+    "schema_random_criterion": 0.45000000000000007,
+    "schema_random_trials_to_criterion": 15.0,
+    "schema_random_criterion_reached": false,
+    "schema_random_new_item_recall": 0.0,
+    "schema_random_new_item_auc": 0.0,
+    "schema_random_prefix_recall": 1.0,
+    "schema_random_final_mrr": 0.8333333333333334,
+    "schema_random_interference_same": -0.19999999999999996,
+    "schema_random_interference_sibling": 0.0,
+    "schema_random_interference_far": -5.551115123125783e-17,
+    "schema_interference_valid": false,
+    "schema_sequence_identity_available": false,
+    "schema_consistency_speed_corr": NaN,
+    "schema_consistency_auc_corr": NaN,
+    "schema_dilution_floor": 0.8333333333333334,
+    "schema_criterion_below_dilution_floor": true,
+    "schema_at_ceiling": false,
+    "schema_at_floor": true,
+    "schema_resolved": false,
+    "schema_auc_resolved": false,
+    "exposure_baseline_epochs": 38.0,
+    "exposure_baseline_reached": true,
+    "avail_exposure_vs_baseline": 1.9605263157894737,
+    "avail_multi_exposure_vs_baseline": 2.526315789473684,
+    "avail_single_exposure_vs_baseline": 1.394736842105263,
+    "chain_exposure_vs_baseline": 0.7894736842105263,
+    "mask_exposure_vs_baseline": 2.263157894736842,
+    "multiple_seq_A_exposure_vs_baseline": 2.263157894736842,
+    "multiple_seq_B_exposure_vs_baseline": 2.263157894736842,
+    "multiple_seq_interleaved_exposure_vs_baseline": 1.236842105263158,
+    "noise_exposure_vs_baseline": 2.263157894736842,
+    "semantic_high_exposure_vs_baseline": 0.9473684210526315,
+    "semantic_low_exposure_vs_baseline": 0.5789473684210527,
+    "seqlen_exposure_vs_baseline": 2.263157894736842,
+    "seqlen_max_exposure_vs_baseline": 2.263157894736842,
+    "symdis_exposure_vs_baseline": 2.263157894736842,
+    "exposure_deviation_max": 2.526315789473684,
+    "exposure_deviation_section": "avail_multi",
+    "exposure_within_band": true
+  },
+  "series": {
+    "convergence_curve": [
+      {
+        "epoch": 1,
+        "mrr": 0.0
+      },
+      {
+        "epoch": 2,
+        "mrr": 0.0
+      },
+      {
+        "epoch": 4,
+        "mrr": 0.16666666666666666
+      },
+      {
+        "epoch": 8,
+        "mrr": 0.3333333333333333
+      },
+      {
+        "epoch": 16,
+        "mrr": 0.3333333333333333
+      },
+      {
+        "epoch": 32,
+        "mrr": 0.8333333333333334
+      },
+      {
+        "epoch": 64,
+        "mrr": 1.0
+      },
+      {
+        "epoch": 128,
+        "mrr": 1.0
+      },
+      {
+        "epoch": 256,
+        "mrr": 1.0
+      },
+      {
+        "epoch": 500,
+        "mrr": 1.0
+      }
+    ],
+    "length_sweep": {
+      "lengths": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "mrr": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "span": [
+        2,
+        4,
+        5,
+        2,
+        2
+      ],
+      "span_raw": [
+        2,
+        4,
+        5,
+        2,
+        2
+      ],
+      "span_l2": [
+        2,
+        4,
+        5,
+        2,
+        2
+      ],
+      "span_quantized": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "span_cued": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "epochs_to_criterion": [
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "criterion_reached": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "multiple_sequences_interleaved": {
+      "mrr_A": 1.0,
+      "mrr_B": 1.0,
+      "span_A": 4,
+      "curve_A": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curve_B": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "epochs": 47.0,
+      "reached": true
+    },
+    "multiple_sequences_lists": {
+      "n_lists": 5,
+      "pairs": [
+        {
+          "A": "fruit",
+          "B": "animal",
+          "mrr_before": 1.0,
+          "mrr_after": 1.0,
+          "epochs_A": 86.0,
+          "epochs_B": 86.0
+        },
+        {
+          "A": "animal",
+          "B": "number",
+          "mrr_before": 1.0,
+          "mrr_after": 1.0,
+          "in_span": 0.2208818981325695,
+          "epochs_A": 86.0,
+          "epochs_B": 86.0
+        },
+        {
+          "A": "number",
+          "B": "vehicle",
+          "mrr_before": 1.0,
+          "mrr_after": 1.0,
+          "in_span": 0.2208818981325695,
+          "epochs_A": 86.0,
+          "epochs_B": 86.0
+        },
+        {
+          "A": "vehicle",
+          "B": "color",
+          "mrr_before": 1.0,
+          "mrr_after": 1.0,
+          "in_span": 0.2258153037787974,
+          "epochs_A": 86.0,
+          "epochs_B": 86.0
+        },
+        {
+          "A": "color",
+          "B": "fruit",
+          "mrr_before": 1.0,
+          "mrr_after": 1.0,
+          "in_span": 0.2208818981325695,
+          "epochs_A": 86.0,
+          "epochs_B": 86.0
+        }
+      ],
+      "prob_before": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "prob_after": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "margin_before": [
+        NaN,
+        0.389930467314264,
+        0.3410951001618501,
+        0.5171840945113285,
+        0.4073203713268302,
+        0.4337367036477824,
+        0.6123484416940468
+      ],
+      "margin_after": [
+        NaN,
+        0.28635046148359533,
+        0.32525640565776326,
+        0.4401455732757863,
+        0.37684129001986877,
+        0.4593274268074232,
+        0.5947187472240317
+      ]
+    },
+    "multiple_sequences_overlap": {
+      "disjoint": {
+        "in_span": 0.21571670592396697,
+        "pairs": [
+          {
+            "A": [
+              "apple",
+              "banana",
+              "orange",
+              "grape",
+              "pear",
+              "peach"
+            ],
+            "B": [
+              "cat",
+              "dog",
+              "cow",
+              "horse",
+              "sheep",
+              "pig"
+            ],
+            "in_span": 0.21106462983120336,
+            "mrr_before": 1.0,
+            "mrr_after": 1.0,
+            "epochs_A": 86.0,
+            "epochs_B": 86.0,
+            "epochs_B_effective": 86
+          },
+          {
+            "A": [
+              "cat",
+              "dog",
+              "cow",
+              "horse",
+              "sheep",
+              "pig"
+            ],
+            "B": [
+              "one",
+              "two",
+              "three",
+              "four",
+              "five",
+              "six"
+            ],
+            "in_span": 0.2203687820167306,
+            "mrr_before": 1.0,
+            "mrr_after": 1.0,
+            "epochs_A": 86.0,
+            "epochs_B": 86.0,
+            "epochs_B_effective": 86
+          }
+        ],
+        "prob_before": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prob_after": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "margin_before": [
+          NaN,
+          0.4498567610402266,
+          0.3735841497508772,
+          0.5166578277287267,
+          0.4179313241061897,
+          0.4419670458631362
+        ],
+        "margin_after": [
+          NaN,
+          0.35563124101905275,
+          0.36456958635012515,
+          0.48008850266973946,
+          0.35682599207557325,
+          0.4259738383406372
+        ]
+      },
+      "same_category": {
+        "in_span": 0.3702484702189596,
+        "pairs": [
+          {
+            "A": [
+              "apple",
+              "banana",
+              "orange",
+              "grape",
+              "pear",
+              "peach"
+            ],
+            "B": [
+              "plum",
+              "cherry",
+              "kiwi",
+              "mango",
+              "lemon",
+              "lime"
+            ],
+            "in_span": 0.3702484702189596,
+            "mrr_before": 1.0,
+            "mrr_after": 1.0,
+            "epochs_A": 86.0,
+            "epochs_B": 86.0,
+            "epochs_B_effective": 86
+          },
+          {
+            "A": [
+              "cat",
+              "dog",
+              "cow",
+              "horse",
+              "sheep",
+              "pig"
+            ],
+            "B": [
+              "lion",
+              "tiger",
+              "bear",
+              "monkey",
+              "rabbit",
+              "deer"
+            ],
+            "in_span": 0.3702484702189596,
+            "mrr_before": 1.0,
+            "mrr_after": 1.0,
+            "epochs_A": 86.0,
+            "epochs_B": 86.0,
+            "epochs_B_effective": 86
+          }
+        ],
+        "prob_before": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prob_after": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "margin_before": [
+          NaN,
+          0.4352608847940783,
+          0.3521349444971864,
+          0.32833049404641135,
+          0.4992041130928414,
+          0.333318974777399
+        ],
+        "margin_after": [
+          NaN,
+          0.16616731726816825,
+          0.20533749461446216,
+          0.27445720903666826,
+          0.40898365268643194,
+          0.3039879025686831
+        ]
+      },
+      "b_exposure_multiplier": 1
+    },
+    "multiple_sequences": {
+      "mrr_before": 1.0,
+      "mrr_after": 1.0,
+      "delta_mrr": 0.0,
+      "span_before": 4,
+      "span_after": 4,
+      "delta_span": 0,
+      "curve_before": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curve_after": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "continual_chain": {
+      "retention_matrix": [
+        [
+          1.0,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          1.0,
+          1.0,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          0.75,
+          1.0,
+          0.75,
+          1.0,
+          NaN,
+          NaN
+        ],
+        [
+          0.75,
+          0.75,
+          0.75,
+          0.5,
+          1.0,
+          NaN
+        ],
+        [
+          0.75,
+          0.75,
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ]
+      ],
+      "task_labels": [
+        "animal",
+        "color",
+        "fruit",
+        "number",
+        "tool",
+        "vehicle"
+      ],
+      "per_task_learned": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "per_task_final": [
+        0.75,
+        0.75,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "forgetting_by_gap": [
+        0.75,
+        0.8125,
+        0.6666666666666666,
+        0.75,
+        0.75
+      ],
+      "gaps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "exposures": [
+        {
+          "task": "animal",
+          "epochs": 34,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "color",
+          "epochs": 21,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "fruit",
+          "epochs": 24,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "number",
+          "epochs": 40,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "tool",
+          "epochs": 33,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "vehicle",
+          "epochs": 28,
+          "reached": true,
+          "mode": "criterion"
+        }
+      ],
+      "max_epochs": 512,
+      "selective_retention": {
+        "rehearsed": [
+          0,
+          1,
+          2
+        ],
+        "unrehearsed": [
+          3,
+          4,
+          5
+        ],
+        "before": [
+          0.75,
+          0.75,
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "after": [
+          1.0,
+          1.0,
+          1.0,
+          0.5,
+          0.25,
+          0.0
+        ],
+        "delta": [
+          0.25,
+          0.25,
+          0.5,
+          0.0,
+          -0.25,
+          -1.0
+        ],
+        "task_labels": [
+          "animal",
+          "color",
+          "fruit",
+          "number",
+          "tool",
+          "vehicle"
+        ]
+      },
+      "material": {
+        "embedding_dim": 100,
+        "category_variance": 0.2,
+        "between_category_cosine": null,
+        "within_cos_law": 0.19999999999999996,
+        "within_cos_measured": 0.20302095143088855,
+        "between_word_cos_law": null,
+        "between_word_cos_measured": -0.005438890534636398,
+        "between_word_cos_sd": 0.10170862000717107,
+        "prototype_cos_min": -0.14587839830500063,
+        "prototype_cos_max": 0.14995872099160354
+      }
+    },
+    "paired_associate": {
+      "abac": {
+        "condition": "abac",
+        "trials": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "old_rate": [
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_rate": [
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "other_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "control": {
+        "condition": "control",
+        "trials": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "old_rate": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "new_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "other_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "noise_sweep": {
+      "noise_levels": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "mrr": [
+        1.0,
+        1.0,
+        0.9777777777777779,
+        0.8611111111111112,
+        0.7222222222222223,
+        0.5555555555555555,
+        0.561111111111111,
+        0.5166666666666666,
+        0.4277777777777778,
+        0.4222222222222222,
+        0.39444444444444443
+      ],
+      "rollout_l2": [
+        0.8333333333333334,
+        0.6722222222222222,
+        0.611111111111111,
+        0.6388888888888888,
+        0.5055555555555555,
+        0.45555555555555555,
+        0.3055555555555556,
+        0.4611111111111111,
+        0.3277777777777778,
+        0.3166666666666667,
+        0.4388888888888889
+      ],
+      "rollout_quantized": [
+        1.0,
+        1.0,
+        0.9777777777777779,
+        0.9222222222222222,
+        0.8000000000000002,
+        0.6555555555555556,
+        0.41111111111111115,
+        0.5333333333333333,
+        0.4555555555555555,
+        0.41111111111111115,
+        0.5555555555555555
+      ],
+      "rollout_margin_first": [
+        0.4405215762885645,
+        0.3594074448498633,
+        0.2567337587513714,
+        0.18829767889640062,
+        0.11452200629862327,
+        0.05195375804000051,
+        -0.13853264646644065,
+        -0.008250108087218867,
+        -0.11406878135227799,
+        -0.15224100259181367,
+        -0.05380958806346141
+      ],
+      "rollout_margin_later": [
+        0.019403509511022564,
+        0.011060263926658176,
+        0.01975837669097798,
+        0.036759973410462235,
+        -0.010883436503605714,
+        -0.010596896697509123,
+        -0.10081296615060895,
+        -0.014377917905354967,
+        -0.09962205054484799,
+        -0.10528330705519448,
+        -0.032230657078064925
+      ],
+      "rollout_margin_mean": [
+        0.08958985397394621,
+        0.06911812741385902,
+        0.059254273701043546,
+        0.062016257658118634,
+        0.010017470630099112,
+        -0.0001717875745908537,
+        -0.10709957953658089,
+        -0.01335661626899895,
+        -0.10202983901275299,
+        -0.11310958964463101,
+        -0.035827145575631006
+      ]
+    },
+    "similarity_sweep": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "cosine_similarities": [
+        0.7908316983210071,
+        0.46561349920979933,
+        0.14794779034305033,
+        -0.002476194533669659,
+        -0.022607491596445272
+      ],
+      "epochs_to_criterion": [
+        173,
+        80,
+        36,
+        25,
+        26
+      ],
+      "criterion_reached": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mrr": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "symbolic_disambiguation": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "discriminator_similarities": [
+        0.9482190965386933,
+        0.8269897293236664,
+        0.5670570526294755,
+        0.22263308426028774,
+        0.10362632547490203
+      ],
+      "variance_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "variance_margin": [
+        -0.6019097584878699,
+        -0.5298194150178457,
+        -0.3524640264641381,
+        -0.280569811623983,
+        -0.2936168542169637
+      ],
+      "episode_counts": [
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "load_accuracy": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "load_chance": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "load_margin": [
+        0.11045457771873246,
+        -0.1612691089169297,
+        -0.280569811623983,
+        -0.39572853099839395,
+        -0.42681607881561917
+      ],
+      "delays": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "delay_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "delay_margin": [
+        -0.280569811623983,
+        -0.5887592667289384,
+        -0.5841951432736632,
+        -0.5763694428011956
+      ],
+      "confusion_matrix_largest_n": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "state_primed": true,
+      "hold_delays": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "hold_accuracy": [
+        0.75,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "hold_cue_duration": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "support_durations": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "support_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "support_delay": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "load_orthogonal_accuracy": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "shared_lengths": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "shared_len_persistent_accuracy": [
+        1.0,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "shared_len_persistent_margin": [
+        0.4852203633466416,
+        -0.1090978179617347,
+        -0.2298459932364934,
+        -0.280569811623983,
+        -0.29491435067426175
+      ],
+      "shared_len_onset_accuracy": [
+        1.0,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "shared_len_onset_margin": [
+        0.4852203633466416,
+        -0.5015869768901807,
+        -0.4431498464372441,
+        -0.5763694428011956,
+        -0.459841335556577
+      ],
+      "shared_len_onset_delay": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "middle_accuracy": [
+        0.25,
+        0.25
+      ],
+      "middle_modes": [
+        "category",
+        "identical"
+      ],
+      "middle_endogenous": [
+        false,
+        true
+      ],
+      "middle_prefix_len": 3
+    },
+    "mask_sweep": {
+      "fractions": [
+        0.0,
+        0.08333333333333333,
+        0.16666666666666666,
+        0.25,
+        0.3333333333333333,
+        0.4166666666666667,
+        0.5,
+        0.5833333333333334,
+        0.6666666666666666,
+        0.75,
+        0.8333333333333334,
+        0.9166666666666666,
+        1.0
+      ],
+      "counts": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "identifiability": {
+        "random": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9921875,
+          0.921875,
+          0.7109375,
+          0.515625,
+          0.0
+        ],
+        "shared": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "identity": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "recall": {
+        "random": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9821428571428571,
+          0.9107142857142857,
+          0.8214285714285714,
+          0.6428571428571429,
+          0.0
+        ],
+        "shared": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "identity": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.8214285714285714,
+          0.2857142857142857,
+          0.2857142857142857,
+          0.3392857142857143,
+          0.19642857142857142,
+          0.19642857142857142,
+          0.26785714285714285,
+          0.0
+        ]
+      },
+      "margin": {
+        "random": [
+          0.08880880183065887,
+          0.091693599197223,
+          0.08975443005602098,
+          0.08694747998358765,
+          0.09033193730161401,
+          0.09014002143980339,
+          0.09427552706037193,
+          0.09420699775227015,
+          0.08575808236953132,
+          0.10211312365046044,
+          0.11337934514302253,
+          0.11574679133012622,
+          0.0
+        ],
+        "shared": [
+          0.08880880183065887,
+          0.101658138624534,
+          0.11859329909255047,
+          0.1426574780203942,
+          0.1776012708035187,
+          0.23512831809531493,
+          0.32990497636365934,
+          0.3242031331118484,
+          0.31648775789081357,
+          0.30829152857991804,
+          0.29235744619496706,
+          0.2547024267990324,
+          0.0
+        ],
+        "identity": [
+          0.08880880183065887,
+          0.07757823139813277,
+          0.06372348783711947,
+          0.049454524368131005,
+          0.033732043715202116,
+          0.013502821534036367,
+          -0.006242116884839459,
+          -0.007282821886851948,
+          -0.007275734590091958,
+          -0.008930946473120165,
+          -0.013485482624835964,
+          -0.014885580825192563,
+          0.0
+        ]
+      },
+      "rollout": {
+        "random": [
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.6785714285714286,
+          0.6607142857142857,
+          0.625,
+          0.5178571428571429,
+          0.0
+        ],
+        "shared": [
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.0
+        ],
+        "identity": [
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.7142857142857143,
+          0.6785714285714286,
+          0.32142857142857145,
+          0.2857142857142857,
+          0.2857142857142857,
+          0.30357142857142855,
+          0.30357142857142855,
+          0.30357142857142855,
+          0.32142857142857145,
+          0.0
+        ]
+      }
+    },
+    "cue_availability": {
+      "conditions": {
+        "single": {
+          "readouts": {
+            "both_recall": 1.0,
+            "both_margin": 0.023542325330219344,
+            "symbolic_recall": 1.0,
+            "symbolic_margin": 0.1139937877503336,
+            "symbolic_tone_cos": 0.9691221445791619,
+            "audio_membership": 1.0,
+            "audio_margin": 0.3197780760672041,
+            "both_rollout": 0.6666666666666666,
+            "symbolic_rollout": 0.6666666666666666,
+            "audio_rollout_membership": 1.0,
+            "audio_rollout_transition_validity": 0.0
+          },
+          "sequences": {
+            "fruit": [
+              "apple",
+              "banana",
+              "orange",
+              "grape"
+            ]
+          },
+          "tones": {
+            "fruit": 297.9591836734694
+          },
+          "geometry": {
+            "d_sym": 100,
+            "d_audio": 50,
+            "audio_gain": 1.0,
+            "n_sequences": 1,
+            "tone_cosine_between_sequences": null
+          },
+          "exposure": {
+            "epochs": 53,
+            "reached": true
+          }
+        },
+        "multi": {
+          "readouts": {
+            "both_recall": 1.0,
+            "both_margin": 0.10204996062225465,
+            "symbolic_recall": 1.0,
+            "symbolic_margin": 0.3045361750027001,
+            "symbolic_tone_cos": 0.9725745943505988,
+            "symbolic_tone_recovery": 1.0,
+            "audio_membership": 1.0,
+            "audio_margin": 0.2994823571368194,
+            "audio_seq_id": 1.0,
+            "both_rollout": 0.8888888888888888,
+            "symbolic_rollout": 0.8888888888888888,
+            "audio_rollout_membership": 1.0,
+            "audio_rollout_transition_validity": 0.16666666666666666
+          },
+          "sequences": {
+            "fruit": [
+              "apple",
+              "banana",
+              "orange",
+              "grape"
+            ],
+            "animal": [
+              "cat",
+              "dog",
+              "cow",
+              "horse"
+            ],
+            "color": [
+              "red",
+              "blue",
+              "green",
+              "yellow"
+            ]
+          },
+          "tones": {
+            "fruit": 297.9591836734694,
+            "animal": 453.0612244897959,
+            "color": 551.0204081632653
+          },
+          "geometry": {
+            "d_sym": 100,
+            "d_audio": 50,
+            "audio_gain": 1.0,
+            "n_sequences": 3,
+            "tone_cosine_between_sequences": 0.0
+          },
+          "exposure": {
+            "epochs": 96,
+            "reached": true
+          }
+        }
+      }
+    },
+    "duplicate": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.8,
+        0.8,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 1.0,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      }
+    },
+    "within": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      }
+    },
+    "across": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 1.0,
+        "n2_2": 0.2,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      }
+    },
+    "random": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334,
+        0.8333333333333334
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 1.0,
+        "n2_2": 0.4,
+        "n2_4": 0.4,
+        "n2_5": 0.8
+      }
+    },
+    "cognitive_phenomena": {
+      "summary": {
+        "cog_spc_primacy_acc_first": -0.16666666666666666,
+        "cog_spc_recency_acc_first": -0.16666666666666666,
+        "cog_spc_rollout_recency_first": -0.3333333333333333,
+        "cog_spc_primacy_margin_criterion": -0.043670027597136916,
+        "cog_spc_recency_margin_criterion": -0.01672788481351369,
+        "cog_spc_accuracy_criterion": 1.0,
+        "cog_ll_early_slope_acc_first": 0.0,
+        "cog_ll_late_slope_acc_first": -0.06140350877192981,
+        "cog_ll_dissociation_acc_first": -0.06140350877192981,
+        "cog_ll_early_slope_margin_criterion": -0.002230678421236917,
+        "cog_ll_late_slope_margin_criterion": -0.005125339873196128,
+        "cog_ll_dissociation_margin_criterion": -0.0028946614519592107,
+        "cog_pr_early_slope_acc": 0.06666666666666667,
+        "cog_pr_late_slope_acc": 0.1,
+        "cog_pr_dissociation_acc": -0.03333333333333334,
+        "cog_pr_early_slope_margin": 0.013765855401612608,
+        "cog_pr_late_slope_margin": 0.021830604045807642,
+        "cog_pr_dissociation_margin": -0.008064748644195034,
+        "cog_pli_headline_rung": "0.50/one_pass",
+        "cog_pli_headline_rho_b": 0.5,
+        "cog_pli_headline_regime": "one_pass",
+        "cog_pli_question_posed": true,
+        "cog_pli_total": 10,
+        "cog_pli_rate": 0.4166666666666667,
+        "cog_pli_lag1_share": 0.3,
+        "cog_pli_recency_spearman": -0.5642880936468347,
+        "cog_pli_avg_forgetting": 0.0,
+        "cog_comp_prior_share": 0.4583333333333333,
+        "cog_comp_lag1_share": 0.2727272727272727,
+        "cog_comp_recency_spearman": -0.5642880936468347,
+        "cog_sem_house_sigma": 0.2,
+        "cog_sem_chance_specific": 0.05555555555555555,
+        "cog_sem_n_errors_house_first": 19,
+        "cog_sem_s1_cue_partner_share": 0.10526315789473684,
+        "cog_sem_s2_target_partner_share": 0.05263157894736842,
+        "cog_sem_s3_cue_partner_successor_share": 0.0,
+        "cog_sem_factor_cue_house": 0.5784313725490196,
+        "cog_sem_factor_target_house": 0.6045751633986929,
+        "cog_sem_factor_cue_nostructure": 0.5448916408668731,
+        "cog_sem_comp_s1_share_criterion": 0.047619047619047616,
+        "cog_sem_comp_s2_share_criterion": 0.23809523809523808,
+        "cog_sem_comp_factor_cue_criterion": 0.3588235294117647,
+        "cog_sem_calibrated": true,
+        "cog_dir_spc_primacy": false,
+        "cog_dir_spc_recency": false,
+        "cog_dir_ll_dissociation": false,
+        "cog_dir_pr_dissociation": false,
+        "cog_pli_direction_source": "intrusions",
+        "cog_dir_pli_recency": true,
+        "cog_dir_sem_organisation": true
+      },
+      "human_reference": {
+        "serial_position": {
+          "signature": "Immediate serial recall: strong primacy, modest recency; immediate free recall: strong recency, smaller primacy.",
+          "read_as": "primacy_index > 0 and recency_index > 0 on the CUED curve; the rollout curve is structurally unable to show recency.",
+          "source": "Kahana 2020 sec 4.1, Fig. 2b (Kahana et al. 2010); Murdock 1962."
+        },
+        "list_length": {
+          "signature": "Longer lists reduce recall of early and middle positions and do not reliably change recall of the last few items.",
+          "read_as": "early_slope < 0 and late_slope ~ 0, i.e. dissociation = late_slope - early_slope > 0.",
+          "source": "Kahana 2020 sec 4.1, Fig. 2a (Murdock 1962)."
+        },
+        "presentation_rate": {
+          "signature": "A slower presentation rate increases recall of early and middle items and has no discernible effect on the final items.",
+          "read_as": "early_slope > 0 and late_slope ~ 0 against log2(passes), i.e. dissociation = early_slope - late_slope > 0. 'Rate' is passes over the list in the batch suite, not seconds per item.",
+          "source": "Kahana 2020 sec 4.1 (Murdock 1962)."
+        },
+        "pli_recency": {
+          "signature": "Prior-list intrusions show a striking recency effect: most come from the last two lists and the proportion falls with list lag.",
+          "read_as": "pli_lag1_share high and pli_recency_spearman < 0 (rate per opportunity decreasing in lag). The competitor read-out is the same question above the accuracy floor.",
+          "source": "Kahana 2020 sec 4.3, Fig. 5a (Zaromb et al. 2006)."
+        },
+        "semantic_clustering": {
+          "signature": "Recall transitions and intrusions are biased toward items semantically similar to the just-recalled item, even on lists without obvious associates.",
+          "read_as": "cue_partner share above chance_specific and semantic_factor_cue > 0.5 at the structured rungs, both falling to chance at the no-structure calibration rung. target_partner and cue_partner_successor are confusability, not organisation.",
+          "source": "Kahana 2020 sec 4.2-4.3, Fig. 4b, 5c (Howard & Kahana 2002; Zaromb et al. 2006); semantic factor after Polyn et al. 2009."
+        }
+      },
+      "metadata": {
+        "section": "cognitive_phenomena",
+        "model": "MultilayerTemporalPCNetwork",
+        "seed": 42,
+        "exposure_mode": "criterion",
+        "criterion": 0.95,
+        "probe": "clean_single",
+        "feedback_mode": "l2",
+        "replication": "material (categories / lists), not cue noise",
+        "phenomena": [
+          "serial_position",
+          "list_length",
+          "presentation_rate",
+          "pli_recency",
+          "semantic_clustering"
+        ]
+      }
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 38,
+      "sections": [
+        "avail",
+        "avail_multi",
+        "avail_single",
+        "chain",
+        "mask",
+        "multiple_seq_A",
+        "multiple_seq_B",
+        "multiple_seq_interleaved",
+        "noise",
+        "semantic_high",
+        "semantic_low",
+        "seqlen",
+        "seqlen_max",
+        "symdis"
+      ],
+      "ratios": [
+        1.9605263157894737,
+        2.526315789473684,
+        1.394736842105263,
+        0.7894736842105263,
+        2.263157894736842,
+        2.263157894736842,
+        2.263157894736842,
+        1.236842105263158,
+        2.263157894736842,
+        0.9473684210526315,
+        0.5789473684210527,
+        2.263157894736842,
+        2.263157894736842,
+        2.263157894736842
+      ],
+      "band": 8.0
+    }
+  }
+}

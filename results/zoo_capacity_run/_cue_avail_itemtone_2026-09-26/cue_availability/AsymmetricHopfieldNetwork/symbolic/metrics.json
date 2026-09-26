@@ -1,0 +1,327 @@
+{
+  "metadata": {
+    "model_name": "AsymmetricHopfieldNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "2",
+      "learning_rate": "0.1",
+      "activation": "relu",
+      "seed": "42"
+    },
+    "rollout_mode": "observation",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 30,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 30,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cue_availability": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cognitive_phenomena": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {
+    "avail_seq_len": 10,
+    "avail_n_sequences": 3,
+    "avail_audio_gain": 1.0,
+    "avail_feedback_mode": "l2",
+    "avail_n_bins": 100,
+    "avail_tone_sigma": 4.0,
+    "avail_chance_item": 0.01818181818181818,
+    "avail_exposure_mode": "criterion",
+    "avail_single_both_recall": 1.0,
+    "avail_single_both_margin": 0.32467732972914143,
+    "avail_single_both_audio_recall": 1.0,
+    "avail_single_both_rollout": 0.6666666666666666,
+    "avail_single_symbolic_recall": 1.0,
+    "avail_single_symbolic_margin": 0.22628680618467772,
+    "avail_single_symbolic_audio_recall": 1.0,
+    "avail_single_symbolic_rollout": 0.5555555555555556,
+    "avail_single_audio_recall": 1.0,
+    "avail_single_audio_margin": 0.4045203127415292,
+    "avail_single_audio_audio_recall": 1.0,
+    "avail_single_audio_rollout": 0.8888888888888888,
+    "avail_single_epochs_to_criterion": 1.0,
+    "avail_single_criterion_reached": true,
+    "avail_single_chance_tone": 0.1,
+    "avail_single_tone_cosine_max": 0.0606149049519946,
+    "avail_multi_both_recall": 1.0,
+    "avail_multi_both_margin": 0.2998926919222888,
+    "avail_multi_both_audio_recall": 1.0,
+    "avail_multi_both_rollout": 0.6296296296296297,
+    "avail_multi_symbolic_recall": 0.9629629629629629,
+    "avail_multi_symbolic_margin": 0.17783179425932485,
+    "avail_multi_symbolic_audio_recall": 1.0,
+    "avail_multi_symbolic_rollout": 0.48148148148148145,
+    "avail_multi_audio_recall": 1.0,
+    "avail_multi_audio_margin": 0.41314136940654983,
+    "avail_multi_audio_audio_recall": 1.0,
+    "avail_multi_audio_rollout": 0.6296296296296297,
+    "avail_multi_epochs_to_criterion": 1.0,
+    "avail_multi_criterion_reached": true,
+    "avail_multi_chance_tone": 0.03333333333333333,
+    "avail_multi_tone_cosine_max": 0.06098525619245111,
+    "avail_acquired": true,
+    "avail_epochs_to_criterion": 1.0,
+    "avail_criterion_reached": true,
+    "exposure_baseline_epochs": 1.0,
+    "exposure_baseline_reached": true,
+    "avail_exposure_vs_baseline": 1.0,
+    "avail_multi_exposure_vs_baseline": 1.0,
+    "avail_single_exposure_vs_baseline": 1.0,
+    "exposure_deviation_max": 1.0,
+    "exposure_deviation_section": "",
+    "exposure_within_band": true
+  },
+  "series": {
+    "cue_availability": {
+      "conditions": {
+        "single": {
+          "readouts": {
+            "both_recall": 1.0,
+            "both_margin": 0.32467732972914143,
+            "both_audio_recall": 1.0,
+            "both_rollout": 0.6666666666666666,
+            "symbolic_recall": 1.0,
+            "symbolic_margin": 0.22628680618467772,
+            "symbolic_audio_recall": 1.0,
+            "symbolic_rollout": 0.5555555555555556,
+            "audio_recall": 1.0,
+            "audio_margin": 0.4045203127415292,
+            "audio_audio_recall": 1.0,
+            "audio_rollout": 0.8888888888888888
+          },
+          "sequences": {
+            "fruit": [
+              "apple",
+              "banana",
+              "orange",
+              "grape",
+              "pear",
+              "peach",
+              "plum",
+              "cherry",
+              "kiwi",
+              "mango"
+            ]
+          },
+          "tones": {
+            "apple": 593.3333333333334,
+            "banana": 420.0,
+            "orange": 300.0,
+            "grape": 540.0,
+            "pear": 526.6666666666667,
+            "peach": 500.0,
+            "plum": 273.33333333333337,
+            "cherry": 486.6666666666667,
+            "kiwi": 553.3333333333334,
+            "mango": 340.0
+          },
+          "geometry": {
+            "d_sym": 100,
+            "d_audio": 100,
+            "audio_gain": 1.0,
+            "n_sequences": 1,
+            "n_tones": 10,
+            "tone_sigma": 4.0,
+            "tone_cosine_max": 0.0606149049519946
+          },
+          "exposure": {
+            "epochs": 1,
+            "reached": true
+          }
+        },
+        "multi": {
+          "readouts": {
+            "both_recall": 1.0,
+            "both_margin": 0.2998926919222888,
+            "both_audio_recall": 1.0,
+            "both_rollout": 0.6296296296296297,
+            "symbolic_recall": 0.9629629629629629,
+            "symbolic_margin": 0.17783179425932485,
+            "symbolic_audio_recall": 1.0,
+            "symbolic_rollout": 0.48148148148148145,
+            "audio_recall": 1.0,
+            "audio_margin": 0.41314136940654983,
+            "audio_audio_recall": 1.0,
+            "audio_rollout": 0.6296296296296297
+          },
+          "sequences": {
+            "fruit": [
+              "apple",
+              "banana",
+              "orange",
+              "grape",
+              "pear",
+              "peach",
+              "plum",
+              "cherry",
+              "kiwi",
+              "mango"
+            ],
+            "animal": [
+              "cat",
+              "dog",
+              "cow",
+              "horse",
+              "sheep",
+              "pig",
+              "lion",
+              "tiger",
+              "bear",
+              "monkey"
+            ],
+            "number": [
+              "one",
+              "two",
+              "three",
+              "four",
+              "five",
+              "six",
+              "seven",
+              "eight",
+              "nine",
+              "ten"
+            ]
+          },
+          "tones": {
+            "apple": 593.3333333333334,
+            "banana": 420.0,
+            "orange": 300.0,
+            "grape": 540.0,
+            "pear": 526.6666666666667,
+            "peach": 500.0,
+            "plum": 273.33333333333337,
+            "cherry": 486.6666666666667,
+            "kiwi": 553.3333333333334,
+            "mango": 340.0,
+            "cat": 460.0,
+            "dog": 473.33333333333337,
+            "cow": 326.6666666666667,
+            "horse": 286.6666666666667,
+            "sheep": 446.6666666666667,
+            "pig": 246.66666666666669,
+            "lion": 206.66666666666666,
+            "tiger": 406.6666666666667,
+            "bear": 433.33333333333337,
+            "monkey": 513.3333333333334,
+            "one": 366.6666666666667,
+            "two": 353.33333333333337,
+            "three": 393.33333333333337,
+            "four": 580.0,
+            "five": 233.33333333333334,
+            "six": 260.0,
+            "seven": 566.6666666666667,
+            "eight": 220.0,
+            "nine": 380.0,
+            "ten": 313.33333333333337
+          },
+          "geometry": {
+            "d_sym": 100,
+            "d_audio": 100,
+            "audio_gain": 1.0,
+            "n_sequences": 3,
+            "n_tones": 30,
+            "tone_sigma": 4.0,
+            "tone_cosine_max": 0.06098525619245111
+          },
+          "exposure": {
+            "epochs": 1,
+            "reached": true
+          }
+        }
+      }
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 1,
+      "sections": [
+        "avail",
+        "avail_multi",
+        "avail_single"
+      ],
+      "ratios": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "band": 8.0
+    }
+  }
+}

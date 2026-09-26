@@ -1,0 +1,77 @@
+% Encoding transformation for the hierarchical symbolic encoder.
+% Companion to docs/encoder_design.md S6.1/S6.3 and the figure in
+% docs/figures/encoder_geometry_pca.png.
+%
+% Requires: \usepackage{amsmath,amssymb,bm}
+% Verified to compile with pdflatex.
+%
+% NOTE ON WORDING: there is no dimensionality change anywhere in this pipeline.
+% The prototype c_k is already in R^100; "project" below means projection onto
+% the unit sphere S^99, not a projection INTO 100-D. Label the figure arrow
+% accordingly.
+
+% (1) one line -- for a figure arrow
+\[
+w \;\longmapsto\; \mathbf{e}_w \;=\;
+\frac{\mathbf{c}_{k(w)} + \sigma\,\bm{\varepsilon}_w}
+     {\bigl\lVert \mathbf{c}_{k(w)} + \sigma\,\bm{\varepsilon}_w \bigr\rVert}
+\;\in\; \mathbb{S}^{d-1},
+\qquad \bm{\varepsilon}_w \sim \mathcal{N}(\mathbf{0}, I_d),\; d = 100 .
+\]
+
+% (2) three steps
+\[
+\begin{aligned}
+\textbf{prototype} \quad & \mathbf{c}_k = \mathbf{g}_k / \lVert \mathbf{g}_k \rVert,
+  & \mathbf{g}_k &\sim \mathcal{N}(\mathbf{0}, I_d)
+  && \text{one per category } k \\[2pt]
+\textbf{perturb} \quad & \mathbf{u}_w = \mathbf{c}_{k(w)} + \sigma\,\bm{\varepsilon}_w,
+  & \bm{\varepsilon}_w &\sim \mathcal{N}(\mathbf{0}, I_d)
+  && \lVert \mathbf{u}_w \rVert \approx \sqrt{1 + d\sigma^{2}} \\[2pt]
+\textbf{project} \quad & \mathbf{e}_w = \mathbf{u}_w / \lVert \mathbf{u}_w \rVert
+  & &  && \lVert \mathbf{e}_w \rVert = 1
+\end{aligned}
+\]
+
+% (3) the payoff -- fixed-angle mixture
+\[
+\mathbf{e}_w \;=\;
+\underbrace{\sqrt{\rho}\;\mathbf{c}_{k(w)}}_{\text{shared: category}}
+\;+\;
+\underbrace{\sqrt{1-\rho}\;\mathbf{z}_w}_{\text{private: item}},
+\qquad
+\mathbf{z}_w \perp \mathbf{c}_{k(w)},\;\;
+\rho \;=\; \frac{1}{1 + d\sigma^{2}} .
+\]
+
+% (4) compact figure annotation, all three collapsed.
+% Labels are uniform (semantic role on every node) and the ambient space is
+% stated once afterwards -- annotating only u_w with R^100 reads as "this is
+% where we arrive in 100-D", which is false: c_k is in R^100 already. The arrow
+% is "normalise", not "project": nothing changes dimension, the last step only
+% imposes the norm constraint.
+\[
+\underset{\textstyle\text{word}}{w}
+\;\xrightarrow{\;\mathrm{cat}(w)\;}\;
+\underset{\textstyle\text{prototype}}{\mathbf{c}_{k(w)}}
+\;\xrightarrow[\;+\,\sigma\bm{\varepsilon}_w\;]{\text{perturb}}\;
+\underset{\textstyle\text{item}}{\mathbf{u}_w}
+\;\xrightarrow[\;/\lVert\cdot\rVert\;]{\text{normalise}}\;
+\underset{\textstyle\text{embedding}}{\mathbf{e}_w}
+\]
+\[
+\mathbf{c}_{k(w)},\,\mathbf{u}_w,\,\mathbf{e}_w \in \mathbb{R}^{100},
+\qquad \lVert\mathbf{e}_w\rVert = 1 .
+\]
+
+% (5) the two knobs, one line
+\[
+\cos(\mathbf{e}_w, \mathbf{e}_{w'}) =
+\begin{cases}
+\rho = \dfrac{1}{1 + d\sigma^{2}}, & k(w) = k(w') \\[10pt]
+0 \pm d^{-1/2}, & k(w) \neq k(w')
+\end{cases}
+\qquad\Longrightarrow\qquad
+\sigma(\rho) = \sqrt{\frac{1-\rho}{\rho\,d}} .
+\]
+

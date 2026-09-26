@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "model_name": "AsymmetricHopfieldNetwork",
+    "suite": "online_symbolic",
+    "n_trials": 30,
+    "noise_scale": 0.05,
+    "model_kwargs": {
+      "n_epochs": "1",
+      "learning_rate": "0.1",
+      "activation": "relu",
+      "seed": "42"
+    },
+    "status": "not_applicable",
+    "requires_capability": "OnlineTrainable",
+    "online_equivalent": false,
+    "rollout_mode": "observation",
+    "status_detail": "AsymmetricHopfieldNetwork does not declare memval.models.capabilities.OnlineTrainable, so it has no event-by-event ingestion path. The suite was skipped; absent metrics here are a capability gap, not a recall failure, and must not be scored as 0.0."
+  },
+  "metrics": {},
+  "series": {}
+}

@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "model_name": "CodecViethNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "200",
+      "n_per_feature": "5",
+      "window_steps": "50",
+      "presentation_steps": "1",
+      "cue_lag": "2",
+      "recall_steps": "1",
+      "exc_per_input": "0.5",
+      "seed": "42"
+    },
+    "rollout_mode": "observation"
+  },
+  "metrics": {
+    "multiple_seq_epochs_interleaved": 512.0,
+    "multiple_seq_interleaved_criterion_reached": false,
+    "multiple_seq_interleaved_mrr_A": 0.0,
+    "multiple_seq_interleaved_mrr_B": 0.16666666666666666,
+    "multiple_seq_interleaved_span_A": 0,
+    "multiple_seq_blocking_cost": 0.0,
+    "multiple_seq_ingestion": "both",
+    "multiple_seq_epochs_A": 512.0,
+    "multiple_seq_epochs_B": 512.0,
+    "multiple_seq_criterion_reached": false,
+    "multiple_seq_exposure_mode": "criterion",
+    "multiple_seq_mrr_before": 0.17777777777777778,
+    "multiple_seq_mrr_after": 0.0,
+    "delta_mrr_forgetting": -0.17777777777777778,
+    "exposure_baseline_epochs": 512.0,
+    "exposure_baseline_reached": false,
+    "multiple_seq_A_exposure_vs_baseline": 1.0,
+    "multiple_seq_B_exposure_vs_baseline": 1.0,
+    "multiple_seq_interleaved_exposure_vs_baseline": 1.0,
+    "exposure_deviation_max": 1.0,
+    "exposure_deviation_section": "",
+    "exposure_within_band": true
+  },
+  "series": {
+    "multiple_sequences_interleaved": {
+      "mrr_A": 0.0,
+      "mrr_B": 0.16666666666666666,
+      "span_A": 0,
+      "curve_A": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "curve_B": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "epochs": 512.0,
+      "reached": false
+    },
+    "multiple_sequences": {
+      "mrr_before": 0.17777777777777778,
+      "mrr_after": 0.0,
+      "delta_mrr": -0.17777777777777778,
+      "span_before": 0,
+      "span_after": 0,
+      "delta_span": 0,
+      "curve_before": [
+        1.0,
+        0.7,
+        0.0,
+        0.0,
+        0.0,
+        0.36666666666666664,
+        0.0
+      ],
+      "curve_after": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 512,
+      "sections": [
+        "multiple_seq_A",
+        "multiple_seq_B",
+        "multiple_seq_interleaved"
+      ],
+      "ratios": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "band": 8.0
+    }
+  }
+}

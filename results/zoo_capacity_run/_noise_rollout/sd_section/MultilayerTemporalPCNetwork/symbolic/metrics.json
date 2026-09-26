@@ -1,0 +1,397 @@
+{
+  "metadata": {
+    "model_name": "MultilayerTemporalPCNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_hidden": "60",
+      "learning_rate": "0.05",
+      "n_epochs": "86",
+      "inf_iters": "100",
+      "seed": "42"
+    },
+    "rollout_mode": "latent",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 30,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 30,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cue_availability": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {
+    "symdis_cued_divergence_accuracy": 0.5,
+    "symdis_cued_divergence_margin": -0.038683659922192526,
+    "symdis_withdrawn_divergence_accuracy": 0.25,
+    "symdis_withdrawn_divergence_margin": -0.40007676222212424,
+    "symdis_shared_stretch_accuracy": 1.0,
+    "symdis_state_primed": true,
+    "symdis_similarity_tolerance_threshold": 0.10362632547490203,
+    "symdis_max_episodes_above_chance": 6.0,
+    "symdis_context_graded_confusion_index": 0.003638267344817125,
+    "symdis_support_needed": NaN,
+    "symdis_max_delay_at_fixed_support": 0.0,
+    "symdis_load_orthogonal_accuracy": 0.125,
+    "symdis_load_disambiguation_cost": 0.0,
+    "symdis_max_shared_len_persistent": 2.0,
+    "symdis_max_shared_len_onset": 2.0,
+    "symdis_middle_informative_accuracy": 0.5,
+    "symdis_middle_endogenous_accuracy": 0.25,
+    "symdis_middle_prefix_len": 3.0,
+    "symdis_epochs_to_criterion": 37.0,
+    "symdis_criterion_reached": true,
+    "symdis_exposure_mode": "fixed",
+    "symdis_exposure_source": "cli:section",
+    "exposure_baseline_epochs": 38.0,
+    "exposure_baseline_reached": true,
+    "symdis_exposure_vs_baseline": 0.9736842105263158,
+    "exposure_deviation_max": 1.027027027027027,
+    "exposure_deviation_section": "symdis",
+    "exposure_within_band": true
+  },
+  "series": {
+    "symbolic_disambiguation": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "discriminator_similarities": [
+        0.9482190965386933,
+        0.8269897293236664,
+        0.5670570526294755,
+        0.22263308426028774,
+        0.10362632547490203
+      ],
+      "variance_accuracy": [
+        0.25,
+        0.25,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "variance_margin": [
+        -0.47984917941082306,
+        -0.4225076482759548,
+        -0.21948512246535143,
+        -0.047164221578274546,
+        -0.038683659922192526
+      ],
+      "episode_counts": [
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "load_accuracy": [
+        0.5,
+        0.3333333333333333,
+        0.5,
+        0.3333333333333333,
+        0.125
+      ],
+      "load_chance": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "load_margin": [
+        0.2156333710614812,
+        0.09903307968297637,
+        -0.047164221578274546,
+        -0.18593931432107205,
+        -0.2335051700212284
+      ],
+      "delays": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "delay_accuracy": [
+        0.5,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "delay_margin": [
+        -0.047164221578274546,
+        -0.4140624342854352,
+        -0.40953405045478575,
+        -0.40007676222212424
+      ],
+      "confusion_matrix_largest_n": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "state_primed": true,
+      "hold_delays": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "hold_accuracy": [
+        1.0,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "hold_cue_duration": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "support_durations": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "support_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "support_delay": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "load_orthogonal_accuracy": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "shared_lengths": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "shared_len_persistent_accuracy": [
+        1.0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "shared_len_persistent_margin": [
+        0.5973197709971074,
+        0.20438287670598895,
+        0.04370619118020391,
+        -0.047164221578274546,
+        0.0024484851969687055
+      ],
+      "shared_len_onset_accuracy": [
+        1.0,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "shared_len_onset_margin": [
+        0.5973197709971074,
+        -0.3172593126612252,
+        -0.26051448609647065,
+        -0.40007676222212424,
+        -0.252045900515104
+      ],
+      "shared_len_onset_delay": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "middle_accuracy": [
+        0.5,
+        0.25
+      ],
+      "middle_modes": [
+        "category",
+        "identical"
+      ],
+      "middle_endogenous": [
+        false,
+        true
+      ],
+      "middle_prefix_len": 3
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 38,
+      "sections": [
+        "symdis"
+      ],
+      "ratios": [
+        0.9736842105263158
+      ],
+      "band": 8.0
+    }
+  }
+}

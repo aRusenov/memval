@@ -1,0 +1,833 @@
+{
+  "metadata": {
+    "model_name": "CodecBushNetwork",
+    "suite": "spatial",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "20",
+      "n_per_feature": "5",
+      "window_steps": "50",
+      "recall_steps": "12",
+      "g_syn": "160.0",
+      "k_inh": "0.02",
+      "seed": "42"
+    },
+    "rollout_mode": "observation"
+  },
+  "metrics": {
+    "tmaze_pc_epochs_to_criterion": 512.0,
+    "tmaze_pc_criterion_reached": false,
+    "tmaze_pc_exposure_mode": "criterion",
+    "tmaze_pc_mse": 0.26739638135303745,
+    "tmaze_pc_coverage": 0.0,
+    "tmaze_pc_divergence_step": 0,
+    "tmaze_pc_recall_len": 11,
+    "tmaze_pc_eps": 0.15,
+    "tmaze_disamb_full_branch_acc": 0.5625,
+    "tmaze_disamb_full_confusion": 0.4375,
+    "tmaze_disamb_mec_only_branch_acc": 0.5,
+    "tmaze_disamb_mec_only_confusion": 0.5,
+    "tmaze_disamb_epochs_to_criterion": 512.0,
+    "tmaze_disamb_criterion_reached": false,
+    "tmaze_disamb_graded_concurrent_branch_accuracy": 0.5625,
+    "tmaze_disamb_graded_concurrent_divergence_accuracy": 1.0,
+    "tmaze_disamb_graded_concurrent_divergence_margin": 0.014829963187019426,
+    "tmaze_disamb_graded_concurrent_branch_margin": 0.002252084628829521,
+    "tmaze_disamb_graded_concurrent_shared_stretch_error": NaN,
+    "tmaze_disamb_graded_delay0_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay0_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay0_divergence_margin": -0.00034817059896580585,
+    "tmaze_disamb_graded_delay0_branch_margin": -4.514131689394626e-05,
+    "tmaze_disamb_graded_delay0_shared_stretch_error": NaN,
+    "tmaze_disamb_graded_delay2_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay2_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay2_divergence_margin": 0.0002752486977862746,
+    "tmaze_disamb_graded_delay2_branch_margin": 3.440608722328226e-05,
+    "tmaze_disamb_graded_delay2_shared_stretch_error": 0.45843330623112355,
+    "tmaze_disamb_graded_delay4_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay4_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay4_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay4_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay4_shared_stretch_error": 0.5115856838232722,
+    "tmaze_disamb_graded_delay6_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay6_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay6_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay6_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay6_shared_stretch_error": 0.5793246697090768,
+    "tmaze_disamb_graded_delay7_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay7_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay7_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay7_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay7_shared_stretch_error": 0.6143162428865302,
+    "reversal_direct_acquisition_trials_to_criterion": 3.0,
+    "reversal_direct_acquisition_criterion_reached": true,
+    "reversal_direct_acquisition_final_arm_accuracy": 1.0,
+    "reversal_direct_acquisition_final_perseveration": 0.0,
+    "reversal_direct_acquisition_final_reward_pred": 0.21032038357735447,
+    "reversal_direct_acquisition_final_goal_identity_margin": 0.21032038357735447,
+    "reversal_direct_acquisition_final_reward_pre_goal": 0.2971410387678953,
+    "reversal_direct_acquisition_final_anticipation_lead": 5.0,
+    "reversal_direct_acquisition_max_anticipation_lead": 5.0,
+    "reversal_direct_reversal_trials_to_criterion": 11.0,
+    "reversal_direct_reversal_criterion_reached": true,
+    "reversal_direct_reversal_final_arm_accuracy": 1.0,
+    "reversal_direct_reversal_final_perseveration": 0.0,
+    "reversal_direct_reversal_final_reward_pred": 0.23011546870335428,
+    "reversal_direct_reversal_final_goal_identity_margin": -0.004696234055170491,
+    "reversal_direct_reversal_final_reward_pre_goal": 0.21269484825046509,
+    "reversal_direct_reversal_final_anticipation_lead": 5.0,
+    "reversal_direct_reversal_max_anticipation_lead": 5.0,
+    "reversal_direct_recovery_after_interference_arm_accuracy": 1.0,
+    "reversal_direct_recovery_after_interference_perseveration": 0.0,
+    "reversal_direct_recovery_after_interference_delta": 0.0,
+    "reversal_direct_max_trials": 12,
+    "reversal_extinction_acquisition_trials_to_criterion": 3.0,
+    "reversal_extinction_acquisition_criterion_reached": true,
+    "reversal_extinction_acquisition_final_arm_accuracy": 1.0,
+    "reversal_extinction_acquisition_final_perseveration": 0.0,
+    "reversal_extinction_acquisition_final_reward_pred": 0.21032038357735447,
+    "reversal_extinction_acquisition_final_goal_identity_margin": 0.21032038357735447,
+    "reversal_extinction_acquisition_final_reward_pre_goal": 0.2971410387678953,
+    "reversal_extinction_acquisition_final_anticipation_lead": 5.0,
+    "reversal_extinction_acquisition_max_anticipation_lead": 5.0,
+    "reversal_extinction_extinction_trials_to_criterion": 1.0,
+    "reversal_extinction_extinction_criterion_reached": true,
+    "reversal_extinction_extinction_final_arm_accuracy": 1.0,
+    "reversal_extinction_extinction_final_perseveration": 0.0,
+    "reversal_extinction_extinction_final_reward_pred": 0.25230759621757626,
+    "reversal_extinction_extinction_final_goal_identity_margin": 0.25230759621757626,
+    "reversal_extinction_extinction_final_reward_pre_goal": 0.28359978028751287,
+    "reversal_extinction_extinction_final_anticipation_lead": 5.0,
+    "reversal_extinction_extinction_max_anticipation_lead": 5.0,
+    "reversal_extinction_reversal_trials_to_criterion": 12.0,
+    "reversal_extinction_reversal_criterion_reached": false,
+    "reversal_extinction_reversal_final_arm_accuracy": 0.0,
+    "reversal_extinction_reversal_final_perseveration": 1.0,
+    "reversal_extinction_reversal_final_reward_pred": 0.20369595959546402,
+    "reversal_extinction_reversal_final_goal_identity_margin": -0.00415706039990744,
+    "reversal_extinction_reversal_final_reward_pre_goal": 0.18991038405937494,
+    "reversal_extinction_reversal_final_anticipation_lead": 5.0,
+    "reversal_extinction_reversal_max_anticipation_lead": 5.0,
+    "reversal_extinction_extinction_reward_drop": -0.03821794214820695,
+    "reversal_extinction_recovery_after_interference_arm_accuracy": 0.0,
+    "reversal_extinction_recovery_after_interference_perseveration": 1.0,
+    "reversal_extinction_recovery_after_interference_delta": 0.0,
+    "reversal_extinction_max_trials": 12,
+    "reversal_reward_gain": 1.0,
+    "reversal_epochs_per_trial": 3
+  },
+  "series": {
+    "tmaze_true": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.16666666666666666
+      ],
+      [
+        0.0,
+        0.3333333333333333
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.6666666666666666
+      ],
+      [
+        0.0,
+        0.8333333333333333
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.125,
+        1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.375,
+        1.0
+      ],
+      [
+        0.5,
+        1.0
+      ],
+      [
+        0.625,
+        1.0
+      ],
+      [
+        0.75,
+        1.0
+      ],
+      [
+        0.875,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "tmaze_prompt": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.16666666666666666
+      ],
+      [
+        0.0,
+        0.3333333333333333
+      ],
+      [
+        0.0,
+        0.5
+      ]
+    ],
+    "tmaze_reconstructed_pc": [
+      [
+        0.17117117117117112,
+        0.6482196482196483
+      ],
+      [
+        0.18784255107125056,
+        0.6595914299950171
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ],
+      [
+        0.1886490807354116,
+        0.6606714628297358
+      ]
+    ],
+    "tmaze_disamb_graded": [
+      {
+        "branch_accuracy": 0.5625,
+        "confusion_rate": 0.4375,
+        "suffix_mse": 0.003325048900696892,
+        "divergence_accuracy": 1.0,
+        "branch_margin": 0.002252084628829521,
+        "divergence_margin": 0.014829963187019426,
+        "shared_stretch_error": NaN,
+        "recovery_profile": [
+          1.0,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.125,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 0,
+        "state_primed": false,
+        "zone_fraction": 1.0,
+        "availability": "concurrent"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.003303091170931553,
+        "divergence_accuracy": 0.5,
+        "branch_margin": -4.514131689394626e-05,
+        "divergence_margin": -0.00034817059896580585,
+        "shared_stretch_error": NaN,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 0,
+        "state_primed": false,
+        "zone_fraction": 1.0,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.003569622498389234,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 3.440608722328226e-05,
+        "divergence_margin": 0.0002752486977862746,
+        "shared_stretch_error": 0.45843330623112355,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 2,
+        "state_primed": false,
+        "zone_fraction": 0.75,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.0035775294605478137,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": 0.5115856838232722,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 4,
+        "state_primed": false,
+        "zone_fraction": 0.5,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.00357270240253057,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": 0.5793246697090768,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 6,
+        "state_primed": false,
+        "zone_fraction": 0.25,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.003586421240534726,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": 0.6143162428865302,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 7,
+        "state_primed": false,
+        "zone_fraction": 0.125,
+        "availability": "withdrawn"
+      }
+    ],
+    "reversal_direct_curves": {
+      "acquisition": {
+        "arm_accuracy": [
+          0.375,
+          0.625,
+          0.75,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.625,
+          0.375,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.14703398470695042,
+          0.14929666532055944,
+          0.15075324937466186,
+          0.1705386165909515,
+          0.20182551248708283,
+          0.22138970545431355,
+          0.21862820383149817,
+          0.21862263374307353,
+          0.21869772706139154,
+          0.2033667459895089,
+          0.2090670869243847,
+          0.21032038357735447
+        ],
+        "goal_identity_margin": [
+          0.14703398470695042,
+          0.14929666532055944,
+          0.15075324937466186,
+          0.1705386165909515,
+          0.20182551248708283,
+          0.22138970545431355,
+          0.21862820383149817,
+          0.21862263374307353,
+          0.21869772706139154,
+          0.2033667459895089,
+          0.2090670869243847,
+          0.21032038357735447
+        ],
+        "reward_pre_goal": [
+          0.13646327515112752,
+          0.22965544489879247,
+          0.23211099688945377,
+          0.2217447804280913,
+          0.2136478769738806,
+          0.234069208604415,
+          0.2695853646925506,
+          0.26581992476735106,
+          0.2813015335420266,
+          0.2823386097392463,
+          0.2854803336827709,
+          0.2971410387678953
+        ],
+        "anticipation_lead": [
+          4.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0
+        ]
+      },
+      "reversal": {
+        "arm_accuracy": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.125,
+          0.5,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.875,
+          0.5,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.060992329154632326,
+          0.0601739726586036,
+          0.07662674488099053,
+          0.07060859200805754,
+          0.1549865291612447,
+          0.1617079724191646,
+          0.13260800837346273,
+          0.18183402530612014,
+          0.22475692669182554,
+          0.22339200377122115,
+          0.23197751791727575,
+          0.23011546870335428
+        ],
+        "goal_identity_margin": [
+          -0.14231543469414212,
+          -0.19856587903728454,
+          -0.16153922563795536,
+          -0.16475338135213433,
+          -0.057394246016705265,
+          -0.06173923356359582,
+          -0.10689058080224893,
+          -0.049229526979778344,
+          -0.01434618681011654,
+          -0.01425906407050348,
+          -0.00473423505953624,
+          -0.004696234055170491
+        ],
+        "reward_pre_goal": [
+          0.054821394790418386,
+          0.11195326271525448,
+          0.16663833004588846,
+          0.16304823614429317,
+          0.17847827324673587,
+          0.18749584558477514,
+          0.19950825890156318,
+          0.20344037874370335,
+          0.2101141411358008,
+          0.21232195543369747,
+          0.21640288482594022,
+          0.21269484825046509
+        ],
+        "anticipation_lead": [
+          0.0,
+          4.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0
+        ]
+      }
+    },
+    "reversal_extinction_curves": {
+      "acquisition": {
+        "arm_accuracy": [
+          0.375,
+          0.625,
+          0.75,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.625,
+          0.375,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.14703398470695042,
+          0.14929666532055944,
+          0.15075324937466186,
+          0.1705386165909515,
+          0.20182551248708283,
+          0.22138970545431355,
+          0.21862820383149817,
+          0.21862263374307353,
+          0.21869772706139154,
+          0.2033667459895089,
+          0.2090670869243847,
+          0.21032038357735447
+        ],
+        "goal_identity_margin": [
+          0.14703398470695042,
+          0.14929666532055944,
+          0.15075324937466186,
+          0.1705386165909515,
+          0.20182551248708283,
+          0.22138970545431355,
+          0.21862820383149817,
+          0.21862263374307353,
+          0.21869772706139154,
+          0.2033667459895089,
+          0.2090670869243847,
+          0.21032038357735447
+        ],
+        "reward_pre_goal": [
+          0.13646327515112752,
+          0.22965544489879247,
+          0.23211099688945377,
+          0.2217447804280913,
+          0.2136478769738806,
+          0.234069208604415,
+          0.2695853646925506,
+          0.26581992476735106,
+          0.2813015335420266,
+          0.2823386097392463,
+          0.2854803336827709,
+          0.2971410387678953
+        ],
+        "anticipation_lead": [
+          4.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0
+        ]
+      },
+      "extinction": {
+        "arm_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.2140896540693693,
+          0.21352646573492287,
+          0.20896776108655377,
+          0.20990698449837067,
+          0.2032830785390806,
+          0.20713637409924401,
+          0.23360653945484952,
+          0.2433652658676454,
+          0.23881651712453822,
+          0.23122846638455363,
+          0.22263471932792966,
+          0.25230759621757626
+        ],
+        "goal_identity_margin": [
+          0.2140896540693693,
+          0.21352646573492287,
+          0.20896776108655377,
+          0.20990698449837067,
+          0.2032830785390806,
+          0.20713637409924401,
+          0.23360653945484952,
+          0.2433652658676454,
+          0.23881651712453822,
+          0.23122846638455363,
+          0.22263471932792966,
+          0.25230759621757626
+        ],
+        "reward_pre_goal": [
+          0.3142388895088972,
+          0.29223767701029163,
+          0.281202465255375,
+          0.2814250833588131,
+          0.30383091475112556,
+          0.30733573719647944,
+          0.3002886718911939,
+          0.2903133523267008,
+          0.28521540363097353,
+          0.27821785101081664,
+          0.2876790039483836,
+          0.28359978028751287
+        ],
+        "anticipation_lead": [
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0
+        ]
+      },
+      "reversal": {
+        "arm_accuracy": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "perseveration": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "reward_pred": [
+          0.02407442611993227,
+          0.044189564006946534,
+          0.1253294982826186,
+          0.15605510026088473,
+          0.17631723555571152,
+          0.17817661698483486,
+          0.19498089605081345,
+          0.20676544468164137,
+          0.2093099872293713,
+          0.20774464607749688,
+          0.20351582075959876,
+          0.20369595959546402
+        ],
+        "goal_identity_margin": [
+          -0.2010223268946306,
+          -0.23207198459781786,
+          -0.10676216520371212,
+          -0.07343769424041632,
+          -0.049730502336226313,
+          -0.04454415424620872,
+          -0.02328288513586298,
+          -0.010144893311355355,
+          -0.004271632392436137,
+          -0.004239686654642805,
+          -0.004153384097134671,
+          -0.00415706039990744
+        ],
+        "reward_pre_goal": [
+          0.028765861043414154,
+          0.1068525814171755,
+          0.1337019456397667,
+          0.15546166135045958,
+          0.17519946693355257,
+          0.17945346579122404,
+          0.18964690885767888,
+          0.19709334055908972,
+          0.19733473825658837,
+          0.1947597511726598,
+          0.19164939077350515,
+          0.18991038405937494
+        ],
+        "anticipation_lead": [
+          0.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0,
+          5.0
+        ]
+      }
+    }
+  }
+}

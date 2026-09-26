@@ -1,0 +1,336 @@
+{
+  "metadata": {
+    "model_name": "CodecBCPNNNetwork",
+    "suite": "symbolic",
+    "n_trials": 10,
+    "model_kwargs": {
+      "codec": "columnar",
+      "n_mc": "10",
+      "n_per_mc": "3",
+      "z_range": "2.5",
+      "n_epochs": "20",
+      "readout_lag_ms": "0",
+      "recall_steps": "100",
+      "overrides": "{'w_stim': 15.0}",
+      "n_basket_per_hc": "3",
+      "substeps": "2",
+      "seed": "42"
+    },
+    "rollout_mode": "observation",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 10,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 10,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cue_availability": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cognitive_phenomena": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {
+    "chain_n_tasks": 6,
+    "chain_epochs_to_criterion": 3.3333333333333335,
+    "chain_criterion_reached": true,
+    "chain_exposure_mode": "criterion",
+    "chain_avg_accuracy": 0.7083333333333334,
+    "chain_avg_forgetting": 0.35,
+    "chain_backward_transfer": -0.35,
+    "chain_avg_learning": 1.0,
+    "chain_intransigence": 0.0,
+    "chain_learning_slope": -3.9528013340747213e-17,
+    "chain_retention_ratio": 0.6982758620689655,
+    "chain_stability_plasticity_index": 0.8223350253807107,
+    "chain_acquired": true,
+    "chain_chance_level": 0.03333333333333333,
+    "select_selectivity": 0.5,
+    "select_rehearsed_gain": -0.16666666666666666,
+    "select_unrehearsed_drift": -0.6666666666666666,
+    "select_rehearsed_recall": 0.5833333333333334,
+    "select_unrehearsed_recall": 0.0,
+    "select_n_rehearsed": 3,
+    "select_rehearsal_epochs": 20,
+    "select_pressure": 0.35,
+    "select_under_pressure": true,
+    "select_rehearsal_effective": true,
+    "exposure_baseline_epochs": 5.0,
+    "exposure_baseline_reached": true,
+    "chain_exposure_vs_baseline": 0.6666666666666667,
+    "exposure_deviation_max": 1.4999999999999998,
+    "exposure_deviation_section": "chain",
+    "exposure_within_band": true
+  },
+  "series": {
+    "continual_chain": {
+      "retention_matrix": [
+        [
+          1.0,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          1.0,
+          1.0,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          NaN,
+          NaN
+        ],
+        [
+          1.0,
+          0.75,
+          1.0,
+          0.5,
+          1.0,
+          NaN
+        ],
+        [
+          0.5,
+          0.75,
+          1.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "task_labels": [
+        "animal",
+        "color",
+        "fruit",
+        "number",
+        "tool",
+        "vehicle"
+      ],
+      "per_task_learned": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "per_task_final": [
+        0.5,
+        0.75,
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "forgetting_by_gap": [
+        0.9,
+        0.75,
+        0.9166666666666666,
+        0.875,
+        0.5
+      ],
+      "gaps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "exposures": [
+        {
+          "task": "animal",
+          "epochs": 6,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "color",
+          "epochs": 4,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "fruit",
+          "epochs": 3,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "number",
+          "epochs": 1,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "tool",
+          "epochs": 5,
+          "reached": true,
+          "mode": "criterion"
+        },
+        {
+          "task": "vehicle",
+          "epochs": 1,
+          "reached": true,
+          "mode": "criterion"
+        }
+      ],
+      "max_epochs": 32,
+      "selective_retention": {
+        "rehearsed": [
+          0,
+          1,
+          2
+        ],
+        "unrehearsed": [
+          3,
+          4,
+          5
+        ],
+        "before": [
+          0.5,
+          0.75,
+          1.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "after": [
+          0.0,
+          0.75,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta": [
+          -0.5,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          -1.0
+        ],
+        "task_labels": [
+          "animal",
+          "color",
+          "fruit",
+          "number",
+          "tool",
+          "vehicle"
+        ]
+      },
+      "material": {
+        "embedding_dim": 100,
+        "category_variance": 0.2,
+        "between_category_cosine": null,
+        "within_cos_law": 0.19999999999999996,
+        "within_cos_measured": 0.20302095143088855,
+        "between_word_cos_law": null,
+        "between_word_cos_measured": -0.005438890534636398,
+        "between_word_cos_sd": 0.10170862000717107,
+        "prototype_cos_min": -0.14587839830500063,
+        "prototype_cos_max": 0.14995872099160354
+      }
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 5,
+      "sections": [
+        "chain"
+      ],
+      "ratios": [
+        0.6666666666666667
+      ],
+      "band": 8.0
+    }
+  }
+}

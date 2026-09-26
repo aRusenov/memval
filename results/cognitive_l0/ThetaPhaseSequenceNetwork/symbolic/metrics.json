@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "model_name": "ThetaPhaseSequenceNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "4",
+      "learning_rate": "0.1",
+      "rectify_output": "True",
+      "modulation_depth": "1.0",
+      "seed": "42"
+    },
+    "rollout_mode": "observation",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 30,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 30,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cue_availability": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cognitive_phenomena": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {},
+  "series": {
+    "cognitive_phenomena": {
+      "summary": {
+        "cog_spc_primacy_acc_first": 0.0,
+        "cog_spc_primacy_acc_first_sd": 0.0,
+        "cog_spc_primacy_acc_first_se": 0.0,
+        "cog_spc_primacy_acc_first_ci_lo": 0.0,
+        "cog_spc_primacy_acc_first_ci_hi": 0.0,
+        "cog_spc_primacy_acc_first_n": 15,
+        "cog_spc_primacy_acc_first_spans_zero": true,
+        "cog_spc_recency_acc_first": 0.0,
+        "cog_spc_recency_acc_first_sd": 0.0,
+        "cog_spc_recency_acc_first_se": 0.0,
+        "cog_spc_recency_acc_first_ci_lo": 0.0,
+        "cog_spc_recency_acc_first_ci_hi": 0.0,
+        "cog_spc_recency_acc_first_n": 15,
+        "cog_spc_recency_acc_first_spans_zero": true,
+        "cog_spc_rollout_recency_first": -0.16666666666666666,
+        "cog_spc_rollout_recency_first_sd": 0.4879500364742666,
+        "cog_spc_rollout_recency_first_se": 0.12598815766974242,
+        "cog_spc_rollout_recency_first_ci_lo": -0.4136034556993618,
+        "cog_spc_rollout_recency_first_ci_hi": 0.08027012236602848,
+        "cog_spc_rollout_recency_first_n": 15,
+        "cog_spc_rollout_recency_first_spans_zero": true,
+        "cog_spc_primacy_margin_criterion": -0.006940688831628306,
+        "cog_spc_primacy_margin_criterion_sd": 0.07799473603865616,
+        "cog_spc_primacy_margin_criterion_se": 0.020138154251303914,
+        "cog_spc_primacy_margin_criterion_ci_lo": -0.046411471164183975,
+        "cog_spc_primacy_margin_criterion_ci_hi": 0.03253009350092736,
+        "cog_spc_primacy_margin_criterion_n": 15,
+        "cog_spc_primacy_margin_criterion_spans_zero": true,
+        "cog_spc_recency_margin_criterion": 0.011080889222007024,
+        "cog_spc_recency_margin_criterion_sd": 0.10531361562131912,
+        "cog_spc_recency_margin_criterion_se": 0.02719185862868388,
+        "cog_spc_recency_margin_criterion_ci_lo": -0.04221515369021338,
+        "cog_spc_recency_margin_criterion_ci_hi": 0.06437693213422742,
+        "cog_spc_recency_margin_criterion_n": 15,
+        "cog_spc_recency_margin_criterion_spans_zero": true,
+        "cog_spc_accuracy_criterion": 1.0,
+        "cog_ll_early_slope_acc_first": 3.3666316116183353e-17,
+        "cog_ll_late_slope_acc_first": 3.3666316116183353e-17,
+        "cog_ll_dissociation_acc_first": 0.0,
+        "cog_ll_dissociation_acc_first_sd": 0.0,
+        "cog_ll_dissociation_acc_first_se": 0.0,
+        "cog_ll_dissociation_acc_first_ci_lo": 0.0,
+        "cog_ll_dissociation_acc_first_ci_hi": 0.0,
+        "cog_ll_dissociation_acc_first_n": 15,
+        "cog_ll_dissociation_acc_first_spans_zero": true,
+        "cog_ll_early_slope_margin_criterion": -0.020242022733971944,
+        "cog_ll_late_slope_margin_criterion": -0.025250845085114805,
+        "cog_ll_dissociation_margin_criterion": -0.005008822351142863,
+        "cog_ll_dissociation_margin_criterion_sd": 0.026484997405808217,
+        "cog_ll_dissociation_margin_criterion_se": 0.006838396925136124,
+        "cog_ll_dissociation_margin_criterion_ci_lo": -0.018412080324409663,
+        "cog_ll_dissociation_margin_criterion_ci_hi": 0.00839443562212394,
+        "cog_ll_dissociation_margin_criterion_n": 15,
+        "cog_ll_dissociation_margin_criterion_spans_zero": true,
+        "cog_pr_early_slope_acc": 0.0,
+        "cog_pr_late_slope_acc": 0.0,
+        "cog_pr_dissociation_acc": 0.0,
+        "cog_pr_dissociation_acc_sd": 0.0,
+        "cog_pr_dissociation_acc_se": 0.0,
+        "cog_pr_dissociation_acc_ci_lo": 0.0,
+        "cog_pr_dissociation_acc_ci_hi": 0.0,
+        "cog_pr_dissociation_acc_n": 15,
+        "cog_pr_dissociation_acc_spans_zero": true,
+        "cog_pr_early_slope_margin": 0.028883865261658852,
+        "cog_pr_late_slope_margin": 0.024634718245834648,
+        "cog_pr_dissociation_margin": 0.00424914701582421,
+        "cog_pr_dissociation_margin_sd": 0.011455804166680844,
+        "cog_pr_dissociation_margin_se": 0.0029578759169978965,
+        "cog_pr_dissociation_margin_ci_lo": -0.001548289781491667,
+        "cog_pr_dissociation_margin_ci_hi": 0.010046583813140088,
+        "cog_pr_dissociation_margin_n": 15,
+        "cog_pr_dissociation_margin_spans_zero": true,
+        "cog_pli_headline_rung": "0.80/one_pass",
+        "cog_pli_headline_rho_b": 0.8,
+        "cog_pli_headline_regime": "one_pass",
+        "cog_pli_question_posed": false,
+        "cog_pli_total": 1,
+        "cog_pli_rate": 0.041666666666666664,
+        "cog_pli_lag1_share": 0.0,
+        "cog_pli_recency_spearman": -0.35355339059327373,
+        "cog_pli_avg_forgetting": 0.05,
+        "cog_comp_prior_share": 0.5416666666666666,
+        "cog_comp_lag1_share": 0.38461538461538464,
+        "cog_comp_recency_spearman": -0.30779350562554625,
+        "cog_sem_house_sigma": 0.2,
+        "cog_sem_chance_specific": 0.05555555555555555,
+        "cog_sem_n_errors_house_first": 0,
+        "cog_sem_s1_cue_partner_share": NaN,
+        "cog_sem_s2_target_partner_share": NaN,
+        "cog_sem_s3_cue_partner_successor_share": NaN,
+        "cog_sem_factor_cue_house": NaN,
+        "cog_sem_factor_target_house": NaN,
+        "cog_sem_factor_cue_nostructure": NaN,
+        "cog_sem_comp_s1_share_criterion": 0.0,
+        "cog_sem_comp_s2_share_criterion": 0.23809523809523808,
+        "cog_sem_comp_factor_cue_criterion": 0.4257703081232493,
+        "cog_sem_calibrated": true,
+        "cog_dir_spc_primacy": null,
+        "cog_dir_spc_recency": null,
+        "cog_dir_ll_dissociation": null,
+        "cog_dir_pr_dissociation": null,
+        "cog_pli_direction_source": "runner-up",
+        "cog_dir_pli_recency": true,
+        "cog_dir_sem_organisation": null
+      },
+      "human_reference": {
+        "serial_position": {
+          "signature": "Immediate serial recall: strong primacy, modest recency; immediate free recall: strong recency, smaller primacy.",
+          "read_as": "primacy_index > 0 and recency_index > 0 on the CUED curve; the rollout curve is structurally unable to show recency.",
+          "source": "Kahana 2020 sec 4.1, Fig. 2b (Kahana et al. 2010); Murdock 1962."
+        },
+        "list_length": {
+          "signature": "Longer lists reduce recall of early and middle positions and do not reliably change recall of the last few items.",
+          "read_as": "early_slope < 0 and late_slope ~ 0, i.e. dissociation = late_slope - early_slope > 0.",
+          "source": "Kahana 2020 sec 4.1, Fig. 2a (Murdock 1962)."
+        },
+        "presentation_rate": {
+          "signature": "A slower presentation rate increases recall of early and middle items and has no discernible effect on the final items.",
+          "read_as": "early_slope > 0 and late_slope ~ 0 against log2(passes), i.e. dissociation = early_slope - late_slope > 0. 'Rate' is passes over the list in the batch suite, not seconds per item.",
+          "source": "Kahana 2020 sec 4.1 (Murdock 1962)."
+        },
+        "pli_recency": {
+          "signature": "Prior-list intrusions show a striking recency effect: most come from the last two lists and the proportion falls with list lag.",
+          "read_as": "pli_lag1_share high and pli_recency_spearman < 0 (rate per opportunity decreasing in lag). The competitor read-out is the same question above the accuracy floor.",
+          "source": "Kahana 2020 sec 4.3, Fig. 5a (Zaromb et al. 2006)."
+        },
+        "semantic_clustering": {
+          "signature": "Recall transitions and intrusions are biased toward items semantically similar to the just-recalled item, even on lists without obvious associates.",
+          "read_as": "cue_partner share above chance_specific and semantic_factor_cue > 0.5 at the structured rungs, both falling to chance at the no-structure calibration rung. target_partner and cue_partner_successor are confusability, not organisation.",
+          "source": "Kahana 2020 sec 4.2-4.3, Fig. 4b, 5c (Howard & Kahana 2002; Zaromb et al. 2006); semantic factor after Polyn et al. 2009."
+        }
+      },
+      "metadata": {
+        "section": "cognitive_phenomena",
+        "model": "ThetaPhaseSequenceNetwork",
+        "seed": 42,
+        "exposure_mode": "criterion",
+        "criterion": 0.95,
+        "probe": "clean_single",
+        "feedback_mode": "l2",
+        "replication": "material (categories / lists), not cue noise",
+        "phenomena": [
+          "serial_position",
+          "list_length",
+          "presentation_rate",
+          "pli_recency",
+          "semantic_clustering"
+        ]
+      }
+    }
+  }
+}

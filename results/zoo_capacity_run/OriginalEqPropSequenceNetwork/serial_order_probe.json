@@ -1,0 +1,395 @@
+{
+  "probe": "serial_order",
+  "model": "OriginalEqPropSequenceNetwork",
+  "epochs": 220,
+  "n_trials": 30,
+  "lengths": [
+    3,
+    5,
+    7,
+    9,
+    11
+  ],
+  "rows": [
+    {
+      "length": 3,
+      "words": [
+        "apple",
+        "banana",
+        "cherry"
+      ],
+      "cued_curve": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rollout_curve": [
+        1.0,
+        1.0,
+        0.4
+      ],
+      "cued_span": 2,
+      "rollout_span": 1,
+      "n_probes": 60,
+      "n_failures": 0,
+      "outcomes": {
+        "correct": 60
+      },
+      "displacements": {},
+      "list_membership_rate": 1.0,
+      "order_given_item": 1.0,
+      "order_error_fraction": NaN,
+      "transposition_locality": NaN,
+      "transposition_asymmetry": NaN,
+      "intrusion_rate": 0.0,
+      "p_correct_after_correct": 0.4,
+      "cascade_recovery_rate": NaN,
+      "rollout_margin_at_break": -0.037334231332684736,
+      "step_margins": [
+        0.4124839442119668,
+        -0.037334231332684736
+      ]
+    },
+    {
+      "length": 5,
+      "words": [
+        "apple",
+        "banana",
+        "cherry",
+        "grape",
+        "kiwi"
+      ],
+      "cued_curve": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rollout_curve": [
+        1.0,
+        1.0,
+        0.0,
+        0.03333333333333333,
+        0.1
+      ],
+      "cued_span": 4,
+      "rollout_span": 1,
+      "n_probes": 120,
+      "n_failures": 0,
+      "outcomes": {
+        "correct": 120
+      },
+      "displacements": {},
+      "list_membership_rate": 1.0,
+      "order_given_item": 1.0,
+      "order_error_fraction": NaN,
+      "transposition_locality": NaN,
+      "transposition_asymmetry": NaN,
+      "intrusion_rate": 0.0,
+      "p_correct_after_correct": 0.0,
+      "cascade_recovery_rate": 0.06779661016949153,
+      "rollout_margin_at_break": -0.26406805754238344,
+      "step_margins": [
+        0.345051442991468,
+        -0.26406805754238344,
+        -0.16980406204405346,
+        -0.07703737793680525
+      ]
+    },
+    {
+      "length": 7,
+      "words": [
+        "apple",
+        "banana",
+        "cherry",
+        "grape",
+        "kiwi",
+        "lemon",
+        "lime"
+      ],
+      "cued_curve": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9666666666666667,
+        0.9333333333333333,
+        1.0
+      ],
+      "rollout_curve": [
+        1.0,
+        1.0,
+        0.0,
+        0.06666666666666667,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.4666666666666667
+      ],
+      "cued_span": 6,
+      "rollout_span": 1,
+      "n_probes": 180,
+      "n_failures": 3,
+      "outcomes": {
+        "correct": 177,
+        "transposition": 3
+      },
+      "displacements": {
+        "-2": 1,
+        "1": 2
+      },
+      "list_membership_rate": 1.0,
+      "order_given_item": 0.9833333333333333,
+      "order_error_fraction": 1.0,
+      "transposition_locality": 0.6666666666666666,
+      "transposition_asymmetry": 1.0,
+      "intrusion_rate": 0.0,
+      "p_correct_after_correct": 0.05714285714285714,
+      "cascade_recovery_rate": 0.14782608695652175,
+      "rollout_margin_at_break": -0.27307117197365066,
+      "step_margins": [
+        0.28580963439967016,
+        -0.27307117197365066,
+        -0.09151461866336413,
+        -0.056035231794450246,
+        -0.13265021617080144,
+        -0.0354678331485535
+      ]
+    },
+    {
+      "length": 9,
+      "words": [
+        "apple",
+        "banana",
+        "cherry",
+        "grape",
+        "kiwi",
+        "lemon",
+        "lime",
+        "mango",
+        "orange"
+      ],
+      "cued_curve": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8,
+        1.0,
+        0.9666666666666667,
+        0.9666666666666667
+      ],
+      "rollout_curve": [
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.06666666666666667,
+        0.0,
+        0.1,
+        0.03333333333333333,
+        0.06666666666666667
+      ],
+      "cued_span": 8,
+      "rollout_span": 1,
+      "n_probes": 240,
+      "n_failures": 8,
+      "outcomes": {
+        "correct": 232,
+        "transposition": 8
+      },
+      "displacements": {
+        "-7": 1,
+        "-5": 1,
+        "-3": 3,
+        "1": 1,
+        "3": 2
+      },
+      "list_membership_rate": 1.0,
+      "order_given_item": 0.9666666666666667,
+      "order_error_fraction": 1.0,
+      "transposition_locality": 0.125,
+      "transposition_asymmetry": 1.0,
+      "intrusion_rate": 0.0,
+      "p_correct_after_correct": 0.0,
+      "cascade_recovery_rate": 0.04597701149425287,
+      "rollout_margin_at_break": -0.3009941189322098,
+      "step_margins": [
+        0.24820155017984397,
+        -0.3009941189322098,
+        -0.1347364926862268,
+        -0.09991545438017267,
+        -0.1996541942405482,
+        -0.15532090518855904,
+        -0.2343185830067672,
+        -0.16314955535348122
+      ]
+    },
+    {
+      "length": 11,
+      "words": [
+        "apple",
+        "banana",
+        "cherry",
+        "grape",
+        "kiwi",
+        "lemon",
+        "lime",
+        "mango",
+        "orange",
+        "peach",
+        "pear"
+      ],
+      "cued_curve": [
+        1.0,
+        0.9666666666666667,
+        1.0,
+        0.9666666666666667,
+        0.9666666666666667,
+        0.8666666666666667,
+        0.9666666666666667,
+        0.9333333333333333,
+        1.0,
+        1.0,
+        0.9333333333333333
+      ],
+      "rollout_curve": [
+        1.0,
+        1.0,
+        0.03333333333333333,
+        0.13333333333333333,
+        0.23333333333333334,
+        0.0,
+        0.06666666666666667,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.03333333333333333,
+        0.03333333333333333
+      ],
+      "cued_span": 10,
+      "rollout_span": 1,
+      "n_probes": 300,
+      "n_failures": 12,
+      "outcomes": {
+        "correct": 288,
+        "transposition": 12
+      },
+      "displacements": {
+        "-8": 1,
+        "-5": 1,
+        "-3": 3,
+        "-2": 1,
+        "1": 2,
+        "3": 3,
+        "5": 1
+      },
+      "list_membership_rate": 1.0,
+      "order_given_item": 0.96,
+      "order_error_fraction": 1.0,
+      "transposition_locality": 0.16666666666666666,
+      "transposition_asymmetry": 1.0,
+      "intrusion_rate": 0.0,
+      "p_correct_after_correct": 0.10416666666666667,
+      "cascade_recovery_rate": 0.06306306306306306,
+      "rollout_margin_at_break": -0.24059543648906806,
+      "step_margins": [
+        0.27590266121278073,
+        -0.24059543648906806,
+        -0.09792717207129557,
+        -0.04421135360792865,
+        -0.2259121577500861,
+        -0.1646436891401937,
+        -0.2989741641021329,
+        -0.1454947715623095,
+        -0.20028074430641638,
+        -0.10462115143350828
+      ]
+    }
+  ],
+  "staircase": [
+    {
+      "length": 3,
+      "e_cued": 6,
+      "e_rollout": 6,
+      "cued_reached": true,
+      "rollout_reached": true,
+      "budget": 512,
+      "criterion": 0.95,
+      "span_cued_at_criterion": 2,
+      "span_rollout_at_criterion": 2,
+      "gap_at_criterion": 0.0,
+      "exposure_ratio": 1.0
+    },
+    {
+      "length": 5,
+      "e_cued": 18,
+      "e_rollout": null,
+      "cued_reached": true,
+      "rollout_reached": false,
+      "budget": 512,
+      "criterion": 0.95,
+      "span_cued_at_criterion": 4,
+      "span_rollout_at_criterion": 1,
+      "gap_at_criterion": 0.75,
+      "exposure_ratio": Infinity
+    },
+    {
+      "length": 7,
+      "e_cued": 57,
+      "e_rollout": null,
+      "cued_reached": true,
+      "rollout_reached": false,
+      "budget": 512,
+      "criterion": 0.95,
+      "span_cued_at_criterion": 6,
+      "span_rollout_at_criterion": 1,
+      "gap_at_criterion": 0.8333333333333334,
+      "exposure_ratio": Infinity
+    },
+    {
+      "length": 9,
+      "e_cued": 66,
+      "e_rollout": null,
+      "cued_reached": true,
+      "rollout_reached": false,
+      "budget": 512,
+      "criterion": 0.95,
+      "span_cued_at_criterion": 8,
+      "span_rollout_at_criterion": 1,
+      "gap_at_criterion": 0.875,
+      "exposure_ratio": Infinity
+    },
+    {
+      "length": 11,
+      "e_cued": 122,
+      "e_rollout": null,
+      "cued_reached": true,
+      "rollout_reached": false,
+      "budget": 512,
+      "criterion": 0.95,
+      "span_cued_at_criterion": 10,
+      "span_rollout_at_criterion": 1,
+      "gap_at_criterion": 0.9,
+      "exposure_ratio": Infinity
+    }
+  ],
+  "summary": {
+    "failures_observed": true,
+    "n_cued_failures": 23,
+    "n_cued_probes": 900,
+    "list_membership_rate": 1.0,
+    "order_given_item": 0.982,
+    "establishment_break_length": 11.0,
+    "order_error_fraction": 1.0,
+    "transposition_locality": 0.3194444444444444,
+    "transposition_asymmetry": 1.0,
+    "intrusion_rate": 0.0,
+    "unrolling_gap": 0.6716666666666666,
+    "unrolling_exposure_ratio": 1.0,
+    "rollout_criterion_reached": false,
+    "cascade_recovery_rate": 0.08116569292083231,
+    "cascade_conditional_ratio": 0.5095850840336135,
+    "rollout_margin_at_break": -0.22321260325399933
+  }
+}

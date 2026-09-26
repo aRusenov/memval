@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "model_name": "GPT2SequenceModel",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "64",
+      "from_pretrained": "True",
+      "device": "auto"
+    }
+  },
+  "metrics": {
+    "max_memory_span": 0,
+    "max_memory_span_l2": 0,
+    "max_memory_span_quantized": 0,
+    "interval_decay_slope": "TODO"
+  },
+  "series": {
+    "length_sweep": {
+      "lengths": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "mrr": [
+        0.5,
+        0.75,
+        0.5,
+        0.875,
+        0.6
+      ],
+      "span": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "span_raw": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "span_l2": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "span_quantized": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+}

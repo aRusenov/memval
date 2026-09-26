@@ -1,0 +1,1425 @@
+{
+  "metadata": {
+    "model_name": "CodecBushNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "20",
+      "n_per_feature": "5",
+      "window_steps": "50",
+      "recall_steps": "12",
+      "g_syn": "160.0",
+      "k_inh": "0.02",
+      "seed": "42"
+    },
+    "rollout_mode": "observation"
+  },
+  "metrics": {
+    "convergence_mrr": 0.16666666666666666,
+    "convergence_span": 0,
+    "convergence_epochs": null,
+    "converged": false,
+    "max_memory_span": 0,
+    "seqlen_epochs_to_criterion": 512.0,
+    "seqlen_max_epochs_to_criterion": 512,
+    "seqlen_criterion_reached": false,
+    "seqlen_exposure_mode": "criterion",
+    "unrolling_gap": NaN,
+    "max_memory_span_l2": 0,
+    "max_memory_span_quantized": 0,
+    "multiple_seq_epochs_A": 512.0,
+    "multiple_seq_epochs_B": 512.0,
+    "multiple_seq_criterion_reached": false,
+    "multiple_seq_exposure_mode": "criterion",
+    "multiple_seq_mrr_before": 0.0,
+    "multiple_seq_mrr_after": 0.0,
+    "delta_mrr_forgetting": 0.0,
+    "chain_n_tasks": 6,
+    "chain_epochs_to_criterion": 512.0,
+    "chain_criterion_reached": false,
+    "chain_exposure_mode": "criterion",
+    "chain_avg_accuracy": 0.0,
+    "chain_avg_forgetting": 0.04833333333333333,
+    "chain_backward_transfer": 0.0,
+    "chain_avg_learning": 0.0,
+    "chain_intransigence": 0.0,
+    "chain_learning_slope": 0.0,
+    "chain_retention_ratio": 0.0,
+    "chain_stability_plasticity_index": 0.0,
+    "chain_acquired": false,
+    "chain_chance_level": 0.03333333333333333,
+    "select_selectivity": 0.0,
+    "select_rehearsed_gain": 0.0,
+    "select_unrehearsed_drift": 0.0,
+    "select_rehearsed_recall": 0.0,
+    "select_unrehearsed_recall": 0.0,
+    "select_n_rehearsed": 3,
+    "select_rehearsal_epochs": 20,
+    "select_pressure": 0.04833333333333333,
+    "select_under_pressure": false,
+    "select_rehearsal_effective": false,
+    "pa_abac_ab_recall_baseline": 0.2,
+    "pa_abac_ab_recall_final": 0.0,
+    "pa_abac_ab_retention": 0.0,
+    "pa_abac_ac_recall_final": 0.02,
+    "pa_abac_ac_trials_to_criterion": NaN,
+    "pa_abac_ac_criterion_reached": false,
+    "pa_abac_other_rate_final": 0.98,
+    "pa_abac_ab_acquired": false,
+    "pa_abac_phase2_trials": 6,
+    "pa_abac_ab_trials": 3,
+    "pa_abac_epochs": 20,
+    "pa_control_ab_recall_baseline": 0.2,
+    "pa_control_ab_recall_final": 0.0,
+    "pa_control_ab_retention": 0.0,
+    "pa_control_ac_recall_final": 0.0,
+    "pa_control_ac_trials_to_criterion": NaN,
+    "pa_control_ac_criterion_reached": false,
+    "pa_control_other_rate_final": 1.0,
+    "pa_control_ab_acquired": false,
+    "pa_control_phase2_trials": 6,
+    "pa_control_ab_trials": 3,
+    "pa_control_epochs": 20,
+    "pa_cue_competition_cost": 0.0,
+    "noise_epochs_to_criterion": 512.0,
+    "noise_criterion_reached": false,
+    "noise_tolerance_threshold": 0.0,
+    "mrr_high_similarity": 0.0,
+    "mrr_low_similarity": 0.0,
+    "semantic_epochs_high": 512.0,
+    "semantic_epochs_low": 512.0,
+    "semantic_criterion_reached": false,
+    "similarity_effect_mrr_drop": 0.0,
+    "symdis_cued_divergence_accuracy": 0.25,
+    "symdis_cued_divergence_margin": -0.13855302986861776,
+    "symdis_withdrawn_divergence_accuracy": 0.25,
+    "symdis_withdrawn_divergence_margin": -0.13855302986861778,
+    "symdis_shared_stretch_accuracy": 0.14285714285714285,
+    "symdis_state_primed": false,
+    "symdis_similarity_tolerance_threshold": 0.10362632547490203,
+    "symdis_max_episodes_above_chance": 0.0,
+    "symdis_context_graded_confusion_index": 0.08283769785247451,
+    "symdis_support_needed": NaN,
+    "symdis_max_delay_at_fixed_support": NaN,
+    "symdis_load_orthogonal_accuracy": 0.125,
+    "symdis_load_disambiguation_cost": 0.0,
+    "symdis_middle_informative_accuracy": 0.25,
+    "symdis_middle_endogenous_accuracy": 0.25,
+    "symdis_middle_prefix_len": 3.0,
+    "symdis_epochs_to_criterion": 512.0,
+    "symdis_criterion_reached": false,
+    "symdis_exposure_mode": "criterion",
+    "mask_identifiability_auc": 0.8569711538461539,
+    "mask_identifiable_to": 0.6666666666666666,
+    "mask_random_identifiable_to": 0.6666666666666666,
+    "mask_shared_identifiable_to": 0.9166666666666666,
+    "mask_identity_identifiable_to": 0.4166666666666667,
+    "mask_epochs_to_criterion": 512.0,
+    "mask_criterion_reached": false,
+    "mask_exposure_mode": "criterion",
+    "mask_random_tolerance": 0.0,
+    "mask_random_auc": 0.0,
+    "mask_random_margin_auc": -0.04815135409675904,
+    "mask_random_rollout_auc": 0.13186813186813184,
+    "mask_random_recall_in_bound": 0.0,
+    "mask_random_margin_in_bound": -0.05461431670606217,
+    "mask_random_in_bound_points": 9,
+    "mask_shared_tolerance": 0.0,
+    "mask_shared_auc": 0.0,
+    "mask_shared_margin_auc": -0.04663975643628758,
+    "mask_shared_rollout_auc": 0.13186813186813184,
+    "mask_shared_recall_in_bound": 0.0,
+    "mask_shared_margin_in_bound": -0.050526402805978206,
+    "mask_shared_in_bound_points": 12,
+    "mask_identity_tolerance": 0.0,
+    "mask_identity_auc": 0.0,
+    "mask_identity_margin_auc": -0.06016259337208174,
+    "mask_identity_rollout_auc": 0.13186813186813184,
+    "mask_identity_recall_in_bound": 0.0,
+    "mask_identity_margin_in_bound": -0.05864933586227423,
+    "mask_identity_in_bound_points": 6,
+    "mask_random_completion_advantage": -0.8569711538461539,
+    "mask_shared_completion_advantage": -0.9230769230769231,
+    "mask_identity_completion_advantage": -0.46153846153846156,
+    "mask_completion_gap": -0.13186813186813184,
+    "mask_block_asymmetry": 0.0,
+    "mask_block_window_frac": 0.4166666666666667,
+    "mask_block_window_points": 6,
+    "mask_block_comparable_frac": 0.5,
+    "mask_clean_recall": 0.0,
+    "mask_chance_level": 0.041666666666666664,
+    "mask_acquired": false,
+    "mask_at_ceiling": false,
+    "mask_at_floor": true,
+    "mask_identifiable_region": true,
+    "mask_margin_ranges": true,
+    "mask_resolved": false,
+    "mask_seq_len": 8,
+    "mask_n_features": 156,
+    "mask_active_features": 12,
+    "mask_shared_features": 6,
+    "mask_identity_features": 6,
+    "mask_alpha": 0.05128205128205128,
+    "mask_list_scope": "across",
+    "mask_renormalize": true,
+    "mask_feedback_mode": "l2",
+    "mask_n_items": 24,
+    "schema_duplicate_projection_ratio": 1.0000000000000002,
+    "schema_within_projection_ratio": 0.8333333333333335,
+    "schema_across_projection_ratio": 0.7380952380952385,
+    "schema_random_projection_ratio": 0.3959899749373433,
+    "schema_ladder_ordered": true,
+    "schema_probe_item_accuracy": 0.07,
+    "schema_probe_category_accuracy": 0.7875,
+    "schema_probe_item_chance": 0.041666666666666664,
+    "schema_probe_category_chance": 0.25,
+    "schema_acquired": true,
+    "schema_duplicate_base_mrr": 0.07,
+    "schema_duplicate_criterion": 0.052500000000000005,
+    "schema_duplicate_trials_to_criterion": 10.0,
+    "schema_duplicate_criterion_reached": true,
+    "schema_duplicate_new_item_recall": 1.0,
+    "schema_duplicate_new_item_auc": 0.2866666666666667,
+    "schema_duplicate_prefix_recall": 0.0,
+    "schema_duplicate_final_mrr": 0.16666666666666666,
+    "schema_duplicate_interference_same": 0.07999999999999999,
+    "schema_duplicate_interference_sibling": 0.09,
+    "schema_duplicate_interference_far": 0.055,
+    "schema_within_base_mrr": 0.07,
+    "schema_within_criterion": 0.052500000000000005,
+    "schema_within_trials_to_criterion": 10.0,
+    "schema_within_criterion_reached": true,
+    "schema_within_new_item_recall": 0.95,
+    "schema_within_new_item_auc": 0.2533333333333333,
+    "schema_within_prefix_recall": 0.0,
+    "schema_within_final_mrr": 0.15833333333333333,
+    "schema_within_interference_same": 0.07999999999999999,
+    "schema_within_interference_sibling": 0.09,
+    "schema_within_interference_far": 0.015,
+    "schema_across_base_mrr": 0.07,
+    "schema_across_criterion": 0.052500000000000005,
+    "schema_across_trials_to_criterion": 9.0,
+    "schema_across_criterion_reached": true,
+    "schema_across_new_item_recall": 1.0,
+    "schema_across_new_item_auc": 0.3333333333333333,
+    "schema_across_prefix_recall": 0.0,
+    "schema_across_final_mrr": 0.16666666666666666,
+    "schema_across_interference_same": 0.07999999999999999,
+    "schema_across_interference_sibling": 0.09,
+    "schema_across_interference_far": 0.015,
+    "schema_random_base_mrr": 0.07,
+    "schema_random_criterion": 0.052500000000000005,
+    "schema_random_trials_to_criterion": 5.0,
+    "schema_random_criterion_reached": true,
+    "schema_random_new_item_recall": 1.0,
+    "schema_random_new_item_auc": 0.43666666666666665,
+    "schema_random_prefix_recall": 0.0,
+    "schema_random_final_mrr": 0.16666666666666666,
+    "schema_random_interference_same": 0.07999999999999999,
+    "schema_random_interference_sibling": 0.09,
+    "schema_random_interference_far": 0.055,
+    "schema_interference_valid": false,
+    "schema_sequence_identity_available": false,
+    "schema_consistency_speed_corr": 0.9527401201605846,
+    "schema_consistency_auc_corr": -0.9032926739910833,
+    "schema_dilution_floor": 0.8333333333333334,
+    "schema_criterion_below_dilution_floor": true,
+    "schema_at_ceiling": false,
+    "schema_at_floor": false,
+    "schema_resolved": true,
+    "schema_auc_resolved": true,
+    "exposure_baseline_epochs": 512.0,
+    "exposure_baseline_reached": false,
+    "chain_exposure_vs_baseline": 1.0,
+    "mask_exposure_vs_baseline": 1.0,
+    "multiple_seq_A_exposure_vs_baseline": 1.0,
+    "multiple_seq_B_exposure_vs_baseline": 1.0,
+    "noise_exposure_vs_baseline": 1.0,
+    "semantic_high_exposure_vs_baseline": 1.0,
+    "semantic_low_exposure_vs_baseline": 1.0,
+    "seqlen_exposure_vs_baseline": 1.0,
+    "seqlen_max_exposure_vs_baseline": 1.0,
+    "symdis_exposure_vs_baseline": 1.0,
+    "exposure_deviation_max": 1.0,
+    "exposure_deviation_section": "",
+    "exposure_within_band": true
+  },
+  "series": {
+    "convergence_curve": [
+      {
+        "epoch": 1,
+        "mrr": 0.011111111111111112
+      },
+      {
+        "epoch": 2,
+        "mrr": 0.005555555555555556
+      },
+      {
+        "epoch": 4,
+        "mrr": 0.005555555555555556
+      },
+      {
+        "epoch": 8,
+        "mrr": 0.16666666666666666
+      },
+      {
+        "epoch": 16,
+        "mrr": 0.16666666666666666
+      },
+      {
+        "epoch": 32,
+        "mrr": 0.16666666666666666
+      },
+      {
+        "epoch": 64,
+        "mrr": 0.16666666666666666
+      },
+      {
+        "epoch": 128,
+        "mrr": 0.16666666666666666
+      },
+      {
+        "epoch": 256,
+        "mrr": 0.16666666666666666
+      },
+      {
+        "epoch": 500,
+        "mrr": 0.0
+      }
+    ],
+    "length_sweep": {
+      "lengths": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "mrr": [
+        0.5,
+        0.25,
+        0.0,
+        0.0875,
+        0.006666666666666666
+      ],
+      "span": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "span_raw": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "span_l2": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "span_quantized": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "span_cued": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "epochs_to_criterion": [
+        512,
+        512,
+        512,
+        512,
+        512
+      ],
+      "criterion_reached": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "multiple_sequences": {
+      "mrr_before": 0.0,
+      "mrr_after": 0.0,
+      "delta_mrr": 0.0,
+      "span_before": 0,
+      "span_after": 0,
+      "delta_span": 0,
+      "curve_before": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "curve_after": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "continual_chain": {
+      "retention_matrix": [
+        [
+          0.0,
+          NaN,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          0.24166666666666667,
+          0.0,
+          NaN,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          NaN,
+          NaN,
+          NaN
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          NaN,
+          NaN
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          NaN
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "task_labels": [
+        "animal",
+        "color",
+        "fruit",
+        "number",
+        "tool",
+        "vehicle"
+      ],
+      "per_task_learned": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_task_final": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "forgetting_by_gap": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "gaps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "exposures": [
+        {
+          "task": "animal",
+          "epochs": 512,
+          "reached": false,
+          "mode": "criterion"
+        },
+        {
+          "task": "color",
+          "epochs": 512,
+          "reached": false,
+          "mode": "criterion"
+        },
+        {
+          "task": "fruit",
+          "epochs": 512,
+          "reached": false,
+          "mode": "criterion"
+        },
+        {
+          "task": "number",
+          "epochs": 512,
+          "reached": false,
+          "mode": "criterion"
+        },
+        {
+          "task": "tool",
+          "epochs": 512,
+          "reached": false,
+          "mode": "criterion"
+        },
+        {
+          "task": "vehicle",
+          "epochs": 512,
+          "reached": false,
+          "mode": "criterion"
+        }
+      ],
+      "selective_retention": {
+        "rehearsed": [
+          0,
+          1,
+          2
+        ],
+        "unrehearsed": [
+          3,
+          4,
+          5
+        ],
+        "before": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "after": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "task_labels": [
+          "animal",
+          "color",
+          "fruit",
+          "number",
+          "tool",
+          "vehicle"
+        ]
+      }
+    },
+    "paired_associate": {
+      "abac": {
+        "condition": "abac",
+        "trials": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "old_rate": [
+          0.2,
+          0.2,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_rate": [
+          0.0,
+          0.0,
+          0.16,
+          0.2,
+          0.2,
+          0.2,
+          0.02
+        ],
+        "other_rate": [
+          0.8,
+          0.8,
+          0.84,
+          0.8,
+          0.8,
+          0.8,
+          0.98
+        ]
+      },
+      "control": {
+        "condition": "control",
+        "trials": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "old_rate": [
+          0.2,
+          0.2,
+          0.02,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_rate": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "other_rate": [
+          0.8,
+          0.8,
+          0.98,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "noise_sweep": {
+      "noise_levels": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "mrr": [
+        0.0,
+        0.005555555555555556,
+        0.022222222222222223,
+        0.03888888888888889,
+        0.08333333333333333,
+        0.09444444444444444,
+        0.09999999999999999,
+        0.11666666666666665,
+        0.11666666666666665,
+        0.14444444444444443,
+        0.08333333333333333
+      ]
+    },
+    "similarity_sweep": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "cosine_similarities": [
+        0.7908316983210071,
+        0.46561349920979933,
+        0.14794779034305033,
+        -0.002476194533669659,
+        -0.022607491596445272
+      ],
+      "epochs_to_criterion": [
+        512,
+        512,
+        512,
+        512,
+        512
+      ],
+      "criterion_reached": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "mrr": [
+        0.15,
+        0.15,
+        0.0,
+        0.005555555555555556,
+        0.0
+      ]
+    },
+    "symbolic_disambiguation": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "discriminator_similarities": [
+        0.9482190965386933,
+        0.8269897293236664,
+        0.5670570526294755,
+        0.22263308426028774,
+        0.10362632547490203
+      ],
+      "variance_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "variance_margin": [
+        -0.13855302986861778,
+        -0.13855302986861778,
+        -0.13855302986861778,
+        -0.13855302986861778,
+        -0.13855302986861776
+      ],
+      "episode_counts": [
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "load_accuracy": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "load_chance": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "load_margin": [
+        -4.85722573273506e-17,
+        -0.15673264532789666,
+        -0.13855302986861778,
+        -0.0991670344472791,
+        -0.1842543874661235
+      ],
+      "delays": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "delay_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "delay_margin": [
+        -0.13855302986861778,
+        -0.13725978859320687,
+        -0.13855302986861778,
+        -0.13855302986861778
+      ],
+      "confusion_matrix_largest_n": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "state_primed": false,
+      "hold_delays": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "hold_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "hold_cue_duration": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "support_durations": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "support_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "support_delay": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "load_orthogonal_accuracy": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "middle_accuracy": [
+        0.25,
+        0.25
+      ],
+      "middle_modes": [
+        "category",
+        "identical"
+      ],
+      "middle_endogenous": [
+        false,
+        true
+      ],
+      "middle_prefix_len": 3
+    },
+    "mask_sweep": {
+      "fractions": [
+        0.0,
+        0.08333333333333333,
+        0.16666666666666666,
+        0.25,
+        0.3333333333333333,
+        0.4166666666666667,
+        0.5,
+        0.5833333333333334,
+        0.6666666666666666,
+        0.75,
+        0.8333333333333334,
+        0.9166666666666666,
+        1.0
+      ],
+      "counts": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "identifiability": {
+        "random": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9921875,
+          0.921875,
+          0.7109375,
+          0.515625,
+          0.0
+        ],
+        "shared": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "identity": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "recall": {
+        "random": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "shared": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "identity": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "margin": {
+        "random": [
+          -0.0682165032191637,
+          -0.06494414473221968,
+          -0.06158091918491304,
+          -0.05824281589447764,
+          -0.054667886566472416,
+          -0.05121353031512128,
+          -0.0476743095208519,
+          -0.04383576043696548,
+          -0.041152980484374324,
+          -0.04078198461629785,
+          -0.04208230283417079,
+          -0.05157446545283932,
+          0.0
+        ],
+        "shared": [
+          -0.0682165032191637,
+          -0.06514324116102767,
+          -0.06259590229887489,
+          -0.05946733156027482,
+          -0.056653583611750866,
+          -0.05510509948434542,
+          -0.05236458845654257,
+          -0.04678002036316059,
+          -0.042429933133933076,
+          -0.03706197093166623,
+          -0.032652524315590854,
+          -0.027846135135407825,
+          0.0
+        ],
+        "identity": [
+          -0.0682165032191637,
+          -0.06457862401247526,
+          -0.06088413340060667,
+          -0.056790429500363636,
+          -0.0527240963019555,
+          -0.04870222873908062,
+          -0.06758610985734531,
+          -0.06816995206946859,
+          -0.07272848745437273,
+          -0.07382506530649051,
+          -0.0716588191314872,
+          -0.07624926484425298,
+          0.0
+        ]
+      },
+      "rollout": {
+        "random": [
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.0
+        ],
+        "shared": [
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.0
+        ],
+        "identity": [
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.14285714285714285,
+          0.0
+        ]
+      }
+    },
+    "duplicate": {
+      "learning_curve": [
+        0.041666666666666664,
+        0.03333333333333333,
+        0.05000000000000001,
+        0.041666666666666664,
+        0.041666666666666664,
+        0.025000000000000005,
+        0.05833333333333333,
+        0.09166666666666667,
+        0.049999999999999996,
+        0.049999999999999996,
+        0.075,
+        0.125,
+        0.15833333333333333,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.15,
+        0.45,
+        0.75,
+        0.95,
+        1.0,
+        1.0
+      ],
+      "prefix_curve": [
+        0.05,
+        0.04,
+        0.06000000000000001,
+        0.05,
+        0.05,
+        0.030000000000000006,
+        0.06999999999999999,
+        0.11000000000000001,
+        0.06,
+        0.03,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pre_mrr": {
+        "n2_1": 0.07999999999999999,
+        "n2_2": 0.09,
+        "n2_4": 0.08,
+        "n2_5": 0.03
+      },
+      "post_mrr": {
+        "n2_1": 0.0,
+        "n2_2": 0.0,
+        "n2_4": 0.0,
+        "n2_5": 0.0
+      }
+    },
+    "within": {
+      "learning_curve": [
+        0.03333333333333333,
+        0.03333333333333333,
+        0.041666666666666664,
+        0.024999999999999998,
+        0.008333333333333333,
+        0.06666666666666667,
+        0.049999999999999996,
+        0.016666666666666666,
+        0.016666666666666666,
+        0.05000000000000001,
+        0.075,
+        0.10833333333333334,
+        0.11666666666666665,
+        0.15,
+        0.15833333333333333
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.05,
+        0.1,
+        0.45,
+        0.65,
+        0.7,
+        0.9,
+        0.95
+      ],
+      "prefix_curve": [
+        0.04,
+        0.04,
+        0.05,
+        0.03,
+        0.01,
+        0.08,
+        0.06,
+        0.02,
+        0.01,
+        0.04,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pre_mrr": {
+        "n2_1": 0.07999999999999999,
+        "n2_2": 0.09,
+        "n2_4": 0.08,
+        "n2_5": 0.03
+      },
+      "post_mrr": {
+        "n2_1": 0.0,
+        "n2_2": 0.0,
+        "n2_4": 0.03,
+        "n2_5": 0.05
+      }
+    },
+    "across": {
+      "learning_curve": [
+        0.049999999999999996,
+        0.041666666666666664,
+        0.05000000000000001,
+        0.041666666666666664,
+        0.025000000000000005,
+        0.041666666666666664,
+        0.03333333333333333,
+        0.008333333333333333,
+        0.03333333333333333,
+        0.075,
+        0.09999999999999999,
+        0.14166666666666666,
+        0.15833333333333333,
+        0.15833333333333333,
+        0.16666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2,
+        0.45,
+        0.6,
+        0.85,
+        0.95,
+        0.95,
+        1.0
+      ],
+      "prefix_curve": [
+        0.06,
+        0.05,
+        0.06000000000000001,
+        0.05,
+        0.030000000000000006,
+        0.05,
+        0.04,
+        0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pre_mrr": {
+        "n2_1": 0.07999999999999999,
+        "n2_2": 0.09,
+        "n2_4": 0.08,
+        "n2_5": 0.03
+      },
+      "post_mrr": {
+        "n2_1": 0.0,
+        "n2_2": 0.0,
+        "n2_4": 0.04,
+        "n2_5": 0.04
+      }
+    },
+    "random": {
+      "learning_curve": [
+        0.03333333333333333,
+        0.016666666666666666,
+        0.0,
+        0.0,
+        0.016666666666666666,
+        0.03333333333333333,
+        0.041666666666666664,
+        0.06666666666666667,
+        0.05833333333333333,
+        0.08333333333333333,
+        0.13333333333333333,
+        0.15833333333333333,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1,
+        0.2,
+        0.25,
+        0.4,
+        0.35,
+        0.5,
+        0.8,
+        0.95,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "prefix_curve": [
+        0.04,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pre_mrr": {
+        "n2_1": 0.07999999999999999,
+        "n2_2": 0.09,
+        "n2_4": 0.08,
+        "n2_5": 0.03
+      },
+      "post_mrr": {
+        "n2_1": 0.0,
+        "n2_2": 0.0,
+        "n2_4": 0.0,
+        "n2_5": 0.0
+      }
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 512,
+      "sections": [
+        "chain",
+        "mask",
+        "multiple_seq_A",
+        "multiple_seq_B",
+        "noise",
+        "semantic_high",
+        "semantic_low",
+        "seqlen",
+        "seqlen_max",
+        "symdis"
+      ],
+      "ratios": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "band": 8.0
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# Environments
+.venv/
+**/*venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Agent tooling
+.agents/
+.claude/settings.local.json
+
+# Scratch: clones, build output, throwaway runs
+scratch/*
+!scratch/vieth_ref.py
+.tmp_eqprop/
+
+# Run byproducts
+*.log
+*.pid
+results/**/_logs/

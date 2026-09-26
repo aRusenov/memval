@@ -1,0 +1,429 @@
+{
+  "metadata": {
+    "model_name": "MultilayerTemporalPCNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_hidden": "60",
+      "learning_rate": "0.05",
+      "n_epochs": "86",
+      "inf_iters": "100",
+      "seed": "42"
+    },
+    "rollout_mode": "latent",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 30,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 30,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cue_availability": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cognitive_phenomena": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {
+    "schema_duplicate_projection_ratio": 1.0000000000000002,
+    "schema_within_projection_ratio": 0.8333333333333335,
+    "schema_across_projection_ratio": 0.7380952380952385,
+    "schema_random_projection_ratio": 0.3959899749373433,
+    "schema_ladder_ordered": true,
+    "schema_probe_item_accuracy": 0.6,
+    "schema_probe_category_accuracy": 1.0,
+    "schema_probe_item_chance": 0.041666666666666664,
+    "schema_probe_category_chance": 0.25,
+    "schema_acquired": true,
+    "schema_duplicate_base_mrr": 0.6000000000000001,
+    "schema_duplicate_criterion": 0.45000000000000007,
+    "schema_duplicate_trials_to_criterion": 15.0,
+    "schema_duplicate_criterion_reached": false,
+    "schema_duplicate_new_item_recall": 0.0,
+    "schema_duplicate_new_item_auc": 0.0,
+    "schema_duplicate_prefix_recall": 0.2,
+    "schema_duplicate_final_mrr": 0.16666666666666666,
+    "schema_duplicate_interference_same": 0.6000000000000001,
+    "schema_duplicate_interference_sibling": 0.0,
+    "schema_duplicate_interference_far": -0.10000000000000003,
+    "schema_within_base_mrr": 0.6000000000000001,
+    "schema_within_criterion": 0.45000000000000007,
+    "schema_within_trials_to_criterion": 15.0,
+    "schema_within_criterion_reached": false,
+    "schema_within_new_item_recall": 0.0,
+    "schema_within_new_item_auc": 0.0,
+    "schema_within_prefix_recall": 0.2,
+    "schema_within_final_mrr": 0.16666666666666666,
+    "schema_within_interference_same": 0.6000000000000001,
+    "schema_within_interference_sibling": 0.0,
+    "schema_within_interference_far": -0.10000000000000003,
+    "schema_across_base_mrr": 0.6000000000000001,
+    "schema_across_criterion": 0.45000000000000007,
+    "schema_across_trials_to_criterion": 15.0,
+    "schema_across_criterion_reached": false,
+    "schema_across_new_item_recall": 0.0,
+    "schema_across_new_item_auc": 0.0,
+    "schema_across_prefix_recall": 0.2,
+    "schema_across_final_mrr": 0.16666666666666666,
+    "schema_across_interference_same": 0.6000000000000001,
+    "schema_across_interference_sibling": 0.4,
+    "schema_across_interference_far": -0.10000000000000003,
+    "schema_random_base_mrr": 0.6000000000000001,
+    "schema_random_criterion": 0.45000000000000007,
+    "schema_random_trials_to_criterion": 15.0,
+    "schema_random_criterion_reached": false,
+    "schema_random_new_item_recall": 0.0,
+    "schema_random_new_item_auc": 0.0,
+    "schema_random_prefix_recall": 0.2,
+    "schema_random_final_mrr": 0.16666666666666666,
+    "schema_random_interference_same": 0.6000000000000001,
+    "schema_random_interference_sibling": 0.0,
+    "schema_random_interference_far": -5.551115123125783e-17,
+    "schema_interference_valid": true,
+    "schema_sequence_identity_available": false,
+    "schema_consistency_speed_corr": NaN,
+    "schema_consistency_auc_corr": NaN,
+    "schema_dilution_floor": 0.8333333333333334,
+    "schema_criterion_below_dilution_floor": true,
+    "schema_at_ceiling": false,
+    "schema_at_floor": true,
+    "schema_resolved": false,
+    "schema_auc_resolved": false
+  },
+  "series": {
+    "duplicate": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.6,
+        0.4,
+        0.4,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 0.2,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.8
+      }
+    },
+    "within": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 0.2,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.8
+      }
+    },
+    "across": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.6,
+        0.4,
+        0.4,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 0.2,
+        "n2_2": 0.0,
+        "n2_4": 0.6,
+        "n2_5": 0.8
+      }
+    },
+    "random": {
+      "learning_curve": [
+        0.6666666666666666,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      "new_item_curve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prefix_curve": [
+        0.8,
+        0.6,
+        0.4,
+        0.4,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "pre_mrr": {
+        "n2_1": 0.8,
+        "n2_2": 0.4,
+        "n2_4": 0.6,
+        "n2_5": 0.6
+      },
+      "post_mrr": {
+        "n2_1": 0.2,
+        "n2_2": 0.4,
+        "n2_4": 0.4,
+        "n2_5": 0.8
+      }
+    }
+  }
+}

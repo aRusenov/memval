@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "model_name": "TemporalPCNetwork",
+    "suite": "symbolic",
+    "n_trials": 10,
+    "model_kwargs": {
+      "learning_rate": "0.01",
+      "n_epochs": "200",
+      "seed": "0"
+    }
+  },
+  "metrics": {
+    "max_memory_span": 10,
+    "max_memory_span_l2": 10,
+    "max_memory_span_quantized": 10,
+    "multiple_seq_mrr_before": 1.0,
+    "multiple_seq_mrr_after": 1.0,
+    "delta_mrr_forgetting": 0.0,
+    "interval_decay_slope": "TODO"
+  },
+  "series": {
+    "length_sweep": {
+      "lengths": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "mrr": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "span": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "span_raw": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "span_l2": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "span_quantized": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ]
+    },
+    "multiple_sequences": {
+      "mrr_before": 1.0,
+      "mrr_after": 1.0,
+      "delta_mrr": 0.0,
+      "span_before": 6,
+      "span_after": 6,
+      "delta_span": 0,
+      "curve_before": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curve_after": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

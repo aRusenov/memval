@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "model_name": "AsymmetricHopfieldNetwork",
+    "suite": "symbolic",
+    "n_trials": 1,
+    "model_kwargs": {
+      "n_epochs": "1",
+      "learning_rate": "0.1",
+      "activation": "relu",
+      "seed": "42"
+    },
+    "rollout_mode": "observation"
+  },
+  "metrics": {
+    "symdis_cued_divergence_accuracy": 0.75,
+    "symdis_cued_divergence_margin": 0.16707606416274012,
+    "symdis_withdrawn_divergence_accuracy": 0.25,
+    "symdis_withdrawn_divergence_margin": -0.1612895205400765,
+    "symdis_shared_stretch_accuracy": 1.0,
+    "symdis_state_primed": false,
+    "symdis_similarity_tolerance_threshold": 0.5670570526294754,
+    "symdis_max_episodes_above_chance": 8.0,
+    "symdis_context_graded_confusion_index": 0.1687921060041131,
+    "symdis_support_needed": NaN,
+    "symdis_max_delay_at_fixed_support": 0.0,
+    "symdis_load_orthogonal_accuracy": 0.875,
+    "symdis_load_disambiguation_cost": 0.25,
+    "symdis_middle_informative_accuracy": 0.75,
+    "symdis_middle_endogenous_accuracy": 0.25,
+    "symdis_middle_prefix_len": 3.0,
+    "symdis_epochs_to_criterion": 3.0,
+    "symdis_criterion_reached": true,
+    "symdis_exposure_mode": "criterion"
+  },
+  "series": {
+    "symbolic_disambiguation": {
+      "category_variances": [
+        0.05,
+        0.1,
+        0.2,
+        0.5,
+        1.0
+      ],
+      "discriminator_similarities": [
+        0.9482190965386931,
+        0.8269897293236664,
+        0.5670570526294754,
+        0.22263308426028774,
+        0.10362632547490198
+      ],
+      "variance_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.75,
+        0.75
+      ],
+      "variance_margin": [
+        -0.2941550921903785,
+        -0.21370764784476054,
+        -0.05469214576773421,
+        0.10763892427492941,
+        0.16707606416274012
+      ],
+      "episode_counts": [
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "load_accuracy": [
+        1.0,
+        1.0,
+        0.75,
+        0.5,
+        0.625
+      ],
+      "load_chance": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.16666666666666666,
+        0.125
+      ],
+      "load_margin": [
+        0.40627541406080725,
+        0.3847060958517485,
+        0.10763892427492941,
+        -0.007462605298853166,
+        0.028937706841737555
+      ],
+      "delays": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "delay_accuracy": [
+        0.75,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "delay_margin": [
+        0.10763892427492941,
+        -0.16425375126982994,
+        -0.1633806044975289,
+        -0.1612895205400765
+      ],
+      "confusion_matrix_largest_n": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "state_primed": false,
+      "hold_delays": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "hold_accuracy": [
+        0.75,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "hold_cue_duration": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "support_durations": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "support_accuracy": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "support_delay": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "load_orthogonal_accuracy": [
+        1.0,
+        1.0,
+        1.0,
+        0.8333333333333334,
+        0.875
+      ],
+      "middle_accuracy": [
+        0.75,
+        0.25
+      ],
+      "middle_modes": [
+        "category",
+        "identical"
+      ],
+      "middle_endogenous": [
+        false,
+        true
+      ],
+      "middle_prefix_len": 3
+    }
+  }
+}

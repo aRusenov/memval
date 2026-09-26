@@ -1,0 +1,7450 @@
+{
+ "model": "hopfield",
+ "class_name": "AsymmetricHopfieldNetwork",
+ "seeds": [
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "probe": {
+  "n_trials": 1,
+  "noise_scale": 0.0
+ },
+ "n_lists": 3,
+ "list_len": 10,
+ "n_lures": 4,
+ "criterion": 0.95,
+ "budget": 512,
+ "train_to": "cued",
+ "dials": [
+  {
+   "dial": "within",
+   "name": "within-list cosine \u03c1\n(lists orthogonal, \u03c1_b = 0)",
+   "rungs": [
+    {
+     "sigma": 0.43588989435406733,
+     "rho_b": 0.0,
+     "label": "\u03c1 = 0.05  (\u03c3 = 0.436)",
+     "geometry": {
+      "within_cos": 0.0542638000254229,
+      "between_cos": 0.0005131260150412701,
+      "within_cos_law": 0.05000000000000001,
+      "between_cos_law": 0.0
+     },
+     "recall_length_mean": [
+      [
+       8.2,
+       NaN,
+       NaN
+      ],
+      [
+       5.4,
+       4.0,
+       NaN
+      ],
+      [
+       3.4,
+       4.2,
+       4.6
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.06561861996505851,
+        "between_cos": 0.0020763282428495743,
+        "within_cos_law": 0.05000000000000001,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         9.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         5.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": 1,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.060742456930105104,
+        "between_cos": 0.0025424910129283316,
+        "within_cos_law": 0.05000000000000001,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         9.0,
+         NaN,
+         NaN
+        ],
+        [
+         8.0,
+         3.0,
+         NaN
+        ],
+        [
+         3.0,
+         3.0,
+         4.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": 1,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.04863674095047068,
+        "between_cos": -0.0032604344298454153,
+        "within_cos_law": 0.05000000000000001,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         6.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         5.0,
+         NaN
+        ],
+        [
+         3.0,
+         5.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.04954240979154228,
+        "between_cos": -0.004901785017193525,
+        "within_cos_law": 0.05000000000000001,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         9.0,
+         NaN,
+         NaN
+        ],
+        [
+         4.0,
+         6.0,
+         NaN
+        ],
+        [
+         3.0,
+         6.0,
+         5.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": 1,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.04677877248993795,
+        "between_cos": 0.006109030266467385,
+        "within_cos_law": 0.05000000000000001,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         8.0,
+         NaN,
+         NaN
+        ],
+        [
+         9.0,
+         5.0,
+         NaN
+        ],
+        [
+         5.0,
+         6.0,
+         7.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.2,
+     "rho_b": 0.0,
+     "label": "\u03c1 = 0.20  (\u03c3 = 0.200)",
+     "geometry": {
+      "within_cos": 0.20460511468484605,
+      "between_cos": 0.003287616058247155,
+      "within_cos_law": 0.19999999999999996,
+      "between_cos_law": 0.0
+     },
+     "recall_length_mean": [
+      [
+       1.8,
+       NaN,
+       NaN
+      ],
+      [
+       1.8,
+       1.4,
+       NaN
+      ],
+      [
+       1.4,
+       1.0,
+       1.6
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 43,
+       "transposition": 1,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 1,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.22164674779681806,
+        "between_cos": 0.0063882565511267884,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         1.0,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "2": 1
+         },
+         {},
+         null
+        ],
+        [
+         {
+          "2": 1
+         },
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 4,
+         "e_rollout": null,
+         "epochs": 4,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.20860652266266505,
+        "between_cos": 0.007764812497652453,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.1929956409708281,
+        "between_cos": -0.0026571062705767288,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.2010943885184273,
+        "between_cos": -0.005733232118539588,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.1986822734754917,
+        "between_cos": 0.010675349631572852,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         2.0,
+         3.0,
+         NaN
+        ],
+        [
+         2.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.1224744871391589,
+     "rho_b": 0.0,
+     "label": "\u03c1 = 0.40  (\u03c3 = 0.122)",
+     "geometry": {
+      "within_cos": 0.40459910695505263,
+      "between_cos": 0.0049906493047329244,
+      "within_cos_law": 0.4,
+      "between_cos_law": 0.0
+     },
+     "recall_length_mean": [
+      [
+       1.8,
+       NaN,
+       NaN
+      ],
+      [
+       1.4,
+       1.0,
+       NaN
+      ],
+      [
+       1.4,
+       0.8,
+       1.2
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 42,
+       "transposition": 3,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 40,
+       "transposition": 4,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 1
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      5.0,
+      6.0,
+      6.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.41941315890929487,
+        "between_cos": 0.008795382383468931,
+        "within_cos_law": 0.4,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "4": 1
+         },
+         {},
+         null
+        ],
+        [
+         {
+          "4": 1
+         },
+         {
+          "2": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 5,
+         "e_rollout": null,
+         "epochs": 5,
+         "censored": false
+        },
+        {
+         "e_cued": 16,
+         "e_rollout": null,
+         "epochs": 16,
+         "censored": false
+        },
+        {
+         "e_cued": 4,
+         "e_rollout": null,
+         "epochs": 4,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.4070883550751992,
+        "between_cos": 0.01086112344701578,
+        "within_cos_law": 0.4,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         0.7777777777777778,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 7,
+          "transposition": 2,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "-2": 1,
+          "1": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 9,
+         "e_rollout": null,
+         "epochs": 9,
+         "censored": false
+        },
+        {
+         "e_cued": 6,
+         "e_rollout": null,
+         "epochs": 6,
+         "censored": false
+        },
+        {
+         "e_cued": 7,
+         "e_rollout": null,
+         "epochs": 7,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.39288873089060833,
+        "between_cos": -0.0019535958829113268,
+        "within_cos_law": 0.4,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         2.0,
+         1.0,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 5,
+         "e_rollout": null,
+         "epochs": 5,
+         "censored": false
+        },
+        {
+         "e_cued": 10,
+         "e_rollout": null,
+         "epochs": 10,
+         "censored": false
+        },
+        {
+         "e_cued": 4,
+         "e_rollout": null,
+         "epochs": 4,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.4009590667179264,
+        "between_cos": -0.005685093666624781,
+        "within_cos_law": 0.4,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 2,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "6": 1
+         },
+         {},
+         null
+        ],
+        [
+         {
+          "4": 1,
+          "6": 1
+         },
+         {
+          "1": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 4,
+         "e_rollout": null,
+         "epochs": 4,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        },
+        {
+         "e_cued": 6,
+         "e_rollout": null,
+         "epochs": 6,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.40264622318223414,
+        "between_cos": 0.012935430242716015,
+        "within_cos_law": 0.4,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         2.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 5,
+         "e_rollout": null,
+         "epochs": 5,
+         "censored": false
+        },
+        {
+         "e_cued": 3,
+         "e_rollout": null,
+         "epochs": 3,
+         "censored": false
+        },
+        {
+         "e_cued": 7,
+         "e_rollout": null,
+         "epochs": 7,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.08164965809277261,
+     "rho_b": 0.0,
+     "label": "\u03c1 = 0.60  (\u03c3 = 0.082)",
+     "geometry": {
+      "within_cos": 0.6040016729963853,
+      "between_cos": 0.005512314696342564,
+      "within_cos_law": 0.6,
+      "between_cos_law": 0.0
+     },
+     "recall_length_mean": [
+      [
+       1.8,
+       NaN,
+       NaN
+      ],
+      [
+       1.2,
+       1.0,
+       NaN
+      ],
+      [
+       1.4,
+       0.8,
+       1.6
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 41,
+       "transposition": 4,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 41,
+       "transposition": 3,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 1
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      14.0,
+      17.0,
+      13.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.6131697561674818,
+        "between_cos": 0.009373881764201996,
+        "within_cos_law": 0.6,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "4": 1
+         },
+         {},
+         null
+        ],
+        [
+         {
+          "4": 1
+         },
+         {
+          "2": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 16,
+         "e_rollout": null,
+         "epochs": 16,
+         "censored": false
+        },
+        {
+         "e_cued": 55,
+         "e_rollout": null,
+         "epochs": 55,
+         "censored": false
+        },
+        {
+         "e_cued": 10,
+         "e_rollout": null,
+         "epochs": 10,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.6057198972349904,
+        "between_cos": 0.011522352164938757,
+        "within_cos_law": 0.6,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "1": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 21,
+         "e_rollout": null,
+         "epochs": 21,
+         "censored": false
+        },
+        {
+         "e_cued": 17,
+         "e_rollout": null,
+         "epochs": 17,
+         "censored": false
+        },
+        {
+         "e_cued": 13,
+         "e_rollout": null,
+         "epochs": 13,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.5957200352001162,
+        "between_cos": -0.0012663660084666754,
+        "within_cos_law": 0.6,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 14,
+         "e_rollout": null,
+         "epochs": 14,
+         "censored": false
+        },
+        {
+         "e_cued": 32,
+         "e_rollout": null,
+         "epochs": 32,
+         "censored": false
+        },
+        {
+         "e_cued": 11,
+         "e_rollout": null,
+         "epochs": 11,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.6003019723402482,
+        "between_cos": -0.004943203277075043,
+        "within_cos_law": 0.6,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.6666666666666666,
+         1.0,
+         NaN
+        ],
+        [
+         0.6666666666666666,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 6,
+          "transposition": 3,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 6,
+          "transposition": 3,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "1": 1,
+          "4": 1,
+          "6": 1
+         },
+         {},
+         null
+        ],
+        [
+         {
+          "1": 1,
+          "4": 1,
+          "6": 1
+         },
+         {
+          "-6": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 9,
+         "e_rollout": null,
+         "epochs": 9,
+         "censored": false
+        },
+        {
+         "e_cued": 7,
+         "e_rollout": null,
+         "epochs": 7,
+         "censored": false
+        },
+        {
+         "e_cued": 13,
+         "e_rollout": null,
+         "epochs": 13,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.6050967040390903,
+        "between_cos": 0.01287490883811379,
+        "within_cos_law": 0.6,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         2.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 13,
+         "e_rollout": null,
+         "epochs": 13,
+         "censored": false
+        },
+        {
+         "e_cued": 14,
+         "e_rollout": null,
+         "epochs": 14,
+         "censored": false
+        },
+        {
+         "e_cued": 16,
+         "e_rollout": null,
+         "epochs": 16,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.049999999999999996,
+     "rho_b": 0.0,
+     "label": "\u03c1 = 0.80  (\u03c3 = 0.050)",
+     "geometry": {
+      "within_cos": 0.802528717100244,
+      "between_cos": 0.0048416803664314305,
+      "within_cos_law": 0.8,
+      "between_cos_law": 0.0
+     },
+     "recall_length_mean": [
+      [
+       1.8,
+       NaN,
+       NaN
+      ],
+      [
+       1.2,
+       0.8,
+       NaN
+      ],
+      [
+       1.2,
+       0.6,
+       1.8
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 40,
+       "transposition": 3,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 2
+      },
+      {
+       "correct": 40,
+       "transposition": 3,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 2
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      true,
+      false
+     ],
+     "e_cued_median": [
+      55.0,
+      129.0,
+      43.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.8057284979212015,
+        "between_cos": 0.008134971595320489,
+        "within_cos_law": 0.8,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         0.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 2,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {
+          "6": 1
+         },
+         null
+        ],
+        [
+         {
+          "-4": 1,
+          "4": 1
+         },
+         {
+          "2": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 79,
+         "e_rollout": null,
+         "epochs": 79,
+         "censored": false
+        },
+        {
+         "e_cued": null,
+         "e_rollout": null,
+         "epochs": 512,
+         "censored": true
+        },
+        {
+         "e_cued": 43,
+         "e_rollout": null,
+         "epochs": 43,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.8035866611991567,
+        "between_cos": 0.009715686518173908,
+        "within_cos_law": 0.8,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         2.0,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.6666666666666666,
+         1.0,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 6,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 2
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 2
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "-3": 1
+         },
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 98,
+         "e_rollout": null,
+         "epochs": 98,
+         "censored": false
+        },
+        {
+         "e_cued": 129,
+         "e_rollout": null,
+         "epochs": 129,
+         "censored": false
+        },
+        {
+         "e_cued": 38,
+         "e_rollout": null,
+         "epochs": 38,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.7989248466529614,
+        "between_cos": -0.0005650569091134562,
+        "within_cos_law": 0.8,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         0.0,
+         NaN
+        ],
+        [
+         3.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {
+          "-1": 1
+         },
+         null
+        ],
+        [
+         {},
+         {
+          "-1": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 55,
+         "e_rollout": null,
+         "epochs": 55,
+         "censored": false
+        },
+        {
+         "e_cued": null,
+         "e_rollout": null,
+         "epochs": 512,
+         "censored": true
+        },
+        {
+         "e_cued": 43,
+         "e_rollout": null,
+         "epochs": 43,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.7998193010072565,
+        "between_cos": -0.003540664655895844,
+        "within_cos_law": 0.8,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         2.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {
+          "4": 1
+         },
+         {
+          "-6": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 40,
+         "e_rollout": null,
+         "epochs": 40,
+         "censored": false
+        },
+        {
+         "e_cued": 23,
+         "e_rollout": null,
+         "epochs": 23,
+         "censored": false
+        },
+        {
+         "e_cued": 50,
+         "e_rollout": null,
+         "epochs": 50,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.8045842787206436,
+        "between_cos": 0.010463465283672056,
+        "within_cos_law": 0.8,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 43,
+         "e_rollout": null,
+         "epochs": 43,
+         "censored": false
+        },
+        {
+         "e_cued": 69,
+         "e_rollout": null,
+         "epochs": 69,
+         "censored": false
+        },
+        {
+         "e_cued": 53,
+         "e_rollout": null,
+         "epochs": 53,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "dial": "between",
+   "name": "between-list prototype cosine \u03c1_b\n(within \u03c1 = 0.20)",
+   "rungs": [
+    {
+     "sigma": 0.2,
+     "rho_b": 0.0,
+     "label": "\u03c1_b = 0.00  (between cos 0.00)",
+     "geometry": {
+      "within_cos": 0.20460511468484605,
+      "between_cos": 0.003287616058247155,
+      "within_cos_law": 0.19999999999999996,
+      "between_cos_law": 0.0
+     },
+     "recall_length_mean": [
+      [
+       1.8,
+       NaN,
+       NaN
+      ],
+      [
+       1.8,
+       1.4,
+       NaN
+      ],
+      [
+       1.4,
+       1.0,
+       1.6
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 43,
+       "transposition": 1,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 1,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.22164674779681806,
+        "between_cos": 0.0063882565511267884,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         1.0,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "2": 1
+         },
+         {},
+         null
+        ],
+        [
+         {
+          "2": 1
+         },
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 4,
+         "e_rollout": null,
+         "epochs": 4,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.20860652266266505,
+        "between_cos": 0.007764812497652453,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.1929956409708281,
+        "between_cos": -0.0026571062705767288,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.2010943885184273,
+        "between_cos": -0.005733232118539588,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.1986822734754917,
+        "between_cos": 0.010675349631572852,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.0
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         2.0,
+         3.0,
+         NaN
+        ],
+        [
+         2.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.2,
+     "rho_b": 0.25,
+     "label": "\u03c1_b = 0.25  (between cos 0.05)",
+     "geometry": {
+      "within_cos": 0.20170877097606704,
+      "between_cos": 0.04962309470547838,
+      "within_cos_law": 0.19999999999999996,
+      "between_cos_law": 0.04999999999999999
+     },
+     "recall_length_mean": [
+      [
+       2.2,
+       NaN,
+       NaN
+      ],
+      [
+       1.4,
+       1.0,
+       NaN
+      ],
+      [
+       1.2,
+       0.8,
+       1.8
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 42,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 3,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 43,
+       "transposition": 2,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.20886078578889736,
+        "between_cos": 0.041802275882137654,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.04999999999999999
+       },
+       "recall_length": [
+        [
+         2.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.5555555555555556,
+         1.0,
+         NaN
+        ],
+        [
+         0.6666666666666666,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 5,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 3,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 6,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 3,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "2": 1
+         },
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "8": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 5,
+         "e_rollout": null,
+         "epochs": 5,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.21298477748426142,
+        "between_cos": 0.06167287243993541,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.04999999999999999
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         2.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "4": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.19763254011717044,
+        "between_cos": 0.051535834810199244,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.04999999999999999
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.1983182731431492,
+        "between_cos": 0.04211212726560542,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.04999999999999999
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.1907474783468566,
+        "between_cos": 0.050992363129514155,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.04999999999999999
+       },
+       "recall_length": [
+        [
+         2.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.2,
+     "rho_b": 0.5,
+     "label": "\u03c1_b = 0.50  (between cos 0.10)",
+     "geometry": {
+      "within_cos": 0.200369168117573,
+      "between_cos": 0.09777160461141535,
+      "within_cos_law": 0.19999999999999996,
+      "between_cos_law": 0.09999999999999998
+     },
+     "recall_length_mean": [
+      [
+       2.8,
+       NaN,
+       NaN
+      ],
+      [
+       1.2,
+       1.0,
+       NaN
+      ],
+      [
+       0.8,
+       0.4,
+       1.8
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 29,
+       "transposition": 1,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 11,
+       "extra_list_intrusion": 4
+      },
+      {
+       "correct": 41,
+       "transposition": 3,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 1
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.2012754780634579,
+        "between_cos": 0.0851311226208105,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.09999999999999998
+       },
+       "recall_length": [
+        [
+         2.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.2222222222222222,
+         1.0,
+         NaN
+        ],
+        [
+         0.1111111111111111,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 2,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 7,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 1,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 7,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "8": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 5,
+         "e_rollout": null,
+         "epochs": 5,
+         "censored": false
+        },
+        {
+         "e_cued": 3,
+         "e_rollout": null,
+         "epochs": 3,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.21490419643968817,
+        "between_cos": 0.11182153455910847,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.09999999999999998
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "4": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.2008787823169944,
+        "between_cos": 0.1028598383860137,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.09999999999999998
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         3.0,
+         1.0,
+         NaN
+        ],
+        [
+         3.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {
+          "-2": 1
+         },
+         {
+          "1": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.1966764767534994,
+        "between_cos": 0.0915007901648918,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.09999999999999998
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.18811090701422514,
+        "between_cos": 0.09754473732625225,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.09999999999999998
+       },
+       "recall_length": [
+        [
+         5.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.4444444444444444,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 4,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 3,
+          "extra_list_intrusion": 2
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.2,
+     "rho_b": 0.75,
+     "label": "\u03c1_b = 0.75  (between cos 0.15)",
+     "geometry": {
+      "within_cos": 0.1992375281393131,
+      "between_cos": 0.14602886301062687,
+      "within_cos_law": 0.19999999999999996,
+      "between_cos_law": 0.14999999999999997
+     },
+     "recall_length_mean": [
+      [
+       3.0,
+       NaN,
+       NaN
+      ],
+      [
+       0.6,
+       1.2,
+       NaN
+      ],
+      [
+       0.4,
+       0.8,
+       1.6
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 20,
+       "transposition": 1,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 20,
+       "extra_list_intrusion": 4
+      },
+      {
+       "correct": 39,
+       "transposition": 2,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 2,
+       "extra_list_intrusion": 2
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      1.0,
+      2.0,
+      2.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.19359520152535914,
+        "between_cos": 0.13009222911350682,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.14999999999999997
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.1111111111111111,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 1,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 8,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 0,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 9,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "8": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 5,
+         "e_rollout": null,
+         "epochs": 5,
+         "censored": false
+        },
+        {
+         "e_cued": 3,
+         "e_rollout": null,
+         "epochs": 3,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.21646556504345704,
+        "between_cos": 0.1607385919496762,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.14999999999999997
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.3333333333333333,
+         0.6666666666666666,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 3,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 6,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 6,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 2,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.2044585675005875,
+        "between_cos": 0.15319459054122794,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.14999999999999997
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         2.0,
+         NaN
+        ],
+        [
+         1.0,
+         2.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {
+          "-2": 1
+         },
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.19500162814840502,
+        "between_cos": 0.14139528109639327,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.14999999999999997
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {
+          "-8": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.18666667847875673,
+        "between_cos": 0.14472362235233005,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.14999999999999997
+       },
+       "recall_length": [
+        [
+         5.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.1111111111111111,
+         1.0,
+         NaN
+        ],
+        [
+         0.1111111111111111,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 1,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 3,
+          "extra_list_intrusion": 5
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 1,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 4,
+          "extra_list_intrusion": 4
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 3,
+         "e_rollout": null,
+         "epochs": 3,
+         "censored": false
+        },
+        {
+         "e_cued": 3,
+         "e_rollout": null,
+         "epochs": 3,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "sigma": 0.2,
+     "rho_b": 0.95,
+     "label": "\u03c1_b = 0.95  (between cos 0.19)",
+     "geometry": {
+      "within_cos": 0.19831820356715268,
+      "between_cos": 0.18416710715384516,
+      "within_cos_law": 0.19999999999999996,
+      "between_cos_law": 0.18999999999999995
+     },
+     "recall_length_mean": [
+      [
+       2.0,
+       NaN,
+       NaN
+      ],
+      [
+       0.6,
+       1.4,
+       NaN
+      ],
+      [
+       0.2,
+       0.6,
+       1.6
+      ]
+     ],
+     "final_outcomes": [
+      {
+       "correct": 16,
+       "transposition": 1,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 18,
+       "extra_list_intrusion": 10
+      },
+      {
+       "correct": 35,
+       "transposition": 1,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 4,
+       "extra_list_intrusion": 5
+      },
+      {
+       "correct": 45,
+       "transposition": 0,
+       "prior_list_intrusion": 0,
+       "later_list_intrusion": 0,
+       "extra_list_intrusion": 0
+      }
+     ],
+     "censored_any": [
+      false,
+      false,
+      false
+     ],
+     "e_cued_median": [
+      1.0,
+      2.0,
+      2.0
+     ],
+     "e_rollout_median": [
+      NaN,
+      NaN,
+      NaN
+     ],
+     "per_seed": [
+      {
+       "seed": 42,
+       "geometry": {
+        "within_cos": 0.18544029602439907,
+        "between_cos": 0.16650003909112965,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.18999999999999995
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 0,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 9,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 0,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 9,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 4,
+         "e_rollout": null,
+         "epochs": 4,
+         "censored": false
+        },
+        {
+         "e_cued": 4,
+         "e_rollout": null,
+         "epochs": 4,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 43,
+       "geometry": {
+        "within_cos": 0.21769065689450498,
+        "between_cos": 0.19837476695697298,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.18999999999999995
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.3333333333333333,
+         0.2222222222222222,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 3,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 5,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 2,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 3,
+          "extra_list_intrusion": 4
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 44,
+       "geometry": {
+        "within_cos": 0.20861961807324647,
+        "between_cos": 0.19247530652397182,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.18999999999999995
+       },
+       "recall_length": [
+        [
+         3.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         2.0,
+         NaN
+        ],
+        [
+         1.0,
+         2.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         0.6666666666666666,
+         1.0,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 6,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 2,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        },
+        {
+         "e_cued": 2,
+         "e_rollout": null,
+         "epochs": 2,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 45,
+       "geometry": {
+        "within_cos": 0.1932204343658866,
+        "between_cos": 0.18190437666171755,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.18999999999999995
+       },
+       "recall_length": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         1.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         2.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.8888888888888888,
+         1.0,
+         NaN
+        ],
+        [
+         0.7777777777777778,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 7,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 8,
+          "transposition": 1,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {
+          "2": 1
+         },
+         {},
+         null
+        ],
+        [
+         {
+          "8": 1
+         },
+         {
+          "-8": 1
+         },
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        }
+       ]
+      },
+      {
+       "seed": 46,
+       "geometry": {
+        "within_cos": 0.1866200124777264,
+        "between_cos": 0.1815810465354337,
+        "within_cos_law": 0.19999999999999996,
+        "between_cos_law": 0.18999999999999995
+       },
+       "recall_length": [
+        [
+         2.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         2.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.0,
+         1.0
+        ]
+       ],
+       "cued_mrr": [
+        [
+         1.0,
+         NaN,
+         NaN
+        ],
+        [
+         0.0,
+         1.0,
+         NaN
+        ],
+        [
+         0.0,
+         0.8888888888888888,
+         1.0
+        ]
+       ],
+       "outcomes": [
+        [
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null,
+         null
+        ],
+        [
+         {
+          "correct": 0,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 2,
+          "extra_list_intrusion": 7
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         },
+         null
+        ],
+        [
+         {
+          "correct": 0,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 1,
+          "extra_list_intrusion": 8
+         },
+         {
+          "correct": 8,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 1
+         },
+         {
+          "correct": 9,
+          "transposition": 0,
+          "prior_list_intrusion": 0,
+          "later_list_intrusion": 0,
+          "extra_list_intrusion": 0
+         }
+        ]
+       ],
+       "displacements": [
+        [
+         {},
+         null,
+         null
+        ],
+        [
+         {},
+         {},
+         null
+        ],
+        [
+         {},
+         {},
+         {}
+        ]
+       ],
+       "exposure": [
+        {
+         "e_cued": 1,
+         "e_rollout": null,
+         "epochs": 1,
+         "censored": false
+        },
+        {
+         "e_cued": 5,
+         "e_rollout": null,
+         "epochs": 5,
+         "censored": false
+        },
+        {
+         "e_cued": 3,
+         "e_rollout": null,
+         "epochs": 3,
+         "censored": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

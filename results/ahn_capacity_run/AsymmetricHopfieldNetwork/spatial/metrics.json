@@ -1,0 +1,830 @@
+{
+  "metadata": {
+    "model_name": "AsymmetricHopfieldNetwork",
+    "suite": "spatial",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "1",
+      "learning_rate": "0.1",
+      "activation": "relu",
+      "seed": "42"
+    },
+    "rollout_mode": "observation"
+  },
+  "metrics": {
+    "tmaze_pc_epochs_to_criterion": 2.0,
+    "tmaze_pc_criterion_reached": true,
+    "tmaze_pc_exposure_mode": "criterion",
+    "tmaze_pc_mse": 0.02411017402101099,
+    "tmaze_pc_coverage": 0.7272727272727273,
+    "tmaze_pc_divergence_step": 2,
+    "tmaze_pc_recall_len": 11,
+    "tmaze_pc_eps": 0.15,
+    "tmaze_disamb_full_branch_acc": 1.0,
+    "tmaze_disamb_full_confusion": 0.0,
+    "tmaze_disamb_mec_only_branch_acc": 0.5,
+    "tmaze_disamb_mec_only_confusion": 0.5,
+    "tmaze_disamb_epochs_to_criterion": 4.0,
+    "tmaze_disamb_criterion_reached": true,
+    "tmaze_disamb_graded_concurrent_branch_accuracy": 1.0,
+    "tmaze_disamb_graded_concurrent_divergence_accuracy": 1.0,
+    "tmaze_disamb_graded_concurrent_divergence_margin": 0.7469940224405436,
+    "tmaze_disamb_graded_concurrent_branch_margin": 0.8193239990025116,
+    "tmaze_disamb_graded_concurrent_shared_stretch_error": NaN,
+    "tmaze_disamb_graded_delay0_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay0_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay0_divergence_margin": -0.028544594903792575,
+    "tmaze_disamb_graded_delay0_branch_margin": -0.0021186711758969246,
+    "tmaze_disamb_graded_delay0_shared_stretch_error": NaN,
+    "tmaze_disamb_graded_delay2_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay2_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay2_divergence_margin": -0.00746548756766835,
+    "tmaze_disamb_graded_delay2_branch_margin": -0.01326880176249512,
+    "tmaze_disamb_graded_delay2_shared_stretch_error": 0.06503415301658626,
+    "tmaze_disamb_graded_delay4_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay4_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay4_divergence_margin": -0.0006221035204680425,
+    "tmaze_disamb_graded_delay4_branch_margin": -0.0012843510177130701,
+    "tmaze_disamb_graded_delay4_shared_stretch_error": 0.08564705806405708,
+    "tmaze_disamb_graded_delay6_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay6_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay6_divergence_margin": 0.0005623605891482697,
+    "tmaze_disamb_graded_delay6_branch_margin": 4.044391613872156e-05,
+    "tmaze_disamb_graded_delay6_shared_stretch_error": 0.09218310479865904,
+    "tmaze_disamb_graded_delay7_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay7_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay7_divergence_margin": 0.0020735781383207086,
+    "tmaze_disamb_graded_delay7_branch_margin": -3.806686179635976e-05,
+    "tmaze_disamb_graded_delay7_shared_stretch_error": 0.09999495356320609,
+    "reversal_direct_acquisition_trials_to_criterion": 1.0,
+    "reversal_direct_acquisition_criterion_reached": true,
+    "reversal_direct_acquisition_final_arm_accuracy": 1.0,
+    "reversal_direct_acquisition_final_perseveration": 0.0,
+    "reversal_direct_acquisition_final_reward_pred": 0.6619125728571623,
+    "reversal_direct_acquisition_final_goal_identity_margin": 0.6619125728571623,
+    "reversal_direct_acquisition_final_reward_pre_goal": 0.10831276311100695,
+    "reversal_direct_acquisition_final_anticipation_lead": 2.0,
+    "reversal_direct_acquisition_max_anticipation_lead": 2.0,
+    "reversal_direct_reversal_trials_to_criterion": 5.0,
+    "reversal_direct_reversal_criterion_reached": true,
+    "reversal_direct_reversal_final_arm_accuracy": 1.0,
+    "reversal_direct_reversal_final_perseveration": 0.0,
+    "reversal_direct_reversal_final_reward_pred": 0.6320181379276022,
+    "reversal_direct_reversal_final_goal_identity_margin": 0.5459434988086493,
+    "reversal_direct_reversal_final_reward_pre_goal": 0.10517749942308144,
+    "reversal_direct_reversal_final_anticipation_lead": 2.0,
+    "reversal_direct_reversal_max_anticipation_lead": 2.0,
+    "reversal_direct_recovery_after_interference_arm_accuracy": 1.0,
+    "reversal_direct_recovery_after_interference_perseveration": 0.0,
+    "reversal_direct_recovery_after_interference_delta": 0.0,
+    "reversal_direct_max_trials": 12,
+    "reversal_extinction_acquisition_trials_to_criterion": 1.0,
+    "reversal_extinction_acquisition_criterion_reached": true,
+    "reversal_extinction_acquisition_final_arm_accuracy": 1.0,
+    "reversal_extinction_acquisition_final_perseveration": 0.0,
+    "reversal_extinction_acquisition_final_reward_pred": 0.6619125728571623,
+    "reversal_extinction_acquisition_final_goal_identity_margin": 0.6619125728571623,
+    "reversal_extinction_acquisition_final_reward_pre_goal": 0.10831276311100695,
+    "reversal_extinction_acquisition_final_anticipation_lead": 2.0,
+    "reversal_extinction_acquisition_max_anticipation_lead": 2.0,
+    "reversal_extinction_extinction_trials_to_criterion": 1.0,
+    "reversal_extinction_extinction_criterion_reached": true,
+    "reversal_extinction_extinction_final_arm_accuracy": 1.0,
+    "reversal_extinction_extinction_final_perseveration": 0.0,
+    "reversal_extinction_extinction_final_reward_pred": 0.028328647806189846,
+    "reversal_extinction_extinction_final_goal_identity_margin": 0.028328647806189846,
+    "reversal_extinction_extinction_final_reward_pre_goal": 0.0063524942145625875,
+    "reversal_extinction_extinction_final_anticipation_lead": 0.0,
+    "reversal_extinction_extinction_max_anticipation_lead": 1.0,
+    "reversal_extinction_reversal_trials_to_criterion": 5.0,
+    "reversal_extinction_reversal_criterion_reached": true,
+    "reversal_extinction_reversal_final_arm_accuracy": 1.0,
+    "reversal_extinction_reversal_final_perseveration": 0.0,
+    "reversal_extinction_reversal_final_reward_pred": 0.6102291005552835,
+    "reversal_extinction_reversal_final_goal_identity_margin": 0.6051733322069001,
+    "reversal_extinction_reversal_final_reward_pre_goal": 0.1037612348414585,
+    "reversal_extinction_reversal_final_anticipation_lead": 2.0,
+    "reversal_extinction_reversal_max_anticipation_lead": 2.0,
+    "reversal_extinction_extinction_reward_drop": 0.4771003911319096,
+    "reversal_extinction_recovery_after_interference_arm_accuracy": 1.0,
+    "reversal_extinction_recovery_after_interference_perseveration": 0.0,
+    "reversal_extinction_recovery_after_interference_delta": 0.0,
+    "reversal_extinction_max_trials": 12,
+    "reversal_reward_gain": 1.0,
+    "reversal_epochs_per_trial": 3
+  },
+  "series": {
+    "tmaze_true": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.16666666666666666
+      ],
+      [
+        0.0,
+        0.3333333333333333
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.6666666666666666
+      ],
+      [
+        0.0,
+        0.8333333333333333
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.125,
+        1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.375,
+        1.0
+      ],
+      [
+        0.5,
+        1.0
+      ],
+      [
+        0.625,
+        1.0
+      ],
+      [
+        0.75,
+        1.0
+      ],
+      [
+        0.875,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "tmaze_prompt": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.16666666666666666
+      ],
+      [
+        0.0,
+        0.3333333333333333
+      ],
+      [
+        0.0,
+        0.5
+      ]
+    ],
+    "tmaze_reconstructed_pc": [
+      [
+        0.0012338320679295735,
+        0.6736721380265063
+      ],
+      [
+        0.055762652592162336,
+        0.8039550250679491
+      ],
+      [
+        0.1655822148234646,
+        0.8808776219742805
+      ],
+      [
+        0.296657437314173,
+        0.9194801452919658
+      ],
+      [
+        0.4163467628761137,
+        0.9365710980566835
+      ],
+      [
+        0.5112329926048701,
+        0.9437555558522015
+      ],
+      [
+        0.582216641685221,
+        0.9467827711285597
+      ],
+      [
+        0.6346513607969486,
+        0.9480349220449551
+      ],
+      [
+        0.6737648696690813,
+        0.9485499804555467
+      ],
+      [
+        0.7035187603174752,
+        0.9487838540889331
+      ],
+      [
+        0.7266325889432182,
+        0.9488984497695522
+      ]
+    ],
+    "tmaze_disamb_graded": [
+      {
+        "branch_accuracy": 1.0,
+        "confusion_rate": 0.0,
+        "suffix_mse": 0.0011569537623188787,
+        "divergence_accuracy": 1.0,
+        "branch_margin": 0.8193239990025116,
+        "divergence_margin": 0.7469940224405436,
+        "shared_stretch_error": NaN,
+        "recovery_profile": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "route_A_branch_accuracy": 1.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 0,
+        "state_primed": false,
+        "zone_fraction": 1.0,
+        "availability": "concurrent"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.0015259128656967943,
+        "divergence_accuracy": 0.5,
+        "branch_margin": -0.0021186711758969246,
+        "divergence_margin": -0.028544594903792575,
+        "shared_stretch_error": NaN,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 0,
+        "state_primed": false,
+        "zone_fraction": 1.0,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.0016898374844059216,
+        "divergence_accuracy": 0.5,
+        "branch_margin": -0.01326880176249512,
+        "divergence_margin": -0.00746548756766835,
+        "shared_stretch_error": 0.06503415301658626,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 2,
+        "state_primed": false,
+        "zone_fraction": 0.75,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.0017535384229774367,
+        "divergence_accuracy": 0.5,
+        "branch_margin": -0.0012843510177130701,
+        "divergence_margin": -0.0006221035204680425,
+        "shared_stretch_error": 0.08564705806405708,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 4,
+        "state_primed": false,
+        "zone_fraction": 0.5,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.0018010578290619706,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 4.044391613872156e-05,
+        "divergence_margin": 0.0005623605891482697,
+        "shared_stretch_error": 0.09218310479865904,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 6,
+        "state_primed": false,
+        "zone_fraction": 0.25,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.0018254648676718876,
+        "divergence_accuracy": 0.5,
+        "branch_margin": -3.806686179635976e-05,
+        "divergence_margin": 0.0020735781383207086,
+        "shared_stretch_error": 0.09999495356320609,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 7,
+        "state_primed": false,
+        "zone_fraction": 0.125,
+        "availability": "withdrawn"
+      }
+    ],
+    "reversal_direct_curves": {
+      "acquisition": {
+        "arm_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.0005147552786661871,
+          0.013332005957097956,
+          0.06151732583705798,
+          0.14528519127319642,
+          0.24515477401974217,
+          0.34262588953321393,
+          0.4274505550190267,
+          0.4970102838916872,
+          0.5524259483958901,
+          0.5963125804829706,
+          0.6327001327032438,
+          0.6619125728571623
+        ],
+        "goal_identity_margin": [
+          0.0005147552786661871,
+          0.013332005957097956,
+          0.06151732583705798,
+          0.14528519127319642,
+          0.24515477401974217,
+          0.34262588953321393,
+          0.4274505550190267,
+          0.4970102838916872,
+          0.5524259483958901,
+          0.5963125804829706,
+          0.6327001327032438,
+          0.6619125728571623
+        ],
+        "reward_pre_goal": [
+          0.004449980909382142,
+          0.02096262984337379,
+          0.04503783401356254,
+          0.06883498551119951,
+          0.08791564010267314,
+          0.10164475529838439,
+          0.10915225030454404,
+          0.11188020898339301,
+          0.11147109959113048,
+          0.10933405884942315,
+          0.10895409020416844,
+          0.10831276311100695
+        ],
+        "anticipation_lead": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      },
+      "reversal": {
+        "arm_accuracy": [
+          0.0,
+          0.0,
+          0.25,
+          0.5,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          1.0,
+          1.0,
+          0.75,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.002081063111566869,
+          0.022932119410159785,
+          0.07919910793856515,
+          0.16342255966900063,
+          0.2567866724136709,
+          0.34483966452756903,
+          0.420311926088925,
+          0.48206735072806645,
+          0.5316402006926202,
+          0.5713040104867767,
+          0.6045977480122134,
+          0.6320181379276022
+        ],
+        "goal_identity_margin": [
+          -0.5167441364613988,
+          -0.3851474791411292,
+          -0.24570772714112468,
+          -0.09959066824290397,
+          0.04005955086397281,
+          0.16310469760532925,
+          0.26530574689100694,
+          0.34778239991687254,
+          0.4133625389852528,
+          0.4658873720417063,
+          0.5097435837724785,
+          0.5459434988086493
+        ],
+        "reward_pre_goal": [
+          0.006058155725321354,
+          0.024270281120752406,
+          0.048018114379297386,
+          0.0702552086820943,
+          0.08755987040282694,
+          0.09998682189781274,
+          0.10673514782512088,
+          0.109129927558031,
+          0.10866304024299589,
+          0.10657384377179616,
+          0.1058767487076405,
+          0.10517749942308144
+        ],
+        "anticipation_lead": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      }
+    },
+    "reversal_extinction_curves": {
+      "acquisition": {
+        "arm_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.0005147552786661871,
+          0.013332005957097956,
+          0.06151732583705798,
+          0.14528519127319642,
+          0.24515477401974217,
+          0.34262588953321393,
+          0.4274505550190267,
+          0.4970102838916872,
+          0.5524259483958901,
+          0.5963125804829706,
+          0.6327001327032438,
+          0.6619125728571623
+        ],
+        "goal_identity_margin": [
+          0.0005147552786661871,
+          0.013332005957097956,
+          0.06151732583705798,
+          0.14528519127319642,
+          0.24515477401974217,
+          0.34262588953321393,
+          0.4274505550190267,
+          0.4970102838916872,
+          0.5524259483958901,
+          0.5963125804829706,
+          0.6327001327032438,
+          0.6619125728571623
+        ],
+        "reward_pre_goal": [
+          0.004449980909382142,
+          0.02096262984337379,
+          0.04503783401356254,
+          0.06883498551119951,
+          0.08791564010267314,
+          0.10164475529838439,
+          0.10915225030454404,
+          0.11188020898339301,
+          0.11147109959113048,
+          0.10933405884942315,
+          0.10895409020416844,
+          0.10831276311100695
+        ],
+        "anticipation_lead": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      },
+      "extinction": {
+        "arm_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.5054290389380994,
+          0.3850204361774044,
+          0.29288852680134314,
+          0.22435083311859527,
+          0.17172271544055703,
+          0.13138503086314107,
+          0.1005345501559531,
+          0.07692865063466278,
+          0.05963216585468855,
+          0.04645321363311195,
+          0.03624450524176564,
+          0.028328647806189846
+        ],
+        "goal_identity_margin": [
+          0.5054290389380994,
+          0.3850204361774044,
+          0.29288852680134314,
+          0.22435083311859527,
+          0.17172271544055703,
+          0.13138503086314107,
+          0.1005345501559531,
+          0.07692865063466278,
+          0.05963216585468855,
+          0.04645321363311195,
+          0.03624450524176564,
+          0.028328647806189846
+        ],
+        "reward_pre_goal": [
+          0.06960815768765491,
+          0.04283470535170826,
+          0.024611130850790124,
+          0.01747045442151917,
+          0.012455324669160116,
+          0.009087706620418634,
+          0.007572510569635885,
+          0.006527885857088715,
+          0.0065776552711512785,
+          0.006662778450821498,
+          0.0065814646699943165,
+          0.0063524942145625875
+        ],
+        "anticipation_lead": [
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "reversal": {
+        "arm_accuracy": [
+          0.0,
+          0.0,
+          0.125,
+          0.375,
+          0.875,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          1.0,
+          1.0,
+          0.875,
+          0.625,
+          0.125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.0016598049660005952,
+          0.02062378171616387,
+          0.07378379145369263,
+          0.15429210765168258,
+          0.24396636051314147,
+          0.3290141998394999,
+          0.4022973045997634,
+          0.4625130465396769,
+          0.5110385670583629,
+          0.5500641376991459,
+          0.5829305388354764,
+          0.6102291005552835
+        ],
+        "goal_identity_margin": [
+          -0.01983988838068831,
+          0.0034863609609392665,
+          0.059600631738618015,
+          0.14198547616788024,
+          0.23321851192504472,
+          0.3195909076704005,
+          0.3939558767498798,
+          0.45509470482306513,
+          0.5043597310229971,
+          0.5440040171964972,
+          0.577399592774413,
+          0.6051733322069001
+        ],
+        "reward_pre_goal": [
+          0.005852063936260862,
+          0.023649621172429514,
+          0.04695478432132807,
+          0.06885294308127184,
+          0.08588653850961256,
+          0.09827061568298838,
+          0.10508601083477671,
+          0.1076177009761776,
+          0.10732617584456486,
+          0.10536765530469391,
+          0.10457207356643768,
+          0.1037612348414585
+        ],
+        "anticipation_lead": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      }
+    }
+  }
+}

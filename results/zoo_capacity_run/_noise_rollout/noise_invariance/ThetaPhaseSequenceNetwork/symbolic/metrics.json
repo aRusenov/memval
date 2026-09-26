@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "model_name": "ThetaPhaseSequenceNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "4",
+      "learning_rate": "0.1",
+      "rectify_output": "True",
+      "modulation_depth": "1.0",
+      "seed": "42"
+    },
+    "rollout_mode": "observation",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 30,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 30,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {
+    "noise_epochs_to_criterion": 4.0,
+    "noise_criterion_reached": true,
+    "noise_tolerance_threshold": 0.9,
+    "noise_rollout_auc": 0.7535353535353536,
+    "noise_rollout_quantized_auc": 0.7247474747474747,
+    "noise_rollout_tolerance": 0.9,
+    "noise_completion_gap": -0.0686868686868688,
+    "exposure_baseline_epochs": 1.0,
+    "exposure_baseline_reached": true,
+    "noise_exposure_vs_baseline": 4.0,
+    "exposure_deviation_max": 4.0,
+    "exposure_deviation_section": "noise",
+    "exposure_within_band": true
+  },
+  "series": {
+    "noise_sweep": {
+      "noise_levels": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "mrr": [
+        1.0,
+        1.0,
+        0.9777777777777779,
+        0.8833333333333334,
+        0.7333333333333334,
+        0.6,
+        0.5388888888888889,
+        0.5222222222222223,
+        0.5166666666666667,
+        0.37777777777777777,
+        0.3833333333333333
+      ],
+      "rollout_l2": [
+        1.0,
+        1.0,
+        1.0,
+        0.9611111111111111,
+        0.7722222222222221,
+        0.7500000000000001,
+        0.65,
+        0.5777777777777777,
+        0.5722222222222223,
+        0.47222222222222227,
+        0.5333333333333333
+      ],
+      "rollout_quantized": [
+        1.0,
+        1.0,
+        1.0,
+        0.9666666666666667,
+        0.7999999999999999,
+        0.6666666666666666,
+        0.5722222222222223,
+        0.5499999999999999,
+        0.6555555555555554,
+        0.43888888888888894,
+        0.3222222222222222
+      ]
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 1,
+      "sections": [
+        "noise"
+      ],
+      "ratios": [
+        4.0
+      ],
+      "band": 8.0
+    }
+  }
+}

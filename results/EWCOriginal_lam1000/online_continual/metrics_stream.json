@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "model_name": "EWCOriginal_lam1000",
+    "suite": "online_continual",
+    "ingest": "stream",
+    "n_tasks": 3,
+    "n_presentations": 30,
+    "isi_steps": 0,
+    "epochs": 400,
+    "requested_online": true,
+    "model_kwargs": {
+      "n_hidden": "128",
+      "activation": "tanh",
+      "output_activation": "tanh",
+      "beta": "0.3",
+      "learning_rate": "0.02",
+      "seed": "1",
+      "ewc_lambda": "1000.0"
+    }
+  },
+  "metrics": {
+    "avg_accuracy": 0.5166666666666666,
+    "backward_transfer": -0.32500000000000007,
+    "avg_forgetting": 0.32500000000000007,
+    "per_task_final": [
+      0.30833333333333335,
+      0.4749999999999999,
+      0.7666666666666667
+    ],
+    "per_task_learned": [
+      0.7333333333333334,
+      0.7000000000000001,
+      0.7666666666666667
+    ]
+  },
+  "series": {
+    "retention_matrix": [
+      [
+        0.7333333333333334,
+        NaN,
+        NaN
+      ],
+      [
+        0.45,
+        0.7000000000000001,
+        NaN
+      ],
+      [
+        0.30833333333333335,
+        0.4749999999999999,
+        0.7666666666666667
+      ]
+    ]
+  }
+}

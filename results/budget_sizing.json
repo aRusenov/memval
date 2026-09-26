@@ -1,0 +1,527 @@
+{
+ "protocol": {
+  "n_items": 10,
+  "n_transitions": 10,
+  "n_seeds": 5,
+  "buffer": 2.0,
+  "criterion": 0.95,
+  "max_epochs": 512,
+  "symbolic_items": [
+   "apple",
+   "banana",
+   "orange",
+   "grape",
+   "pear",
+   "peach",
+   "plum",
+   "cherry",
+   "kiwi",
+   "mango"
+  ],
+  "spatial_route_step": 0.2,
+  "spatial_eps": 0.21,
+  "spatial_eps_k": 1.05,
+  "spatial_decode_floor_max": 0.1787,
+  "spatial_decode_floor_frac_of_eps": 0.851
+ },
+ "arms": {
+  "hopfield": {
+   "class": "AsymmetricHopfieldNetwork",
+   "seed_invariant": true,
+   "seeds": [
+    42
+   ],
+   "symbolic": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 1,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     }
+    ],
+    "n_reached": 1,
+    "n_seeds": 1,
+    "mean_epochs_reached": 1.0,
+    "sd_epochs": 0.0,
+    "budget": 2
+   },
+   "spatial": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 2,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     }
+    ],
+    "n_reached": 1,
+    "n_seeds": 1,
+    "mean_epochs_reached": 2.0,
+    "sd_epochs": 0.0,
+    "budget": 4
+   },
+   "online": {
+    "inherits": "symbolic",
+    "budget": 2
+   }
+  },
+  "original_eqprop": {
+   "class": "OriginalEqPropSequenceNetwork",
+   "seed_invariant": false,
+   "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "symbolic": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 19,
+      "reached": true,
+      "score": 1.0,
+      "secs": 2.1
+     },
+     {
+      "seed": 43,
+      "epochs": 30,
+      "reached": true,
+      "score": 1.0,
+      "secs": 8.8
+     },
+     {
+      "seed": 44,
+      "epochs": 17,
+      "reached": true,
+      "score": 1.0,
+      "secs": 1.9
+     },
+     {
+      "seed": 45,
+      "epochs": 22,
+      "reached": true,
+      "score": 1.0,
+      "secs": 3.9
+     },
+     {
+      "seed": 46,
+      "epochs": 19,
+      "reached": true,
+      "score": 1.0,
+      "secs": 3.9
+     }
+    ],
+    "n_reached": 5,
+    "n_seeds": 5,
+    "mean_epochs_reached": 21.4,
+    "sd_epochs": 4.59,
+    "budget": 43
+   },
+   "spatial": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 40,
+      "reached": true,
+      "score": 1.0,
+      "secs": 37.9
+     },
+     {
+      "seed": 43,
+      "epochs": 47,
+      "reached": true,
+      "score": 1.0,
+      "secs": 86.9
+     },
+     {
+      "seed": 44,
+      "epochs": 43,
+      "reached": true,
+      "score": 1.0,
+      "secs": 82.9
+     },
+     {
+      "seed": 45,
+      "epochs": 42,
+      "reached": true,
+      "score": 1.0,
+      "secs": 36.2
+     },
+     {
+      "seed": 46,
+      "epochs": 40,
+      "reached": true,
+      "score": 1.0,
+      "secs": 29.3
+     }
+    ],
+    "n_reached": 5,
+    "n_seeds": 5,
+    "mean_epochs_reached": 42.4,
+    "sd_epochs": 2.58,
+    "budget": 85
+   },
+   "online": {
+    "inherits": "symbolic",
+    "budget": 43
+   }
+  },
+  "temporal_pc": {
+   "class": "MultilayerTemporalPCNetwork",
+   "seed_invariant": false,
+   "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "symbolic": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 39,
+      "reached": true,
+      "score": 1.0,
+      "secs": 3.1
+     },
+     {
+      "seed": 43,
+      "epochs": 34,
+      "reached": true,
+      "score": 1.0,
+      "secs": 1.6
+     },
+     {
+      "seed": 44,
+      "epochs": 48,
+      "reached": true,
+      "score": 1.0,
+      "secs": 6.2
+     },
+     {
+      "seed": 45,
+      "epochs": 41,
+      "reached": true,
+      "score": 1.0,
+      "secs": 3.6
+     },
+     {
+      "seed": 46,
+      "epochs": 44,
+      "reached": true,
+      "score": 1.0,
+      "secs": 4.6
+     }
+    ],
+    "n_reached": 5,
+    "n_seeds": 5,
+    "mean_epochs_reached": 41.2,
+    "sd_epochs": 4.71,
+    "budget": 83
+   },
+   "spatial": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 32,
+      "reached": true,
+      "score": 1.0,
+      "secs": 13.4
+     },
+     {
+      "seed": 43,
+      "epochs": 42,
+      "reached": true,
+      "score": 1.0,
+      "secs": 16.8
+     },
+     {
+      "seed": 44,
+      "epochs": 12,
+      "reached": true,
+      "score": 1.0,
+      "secs": 2.6
+     },
+     {
+      "seed": 45,
+      "epochs": 35,
+      "reached": true,
+      "score": 1.0,
+      "secs": 7.7
+     },
+     {
+      "seed": 46,
+      "epochs": 14,
+      "reached": true,
+      "score": 1.0,
+      "secs": 3.6
+     }
+    ],
+    "n_reached": 5,
+    "n_seeds": 5,
+    "mean_epochs_reached": 27.0,
+    "sd_epochs": 11.9,
+    "budget": 54
+   },
+   "online": {
+    "inherits": "symbolic",
+    "budget": 83
+   }
+  },
+  "predictive_recirculation": {
+   "class": "PredictiveRecirculationNetwork",
+   "seed_invariant": false,
+   "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "symbolic": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 10,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     },
+     {
+      "seed": 43,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.889,
+      "secs": 0.7
+     },
+     {
+      "seed": 44,
+      "epochs": 18,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     },
+     {
+      "seed": 45,
+      "epochs": 40,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.2
+     },
+     {
+      "seed": 46,
+      "epochs": 18,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     }
+    ],
+    "n_reached": 4,
+    "n_seeds": 5,
+    "mean_epochs_reached": 21.5,
+    "sd_epochs": 11.17,
+    "budget": 43
+   },
+   "spatial": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.4,
+      "secs": 2.8
+     },
+     {
+      "seed": 43,
+      "epochs": 4,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     },
+     {
+      "seed": 44,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.8,
+      "secs": 2.8
+     },
+     {
+      "seed": 45,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.8,
+      "secs": 2.8
+     },
+     {
+      "seed": 46,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.6,
+      "secs": 2.8
+     }
+    ],
+    "n_reached": 1,
+    "n_seeds": 5,
+    "mean_epochs_reached": 4.0,
+    "sd_epochs": 0.0,
+    "budget": 8
+   },
+   "online": {
+    "inherits": "symbolic",
+    "budget": 43
+   }
+  },
+  "theta": {
+   "class": "ThetaPhaseSequenceNetwork",
+   "seed_invariant": true,
+   "seeds": [
+    42
+   ],
+   "symbolic": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 1,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     }
+    ],
+    "n_reached": 1,
+    "n_seeds": 1,
+    "mean_epochs_reached": 1.0,
+    "sd_epochs": 0.0,
+    "budget": 2
+   },
+   "spatial": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 2,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.0
+     }
+    ],
+    "n_reached": 1,
+    "n_seeds": 1,
+    "mean_epochs_reached": 2.0,
+    "sd_epochs": 0.0,
+    "budget": 4
+   },
+   "online": {
+    "inherits": "symbolic",
+    "budget": 2
+   }
+  },
+  "dts_esn": {
+   "class": "DTSESNSequenceNetwork",
+   "seed_invariant": false,
+   "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "symbolic": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 1,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.1
+     },
+     {
+      "seed": 43,
+      "epochs": 1,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.1
+     },
+     {
+      "seed": 44,
+      "epochs": 1,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.1
+     },
+     {
+      "seed": 45,
+      "epochs": 1,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.1
+     },
+     {
+      "seed": 46,
+      "epochs": 1,
+      "reached": true,
+      "score": 1.0,
+      "secs": 0.1
+     }
+    ],
+    "n_reached": 5,
+    "n_seeds": 5,
+    "mean_epochs_reached": 1.0,
+    "sd_epochs": 0.0,
+    "budget": 2
+   },
+   "spatial": {
+    "runs": [
+     {
+      "seed": 42,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.2,
+      "secs": 10.9
+     },
+     {
+      "seed": 43,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.3,
+      "secs": 11.5
+     },
+     {
+      "seed": 44,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.2,
+      "secs": 10.9
+     },
+     {
+      "seed": 45,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.2,
+      "secs": 11.1
+     },
+     {
+      "seed": 46,
+      "epochs": 512,
+      "reached": false,
+      "score": 0.3,
+      "secs": 11.1
+     }
+    ],
+    "n_reached": 0,
+    "n_seeds": 5,
+    "mean_epochs_reached": null,
+    "budget": null,
+    "note": "criterion unreached on every seed; no budget derived for this suite"
+   },
+   "online": {
+    "inherits": "symbolic",
+    "budget": 2
+   }
+  }
+ }
+}

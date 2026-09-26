@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "model_name": "DTSESNSequenceNetwork",
+    "suite": "symbolic",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_units": "400",
+      "tau_min": "0.1",
+      "tau_max": "20.0",
+      "spectral_radius": "0.9",
+      "dt": "0.05",
+      "predict_timing": "True",
+      "n_epochs": "2",
+      "seed": "42"
+    },
+    "rollout_mode": "hybrid",
+    "probe_protocols": {
+      "presentation_duration": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "sequence_length": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "multiple_sequences": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "continual_chain": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "paired_associate": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "noise_invariance": {
+        "protocol": "noise_sweep",
+        "n_trials": 30,
+        "noise_scale": null,
+        "stochastic_forward": false
+      },
+      "cue_masking": {
+        "protocol": "mask_sweep",
+        "n_trials": 30,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cue_availability": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "semantic_similarity": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "symbolic_disambiguation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "schema_consistency": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "cognitive_phenomena": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_retention": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      },
+      "interval_generation": {
+        "protocol": "clean_single",
+        "n_trials": 1,
+        "noise_scale": 0.0,
+        "stochastic_forward": false
+      }
+    }
+  },
+  "metrics": {
+    "noise_epochs_to_criterion": 1.0,
+    "noise_criterion_reached": true,
+    "noise_tolerance_threshold": 0.4,
+    "noise_rollout_auc": 0.36666666666666664,
+    "noise_rollout_raw_auc": 0.30505050505050507,
+    "noise_rollout_tolerance": 0.1,
+    "noise_completion_gap": 0.158080808080808,
+    "noise_rollout_margin_auc": -0.22117285944307288,
+    "noise_rollout_margin_first_auc": 0.11879734803825198,
+    "noise_rollout_margin_later_auc": -0.28916690093933783,
+    "noise_rollout_margin_first_slope": -0.5732262296098782,
+    "noise_rollout_margin_later_slope": -0.11199859508119553,
+    "exposure_baseline_epochs": 1.0,
+    "exposure_baseline_reached": true,
+    "noise_exposure_vs_baseline": 1.0,
+    "exposure_deviation_max": 1.0,
+    "exposure_deviation_section": "",
+    "exposure_within_band": true
+  },
+  "series": {
+    "noise_sweep": {
+      "noise_levels": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "mrr": [
+        1.0,
+        0.9777777777777779,
+        0.8055555555555555,
+        0.5611111111111111,
+        0.4666666666666666,
+        0.41111111111111104,
+        0.37777777777777777,
+        0.29444444444444445,
+        0.29444444444444445,
+        0.2777777777777778,
+        0.3055555555555555
+      ],
+      "rollout_l2": [
+        0.5,
+        0.43333333333333335,
+        0.4166666666666667,
+        0.3333333333333334,
+        0.3611111111111111,
+        0.35000000000000003,
+        0.2722222222222222,
+        0.43333333333333335,
+        0.2722222222222222,
+        0.31111111111111106,
+        0.35000000000000003
+      ],
+      "rollout_raw": [
+        0.5,
+        0.3666666666666667,
+        0.3833333333333333,
+        0.3111111111111111,
+        0.31111111111111117,
+        0.25,
+        0.19444444444444445,
+        0.3277777777777778,
+        0.2388888888888889,
+        0.18888888888888888,
+        0.2833333333333334
+      ],
+      "rollout_margin_first": [
+        0.5451080318737591,
+        0.38640833035185146,
+        0.2921657600480632,
+        0.20622843330197782,
+        0.10648848352989541,
+        0.008652622454940855,
+        -0.07685548948105787,
+        0.0007151710883488982,
+        -0.07124917598935233,
+        -0.10475695440627134,
+        0.013865615648616476
+      ],
+      "rollout_margin_later": [
+        -0.18775257262840478,
+        -0.254852154265716,
+        -0.2198517842835451,
+        -0.30776641214241385,
+        -0.2889949016548538,
+        -0.31045722746545523,
+        -0.39132392923187564,
+        -0.1989679078467993,
+        -0.38997562102326677,
+        -0.35941450205884873,
+        -0.27147889773153694
+      ],
+      "rollout_margin_mean": [
+        -0.06560913854471077,
+        -0.1479754068294548,
+        -0.1345155268949437,
+        -0.22210060456834857,
+        -0.2230810041240623,
+        -0.25727225247872254,
+        -0.3389125226067393,
+        -0.16568739469094126,
+        -0.3368545468509477,
+        -0.31697157745008586,
+        -0.2239214788348447
+      ]
+    },
+    "exposure_vs_baseline": {
+      "baseline_epochs": 1,
+      "sections": [
+        "noise"
+      ],
+      "ratios": [
+        1.0
+      ],
+      "band": 8.0
+    }
+  }
+}

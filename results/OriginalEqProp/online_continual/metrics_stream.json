@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "model_name": "OriginalEqProp",
+    "suite": "online_continual",
+    "ingest": "stream",
+    "n_tasks": 3,
+    "n_presentations": 30,
+    "isi_steps": 0,
+    "epochs": 400,
+    "requested_online": true,
+    "model_kwargs": {
+      "n_hidden": "128",
+      "activation": "tanh",
+      "output_activation": "tanh",
+      "beta": "0.3",
+      "learning_rate": "0.02",
+      "seed": "1"
+    }
+  },
+  "metrics": {
+    "avg_accuracy": 0.3777777777777778,
+    "backward_transfer": -0.5666666666666668,
+    "avg_forgetting": 0.5666666666666668,
+    "per_task_final": [
+      0.10833333333333332,
+      0.19166666666666665,
+      0.8333333333333335
+    ],
+    "per_task_learned": [
+      0.7333333333333334,
+      0.7000000000000001,
+      0.8333333333333335
+    ]
+  },
+  "series": {
+    "retention_matrix": [
+      [
+        0.7333333333333334,
+        NaN,
+        NaN
+      ],
+      [
+        0.25,
+        0.7000000000000001,
+        NaN
+      ],
+      [
+        0.10833333333333332,
+        0.19166666666666665,
+        0.8333333333333335
+      ]
+    ]
+  }
+}

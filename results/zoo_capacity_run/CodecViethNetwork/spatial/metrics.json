@@ -1,0 +1,834 @@
+{
+  "metadata": {
+    "model_name": "CodecViethNetwork",
+    "suite": "spatial",
+    "n_trials": 30,
+    "model_kwargs": {
+      "n_epochs": "200",
+      "n_per_feature": "5",
+      "window_steps": "50",
+      "presentation_steps": "1",
+      "cue_lag": "2",
+      "recall_steps": "1",
+      "exc_per_input": "0.5",
+      "seed": "42"
+    },
+    "rollout_mode": "observation"
+  },
+  "metrics": {
+    "tmaze_pc_epochs_to_criterion": 512.0,
+    "tmaze_pc_criterion_reached": false,
+    "tmaze_pc_exposure_mode": "criterion",
+    "tmaze_pc_mse": 1.1284864023133083,
+    "tmaze_pc_coverage": 0.0,
+    "tmaze_pc_divergence_step": 0,
+    "tmaze_pc_recall_len": 11,
+    "tmaze_pc_eps": 0.15,
+    "tmaze_disamb_full_branch_acc": 0.5,
+    "tmaze_disamb_full_confusion": 0.5,
+    "tmaze_disamb_mec_only_branch_acc": 0.5,
+    "tmaze_disamb_mec_only_confusion": 0.5,
+    "tmaze_disamb_epochs_to_criterion": 512.0,
+    "tmaze_disamb_criterion_reached": false,
+    "tmaze_disamb_graded_concurrent_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_concurrent_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_concurrent_divergence_margin": -0.0003445893012579918,
+    "tmaze_disamb_graded_concurrent_branch_margin": -8.237274076088215e-05,
+    "tmaze_disamb_graded_concurrent_shared_stretch_error": NaN,
+    "tmaze_disamb_graded_delay0_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay0_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay0_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay0_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay0_shared_stretch_error": NaN,
+    "tmaze_disamb_graded_delay2_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay2_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay2_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay2_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay2_shared_stretch_error": 0.11933256741833037,
+    "tmaze_disamb_graded_delay4_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay4_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay4_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay4_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay4_shared_stretch_error": 0.07192106580437779,
+    "tmaze_disamb_graded_delay6_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay6_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay6_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay6_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay6_shared_stretch_error": 0.07468700438722695,
+    "tmaze_disamb_graded_delay7_branch_accuracy": 0.5,
+    "tmaze_disamb_graded_delay7_divergence_accuracy": 0.5,
+    "tmaze_disamb_graded_delay7_divergence_margin": 0.0,
+    "tmaze_disamb_graded_delay7_branch_margin": 0.0,
+    "tmaze_disamb_graded_delay7_shared_stretch_error": 0.08690910453026215,
+    "reversal_direct_acquisition_trials_to_criterion": 11.0,
+    "reversal_direct_acquisition_criterion_reached": true,
+    "reversal_direct_acquisition_final_arm_accuracy": 1.0,
+    "reversal_direct_acquisition_final_perseveration": 0.0,
+    "reversal_direct_acquisition_final_reward_pred": 0.32763373191686823,
+    "reversal_direct_acquisition_final_goal_identity_margin": 0.32765727918627474,
+    "reversal_direct_acquisition_final_reward_pre_goal": 0.24451127972985853,
+    "reversal_direct_acquisition_final_anticipation_lead": 4.0,
+    "reversal_direct_acquisition_max_anticipation_lead": 5.0,
+    "reversal_direct_reversal_trials_to_criterion": 1.0,
+    "reversal_direct_reversal_criterion_reached": true,
+    "reversal_direct_reversal_final_arm_accuracy": 1.0,
+    "reversal_direct_reversal_final_perseveration": 0.0,
+    "reversal_direct_reversal_final_reward_pred": 0.20767185345066244,
+    "reversal_direct_reversal_final_goal_identity_margin": 0.14420525402862008,
+    "reversal_direct_reversal_final_reward_pre_goal": 0.20356083360696706,
+    "reversal_direct_reversal_final_anticipation_lead": 5.0,
+    "reversal_direct_reversal_max_anticipation_lead": 5.0,
+    "reversal_direct_recovery_after_interference_arm_accuracy": 1.0,
+    "reversal_direct_recovery_after_interference_perseveration": 0.0,
+    "reversal_direct_recovery_after_interference_delta": 0.0,
+    "reversal_direct_max_trials": 12,
+    "reversal_extinction_acquisition_trials_to_criterion": 11.0,
+    "reversal_extinction_acquisition_criterion_reached": true,
+    "reversal_extinction_acquisition_final_arm_accuracy": 1.0,
+    "reversal_extinction_acquisition_final_perseveration": 0.0,
+    "reversal_extinction_acquisition_final_reward_pred": 0.32763373191686823,
+    "reversal_extinction_acquisition_final_goal_identity_margin": 0.32765727918627474,
+    "reversal_extinction_acquisition_final_reward_pre_goal": 0.24451127972985853,
+    "reversal_extinction_acquisition_final_anticipation_lead": 4.0,
+    "reversal_extinction_acquisition_max_anticipation_lead": 5.0,
+    "reversal_extinction_extinction_trials_to_criterion": 2.0,
+    "reversal_extinction_extinction_criterion_reached": true,
+    "reversal_extinction_extinction_final_arm_accuracy": 1.0,
+    "reversal_extinction_extinction_final_perseveration": 0.0,
+    "reversal_extinction_extinction_final_reward_pred": 0.09013816065226911,
+    "reversal_extinction_extinction_final_goal_identity_margin": 0.09019043197297756,
+    "reversal_extinction_extinction_final_reward_pre_goal": 0.02437878848513983,
+    "reversal_extinction_extinction_final_anticipation_lead": 0.0,
+    "reversal_extinction_extinction_max_anticipation_lead": 1.0,
+    "reversal_extinction_reversal_trials_to_criterion": 7.0,
+    "reversal_extinction_reversal_criterion_reached": true,
+    "reversal_extinction_reversal_final_arm_accuracy": 0.875,
+    "reversal_extinction_reversal_final_perseveration": 0.125,
+    "reversal_extinction_reversal_final_reward_pred": 0.24429444448191692,
+    "reversal_extinction_reversal_final_goal_identity_margin": 0.17337776693697682,
+    "reversal_extinction_reversal_final_reward_pre_goal": 0.1991964579103002,
+    "reversal_extinction_reversal_final_anticipation_lead": 4.0,
+    "reversal_extinction_reversal_max_anticipation_lead": 5.0,
+    "reversal_extinction_extinction_reward_drop": -0.09013816065226911,
+    "reversal_extinction_recovery_after_interference_arm_accuracy": 0.0,
+    "reversal_extinction_recovery_after_interference_perseveration": 1.0,
+    "reversal_extinction_recovery_after_interference_delta": 0.875,
+    "reversal_extinction_max_trials": 12,
+    "reversal_reward_gain": 1.0,
+    "reversal_epochs_per_trial": 3
+  },
+  "series": {
+    "tmaze_true": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.16666666666666666
+      ],
+      [
+        0.0,
+        0.3333333333333333
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.6666666666666666
+      ],
+      [
+        0.0,
+        0.8333333333333333
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.125,
+        1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.375,
+        1.0
+      ],
+      [
+        0.5,
+        1.0
+      ],
+      [
+        0.625,
+        1.0
+      ],
+      [
+        0.75,
+        1.0
+      ],
+      [
+        0.875,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "tmaze_prompt": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.16666666666666666
+      ],
+      [
+        0.0,
+        0.3333333333333333
+      ],
+      [
+        0.0,
+        0.5
+      ]
+    ],
+    "tmaze_reconstructed_pc": [
+      [
+        -0.052947193717324675,
+        -0.14459517587435453
+      ],
+      [
+        -0.034107463317184936,
+        -0.002725036053379085
+      ],
+      [
+        -0.024579442399716052,
+        0.0335489848163255
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.018020760204464636,
+        0.13124839237904157
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.018020760204464636,
+        0.13124839237904157
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.018020760204464636,
+        0.13124839237904157
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.018020760204464636,
+        0.13124839237904157
+      ]
+    ],
+    "tmaze_disamb_graded": [
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.25176400460357884,
+        "divergence_accuracy": 0.5,
+        "branch_margin": -8.237274076088215e-05,
+        "divergence_margin": -0.0003445893012579918,
+        "shared_stretch_error": NaN,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 0,
+        "state_primed": false,
+        "zone_fraction": 1.0,
+        "availability": "concurrent"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.25229856009049967,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": NaN,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 0,
+        "state_primed": false,
+        "zone_fraction": 1.0,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.2521368384456505,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": 0.11933256741833037,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 2,
+        "state_primed": false,
+        "zone_fraction": 0.75,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.25246951630267234,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": 0.07192106580437779,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 4,
+        "state_primed": false,
+        "zone_fraction": 0.5,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.25338930633642454,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": 0.07468700438722695,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 6,
+        "state_primed": false,
+        "zone_fraction": 0.25,
+        "availability": "withdrawn"
+      },
+      {
+        "branch_accuracy": 0.5,
+        "confusion_rate": 0.5,
+        "suffix_mse": 0.2522710597304777,
+        "divergence_accuracy": 0.5,
+        "branch_margin": 0.0,
+        "divergence_margin": 0.0,
+        "shared_stretch_error": 0.08690910453026215,
+        "recovery_profile": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "route_A_branch_accuracy": 0.0,
+        "route_B_branch_accuracy": 1.0,
+        "delay": 7,
+        "state_primed": false,
+        "zone_fraction": 0.125,
+        "availability": "withdrawn"
+      }
+    ],
+    "reversal_direct_curves": {
+      "acquisition": {
+        "arm_accuracy": [
+          1.0,
+          0.375,
+          0.375,
+          1.0,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.0,
+          0.375,
+          0.375,
+          0.0,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          -0.001162897166720698,
+          0.0,
+          0.0,
+          0.1902782725626179,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.019312457975602642,
+          0.32763373191686823
+        ],
+        "goal_identity_margin": [
+          -0.0016620418077693553,
+          0.0,
+          0.0,
+          0.19003933554474883,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.01887135971197865,
+          0.32765727918627474
+        ],
+        "reward_pre_goal": [
+          -0.0014064300657704721,
+          0.0,
+          0.0,
+          0.18095124497440448,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.017829758815740178,
+          0.24451127972985853
+        ],
+        "anticipation_lead": [
+          0.0,
+          0.0,
+          0.0,
+          5.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          4.0
+        ]
+      },
+      "reversal": {
+        "arm_accuracy": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.308307885179072,
+          0.2561391367618725,
+          0.2303824180383859,
+          0.38954922810523684,
+          0.047862043972985935,
+          0.3476365876851375,
+          0.3040208349351194,
+          0.29936622285813835,
+          0.09800905367166367,
+          0.155240394922925,
+          0.11234430210273348,
+          0.20767185345066244
+        ],
+        "goal_identity_margin": [
+          0.17217099115682896,
+          0.2521216916012426,
+          0.2254888290868837,
+          0.3871399296126838,
+          0.04024666143058588,
+          0.33647192687546995,
+          0.295793013902231,
+          0.29420015373392044,
+          0.07813289703901187,
+          0.13684050041883633,
+          0.09602307443098816,
+          0.14420525402862008
+        ],
+        "reward_pre_goal": [
+          0.3102471269015763,
+          0.25430564085369645,
+          0.22288397004302474,
+          0.3177619799939974,
+          0.05019989687557689,
+          0.33153826495341904,
+          0.2708337230526143,
+          0.25401633370103444,
+          0.09695822617286765,
+          0.13779835690818826,
+          0.0951221020955239,
+          0.20356083360696706
+        ],
+        "anticipation_lead": [
+          5.0,
+          5.0,
+          5.0,
+          4.0,
+          0.0,
+          5.0,
+          5.0,
+          5.0,
+          4.0,
+          4.0,
+          3.0,
+          5.0
+        ]
+      }
+    },
+    "reversal_extinction_curves": {
+      "acquisition": {
+        "arm_accuracy": [
+          1.0,
+          0.375,
+          0.375,
+          1.0,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.0,
+          0.375,
+          0.375,
+          0.0,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.375,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          -0.001162897166720698,
+          0.0,
+          0.0,
+          0.1902782725626179,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.019312457975602642,
+          0.32763373191686823
+        ],
+        "goal_identity_margin": [
+          -0.0016620418077693553,
+          0.0,
+          0.0,
+          0.19003933554474883,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.01887135971197865,
+          0.32765727918627474
+        ],
+        "reward_pre_goal": [
+          -0.0014064300657704721,
+          0.0,
+          0.0,
+          0.18095124497440448,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.017829758815740178,
+          0.24451127972985853
+        ],
+        "anticipation_lead": [
+          0.0,
+          0.0,
+          0.0,
+          5.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          4.0
+        ]
+      },
+      "extinction": {
+        "arm_accuracy": [
+          0.375,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "perseveration": [
+          0.375,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reward_pred": [
+          0.0,
+          0.02616806513039055,
+          0.07980617402204719,
+          0.003390776404284397,
+          0.0053005245126149505,
+          0.014546631221173471,
+          0.1173497168639241,
+          0.0026405317752434434,
+          0.07234408613695871,
+          0.08171862584979644,
+          0.07888998702443077,
+          0.09013816065226911
+        ],
+        "goal_identity_margin": [
+          0.0,
+          0.026527806597946697,
+          0.08016290387897702,
+          0.0036305769546879853,
+          0.005638800309717809,
+          0.014412520009037227,
+          0.11728000134119883,
+          0.0026965430940749705,
+          0.0721751349090728,
+          0.081813118718063,
+          0.07882909267565308,
+          0.09019043197297756
+        ],
+        "reward_pre_goal": [
+          0.0,
+          0.024233884844357578,
+          0.04629585079334406,
+          0.003187428419725581,
+          0.005694909821221888,
+          0.009299024221208783,
+          0.0498176650288086,
+          0.0022284754698643854,
+          0.05549931820549113,
+          0.05777209640503013,
+          0.06066249421457094,
+          0.02437878848513983
+        ],
+        "anticipation_lead": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "reversal": {
+        "arm_accuracy": [
+          1.0,
+          0.375,
+          1.0,
+          0.375,
+          0.875,
+          0.0,
+          0.875,
+          1.0,
+          0.75,
+          0.0,
+          1.0,
+          0.875
+        ],
+        "perseveration": [
+          0.0,
+          0.375,
+          0.0,
+          0.375,
+          0.125,
+          1.0,
+          0.125,
+          0.0,
+          0.25,
+          1.0,
+          0.0,
+          0.125
+        ],
+        "reward_pred": [
+          0.09018874622113156,
+          0.0,
+          0.10891721644732076,
+          0.0,
+          0.2703717954047582,
+          1.25634572810915e-05,
+          0.13277528692773619,
+          0.08850944366236513,
+          0.17432880006604043,
+          0.07498703722502831,
+          0.276042121359616,
+          0.24429444448191692
+        ],
+        "goal_identity_margin": [
+          0.0822490133038417,
+          0.0,
+          0.08886931995027159,
+          0.0,
+          0.2627047516125774,
+          -0.017440546755612987,
+          0.0359115844433276,
+          0.049906117455535005,
+          0.14632268366894577,
+          -0.055990349338392975,
+          0.2133929348367756,
+          0.17337776693697682
+        ],
+        "reward_pre_goal": [
+          0.09216082191099809,
+          0.0,
+          0.11722897618270185,
+          0.0,
+          0.1751203760904316,
+          0.0003172590568324241,
+          0.12476013523217251,
+          0.08335250690028181,
+          0.13101244178844443,
+          0.06671836817930983,
+          0.2325988163363375,
+          0.1991964579103002
+        ],
+        "anticipation_lead": [
+          5.0,
+          0.0,
+          5.0,
+          0.0,
+          4.0,
+          0.0,
+          4.0,
+          0.0,
+          4.0,
+          0.0,
+          5.0,
+          4.0
+        ]
+      }
+    }
+  }
+}
