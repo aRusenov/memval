@@ -166,8 +166,6 @@ def draw(arms, out, title):
                                        hatch=hatch, alpha=0.9))
         ax.text(-0.25, r + 0.5, label, ha="right", va="center", fontsize=10.5,
                 fontweight="bold", color=INK)
-    ax.plot([-1.6, x], [first_spk, first_spk], color=INK3, lw=0.9, ls=(0, (4, 3)),
-            clip_on=False)
     # dimension labels + weights, capacity group brackets
     for (cap, dim), xi in zip(dims, xs):
         ax.text(xi + 0.5, -0.1, DIM_SHORT[dim], ha="center", va="bottom",

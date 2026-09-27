@@ -13,7 +13,7 @@
       "coverage": 1.0
     },
     "Sequence disambiguation": {
-      "score": 0.6175499300490381,
+      "score": 0.6138334013803934,
       "coverage": 1.0
     },
     "Serial order": {
@@ -35,7 +35,7 @@
       "coverage": 1.0
     },
     "Sequence disambiguation": {
-      "score": 0.6175499300490381,
+      "score": 0.6138334013803934,
       "coverage": 1.0
     },
     "Serial order": {
@@ -43,53 +43,9 @@
       "coverage": 0.30000000000000004
     }
   },
-  "EP": {
-    "Continual retention": {
-      "score": 0.7508336649434095,
-      "coverage": 1.0
-    },
-    "One-shot learning": {
-      "score": 0.47292343073593074,
-      "coverage": 1.0
-    },
-    "Pattern completion": {
-      "score": 0.6003421657113359,
-      "coverage": 1.0
-    },
-    "Sequence disambiguation": {
-      "score": 0.5876498707133909,
-      "coverage": 1.0
-    },
-    "Serial order": {
-      "score": 0.6542383428385592,
-      "coverage": 0.5
-    }
-  },
-  "spiking EP": {
-    "Continual retention": {
-      "score": 0.3676645544748993,
-      "coverage": 0.6
-    },
-    "One-shot learning": {
-      "score": 0.1505050505050505,
-      "coverage": 0.75
-    },
-    "Pattern completion": {
-      "score": 0.04444444444444445,
-      "coverage": 0.75
-    },
-    "Sequence disambiguation": {
-      "score": 0.2582221033260722,
-      "coverage": 1.0
-    },
-    "Serial order": {
-      "score": 0.4788230314347962,
-      "coverage": 0.5
-    }
-  },
   "tPC": {
     "Continual retention": {
-      "score": 0.7673566460922782,
+      "score": 0.8098764386120708,
       "coverage": 0.9
     },
     "One-shot learning": {
@@ -97,16 +53,60 @@
       "coverage": 0.75
     },
     "Pattern completion": {
-      "score": 0.7737298700731498,
+      "score": 0.8055480518913316,
       "coverage": 1.0
     },
     "Sequence disambiguation": {
-      "score": 0.4670372119958359,
+      "score": 0.4887835444948937,
       "coverage": 1.0
     },
     "Serial order": {
-      "score": 0.7266510598473221,
+      "score": 0.7337811846245057,
       "coverage": 0.30000000000000004
+    }
+  },
+  "recirc": {
+    "Continual retention": {
+      "score": 0.784124304196514,
+      "coverage": 0.9
+    },
+    "One-shot learning": {
+      "score": 0.46419753086419746,
+      "coverage": 0.75
+    },
+    "Pattern completion": {
+      "score": 0.692121212121212,
+      "coverage": 0.75
+    },
+    "Sequence disambiguation": {
+      "score": 0.5074515010069505,
+      "coverage": 1.0
+    },
+    "Serial order": {
+      "score": 0.7255504604503207,
+      "coverage": 0.5
+    }
+  },
+  "EP": {
+    "Continual retention": {
+      "score": 0.7712966647519365,
+      "coverage": 0.9
+    },
+    "One-shot learning": {
+      "score": 0.49074074074074076,
+      "coverage": 0.75
+    },
+    "Pattern completion": {
+      "score": 0.6003421657113359,
+      "coverage": 1.0
+    },
+    "Sequence disambiguation": {
+      "score": 0.5604565662482965,
+      "coverage": 1.0
+    },
+    "Serial order": {
+      "score": 0.6542383428385592,
+      "coverage": 0.5
     }
   },
   "DTS-ESN": {
@@ -123,56 +123,12 @@
       "coverage": 1.0
     },
     "Sequence disambiguation": {
-      "score": 0.6022028810614336,
+      "score": 0.6766551706407905,
       "coverage": 1.0
     },
     "Serial order": {
       "score": 0.8824980838313892,
       "coverage": 0.8
-    }
-  },
-  "Vieth STDP": {
-    "Continual retention": {
-      "score": 0.44695349084716907,
-      "coverage": 0.6
-    },
-    "One-shot learning": {
-      "score": 0.0,
-      "coverage": 0.75
-    },
-    "Pattern completion": {
-      "score": 0.0,
-      "coverage": 0.75
-    },
-    "Sequence disambiguation": {
-      "score": 0.2675100290226667,
-      "coverage": 1.0
-    },
-    "Serial order": {
-      "score": 0.4977726182203051,
-      "coverage": 0.5
-    }
-  },
-  "BCPNN (columnar)": {
-    "Continual retention": {
-      "score": 0.6262836025700201,
-      "coverage": 0.9
-    },
-    "One-shot learning": {
-      "score": 0.31030303030303025,
-      "coverage": 0.5
-    },
-    "Pattern completion": {
-      "score": 0.0,
-      "coverage": 0.0
-    },
-    "Sequence disambiguation": {
-      "score": 0.0,
-      "coverage": 0.0
-    },
-    "Serial order": {
-      "score": 0.35999999999999993,
-      "coverage": 0.2
     }
   }
 }
