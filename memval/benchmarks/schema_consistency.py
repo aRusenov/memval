@@ -134,8 +134,7 @@ def _sequence_identity_available(model: Any) -> bool:
     2. a ``fit_sequence`` that accepts ``context_data``.
 
     Condition 2 alone is worthless and actively dangerous: ``TemporalPCNetwork``,
-    ``DGOriginalEqPropSequenceNetwork``, ``ThetaPhaseSequenceNetwork`` and
-    ``DTSESNSequenceNetwork`` all *accept* ``context_data`` and silently ignore
+    ``ThetaPhaseSequenceNetwork`` and ``DTSESNSequenceNetwork`` all *accept* ``context_data`` and silently ignore
     it, so passing a sequence identifier to them would look like it worked and
     change nothing. ``OriginalEqPropSequenceNetwork`` does not accept the
     argument at all. Only ``AsymmetricHopfieldNetwork`` declares ``n_context``,

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Run the adaptive extinction-preference protocol on one arm, across seeds.
 
-    python bin/extinction_preference_benchmark.py --model hopfield --out results/extinction_preference
+    python bin/extinction_preference_benchmark.py --model ahn --out results/extinction_preference
 
 Writes ``<out>/<ClassName>/extinction_preference.png`` and ``.json``. See
 ``memval/benchmarks/extinction_preference.py`` for the protocol and the sign
@@ -23,7 +23,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..")))
 sys.path.insert(0, HERE)
 
-from run_benchmark import MODEL_REGISTRY  # noqa: E402
+from run_benchmark import MODEL_REGISTRY, resolve_model_name  # noqa: E402
 
 from memval.benchmarks.extinction_preference import ARMS, ExtinctionPreferenceBenchmark  # noqa: E402
 from memval.generators.t_maze_extinction import TMazeExtinctionGenerator  # noqa: E402
@@ -171,7 +171,7 @@ def plot(runs, path, title):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--model", default="hopfield", choices=sorted(MODEL_REGISTRY))
+    ap.add_argument("--model", default="ahn", type=resolve_model_name, choices=sorted(MODEL_REGISTRY))
     ap.add_argument("--out", default="results/extinction_preference")
     ap.add_argument("--seeds", default="0,1,2,3,4,5,6,7,8,9,10,11")
     ap.add_argument("--epochs", type=int, default=3, help="passes per presentation (reversal section uses 3)")

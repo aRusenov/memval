@@ -64,7 +64,7 @@ from memval.encoders.symbolic import SymbolicEncoder, SymbolicDecoder
 from memval.benchmarks.symbolic_pipeline import (
     measure_recall_associative, measure_recall_autoregressive,
     mean_recall_rate, memory_span)
-from run_benchmark import MODEL_REGISTRY
+from run_benchmark import MODEL_REGISTRY, resolve_model_name
 
 LENGTHS = (10, 20, 30)
 N_LISTS, MULTI_LIST_LEN = 3, 10
@@ -78,7 +78,7 @@ OUTCOME_KINDS = ("correct", "transposition", "other_list_intrusion",
 #: Arm under probe. Set by main() from --model; the probe is per-arm, and the
 #: staircase's whole point is that E_cued / E_roll are self-referenced, so an
 #: arm-specific epoch budget must not leak in from AHN's defaults.
-MODEL_NAME = "hopfield"
+MODEL_NAME = "ahn"
 
 
 def _fit_one_epoch(model, X):
@@ -224,7 +224,7 @@ def staircase(lengths=LENGTHS, n_trials=20, criterion=0.95, budget=512,
 
     The suite resolves a section's epoch count as CLI > model default > section
     fallback, and the model defaults in MODEL_REGISTRY differ by 300x across the
-    taxonomy (hopfield 1, EP arms 100-300). Any span measured at "the default" is
+    taxonomy (ahn 1, EP arms 100-300). Any span measured at "the default" is
     therefore measured at a different point on every arm's learning curve, and
     the cross-arm comparison is void.
 
@@ -460,8 +460,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--model", default="hopfield", choices=list(MODEL_REGISTRY),
-                    help="Arm to probe (default: hopfield, the AHN reference).")
+    ap.add_argument("--model", default="ahn", type=resolve_model_name, choices=list(MODEL_REGISTRY),
+                    help="Arm to probe (default: ahn, the reference arm).")
     ap.add_argument("--n-trials", type=int, default=30)
     ap.add_argument("--epochs", type=int, default=None,
                     help="Exposure for the FIXED-epoch rows (establishment, "

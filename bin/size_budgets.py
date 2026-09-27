@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Size each arm's fixed exposure budget by criterion, per suite, over seeds.
 
-    python bin/size_budgets.py --out results/budget_sizing.json [--arms hopfield,theta]
+    python bin/size_budgets.py --out results/budget_sizing.json [--arms ahn,theta]
 
 Protocol (settled 2026-09-23):
 
@@ -49,7 +49,7 @@ def _registry():
     spec = importlib.util.spec_from_file_location(
         "rb", os.path.join(os.path.dirname(os.path.abspath(__file__)), "run_benchmark.py"))
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
-    return mod.MODEL_REGISTRY
+    return mod
 
 
 def _weight_arrays(m):
@@ -180,8 +180,9 @@ def main():
     ap.add_argument("--max-epochs", type=int, default=512)
     args = ap.parse_args()
 
-    R = _registry()
-    names = args.arms.split(",") if args.arms else list(R)
+    rb = _registry()
+    R = rb.MODEL_REGISTRY
+    names = [rb.resolve_model_name(n) for n in args.arms.split(",")] if args.arms else list(R)
     materials = (symbolic_material(), spatial_material())
     (words, _, _, _), (traj, penc, _, eps) = materials
     floor = decode_floor(penc, traj)

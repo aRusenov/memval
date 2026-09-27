@@ -257,7 +257,6 @@ class OriginalEqPropSequenceNetwork(HippocampalModel, OnlineTrainable):
         # pinning ``n_epochs`` on the instance. Reading ``self.n_epochs``
         # unconditionally silently multiplied every such step by up to 100x
         # (continual_chain steps one epoch at a time; each step ran 100).
-        # Matches DGOriginalEqPropSequenceNetwork, which already did this.
         for _epoch in range(int(kwargs.get('epochs', self.n_epochs))):
             # accumulators
             dW_ih = np.zeros_like(self.W_ih)

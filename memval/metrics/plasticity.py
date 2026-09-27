@@ -1,7 +1,7 @@
 """Weight-space plasticity metrics — the efficiency index.
 
 NOT WIRED INTO ANY PIPELINE. Kept as a standalone, tested utility (the same call
-taken for ``utils/text_noise.py`` at capacity_coverage_audit.md C3), not as a
+taken for the since-retired text-noise utility at capacity_coverage_audit.md C3), not as a
 benchmark read-out. It was drafted for ``schema_consistency`` and withdrawn on
 2026-09-02: its utility is unproven and it is **not comparable across the model
 taxonomy**. Four problems, all verified:
@@ -10,12 +10,10 @@ taxonomy**. Four problems, all verified:
    *within* a trial is invisible. Holding total training fixed and varying only
    ``epochs_per_trial``, Original EP reads 0.948 / 0.977 / 0.985 / 1.000 at
    1 / 5 / 20 / 60 epochs per checkpoint — and 1.000 is definitional at one
-   checkpoint. Arms differ in ``n_epochs`` by design (AHN 1, EP 100, DG-EP 300).
-2. *Discovery is wrong for several arms.* ``SpikingEqPropSequenceNetwork`` keeps
-   its weights in vendored ``LayerParams`` objects, so discovery returns nothing;
-   ``DTSESNSequenceNetwork`` exposes a fixed random reservoir, time constants and
-   the RLS inverse-correlation matrix ``P`` (optimiser state, not a synapse)
-   alongside the one learned matrix ``W_out``; ``ThetaPhaseSequenceNetwork``
+   checkpoint. Arms differ in ``n_epochs`` by design (AHN 1, EP 100).
+2. *Discovery is wrong for several arms.* ``DTSESNSequenceNetwork`` exposes a
+   fixed random reservoir, time constants and the RLS inverse-correlation
+   matrix ``P`` (optimiser state, not a synapse) alongside the one learned matrix ``W_out``; ``ThetaPhaseSequenceNetwork``
    exposes four phase/gating arrays alongside ``W``.
 3. *Architectural non-commensurability.* EI measures whether updates cancel, and
    a Hebbian outer-product rule in a near-orthogonal regime cannot cancel: AHN

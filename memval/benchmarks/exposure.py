@@ -40,9 +40,8 @@ Incremental vs. from-scratch
 ----------------------------
 Most arms' ``fit_sequence`` accumulates (the schema and continual-chain sections
 already depend on this), so the staircase can add one epoch at a time. Some do
-not: ``HopfieldSequenceNetwork`` under ``fit_method="projection"`` *replaces*
-``W`` with a least-squares solution, so calling it twice is not the same as
-training twice. ``incremental=False`` (the default) therefore rebuilds the model
+not: an arm whose fit *replaces* ``W`` with a least-squares solution (e.g. a
+projection-rule Hopfield) is not trained twice by calling it twice. ``incremental=False`` (the default) therefore rebuilds the model
 at every checkpoint, which is correct for every arm; pass ``incremental=True``
 only for an arm known to accumulate, as a speed-up.
 """

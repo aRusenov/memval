@@ -31,8 +31,7 @@ class HippocampalModel(ABC):
 
     #: True when the forward pass (``predict_next`` / ``recall``) is itself
     #: random, so repeating a probe with a FIXED clean cue samples the model's
-    #: own variability. Every arm in the roster is deterministic today -- the
-    #: codec wrappers reseed their spike encoder on every call by design -- so
+    #: own variability. Every arm in the roster is deterministic today, so
     #: under ``ProbeProtocol.CLEAN_SINGLE`` a repeat is an exact copy and the
     #: harness runs the probe once. Declare True only where a repeat is
     #: genuinely a new sample; then, and only then, ``n_trials`` means

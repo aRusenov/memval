@@ -29,15 +29,6 @@ SPATIAL_BENCHMARKS = (
 #                          drift question was never actually asked.
 #   object_arena        -- never implemented; emitted literal "TODO" strings.
 
-# EWC's registry default (ewc_lambda=30000) is tuned for the symbolic continual-
-# learning suite, where embeddings are small and the Fisher is ~1e-3. On spatial
-# place-cell gradients that penalty overflows (ewc_mixin.py: lambda * fisher *
-# (W - anchor)) and nondeterministically produces NaN weights -> 0 disambiguation.
-# A spatial-appropriate value keeps the A->B consolidation stable; the lambda
-# sweep shows [1e2, 1e3] all reach 1.0 branch accuracy. Applied only to the
-# disambiguation section, so the symbolic-tuned default is left untouched.
-SPATIAL_EWC_LAMBDA = 1000.0
-
 def _get_model_kwargs(base_kwargs: Dict[str, Any], target_epochs: int) -> Dict[str, Any]:
     """Helper to copy model kwargs and override epoch parameters."""
     kwargs = dict(base_kwargs)
@@ -460,10 +451,6 @@ def run_spatial_pipeline(
             tmaze_disamb_bench = SpatialDisambiguationBenchmark()
             tmaze_disamb_kwargs = dict(model_kwargs)
             tmaze_disamb_kwargs["n_features"] = _disamb_npc + _disamb_nod
-            # Use a spatial-appropriate EWC strength (see SPATIAL_EWC_LAMBDA) for
-            # models that expose ewc_lambda; leaves non-EWC models untouched.
-            if "ewc_lambda" in tmaze_disamb_kwargs:
-                tmaze_disamb_kwargs["ewc_lambda"] = SPATIAL_EWC_LAMBDA
 
             if disamb_epochs is None:
                 inA = tmaze_route_pair["input_A"]
@@ -618,8 +605,6 @@ def run_spatial_pipeline(
             grad_bench = SpatialDisambiguationBenchmark()
             grad_kwargs = dict(model_kwargs)
             grad_kwargs["n_features"] = n_pc_g + n_od_g
-            if "ewc_lambda" in grad_kwargs:
-                grad_kwargs["ewc_lambda"] = SPATIAL_EWC_LAMBDA
 
             def _graded_row(zone_fraction, on_arms):
                 route = grad_gen.generate(
@@ -859,8 +844,6 @@ def run_spatial_pipeline(
         try:
             rev_kwargs = _get_model_kwargs(model_kwargs, rev_epochs)
             rev_kwargs["n_features"] = n_rev_place + n_rev_reward
-            if "ewc_lambda" in rev_kwargs:
-                rev_kwargs["ewc_lambda"] = SPATIAL_EWC_LAMBDA
 
             bench = SpatialReversalBenchmark()
             for cond in rev_conditions:

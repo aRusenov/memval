@@ -56,7 +56,7 @@ Writes, beside the arm's symbolic plots:
   serial_order_overlap_failures.png        final cued outcome per list, per rung
   serial_order_overlap_sweep.json          everything, per seed
 
-    python bin/serial_order_overlap_sweep.py --model hopfield --out results/zoo_capacity_run
+    python bin/serial_order_overlap_sweep.py --model ahn --out results/zoo_capacity_run
 """
 from __future__ import annotations
 
@@ -76,7 +76,7 @@ sys.path.insert(0, HERE)
 
 import probe_serial_order as P  # noqa: E402
 from continual_chain_overlap_sweep import build_model  # noqa: E402
-from run_benchmark import MODEL_REGISTRY  # noqa: E402
+from run_benchmark import MODEL_REGISTRY, resolve_model_name  # noqa: E402
 
 from memval.benchmarks.probe import resolve_probe  # noqa: E402
 from memval.encoders.symbolic import SymbolicDecoder, SymbolicEncoder  # noqa: E402
@@ -284,7 +284,7 @@ def plot_failures(dials, path, title, task_labels):
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--model", default="hopfield", choices=sorted(MODEL_REGISTRY))
+    ap.add_argument("--model", default="ahn", type=resolve_model_name, choices=sorted(MODEL_REGISTRY))
     ap.add_argument("--out", default="results/zoo_capacity_run",
                     help="run directory; outputs go to <out>/<ClassName>/symbolic/")
     ap.add_argument("--dials", default="within,between")

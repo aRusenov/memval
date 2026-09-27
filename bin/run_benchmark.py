@@ -1,19 +1,4 @@
 #!/usr/bin/env python
-from memval.models.baselines import EqPropSequenceNetwork
-from memval.models.baselines import OriginalEqPropSequenceNetwork
-from memval.models.baselines import DGOriginalEqPropSequenceNetwork
-from memval.models.baselines import DGXdGEqPropSequenceNetwork
-from memval.models.baselines import EWCDGXdGEqPropSequenceNetwork
-from memval.models.baselines import EWCOriginalEqPropSequenceNetwork
-from memval.models.baselines import AsymmetricHopfieldNetwork
-from memval.models.baselines import MultilayerTemporalPCNetwork
-from memval.models.baselines import PredictiveRecirculationNetwork
-from memval.models.baselines import DTSESNSequenceNetwork
-from memval.models.baselines import ThetaPhaseSequenceNetwork
-from memval.models.baselines import SpikingEqPropSequenceNetwork
-from memval.models.baselines import CodecBushNetwork
-from memval.models.baselines import CodecViethNetwork
-from memval.models.baselines import CodecBCPNNNetwork
 import os
 import sys
 import argparse
@@ -22,12 +7,12 @@ from typing import Dict, Any, Type, Optional
 # Add the project root to sys.path so we can import memval
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from memval.models.baselines.hopfield import HopfieldSequenceNetwork
-# ARCHIVED -- outside the model taxonomy; kept on disk, not run. See the
-# MODEL_REGISTRY note below.
-# from memval.models.baselines.gpt2_wrapper import GPT2SequenceModel
-from memval.models.baselines.dg_eqprop import DGEqPropSequenceNetwork
-from memval.models.baselines.ewc_dg_eqprop import EWCDGEqPropSequenceNetwork
+from memval.models.baselines import AsymmetricHopfieldNetwork
+from memval.models.baselines import OriginalEqPropSequenceNetwork
+from memval.models.baselines import MultilayerTemporalPCNetwork
+from memval.models.baselines import PredictiveRecirculationNetwork
+from memval.models.baselines import DTSESNSequenceNetwork
+from memval.models.baselines import ThetaPhaseSequenceNetwork
 from memval.benchmarks.spatial_pipeline import run_spatial_pipeline, SPATIAL_BENCHMARKS
 from memval.benchmarks.symbolic_pipeline import run_symbolic_pipeline, SYMBOLIC_BENCHMARKS
 from memval.benchmarks.online_symbolic_pipeline import (
@@ -44,7 +29,7 @@ SUITE_BENCHMARKS = {
 
 # Central Registry of Models
 MODEL_REGISTRY = {
-    "hopfield": {
+    "ahn": {
         "class": AsymmetricHopfieldNetwork,
         "modalities": ["spatial", "symbolic", "online_symbolic"],
         "default_kwargs": {
@@ -63,258 +48,6 @@ MODEL_REGISTRY = {
         },
         "modality_kwargs": {"spatial": {"n_epochs": 4}}
     },
-    # --- ARCHIVED: outside the model taxonomy ------------------------------
-    # GPT-2 (and KNNEpisodicModel, which was never registered here) sit outside
-    # the taxonomy this project compares within. The classes stay in
-    # memval/models/baselines/ for archival reference, but they are not run and
-    # their outputs are not compared against the taxonomy's arms. Any figure or
-    # scorecard that still lists them should drop the row, not re-run them.
-    # Uncomment the import above together with this entry to reinstate.
-    # "gpt2": {
-    #     "class": GPT2SequenceModel,
-    #     "modalities": ["symbolic"],
-    #     "default_kwargs": {
-    #         "n_epochs": 64, # low epochs by default so it runs fast during benchmark
-    #         "from_pretrained": True,
-    #         "device": "auto"
-    #     }
-    # },
-    # Bush, Philippides, Husbands & O'Shea (2010) behind the population spike
-    # codec. It is an online arm and the online_symbolic suite runs it through
-    # fit_event (docs/spike_codec_spec.md S9.8); the spatial and symbolic suites
-    # are batch, which is byte-identical here (resample_per_pass), so the arm is
-    # registered for all three and the regime is the protocol's choice.
-    # It is also the roster's Hebbian contrast case -- purely local, no error
-    # signal -- against AHN, EP, tPC and theta, all of which are error-correcting.
-    #
-    # Expect a floor on this suite, and read it as a result rather than a bug:
-    # transport costs at most 0.07 recall (S9.2, measured), and the arm reaches
-    # 1.00 one-step recall through the same codec at comparable network size on
-    # a sparse code (S9.4). What floors it here is the substrate --
-    # SymbolicEncoder's rows are dense, so ~25% of the network fires for every
-    # item and any two items share ~21% of their active neurons, leaving STDP no
-    # item-specific populations to chain. Note that cosine ranks this substrate
-    # as the EASIEST of the three measured and population overlap ranks it the
-    # hardest; this arm tracks the second.
-    #
-    # g_syn/k_inh sit on a stability ridge that moves with co-activity, so these
-    # are the ridge point established at comparable N (1560), where the arm
-    # reaches 1.00 on an overlap-free code. On THIS substrate nothing works:
-    # a 4x4 probe (g 45..1200, k_inh 0.005..0.25, 5 and 20 passes) finds no
-    # cell above 0.14, and the failure is cleanly bimodal -- 77% of neuron-steps
-    # firing at low inhibition, 1.9% (chain dead) at high, with no band in
-    # between. That is what 25% co-activity does: there is no operating point at
-    # which a quarter of the network can be driven as a chain.
-    # Re-site with bin/bush_stdp_siting_sweep.py for any new configuration.
-    # "bush_stdp": {
-    #     "class": CodecBushNetwork,
-    #     "modalities": ["spatial", "symbolic", "online_symbolic"],
-    #     "default_kwargs": {
-    #         # Presentations. One pass over the material, the same unit every
-    #         # other arm's n_epochs denotes. 20 is where the siting sweep peaked;
-    #         # note recall is NON-monotone in exposure (it collapses by 40 as the
-    #         # weights saturate into a burst), so a criterion staircase's
-    #         # reached=False here does not mean "train longer".
-    #         "n_epochs": 20,
-    #         # 5, the codec default. NOTE this is BELOW Phase 0's round-trip
-    #         # fidelity gate on a dense substrate -- median cosine 0.934 at 5
-    #         # against the 0.95 gate, 0.966 at 10 -- and is a deliberate
-    #         # cost/fidelity trade: N drops from 2000 to 1000 and the suites run
-    #         # ~4x faster. Defensible only while these runs are confirming a
-    #         # floor. Raise to 10 before reading any non-floor score off them,
-    #         # and state the value in the caption either way (spec constraint 5).
-    #         "n_per_feature": 5,
-    #         "window_steps": 50,
-    #         # The one-step readout window. The paper's ~33 ms sharp-wave-ripple
-    #         # value is what bin/bush_stdp_gate.py scores replay over; this
-    #         # pipeline probes one-step prediction, where a shorter window is the
-    #         # right reduction -- 33 pools several links of the replay chain into
-    #         # one decoded vector.
-    #         "recall_steps": 12,
-    #         # k_inh is a CONDUCTANCE (shunting toward e_inh), not a current.
-    #         "g_syn": 160.0,
-    #         "k_inh": 0.02,
-    #         "seed": 42,
-    #     }
-    # },
-    # Vieth & Triesch (2025) GABA-modulated STDP -- the roster's spiking x online
-    # arm. Reimplemented against the upstream MIT release, which
-    # tests/test_vieth_gaba_stdp.py replays step by step; the correctness gate on
-    # the paper's own task is bin/vieth_stdp_gate.py.
-    #
-    # TWO THINGS TO KNOW BEFORE READING A SCORE OFF THIS ARM.
-    #
-    # 1. It is BIMODAL ACROSS SEEDS, and that is the model, not the port. On
-    #    upstream's own character task at n_exc=600, upstream itself regenerates
-    #    its training text on 5 of 10 seeds and produces noise on the other 5,
-    #    with nothing in between (scores 3.99-4.13 vs 1.72-2.07). The port lands
-    #    3 of 8. So a single seed here is a coin flip: report a distribution over
-    #    seeds, never a mean, and never a single run.
-    # 1b. IT CANNOT INGEST SEQUENCES ONE AFTER ANOTHER (2026-09-05, the arm's
-    #    headline limitation). Its source paper sizes every assembly by how
-    #    often its item occurs in the stream (Vieth & Triesch 2025, sec. 4.5-4.6:
-    #    cluster size proportional to pattern frequency, N_active = N_E * h),
-    #    so a list presented alone takes the whole excitatory population and a
-    #    later list re-labels it: chain intact, input bindings overwritten
-    #    (docs/vieth_stdp_port.md). The paper only ever trains in random block
-    #    order and never tests blocked lists. Every multi-list section here --
-    #    multiple_sequences, continual_chain, paired_associate, schema -- is
-    #    blocked, and it scores zero on all of them for this reason. The
-    #    interleaved condition in multiple_sequences is the control that shows
-    #    it holds both lists when they share the stream. A property of the
-    #    model under a protocol its paper does not use; reported, not patched.
-    # 2. FENCED INGESTION COSTS IT MORE THAN OVERLAP DOES. On a 6-item sequence
-    #    it reaches 1.00 cued and 1.00 autoregressive recall trained as one
-    #    continuous stream, and 0.40 / 0.20 trained through fit_sequence's
-    #    fenced passes -- and that gap does NOT close with exposure
-    #    (bin/vieth_stdp_sanity.py). Its assemblies form by recurrent
-    #    competition, which a cold start at every pass disrupts. State the
-    #    ingestion regime in any caption; for this arm it is not neutral.
-    # 3. It needs FAR more exposure than the rate arms. Its homeostatic
-    #    threshold has to settle before the recurrent chain can free-run at all,
-    #    which took ~20000 presentations upstream. n_epochs=200 is a compromise
-    #    that keeps the suites runnable; expect an unsettled network and score it
-    #    as such rather than as a capability claim.
-    # "vieth_gaba_stdp": {
-    #     "class": CodecViethNetwork,
-    #     # Spiking arm behind the codec, trained through fit_event, so the same
-    #     # three modalities the Bush arm carries.
-    #     "modalities": ["spatial", "symbolic", "online_symbolic"],
-    #     "default_kwargs": {
-    #         "n_epochs": 200,
-    #         # Codec condition, matched to the Bush arm's so the two spiking arms
-    #         # are read on the same substrate (spec S2.5 -- state it in captions).
-    #         "n_per_feature": 5,
-    #         "window_steps": 50,
-    #         # Upstream's protocol: ONE network iteration per item. The STDP
-    #         # window is exactly one iteration wide, so presenting a 50-step codec
-    #         # window instead makes 49 of every 50 pairs a within-item self-pair
-    #         # and buries the transition. See the module docstring.
-    #         "presentation_steps": 1,
-    #         # The network's pipeline is two iterations deep, so lag 2 is the
-    #         # first genuinely predictive state; lag 1 reads the cue back.
-    #         "cue_lag": 2,
-    #         "recall_steps": 1,
-    #         "exc_per_input": 0.5,
-    #         "seed": 42,
-    #     }
-    # },
-    # Tully, Linden, Hennig & Lansner (2016) spike-based BCPNN -- the roster's
-    # spiking x online arm WITH a real membrane (AdEx, conductance synapses,
-    # adaptation, short-term depression). Rule reimplemented against the
-    # authors' NEST 2.2 synapse module (transliterated as the oracle in
-    # tests/test_bcpnn_spiking.py); network from the Methods and S1 Appendix.
-    # Correctness gate on the paper's own 9x10x30 task: bin/bcpnn_gate.py
-    # (PASS: cued CRP lag-1 0.99, D_L 0.75, 34 Hz attractors, 2 seeds).
-    #
-    # THREE THINGS TO KNOW BEFORE READING A SCORE OFF THIS ARM.
-    #
-    # 1. The gains are CALIBRATED TO THE PAPER'S FIGURES, not its text. Eq 4
-    #    with the stated gains gives weights 3x (AMPA) and 40x (NMDA) larger
-    #    than the paper plots and a replay 4x hotter than it shows; with
-    #    ampa_calib=0.3 / nmda_calib=0.025 the reimplementation matches the
-    #    plotted weights AND the plotted recall regime (20-40 Hz attractors).
-    #    Replay is still ~2x faster than the paper's 3-7 attractors/s.
-    #    bin/bcpnn_gate.py --calibrate prints both. docs/bcpnn_spiking_port.md.
-    # 2. Its columnar structure is the codec's: hypercolumn = feature, the two
-    #    minicolumns = ON/OFF. That makes every dense item share ~50% of its
-    #    cells with every other -- the paper's patterns share 0% -- so the
-    #    log-ratio weights sit near chance and attractors are weak. On the
-    #    hierarchical substrate items are small (8 features x n_per_feature
-    #    cells) and live in disjoint hypercolumns, so the paper's
-    #    within-hypercolumn handover has nothing to act on. Measured next-item
-    #    accuracy through the codec is 0.4-0.6 on 6-item lists at every
-    #    readout window scanned (bin/bcpnn_gate.py --codec), against 1.00 on
-    #    the paper's geometry. A floor, and an attributable one; see the
-    #    port note before reading anything into it.
-    # 3. Two conditions are SITED PER SUBSTRATE and belong in every caption:
-    #    w_stim (the paper's 5 nS at 200 Hz is 7 Hz here; unit-norm items
-    #    drive 20-70 Hz, and 50 nS brings training to ~f_max on both
-    #    substrates) and pattern_cells (the recurrent-gain normalisation;
-    #    250 is the symbolic pipeline's measured active count, ~40 is the
-    #    hierarchical encoder's at n_per_feature=5).
-    # DROPPED 2026-09-23: spiking arms are out of the paper roster (rate arms
-    # only). Entry kept verbatim below so it can be restored; its budget was
-    # never re-sized after the 2026-09-06 paper-value changes.
-    # "bcpnn_spiking": {
-    #     "class": CodecBCPNNNetwork,
-    #     "modalities": ["spatial", "symbolic", "online_symbolic"],
-    #     "default_kwargs": {
-    #         # P traces converge within ~10 passes (paper S7 Fig; tau_p = 5 s
-    #         # against 0.6 s per pass); 20 matches the Bush arm's unit.
-    #         "n_epochs": 20,
-    #         # Codec condition matched to the other two spiking arms (spec S2.5).
-    #         "n_per_feature": 5,
-    #         "window_steps": 50,
-    #         # Two 50 ms windows = the paper's 100 ms stimulus.
-    #         "cue_repeats": 2,
-    #         # Readout: the 100 ms right after the cue. The successor appears
-    #         # within 0-50 ms of cue offset on every substrate scanned and the
-    #         # cued attractor's tail is what a lag would have to trade against.
-    #         "readout_lag_ms": 0,
-    #         "recall_steps": 100,
-    #         # Sited on the symbolic pipeline's substrate (note 3).
-    #         "pattern_cells": 250,
-    #         "overrides": {"w_stim": 50.0},
-    #         # Cost. A probe simulates 200 ms of the whole circuit and the suite
-    #         # makes 180 probes per score, so the circuit is run at 3 basket
-    #         # cells per hypercolumn (the basket->pyr gain is normalised by the
-    #         # count, so a volley delivers the paper's inhibition either way;
-    #         # 1 per hypercolumn is too coarse a WTA and floors) and 0.5 ms
-    #         # membrane substeps (semi-implicit, so stable). Probe 0.47 s ->
-    #         # 0.08 s, same scores; paper gate re-checked at these settings.
-    #         "n_basket_per_hc": 3,
-    #         "substeps": 2,
-    #         "seed": 42,
-    #     }
-    # },
-    # The same arm on the interval-coded COLUMNAR codec -- the format its
-    # paper prescribes for a continuous variable (S1 Appendix: one
-    # hypercolumn per variable, one minicolumn per interval, one active at a
-    # flat rate). Fixed from the paper's side, never re-sited per section:
-    # 10 minicolumns per dimension, 3 cells each (300 cells per item against
-    # the paper's 270), 200 Hz for 100 ms, bins over +-2.5 SD of an isotropic
-    # unit-norm coordinate. On the population codec above the arm's memory is
-    # empty (in-item weight 0.36 nS vs the paper's ~4); on this code it learns
-    # the paper's weights and recalls 7-item lists at 1.00 (standalone
-    # verification in docs/capacity_report_bcpnn.md sec 1b-1c). Its known
-    # weaknesses are the code's resolution -- vector-space cue noise flips
-    # bins -- and the paper's own load limit (10 patterns in 10 minicolumns).
-    # Both are results, not things to tune away.
-    # DROPPED 2026-09-23: spiking arms are out of the paper roster (rate arms
-    # only). Entry kept verbatim below so it can be restored; its budget was
-    # never re-sized after the 2026-09-06 paper-value changes.
-    # "bcpnn_spiking_columnar": {
-    #     "class": CodecBCPNNNetwork,
-    #     "modalities": ["spatial", "symbolic", "online_symbolic"],
-    #     "default_kwargs": {
-    #         "codec": "columnar",
-    #         "n_mc": 10,
-    #         "n_per_mc": 3,
-    #         "z_range": 2.5,
-    #         "n_epochs": 20,
-    #         # cue = the codec's 100 ms window once; readout the 100 ms after.
-    #         "readout_lag_ms": 0,
-    #         "recall_steps": 100,
-    #         # Paper's stimulus synapse at the paper's 200 Hz (the 50 nS of the
-    #         # population entry compensated for graded, weaker drive).
-    #         "overrides": {"w_stim": 15.0},
-    #         "n_basket_per_hc": 3,
-    #         "substeps": 2,
-    #         "seed": 42,
-    #     }
-    # },
-    # "eqprop": {
-    #     "class": EqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic"],
-    #     "default_kwargs": {
-    #         "learning_rate": 0.1,
-    #         "n_epochs": 100,
-    #         "beta": 0.5,
-    #         "activation": "tanh",
-    #         "seed": 42
-    #     }
-    # },
     "original_eqprop": {
         "class": OriginalEqPropSequenceNetwork,
         # online_symbolic added 2026-09-03. The arm has declared OnlineTrainable
@@ -346,110 +79,6 @@ MODEL_REGISTRY = {
         },
         "modality_kwargs": {"spatial": {"n_epochs": 85}}
     },
-    # "dg_original_eqprop": {
-    #     "class": DGOriginalEqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic"],
-    #     "default_kwargs": {
-    #         "n_dg": 1000,
-    #         "dg_target_sparsity": 0.05,
-    #         "dg_inhibition": 1.0,
-    #         "learning_rate": 0.1,
-    #         "n_epochs": 300,
-    #         "beta": 0.5,
-    #         "seed": 42,
-    #         "dg_seed": 42
-    #     }
-    # },
-    # "dg_xdg_eqprop": {
-    #     "class": DGXdGEqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic"],
-    #     # Wide + sparse: large n_hidden with a small gate keeps per-item capacity
-    #     # (~41 units/item) while keeping subnetworks disjoint under many
-    #     # interferers — cumulative coverage ~(1-gate_sparsity)^n_interferers.
-    #     # Heavier compute than a narrow net; shrink n_hidden to trade retention
-    #     # for speed.
-    #     "default_kwargs": {
-    #         "n_dg": 1000,
-    #         "dg_target_sparsity": 0.05,
-    #         "dg_inhibition": 1.0,
-    #         "n_hidden": 2048,
-    #         "gate_sparsity": 0.02,
-    #         "learning_rate": 0.1,
-    #         "n_epochs": 300,
-    #         "beta": 0.5,
-    #         "seed": 42,
-    #         "dg_seed": 42,
-    #         "gate_seed": 42
-    #     }
-    # },
-    # "ewc_dg_xdg_eqprop": {
-    #     "class": EWCDGXdGEqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic"],
-    #     # Small/fast hidden layer: EWC protects A-important weights directly, so
-    #     # retention no longer needs a wide layer. gate_sparsity=1.0 disables XdG
-    #     # (EWC alone beats EWC+XdG here — XdG's gating costs learning capacity).
-    #     # ewc_lambda sweet spot is a flat plateau ~[3e4, 1e5] (A~0.89 retained,
-    #     # B~0.98 learned); it collapses by ~3e5 (over-constrained). Fisher is
-    #     # tiny (~1e-3) so lambda must be large.
-    #     "default_kwargs": {
-    #         "n_dg": 1000,
-    #         "dg_target_sparsity": 0.05,
-    #         "dg_inhibition": 1.0,
-    #         # "n_hidden": 128,
-    #         "gate_sparsity": 1.0,
-    #         "ewc_lambda": 30000.0,
-    #         "ewc_decay": 0.0,
-    #         "learning_rate": 0.1,
-    #         "n_epochs": 300,
-    #         "beta": 0.5,
-    #         "seed": 42,
-    #         "dg_seed": 42,
-    #         "gate_seed": 42
-    #     }
-    # },
-    # "ewc_original_eqprop": {
-    #     "class": EWCOriginalEqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic"],
-    #     # EWC directly on the plain net (no DG, no XdG) — the control for
-    #     # measuring whether the DG front-end adds anything over plain EWC.
-    #     "default_kwargs": {
-    #         # "n_hidden": 128,
-    #         "ewc_lambda": 30000.0,
-    #         "ewc_decay": 0.0,
-    #         "learning_rate": 0.1,
-    #         "n_epochs": 300,
-    #         "beta": 0.5,
-    #         "seed": 42
-    #     }
-    # },
-    # "dg_eqprop": {
-    #     "class": DGEqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic"],
-    #     "default_kwargs": {
-    #         "n_dg": 1000,
-    #         "sparsity": 0.05,
-    #         "learning_rate": 0.1,
-    #         "n_epochs": 100,
-    #         "beta": 0.5,
-    #         "activation": "tanh",
-    #         "seed": 42
-    #     }
-    # },
-    # "ewc_dg_eqprop": {
-    #     "class": EWCDGEqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic"],
-    #     "default_kwargs": {
-    #         "n_dg": 1000,
-    #         "sparsity": 0.05,
-    #         "learning_rate": 0.1,
-    #         "n_epochs": 100,
-    #         "beta": 0.5,
-    #         "activation": "tanh",
-    #         "seed": 42,
-    #         "ewc_lambda": 100.0,
-    #         "ewc_method": "lr"
-    #     }
-    # },
     # --- non-EP arm: temporal predictive coding (Tang, Barron & Bogacz 2023) --
     # Registered 2026-09-03. Its absence was an oversight, not a decision:
     # models/baselines/__init__.py records tPC and DTS-ESN as "a crucial part of
@@ -522,21 +151,12 @@ MODEL_REGISTRY = {
         },
         "modality_kwargs": {"spatial": {"n_epochs": 8}}
     },
-    # The only arm clocked by elapsed TIME rather than event ordinal: it declares
-    # TemporallyClocked and TimingPredictive (memval/models/capabilities.py), so
-    # it is the only one that can answer Serial order's interval questions
-    # (docs/capacity_questions.md 5.4, 5.5 -- half that capacity's weight). It
-    # also declares OnlineTrainable. kwargs follow examples/dts_esn_*_demo.py;
-    # predict_timing=True enables the timing head that 5.5 needs. The reservoir
-    # is fixed; the RLS readout keeps updating across passes, and fit_sequence
-    # loops `epochs` times (resetting context each pass). n_epochs=1 is the
-    # ordinal-clocked baseline exposure, not a statement that more is inert.
     # --- non-EP arm: theta-phase encode/retrieve (Hasselmo, Bodelon & Wyble 2002) -
     # Registered 2026-09-03 for the zoo capacity run. The arm was implemented and
     # demoed (examples/theta_phase_demo.py) but never reachable from this
     # registry, so no suite could run it.
     #
-    # It is the CONTROLLED PAIR for `hopfield`: at the paper's optimal phases
+    # It is the CONTROLLED PAIR for `ahn`: at the paper's optimal phases
     # (phi_EC = phi_LTP = 0, phi_CA3 = pi, X = 1) the theta cycle integral
     # reduces exactly to the delta rule, so this arm takes the *identical* weight
     # step as AsymmetricHopfieldNetwork at the same learning_rate. The one
@@ -546,7 +166,7 @@ MODEL_REGISTRY = {
     # phase separation instead of explicit subtraction. Any divergence from the
     # AHN scorecard is a bug or a readout effect, not a model difference.
     #
-    # n_epochs=1 matches hopfield: the arm is naturally online and one pass is the
+    # n_epochs=1 matches ahn: the arm is naturally online and one pass is the
     # honest default. Sections that need more staircase up to it.
     "theta": {
         "class": ThetaPhaseSequenceNetwork,
@@ -568,79 +188,15 @@ MODEL_REGISTRY = {
         },
         "modality_kwargs": {"spatial": {"n_epochs": 4}}
     },
-    # --- spiking EP (O'Connor, Gavves & Welling, AISTATS 2019) ----------------
-    # Registered 2026-09-03. Thin wrapper over the authors' vendored code at
-    # memval/vendor/spiking_eqprop. The LEARNING RULE is unchanged EP; what
-    # changes is the communication channel between neurons (binary sigma-delta
-    # spikes + leaky predictive decode instead of real-valued rates). So it is
-    # read against `original_eqprop`, and `quantizer=None` through the same code
-    # path is its own exact real-valued control.
-    #
-    # `random_flip_beta=False` departs from upstream deliberately and this is a
-    # REGIME landmine, not a tuning choice: upstream's MNIST run takes ~3000
-    # minibatch updates per epoch so the sign noise averages out; MemVal takes
-    # one full-batch update per epoch over a handful of transitions, where it
-    # does not (0.24 vs 0.88 next-item accuracy on the demo chain over 5 seeds).
-    #
-    # 100/50 settling ticks is upstream's "longer" setting, and it is NOT a knob
-    # to trade for speed: it is the paper's own calibration. Their ablation
-    # (demo_mnist_quantized_eqprop.py, X_osa_1hid_longer) at epoch 25 --
-    #     n_neg/n_pos  20/4 -> 6.20% test error
-    #                 50/20 -> 4.68%
-    #                100/20 -> 3.25%
-    #                100/50 -> 2.58%   <- this setting, and the paper's result
-    # Note the assignment: the paper's prose reads "the positive and negative
-    # phases to (100, 50) respectively", which is backwards; the code is
-    # authoritative and says n_negative_steps=100, n_positive_steps=50.
-    #
-    # `input_gain` is left at the arm's own default of sqrt(n_features) rather
-    # than pinned here. That default exists because MemVal's encoders emit
-    # UNIT-NORM vectors, so per-component magnitude falls as 1/sqrt(n_features),
-    # while upstream's MNIST pixels already fill the neurons' [0, 1] domain. At
-    # the old gain of 1.0 a 100-dim embedding mapped into [0.15, 0.79] -- every
-    # neuron saw a near-constant 0.5 -- and the arm floored at chance (MRR 0.167
-    # on a 7-item list) for ANY budget from 1 to 512 updates. With the gain it
-    # reaches criterion in 32. Diagnosed 2026-09-04; see the arm's module
-    # docstring for the measured sweep.
-    #
-    # Cost note: `n_epochs=100` here means 100 full-batch updates, because a
-    # MemVal sequence is a handful of transitions that fit in ONE batch.
-    # Upstream's n_epochs=25 over 50k MNIST images at minibatch_size=20 is
-    # ~2.5k updates per epoch, ~62k in total. These are not the same unit, and
-    # our budget is the far smaller one -- do not read `n_epochs=100` as
-    # "more training than the paper".
-    # DROPPED 2026-09-23: spiking arms are out of the paper roster (rate arms
-    # only). Entry kept verbatim below so it can be restored; its budget was
-    # never re-sized after the 2026-09-06 paper-value changes.
-    # "spiking_eqprop": {
-    #     "class": SpikingEqPropSequenceNetwork,
-    #     "modalities": ["spatial", "symbolic", "online_symbolic"],
-    #     "default_kwargs": {
-    #         # Paper width (O'Connor, Gavves & Welling 2019: 784-500-10), set
-    #         # 2026-09-06; was (100,) on the argument that MemVal sequences are
-    #         # small. beta and learning_rate are not stated in the paper's main
-    #         # text and stay as they were.
-    #         "hidden_sizes": (500,),
-    #         "quantizer": "sigma_delta",
-    #         "n_negative_steps": 100,
-    #         "n_positive_steps": 50,
-    #         "beta": 0.5,
-    #         "random_flip_beta": False,
-    #         "learning_rate": 0.05,
-    #         # STALE BUDGET (2026-09-06): n_epochs was sized as 2x epochs-to-criterion
-    #         # under the PREVIOUS hyper-parameters. The settings below were then reset
-    #         # to the mother paper's values without re-running; re-size before use.
-    #         "n_epochs": 22,
-    #         "seed": 42
-    #     },
-    #     # Place codes are sparse and already in [0,1]; the symbolic mapping
-    #     # (offset .5, gain sqrt(n)) flattens them to a constant 0.5 and the arm
-    #     # scores 0.0 at ANY budget. With the [0,1] mapping it reaches criterion
-    #     # at 257 -> spatial budget 514 (2x); symbolic/online use 22 (2x L=7).
-    #     "modality_kwargs": {
-    #         "spatial": {"input_offset": 0.0, "input_gain": 1.0, "n_epochs": 514}
-    #     }
-    # },
+    # The only arm clocked by elapsed TIME rather than event ordinal: it declares
+    # TemporallyClocked and TimingPredictive (memval/models/capabilities.py), so
+    # it is the only one that can answer Serial order's interval questions
+    # (docs/capacity_questions.md 5.4, 5.5 -- half that capacity's weight). It
+    # also declares OnlineTrainable. kwargs follow examples/dts_esn_*_demo.py;
+    # predict_timing=True enables the timing head that 5.5 needs. The reservoir
+    # is fixed; the RLS readout keeps updating across passes, and fit_sequence
+    # loops `epochs` times (resetting context each pass). n_epochs=1 is the
+    # ordinal-clocked baseline exposure, not a statement that more is inert.
     "dts_esn": {
         "class": DTSESNSequenceNetwork,
         "modalities": ["spatial", "symbolic", "online_symbolic"],
@@ -669,6 +225,14 @@ MODEL_REGISTRY = {
         }
     }
 }
+
+# Old registry names that still resolve, so pre-rename commands keep working.
+MODEL_ALIASES = {"hopfield": "ahn"}
+
+
+def resolve_model_name(name: str) -> str:
+    """argparse ``type=`` for ``--model``: map a legacy alias to its registry key."""
+    return MODEL_ALIASES.get(name, name)
 
 # EP (Equilibrium Propagation) models settle iteratively and need a far larger
 # epoch budget to reach the convergence threshold than one-shot associators, so
@@ -753,7 +317,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run MemVal sequence memory benchmark pipelines.")
     parser.add_argument(
         "--model",
-        type=str,
+        type=resolve_model_name,
         default=None,
         choices=list(MODEL_REGISTRY.keys()),
         help="Name of the model to benchmark (required unless --list-benchmarks)."

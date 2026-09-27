@@ -20,7 +20,6 @@ __pycache__/
 
 # Scratch: clones, build output, throwaway runs
 scratch/*
-!scratch/vieth_ref.py
 .tmp_eqprop/
 
 # Run byproducts

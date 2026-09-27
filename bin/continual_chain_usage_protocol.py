@@ -29,7 +29,7 @@ competitor) after every block, because accuracy saturates on the frequently
 used tasks and the ranking lives above that floor. Chain, material and probe
 are the continual_chain section's own.
 
-    python bin/continual_chain_usage_protocol.py --model hopfield --out results/ahn_capacity_run
+    python bin/continual_chain_usage_protocol.py --model ahn --out results/ahn_capacity_run
 """
 from __future__ import annotations
 
@@ -46,7 +46,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..")))
 sys.path.insert(0, HERE)
 
-from run_benchmark import MODEL_REGISTRY  # noqa: E402
+from run_benchmark import MODEL_REGISTRY, resolve_model_name  # noqa: E402
 
 from memval.benchmarks._selection import resolve_epochs_default  # noqa: E402
 from memval.benchmarks.continual_chain import (  # noqa: E402
@@ -93,7 +93,7 @@ def load_chain(model_class, default_kwargs, vocab, *, n_tasks, seq_len, sigma, r
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--model", default="hopfield", choices=sorted(MODEL_REGISTRY))
+    ap.add_argument("--model", default="ahn", type=resolve_model_name, choices=sorted(MODEL_REGISTRY))
     ap.add_argument("--out", default="results/usage_protocol")
     ap.add_argument("--rho-b", type=float, default=0.75,
                     help="between-task cosine for the pressure conditions (0.75 forgets 0.18 on AHN)")

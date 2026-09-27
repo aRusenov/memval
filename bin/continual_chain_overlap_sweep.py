@@ -41,8 +41,8 @@ picks them up beside ``continual_chain_retention.png``:
 and ``continual_chain_overlap_sweep.json`` with every per-seed matrix, summary,
 exposure record and the measured geometry of each rung.
 
-    python bin/continual_chain_overlap_sweep.py --model hopfield --out results/ahn_capacity_run
-    python bin/continual_chain_overlap_sweep.py --model hopfield --dials between --between-rungs 0,0.5,0.9
+    python bin/continual_chain_overlap_sweep.py --model ahn --out results/ahn_capacity_run
+    python bin/continual_chain_overlap_sweep.py --model ahn --dials between --between-rungs 0,0.5,0.9
 """
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..")))
 sys.path.insert(0, HERE)
 
-from run_benchmark import MODEL_REGISTRY  # noqa: E402  (bin/ on the path above)
+from run_benchmark import MODEL_REGISTRY, resolve_model_name  # noqa: E402  (bin/ on the path above)
 
 from memval.benchmarks._selection import resolve_epochs_default  # noqa: E402
 from memval.benchmarks.continual_chain import (  # noqa: E402
@@ -196,7 +196,7 @@ def aggregate(runs: List[Dict[str, Any]], chance_level: float) -> Dict[str, Any]
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--model", default="hopfield", choices=sorted(MODEL_REGISTRY))
+    ap.add_argument("--model", default="ahn", type=resolve_model_name, choices=sorted(MODEL_REGISTRY))
     ap.add_argument("--out", default="results/overlap_sweep",
                     help="run directory; figures go to <out>/<ClassName>/symbolic/plots/")
     ap.add_argument("--dials", default="between,within",

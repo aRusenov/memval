@@ -304,16 +304,10 @@ def run_online_symbolic_pipeline(
 
 
 if __name__ == "__main__":
-    from memval.models.baselines.hopfield import HopfieldSequenceNetwork
-    
-    # Run the online pipeline for Hopfield with Hebbian, Delta, and Projection rules
-    for method in ["hebbian", "delta", "projection"]:
-        run_online_symbolic_pipeline(
-            model_class=HopfieldSequenceNetwork,
-            model_kwargs={
-                "learning_rate": 0.1,
-                "activation": "linear",
-                "fit_method": method
-            },
-            run_name=f"HopfieldSequenceNetwork_{method}"
-        )
+    from memval.models.baselines import AsymmetricHopfieldNetwork
+
+    run_online_symbolic_pipeline(
+        model_class=AsymmetricHopfieldNetwork,
+        model_kwargs={"learning_rate": 0.1, "activation": "relu", "n_epochs": 2},
+        run_name="AsymmetricHopfieldNetwork_online",
+    )

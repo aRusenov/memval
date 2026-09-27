@@ -14,7 +14,7 @@ informative one can be chosen:
   reward (forced)     reward predicted teacher-forced along the original route
   odour (forced)      cheese odour predicted along the arm / original
 
-    python bin/extinction_timeline.py --model hopfield --learning-rate 0.05 --epochs 1
+    python bin/extinction_timeline.py --model ahn --learning-rate 0.05 --epochs 1
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..")))
 sys.path.insert(0, HERE)
-from run_benchmark import MODEL_REGISTRY  # noqa: E402
+from run_benchmark import MODEL_REGISTRY, resolve_model_name  # noqa: E402
 from memval.benchmarks.extinction_preference import (  # noqa: E402
     ExtinctionPreferenceBenchmark, arm_rollout, choice_margin, choice_margin_ceiling, other)
 from memval.generators.t_maze_extinction import TMazeExtinctionGenerator as G  # noqa: E402
@@ -98,7 +98,7 @@ def run(model_class, kwargs, seed, args, extinguish: str) -> List[Dict[str, Any]
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--model", default="hopfield", choices=sorted(MODEL_REGISTRY))
+    ap.add_argument("--model", default="ahn", type=resolve_model_name, choices=sorted(MODEL_REGISTRY))
     ap.add_argument("--out", default="results/extinction_preference")
     ap.add_argument("--seeds", default="0,1,2,3,4,5,6,7,8,9,10,11")
     ap.add_argument("--per-phase", type=int, default=5)

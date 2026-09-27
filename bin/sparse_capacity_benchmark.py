@@ -64,8 +64,8 @@ retained at equal exposure, so equalising exposure is the point. That makes the
 curve a capacity-at-fixed-cost reading, and an arm that simply needs more passes
 will look worse than one that does not -- state it when comparing arms.
 
-    python bin/sparse_capacity_benchmark.py --model hopfield --out results/sparse_capacity
-    python bin/sparse_capacity_benchmark.py --model hopfield --active 20 --category-core 0.8
+    python bin/sparse_capacity_benchmark.py --model ahn --out results/sparse_capacity
+    python bin/sparse_capacity_benchmark.py --model ahn --active 20 --category-core 0.8
 
 Writes <out>/<ClassName>/sparse_capacity/plots/sparse_capacity_curves.png and
 <out>/<ClassName>/sparse_capacity/sparse_capacity.json -- the same shape as a
@@ -87,7 +87,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..")))
 sys.path.insert(0, HERE)
 
-from run_benchmark import MODEL_REGISTRY  # noqa: E402
+from run_benchmark import MODEL_REGISTRY, resolve_model_name  # noqa: E402
 
 from memval.benchmarks.symbolic_pipeline import (  # noqa: E402
     _get_model_kwargs, mean_recall_rate, measure_recall_associative,
@@ -321,7 +321,7 @@ def plot_positions(conditions: List[Dict[str, Any]], path: str, title: str,
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--model", default="hopfield", choices=sorted(MODEL_REGISTRY))
+    ap.add_argument("--model", default="ahn", type=resolve_model_name, choices=sorted(MODEL_REGISTRY))
     ap.add_argument("--out", default="results/sparse_capacity")
     ap.add_argument("--n-items", type=int, default=100)
     ap.add_argument("--block", type=int, default=10, help="items per ingestion call in A")

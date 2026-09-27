@@ -27,7 +27,7 @@ EXTRA=("$@")
 #
 #   max_epochs=N  lowers the CEILING of the criterion staircase. An arm that
 #                 reaches criterion below N is bit-identical to an uncapped run
-#                 (hopfield reaches symbolic_disambiguation at 3 epochs, dts_esn
+#                 (ahn reaches symbolic_disambiguation at 3 epochs, dts_esn
 #                 at 1, temporal_pc at 37); only an arm that would have run past
 #                 N is truncated, and it was already reporting
 #                 `criterion_reached: False`.

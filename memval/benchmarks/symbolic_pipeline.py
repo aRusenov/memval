@@ -1237,12 +1237,11 @@ def run_symbolic_pipeline(
 
             # 3. INTERLEAVED ingestion condition (added 2026-09-04). The blocked
             # protocol above -- A to criterion, then B to criterion -- is one
-            # ingestion order, and for at least one arm it is the wrong one:
-            # the Vieth STDP arm sizes every assembly by how often its item
-            # occurs in the stream, so a list presented alone takes the whole
-            # network and the next list re-labels it (docs/vieth_stdp_port.md).
-            # Its source paper only ever trains sequences in random block
-            # order. This condition trains A and B as ONE stream, blocks in a
+            # ingestion order, and for some arms it is the wrong one: an arm
+            # that sizes every assembly by how often its item occurs in the
+            # stream gives a list presented alone the whole network, and the
+            # next list re-labels it (the retired Vieth STDP arm did exactly
+            # this). This condition trains A and B as ONE stream, blocks in a
             # seeded random order with each list getting exactly `ep` passes
             # (so per-list exposure matches the blocked condition), to a
             # criterion on the WORSE of the two lists, then reads both. The
