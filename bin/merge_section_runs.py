@@ -18,8 +18,8 @@ their ``metrics`` and ``series`` dicts (later runs win on a duplicate key,
 which is reported), copies side files (``cue_masking_metrics.json``,
 ``schema_consistency_metrics.json``, plots) and writes the merged suite file.
 
-    python bin/merge_section_runs.py --class CodecBCPNNNetwork --suite symbolic \
-        --sections-root results/zoo_capacity_run/_bcpnn_sections \
+    python bin/merge_section_runs.py --class OriginalEqPropSequenceNetwork --suite symbolic \
+        --sections-root results/zoo_capacity_run/_ep_sections \
         --out results/zoo_capacity_run
 
 Section-subset runs are not bit-identical to a full-suite run (probe noise

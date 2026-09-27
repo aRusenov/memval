@@ -61,8 +61,6 @@ ARMS = [
     ("recirc",     "PredictiveRecirculationNetwork","rate",   "all-plastic"),
     ("EP",         "OriginalEqPropSequenceNetwork","rate",    "all-plastic"),
     ("DTS-ESN",    "DTSESNSequenceNetwork",        "rate",    "readout only"),
-    ("spiking EP", "SpikingEqPropSequenceNetwork", "spiking", "all-plastic"),
-    ("Vieth STDP", "CodecViethNetwork",            "spiking", "one matrix"),
 ]
 
 # Sequential blue ramp, steps 100 -> 700 (dataviz reference palette).
@@ -133,10 +131,6 @@ def draw(arms, out, title):
                 fontweight="bold", color=INK, transform=ax.transData)
         ax.text(-0.06, r + 0.68, f"{grain} · {locus}", ha="right", va="center",
                 fontsize=8.2, color=INK3)
-    # rate / spiking separator
-    first_spk = next(i for i, a in enumerate(arms) if a[1] == "spiking")
-    ax.plot([-0.9, 5], [first_spk, first_spk], color=INK3, lw=0.9, ls=(0, (4, 3)),
-            clip_on=False)
     for c, cap in enumerate(CAPACITIES):
         ax.text(c + 0.5, -0.12, CAP_SHORT[cap], ha="center", va="bottom",
                 fontsize=10.5, color=INK, fontweight="semibold")

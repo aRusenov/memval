@@ -151,7 +151,7 @@ add("delta_mrr_forgetting", "Continual retention", "load", "material",
 # INTERLEAVED ingestion condition (added 2026-09-04). Same lists, same per-list
 # exposure, but A and B are trained as one stream in seeded random block order
 # to a criterion on the worse list. The blocked keys above are one ingestion
-# order; for an arm that sizes assemblies by item frequency (Vieth STDP) it is
+# order; for an arm that sizes assemblies by item frequency (the retired Vieth STDP arm) it is
 # the order under which a list presented alone takes the whole network. Its
 # source paper only ever trains in random block order, so without this
 # condition the section could not distinguish "cannot hold two lists" from
@@ -2083,7 +2083,7 @@ def gate_chain_readouts(rows: List[Dict[str, Any]], guards: Dict[str, Any]) -> i
     `chain_avg_forgetting` is lower-is-better and `chain_retention_ratio` is a
     ratio of what survived to what was learned. On an arm whose chain accuracy
     never left chance, forgetting is ~0 because there was nothing to forget, and
-    that normalised to a near-perfect stability score: the Vieth STDP arm
+    that normalised to a near-perfect stability score: the (retired) Vieth STDP arm
     (2026-09-04) scored 0.41 on `load` with `chain_acquired` False and chain
     ACC 0.042 against chance 0.033. The same class of defect as the sign
     inversion of 2026-09-04 (a normaliser for forgetting is untestable on an arm

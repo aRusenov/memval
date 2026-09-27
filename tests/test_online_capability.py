@@ -20,9 +20,7 @@ from memval.models.capabilities import (
 )
 from memval.models.baselines import (
     AsymmetricHopfieldNetwork,
-    DGOriginalEqPropSequenceNetwork,
     DTSESNSequenceNetwork,
-    HopfieldSequenceNetwork,
     MultilayerTemporalPCNetwork,
     OriginalEqPropSequenceNetwork,
     TemporalPCNetwork,
@@ -83,10 +81,14 @@ def test_declaring_without_implementing_fails_at_construction():
 
 
 def test_capability_is_inherited_by_subclassed_arms():
-    """DG-EqProp inherits `fit_event` from OriginalEqProp and overrides
-    `_transition_deltas`, which that inherited path calls -- so the streamed
-    route really is DG-gated and the inherited declaration is honest."""
-    assert supports_online(DGOriginalEqPropSequenceNetwork)
+    """A subclass of an online arm inherits `fit_event` and with it the
+    declaration, without restating it."""
+
+    class Subclassed(OriginalEqPropSequenceNetwork):
+        pass
+
+    assert supports_online(Subclassed)
+    assert supports_online(Subclassed(n_features=N_FEATURES, n_hidden=8, seed=0))
 
 
 # ---------------------------------------------------------------------------
@@ -105,8 +107,7 @@ def test_ingest_rejects_an_unknown_regime():
 
 
 def test_batch_ingest_works_on_arms_whose_fit_sequence_omits_context_data():
-    """`original_eqprop`, `hopfield` and `eq_prop` declare
-    `fit_sequence(self, sequence_data, **kwargs)`. Passing context positionally
+    """`original_eqprop` declares `fit_sequence(self, sequence_data, **kwargs)`. Passing context positionally
     raises TypeError, so `ingest` must pass it by keyword."""
     model = OriginalEqPropSequenceNetwork(n_features=N_FEATURES, n_hidden=8, seed=0)
     ingest(model, _seq(), regime="batch")
@@ -168,22 +169,3 @@ def test_non_equivalent_arms_really_do_differ(cls, kw):
     ingest(a, seq, regime="batch")
     ingest(b, seq, regime="streamed")
     assert _max_delta(a, b) > 1e-6
-
-
-def test_hopfield_equivalence_is_config_dependent():
-    """Why Hopfield declares False despite matching under its own defaults:
-    equivalence depends on (activation, fit_method), so the class-level claim
-    has to be the conservative one. This test pins the table in its docstring."""
-    expected = {
-        ("linear", "projection"): True, ("linear", "hebbian"): False, ("linear", "delta"): True,
-        ("sign", "projection"): True,   ("sign", "hebbian"): False,   ("sign", "delta"): False,
-        ("tanh", "projection"): True,   ("tanh", "hebbian"): False,   ("tanh", "delta"): True,
-    }
-    assert not is_online_equivalent(HopfieldSequenceNetwork)
-    seq = _seq()
-    for (act, meth), same in expected.items():
-        kw = dict(n_features=N_FEATURES, activation=act, fit_method=meth)
-        a, b = HopfieldSequenceNetwork(**kw), HopfieldSequenceNetwork(**kw)
-        ingest(a, seq, regime="batch")
-        ingest(b, seq, regime="streamed")
-        assert (_max_delta(a, b) == 0.0) is same, f"{act}/{meth}"

@@ -19,7 +19,7 @@ EXTRA=("$@")
 # Extra args are forwarded to the two suite runs, so a slow arm can be given a
 # lower staircase ceiling, e.g.
 #
-#   bin/run_capacity_arm.sh spiking_eqprop SpikingEqProp... <out> 30 \
+#   bin/run_capacity_arm.sh original_eqprop OriginalEqPropSequenceNetwork <out> 30 \
 #       --benchmark-args symbolic_disambiguation:max_epochs=128
 #
 # Use `max_epochs=N`, NOT `epochs=N`. They are different knobs and only one of
@@ -43,8 +43,9 @@ EXTRA=("$@")
 # per-arm decision, which is why this is an argument and not a default.
 #
 # Cost, for scale: symbolic_disambiguation sweeps ~30 points across seven axes
-# and trains every one to criterion. On spiking_eqprop, which never reaches it,
-# that section alone took 34 minutes of a 45-minute symbolic suite.
+# and trains every one to criterion. On an arm that never reaches it (the
+# retired spiking EP arm), that section alone took 34 minutes of a 45-minute
+# symbolic suite.
 
 LOG="$OUT/_logs"; mkdir -p "$LOG"
 say() { echo "[$(date +%H:%M:%S)] $MODEL: $*"; }

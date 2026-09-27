@@ -304,10 +304,11 @@ def run_online_symbolic_pipeline(
 
 
 if __name__ == "__main__":
-    from memval.models.baselines import AsymmetricHopfieldNetwork
+    from memval.models.baselines import ThetaPhaseSequenceNetwork
 
+    # Theta, the online twin of AHN (AHN itself is batch-only).
     run_online_symbolic_pipeline(
-        model_class=AsymmetricHopfieldNetwork,
-        model_kwargs={"learning_rate": 0.1, "activation": "relu", "n_epochs": 2},
-        run_name="AsymmetricHopfieldNetwork_online",
+        model_class=ThetaPhaseSequenceNetwork,
+        model_kwargs={"learning_rate": 0.1},
+        run_name="ThetaPhaseSequenceNetwork_online",
     )

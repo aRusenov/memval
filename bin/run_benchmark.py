@@ -91,7 +91,7 @@ MODEL_REGISTRY = {
     # state_primed=False, so their delay > 0 rows are protocol floors rather
     # than model results (docs/disambiguation_design.md sec 3, C2).
     #
-    # kwargs follow bin/continual_chain_experiment.py's "tpc2" precedent
+    # kwargs follow the retired continual-chain experiment's "tpc2" precedent
     # (n_hidden=128, learning_rate=0.05). inf_iters is the relaxation budget per
     # timestep and dominates runtime; the reference default is 100.
     "temporal_pc": {

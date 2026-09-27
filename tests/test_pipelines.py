@@ -5,7 +5,7 @@ import json
 import pytest
 import numpy as np
 
-from memval.models.baselines.hopfield import HopfieldSequenceNetwork
+from memval.models.baselines import AsymmetricHopfieldNetwork, ThetaPhaseSequenceNetwork
 from memval.benchmarks.spatial_pipeline import run_spatial_pipeline
 from memval.benchmarks.symbolic_pipeline import run_symbolic_pipeline
 from memval.benchmarks.online_symbolic_pipeline import run_online_symbolic_pipeline
@@ -18,11 +18,11 @@ def temp_results_dir():
     shutil.rmtree(tmpdir)
 
 def test_spatial_pipeline(temp_results_dir):
-    """Test that the spatial pipeline runs successfully with HopfieldSequenceNetwork."""
-    model_class = HopfieldSequenceNetwork
+    """Test that the spatial pipeline runs successfully with AsymmetricHopfieldNetwork."""
+    model_class = AsymmetricHopfieldNetwork
     model_kwargs = {
         "learning_rate": 0.5,
-        "activation": "linear"
+        "activation": "relu"
     }
 
     # Run with small trials to keep tests fast
@@ -49,7 +49,7 @@ def test_spatial_pipeline(temp_results_dir):
     assert "tmaze_disamb_graded_delay0_divergence_accuracy" in metrics
 
     # Check directory structure and file contents
-    run_dir = os.path.join(temp_results_dir, "HopfieldSequenceNetwork", "spatial")
+    run_dir = os.path.join(temp_results_dir, "AsymmetricHopfieldNetwork", "spatial")
     assert os.path.isdir(run_dir)
     assert os.path.isdir(os.path.join(run_dir, "plots"))
     
@@ -63,19 +63,18 @@ def test_spatial_pipeline(temp_results_dir):
     assert os.path.exists(json_path)
     with open(json_path, "r") as f:
         data = json.load(f)
-        assert data["metadata"]["model_name"] == "HopfieldSequenceNetwork"
+        assert data["metadata"]["model_name"] == "AsymmetricHopfieldNetwork"
         assert data["metadata"]["suite"] == "spatial"
         assert "metrics" in data
         assert "series" in data
         assert len(data["series"]["tmaze_true"]) > 0
 
 def test_symbolic_pipeline(temp_results_dir):
-    """Test that the symbolic pipeline runs successfully with HopfieldSequenceNetwork."""
-    model_class = HopfieldSequenceNetwork
+    """Test that the symbolic pipeline runs successfully with AsymmetricHopfieldNetwork."""
+    model_class = AsymmetricHopfieldNetwork
     model_kwargs = {
         "learning_rate": 0.1,
-        "activation": "relu",
-        "fit_method": "delta"
+        "activation": "relu"
     }
 
     # Run with small trials to keep tests fast. schema_consistency retrains a
@@ -199,7 +198,7 @@ def test_symbolic_pipeline(temp_results_dir):
     assert metrics["schema_acquisition_trials"] <= 8      # the test's schema_trials
 
     # Check directory structure and file contents
-    run_dir = os.path.join(temp_results_dir, "HopfieldSequenceNetwork", "symbolic")
+    run_dir = os.path.join(temp_results_dir, "AsymmetricHopfieldNetwork", "symbolic")
     assert os.path.isdir(run_dir)
     assert os.path.isdir(os.path.join(run_dir, "plots"))
     
@@ -223,7 +222,7 @@ def test_symbolic_pipeline(temp_results_dir):
     assert os.path.exists(json_path)
     with open(json_path, "r") as f:
         data = json.load(f)
-        assert data["metadata"]["model_name"] == "HopfieldSequenceNetwork"
+        assert data["metadata"]["model_name"] == "AsymmetricHopfieldNetwork"
         assert data["metadata"]["suite"] == "symbolic"
         assert "metrics" in data
         assert "series" in data
@@ -231,13 +230,10 @@ def test_symbolic_pipeline(temp_results_dir):
         assert "noise_sweep" in data["series"]
 
 def test_online_symbolic_pipeline(temp_results_dir):
-    """Test that the online symbolic pipeline runs successfully with HopfieldSequenceNetwork."""
-    model_class = HopfieldSequenceNetwork
-    model_kwargs = {
-        "learning_rate": 0.1,
-        "activation": "linear",
-        "fit_method": "hebbian"
-    }
+    """Test that the online symbolic pipeline runs successfully with an online arm.
+    Theta, not AHN: AHN is batch-only, so the online sections skip it."""
+    model_class = ThetaPhaseSequenceNetwork
+    model_kwargs = {"learning_rate": 0.1}
 
     # Run with small trials to keep tests fast
     metrics = run_online_symbolic_pipeline(
@@ -258,7 +254,7 @@ def test_online_symbolic_pipeline(temp_results_dir):
     assert "isi_tolerance_span_sweep" in metrics
 
     # Check directory structure and file contents
-    run_dir = os.path.join(temp_results_dir, "HopfieldSequenceNetwork", "online_symbolic")
+    run_dir = os.path.join(temp_results_dir, "ThetaPhaseSequenceNetwork", "online_symbolic")
     assert os.path.isdir(run_dir)
     assert os.path.isdir(os.path.join(run_dir, "plots"))
 
@@ -271,7 +267,7 @@ def test_online_symbolic_pipeline(temp_results_dir):
     assert os.path.exists(json_path)
     with open(json_path, "r") as f:
         data = json.load(f)
-        assert data["metadata"]["model_name"] == "HopfieldSequenceNetwork"
+        assert data["metadata"]["model_name"] == "ThetaPhaseSequenceNetwork"
         assert data["metadata"]["suite"] == "online_symbolic"
         assert "metrics" in data
         assert "series" in data
@@ -329,9 +325,8 @@ def test_every_symbolic_metric_is_classified_by_the_scorecard(temp_results_dir):
     import importlib.util
 
     metrics = run_symbolic_pipeline(
-        model_class=HopfieldSequenceNetwork,
-        model_kwargs={"learning_rate": 0.1, "activation": "relu",
-                      "fit_method": "delta"},
+        model_class=AsymmetricHopfieldNetwork,
+        model_kwargs={"learning_rate": 0.1, "activation": "relu"},
         output_dir=temp_results_dir,
         n_trials=2,
         benchmarks=["continual_chain", "paired_associate"],

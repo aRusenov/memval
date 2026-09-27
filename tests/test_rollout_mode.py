@@ -23,7 +23,6 @@ from memval.models.capabilities import (
 )
 from memval.models.baselines import (
     AsymmetricHopfieldNetwork,
-    HopfieldSequenceNetwork,
     MultilayerTemporalPCNetwork,
     OriginalEqPropSequenceNetwork,
     TemporalPCNetwork,
@@ -67,7 +66,6 @@ OBSERVATION_ARMS = [
     (ThetaPhaseSequenceNetwork, {}),
     (TemporalPCNetwork, dict(n_epochs=1)),
     (OriginalEqPropSequenceNetwork, dict(n_hidden=8, seed=0, n_epochs=1)),
-    (HopfieldSequenceNetwork, {}),
     (AsymmetricHopfieldNetwork, {}),
 ]
 
@@ -125,15 +123,23 @@ def test_latent_arm_does_not_feed_observations_back():
 # ---------------------------------------------------------------------------
 
 def test_encoder_and_observation_arms_are_not_comparable():
-    """The point of the declaration. GPT-2 and HiCL hardcode what the symbolic
+    """The point of the declaration. An ENCODER arm hardcodes what the symbolic
     suite calls a "drift-free upper bound ... [that] hides sub-threshold
     representational degradation"; the EP family hardcodes the maximal-drift
     protocol. Both are scored by pattern_completion and disambiguation."""
-    from memval.models.baselines import GPT2SequenceModel
 
-    assert rollout_mode_of(GPT2SequenceModel) is RolloutMode.ENCODER
+    class EncoderArm(HippocampalModel):
+        rollout_mode = RolloutMode.ENCODER
+
+        def fit_sequence(self, sequence_data, context_data=None, **kwargs): ...
+        def predict_next(self, current_event, current_context=None, **kwargs): ...
+        def recall(self, prompt_event, length, prompt_context=None, **kwargs): ...
+        def get_latent_state(self): return {}
+        def reset_context(self): ...
+
+    assert rollout_mode_of(EncoderArm) is RolloutMode.ENCODER
     assert rollout_mode_of(OriginalEqPropSequenceNetwork) is RolloutMode.OBSERVATION
-    assert not rollout_modes_comparable(GPT2SequenceModel, OriginalEqPropSequenceNetwork)
+    assert not rollout_modes_comparable(EncoderArm, OriginalEqPropSequenceNetwork)
     assert rollout_modes_comparable(ThetaPhaseSequenceNetwork, OriginalEqPropSequenceNetwork)
 
 

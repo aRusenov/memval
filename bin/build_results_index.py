@@ -37,7 +37,6 @@ DISPLAY = {
     "AsymmetricHopfieldNetwork": "AHN (reference)",
     "ThetaPhaseSequenceNetwork": "theta",
     "OriginalEqPropSequenceNetwork": "EP",
-    "SpikingEqPropSequenceNetwork": "spiking EP",
     "MultilayerTemporalPCNetwork": "tPC",
     "PredictiveRecirculationNetwork": "recirc (Chen)",
     "DTSESNSequenceNetwork": "DTS-ESN",

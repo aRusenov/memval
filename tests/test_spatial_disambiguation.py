@@ -2,7 +2,7 @@ import numpy as np
 from memval.benchmarks.overlap_config import OverlapConfig
 from memval.generators.bifurcating_route import BifurcatingRouteGenerator
 from memval.benchmarks.spatial_disambiguation import SpatialDisambiguationBenchmark
-from memval.models.baselines.knn_episodic import KNNEpisodicModel
+from memval.models.baselines import AsymmetricHopfieldNetwork
 
 def test_overlap_config_resolve():
     config = OverlapConfig(
@@ -69,7 +69,7 @@ def test_bifurcating_route_generator():
         assert not np.allclose(decoded_A[se:], decoded_B[se:])
 
 def test_spatial_disambiguation_evaluate():
-    # Use KNNEpisodicModel as baseline to verify evaluate/sweep executes end-to-end
+    # Use AHN (cheap, deterministic) as the harness arm to verify evaluate/sweep executes end-to-end
     generator = BifurcatingRouteGenerator(seed=42)
     route_pair = generator.generate(
         total_length=20,
@@ -82,22 +82,22 @@ def test_spatial_disambiguation_evaluate():
         n_encounter_dims=10
     )
     
-    # Instantiate KNN model (which fits exact sequences and recalls using context/t index)
+    # Instantiate the harness arm
     # n_features = 110 (100 place cells + 10 encounter dims)
-    model = KNNEpisodicModel(n_features=110)
+    model = AsymmetricHopfieldNetwork(n_features=110)
     
     benchmark = SpatialDisambiguationBenchmark()
     
     # Test evaluation for different conditions
     for cond in ["full", "mec_only", "lec_only", "conflicting"]:
         # Instantiate fresh model for each condition
-        model = KNNEpisodicModel(n_features=110)
+        model = AsymmetricHopfieldNetwork(n_features=110)
         metrics = benchmark.evaluate(
             model=model,
             route_pair=route_pair,
             condition=cond,
             n_trials=2,
-            fit_epochs=1 # KNN ignore fit_epochs
+            fit_epochs=1
         )
         assert "branch_accuracy" in metrics
         assert "confusion_rate" in metrics
@@ -114,7 +114,7 @@ def test_spatial_disambiguation_sweep():
     
     benchmark = SpatialDisambiguationBenchmark()
     records = benchmark.sweep(
-        model_class=KNNEpisodicModel,
+        model_class=AsymmetricHopfieldNetwork,
         model_kwargs={"n_features": 450},
         configs=configs,
         conditions=conditions,
@@ -150,7 +150,7 @@ def test_tmaze_disambiguation_generator():
     
     # Test evaluation integration
     benchmark = SpatialDisambiguationBenchmark()
-    model = KNNEpisodicModel(n_features=110)
+    model = AsymmetricHopfieldNetwork(n_features=110)
     metrics = benchmark.evaluate(
         model=model,
         route_pair=res,
