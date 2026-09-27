@@ -1,5 +1,6 @@
 """Render the 5-sequence x 10-item retention matrices (Original / DG / XdG,
-use_output_bias=False) produced by standalone_scale_matrix.py. Values are the
+use_output_bias=False) produced by standalone_scale_matrix.py (retired; see
+git tag archive/pre-cleanup). Values are the
 seed-averaged noise-free MRR R[j,i] = recall of list i after training through
 list j. Regenerates docs/figures/ep_retention_matrices.png."""
 

@@ -1414,8 +1414,8 @@ def run_symbolic_pipeline(
         # ---- OVERLAP condition (added 2026-09-06) ---------------------------
         # The canonical pair is fruit->animal: near-orthogonal in a 100-d random
         # embedding (in_span ~0.23), so a linear associator's B updates land in
-        # weight-space A never used and P(A) stays at ceiling -- see
-        # standalone_overlap_demo.py. This block holds everything fixed except the
+        # weight-space A never used and P(A) stays at ceiling (shown by the
+        # retired standalone_overlap_demo.py, at tag archive/pre-cleanup). This block holds everything fixed except the
         # DIRECTION of B relative to A: B drawn from A's own category (in_span
         # ~0.37) against a disjoint-category control, both at L=6 so the two
         # conditions share list length (only fruit and animal have 12 words).

@@ -26,3 +26,5 @@ scratch/*
 *.log
 *.pid
 results/**/_logs/
+# Agent session scratch
+brain/
