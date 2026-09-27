@@ -23,9 +23,8 @@ it has been seen).
     and ``intransigence`` score it; ``stability_plasticity_index`` refuses to
     reward either half alone.
 
-Note the transpose relative to ``bin/continual_chain_experiment.py``'s original
-local convention (``R[i, j]``); that script now calls into here and reports the
-same orientation as everything else.
+Note the transpose relative to the original local convention (``R[i, j]``) of
+the retired ``bin/continual_chain_experiment.py``.
 """
 from typing import Any, Callable, Dict, List, Optional
 

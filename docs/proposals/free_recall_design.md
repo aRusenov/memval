@@ -4,14 +4,14 @@
 > order capacity, so the lag-CRP — this note's whole case, and the subject of §3's
 > dissociation table — is no longer a target statistic. `binding_ordinal` is now covered
 > by cued-recall order errors (`order_error_fraction`, `transposition_locality`,
-> `transposition_asymmetry`, `intrusion_rate`; see `docs/capacity_coverage_audit.md`
+> `transposition_asymmetry`, `intrusion_rate`; see `docs/capacities/capacity_coverage_audit.md`
 > sec 5, S-O1/S-O2) at a fraction of the cost. Everything below still stands as a design;
 > its unique remainders are the initiation curve and unconstrained-order recall, neither
 > of which any paragraph-11 row currently asks for. Read §§1-2 and 4-5 as the record of a
 > protocol worth building if contiguity ever returns to scope; disregard §3's framing.
 
 **Status:** design only. Nothing built. Symbolic suite. Unlike the interval section
-(docs/interval_encoding_design.md), this needs **no new model interface and no
+(docs/proposals/interval_encoding_design.md), this needs **no new model interface and no
 state-carrying protocol** — rollout, decode, and feedback modes all exist in
 `measure_recall_autoregressive`. It is therefore the cheapest buildable binding metric,
 and the natural first one to ship.

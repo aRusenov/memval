@@ -1,10 +1,14 @@
 # Capacity coverage audit — what the suites actually measure
 
+> **Note (2026-09-27):** files this audit cites that are no longer in the tree
+> (`bin/continual_chain_experiment.py`, the retired arms, the dashboard) are at
+> git tag `archive/pre-cleanup`.
+
 **Generated:** 2026-08-31. **Decisions taken:** 2026-08-31 (§0). **Landed in code:** 2026-09-01.
 **Provenance:** built from the pipeline sources, not the design docs. Section names are the literal
 entries of `SPATIAL_BENCHMARKS` / `SYMBOLIC_BENCHMARKS` / `ONLINE_SYMBOLIC_BENCHMARKS`; metric names
 are the keys actually written to `results["metrics"]`. Prose promises are quoted from
-`paper/capacities.md`.
+`docs/capacities/capacities.md`.
 
 **How to edit:** flip a status marker, correct a question or metric name, or add a line under any
 table. Anything you change here I will carry back into the pipelines / docs.
@@ -34,7 +38,7 @@ table. Anything you change here I will carry back into the pipelines / docs.
 | D4 | **Remove** object arena (NOR/OLM) stub | Never implemented; emits `"TODO"` strings into `metrics.json`. | delete 2 keys |
 | D5 | **Remove** `letter_noise` | Measures the vocabulary's edit-distance geometry, not the model: across 7 architectures the across-model spread is **0.000** for `insert` and `transpose`, ≤0.111 for the rest, against **0.711** for the σ sweep. No literature anchor in `docs/` or `paper/`. | dead code, see C3 |
 | D6 | **Remove** interval / interference decay from the symbolic (non-online) suite | The batch suite has no time axis. The only interval it can express is count of interposed items, which is interference — already measured by `multiple_sequences` and the retention matrix. | delete 1 key |
-| D7 | **Extend** online symbolic with interval duration between events | Turns `isi_tolerance` (ISI as nuisance) into half of a dissociation whose other half is ISI as signal. This is `docs/interval_encoding_design.md`. | new section |
+| D7 | **Extend** online symbolic with interval duration between events | Turns `isi_tolerance` (ISI as nuisance) into half of a dissociation whose other half is ISI as signal. This is `docs/proposals/interval_encoding_design.md`. | new section |
 | D8 | **Drop** `online_continual` | Not CLI-wired; overlaps `bin/continual_chain_experiment.py`. | see ⚠️ C4 |
 
 ### Consequences — all four resolved and implemented 2026-09-01
@@ -58,7 +62,7 @@ cue loss alone; report the two together.
 
 **C4 closed 2026-09-02 — option (a), extended.** `continual_chain` is now a
 section of the symbolic suite (`memval/benchmarks/continual_chain.py`), so a
-`--suite symbolic` run computes a retention matrix and `paper/capacities.md` ¶3
+`--suite symbolic` run computes a retention matrix and `docs/capacities/capacities.md` ¶3
 is supported. The section went in wider than option (a) proposed, because
 reading the matrix exposed two questions the capacity had never asked:
 
@@ -75,7 +79,7 @@ reading the matrix exposed two questions the capacity had never asked:
   interposition gap 1 … T-1. `multiple_sequences` is the g = 1 point of it.
 
 The **ingestion contrast** remains the one thing the deleted pipeline was the
-sole home for; `docs/online_continual_benchmark.md` §8 still carries that recipe.
+sole home for; `docs/background/online_continual_benchmark.md` §8 still carries that recipe.
 Note the chain is a *condition* of the symbolic suite, not a suite, which is what
 the settled narrative asks for.
 
@@ -93,7 +97,7 @@ scored only by the metric that cannot distinguish "somewhat wrong" from "totally
 
 *Recommendation:* move `coverage` and `divergence_step` onto `tmaze_completion` **before** deleting
 §2/§5. `divergence_step` is additionally the continuous-space analogue of memory span and the
-error-propagation readout `paper/capacities.md` ¶17 promises — currently computed and discarded.
+error-propagation readout `docs/capacities/capacities.md` ¶17 promises — currently computed and discarded.
 
 Dead after removal: `_build_anchor_demo`, `_catmull_rom`, `_anchored_rollout_score`, and
 `_recall_metrics` unless C1 is adopted.
@@ -107,7 +111,7 @@ gradient will therefore produce a floor for a **protocol** reason, not a model r
 That is still worth shipping — it is the behavioural face of the no-persistent-state limitation, and
 a graded curve from full-corridor to onset-only localises exactly where each arm breaks. It must be
 reported as a protocol finding and never as a model ranking. Unblocking it as a *model* result needs
-the state-carrying ingestion path (`docs/nonlinearity_benchmark_design.md` §4).
+the state-carrying ingestion path (`docs/proposals/nonlinearity_benchmark_design.md` §4).
 
 **C3 — D5 leaves `noise_invariance` as the sole completion probe**, which is fine, but note ¶17's
 structural/corruption dichotomy then has only its corruption half implemented (see §6, Pattern
@@ -116,7 +120,7 @@ and the shared-model setup branch `if "noise_invariance" in selected or "letter_
 
 **C4 — D8 removes the retention matrix from the suite entirely.** After it, nothing in any pipeline
 computes `R[j,i]`, ACC, BWT or forgetting; only `bin/continual_chain_experiment.py` does, and that is
-a standalone script, not a suite section. `paper/capacities.md` ¶3 promises "Across most benchmark
+a standalone script, not a suite section. `docs/capacities/capacities.md` ¶3 promises "Across most benchmark
 suites, we report a retention matrix" and ¶7 promises pairing exposure against it. Both become
 unsupported rather than merely overstated, and **continual retention is left with `multiple_sequences`
 (a T=2 special case) and `tmaze_reversal` as its only instruments.**
@@ -228,15 +232,15 @@ contrast rather than relocating it.
 
 - §3 reuses `stream_sequence` unchanged, so §2 and §3 form one dissociation at near-zero extra build
   cost: association intact + interval lost is a failure no other section detects. Full design in
-  `docs/interval_encoding_design.md`.
+  `docs/proposals/interval_encoding_design.md`.
 - §3 is runnable **only for arms with a state of time**; it is unrunnable under the memoryless probe
-  by construction. `paper/capacities.md` ¶11 already hedges it correctly ("For models that support an
+  by construction. `docs/capacities/capacities.md` ¶11 already hedges it correctly ("For models that support an
   online regime and state of time"). Report which arms were included.
 - Both shipped sections score the current list only; neither is crossed with retention (§6, One-shot).
 
 ---
 
-## 5. Capacity coverage — `paper/capacities.md` promises vs shipped instruments
+## 5. Capacity coverage — `docs/capacities/capacities.md` promises vs shipped instruments
 
 ### Continual retention
 
@@ -292,7 +296,7 @@ at chance voids the unrolling numbers, because a span means nothing if the order
 was never established.
 
 **S-O1 — consequence of the contiguity removal for `free_recall`.** The design note
-(`docs/free_recall_design.md`) rests its case on the lag-CRP: "the only one of the three that
+(`docs/proposals/free_recall_design.md`) rests its case on the lag-CRP: "the only one of the three that
 yields a *genuine* lag-CRP", and §3's dissociation table is a lag-CRP table. With contiguity
 out of scope that argument is void. The architecture dissociation it promised survives in
 cheaper form — `transposition_locality` + `transposition_asymmetry` off cued recall separate
@@ -401,7 +405,7 @@ writing them from scratch.
      `schema_consistency`. **It is a reference, not a ceiling**: recall above it means the arm
      recovers a target the degraded cue no longer specifies, which is completion as against cue
      matching, and is what `mask_*_completion_advantage` reports.
-   - **The block contrast**, which is the part `paper/capacities.md` ¶17 does not ask for and the
+   - **The block contrast**, which is the part `docs/capacities/capacities.md` ¶17 does not ask for and the
      Horner et al. (2015) holistic-retrieval evidence it cites does. Masking `shared` (category)
      features against `identity` (own-leaf) features at an equal number removed asks whether *which*
      features are missing matters, or only how many. `mask_block_asymmetry` is diagnostic — an
@@ -447,13 +451,13 @@ writing them from scratch.
    `transposition_asymmetry`, `intrusion_rate`. Depends on 6.
 8b. ~~`free_recall`~~ — **demoted 2026-09-02**, see S-O1. Its case was the lag-CRP, which is
    no longer a promise; `binding_ordinal` is covered by 8 at a fraction of the cost. Design
-   retained in `docs/free_recall_design.md` for the initiation curve, which nothing asks for
+   retained in `docs/proposals/free_recall_design.md` for the initiation curve, which nothing asks for
    yet.
 9. ~~Autoregressive rollout crossed with the σ sweep.~~ **DONE 2026-09-06** (`noise_invariance` rollout sweep, l2 + quantized feedback).
 10. `sequence_length` load axis: α = P/N log-spaced or staircase-to-criterion, plus the >12-word
     vocabulary fix.
 11. N > 2 confusable episodes.
-12. Linear oracle (`docs/nonlinearity_benchmark_design.md` §3) — specified, not implemented.
+12. Linear oracle (`docs/proposals/nonlinearity_benchmark_design.md` §3) — specified, not implemented.
 
 **Closed by the C4 decision (2026-09-02)**
 
@@ -470,7 +474,7 @@ writing them from scratch.
 
 **Opened by it**
 
-14b. **A spatial chain.** `paper/capacities.md` ¶3 says "across most benchmark
+14b. **A spatial chain.** `docs/capacities/capacities.md` ¶3 says "across most benchmark
     suites"; exactly one reports a matrix. `memval/metrics/retention.py` is
     modality-agnostic and `ContinualChainBenchmark` is not — it takes a word
     list and an encoder. Either generalise the benchmark or write a spatial
@@ -516,7 +520,8 @@ writing them from scratch.
 
 16. D2's onset-only rung as a *model* result rather than a protocol artefact.
 17. Aliased chain / high-order Markov; the five proposed nonlinearity sections, none implemented
-    (four exist only as `dashboard/docs/benchmarks/` stubs that read as if shipped).
+    (four had stubs under the since-deleted `dashboard/docs/benchmarks/`; recover them from
+    git tag `archive/pre-cleanup`).
 18. **Sequence identity as a capacity — "continuation vs. new episode."** Given a familiar item,
     can the model tell *this continues an episode I know* from *this is a new episode that happens
     to start with a familiar item*? Raised 2026-09-02 against `schema_consistency`, where appending
@@ -527,7 +532,7 @@ writing them from scratch.
     weight update. The distinction becomes measurable only once an arm carries state across a
     sequence. Structurally this is the sequence-identity twin of Sequence disambiguation (shared
     stretch, divergent continuation), and belongs beside it rather than inside the schema section.
-    Prerequisite for a *model* result: `docs/nonlinearity_benchmark_design.md` §4. An explicit
+    Prerequisite for a *model* result: `docs/proposals/nonlinearity_benchmark_design.md` §4. An explicit
     sequence identifier clamped as context is the natural instrument, but only
     `AsymmetricHopfieldNetwork` has an `n_context` dimension today; four arms accept `context_data`
     and silently drop it, and `OriginalEqPropSequenceNetwork` does not accept it at all — so it
@@ -551,14 +556,14 @@ writing them from scratch.
 
 | Where | Problem |
 |---|---|
-| `paper/capacities.md` ¶3 | ~~unsupported after D8~~ — **fixed 2026-09-02**: `continual_chain` reports one. But "most benchmark suites" overstates *one* suite; and ¶3 describes the matrix as scoring stability only, which is now half of what it does (see 14b). Rewritten. |
-| `paper/capacities.md` ¶7 | Pairing exposure against the retention matrix — the instrument exists again, the crossing does not. See pending item 14. |
-| `paper/capacities.md` ¶1 | Argues forgetting is functional and "more retention is not necessarily better", which had no instrument until the rehearsal phase. Now supported — but only under `select_under_pressure`, which is False for the linear arms at the default load (14c). Do not quote the claim as met for those arms. |
-| `paper/capacities.md` ¶10, ¶21 | Inline author markers still present: `<<add few words for autonomous recall?>>`, `<< expand on theories of drifting context? >>`. |
-| `paper/capacities.md` ¶22 | Once D2 lands, this paragraph is met — but must state that the onset-only end is a protocol finding, not a model ranking (C2). |
-| `docs/results_intro_capacities.md` | Capacity map still keyed to **Autonomous generation**; the paper's fifth capacity is **Serial order**. Rows no longer align with the paper's headings. |
-| `docs/results_intro_capacities.md` | Rows for `spatial_sequence`, `anchoring_few_shot` and `letter_noise` must be deleted (D1/D3/D5); the `online_continual` row depends on C4. |
-| `docs/disambiguation_design.md` | §6 build order steps 1–2 are now decided work (D2), not proposals. |
-| `run.md` | Stale suite descriptions — omits `schema_consistency`, `tmaze_reversal`; lists sections removed by D1/D3/D5. |
-| `dashboard/` | Reads `results/<model>/<suite>/metrics.json`; removed keys and the dropped `online_continual` suite need handling. `dashboard/docs/benchmarks/` also documents `context_gating`, `high_order_markov`, `delayed_recall`, `limit_cycle` — none of which exist. |
+| `docs/capacities/capacities.md` ¶3 | ~~unsupported after D8~~ — **fixed 2026-09-02**: `continual_chain` reports one. But "most benchmark suites" overstates *one* suite; and ¶3 describes the matrix as scoring stability only, which is now half of what it does (see 14b). Rewritten. |
+| `docs/capacities/capacities.md` ¶7 | Pairing exposure against the retention matrix — the instrument exists again, the crossing does not. See pending item 14. |
+| `docs/capacities/capacities.md` ¶1 | Argues forgetting is functional and "more retention is not necessarily better", which had no instrument until the rehearsal phase. Now supported — but only under `select_under_pressure`, which is False for the linear arms at the default load (14c). Do not quote the claim as met for those arms. |
+| `docs/capacities/capacities.md` ¶10, ¶21 | Inline author markers still present: `<<add few words for autonomous recall?>>`, `<< expand on theories of drifting context? >>`. |
+| `docs/capacities/capacities.md` ¶22 | Once D2 lands, this paragraph is met — but must state that the onset-only end is a protocol finding, not a model ranking (C2). |
+| `docs/paper/results_intro_capacities.md` | Capacity map still keyed to **Autonomous generation**; the paper's fifth capacity is **Serial order**. Rows no longer align with the paper's headings. |
+| `docs/paper/results_intro_capacities.md` | Rows for `spatial_sequence`, `anchoring_few_shot` and `letter_noise` must be deleted (D1/D3/D5); the `online_continual` row depends on C4. |
+| `docs/sections/disambiguation_design.md` | §6 build order steps 1–2 are now decided work (D2), not proposals. |
+| `docs/running.md` | ~~Stale suite descriptions~~ — rewritten 2026-09-27 against `--list-benchmarks`. |
+| `dashboard/` | ~~Stale~~ — deleted 2026-09-27 (git tag `archive/pre-cleanup`). The per-arm `capacity_scorecard.html` pages and `results/zoo_capacity_run/index.html` replace it. |
 | `tests/` | `tests/test_pipelines.py` and any test asserting removed sections/keys. |

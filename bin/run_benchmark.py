@@ -59,7 +59,7 @@ MODEL_REGISTRY = {
         "modalities": ["spatial", "symbolic", "online_symbolic"],
         "default_kwargs": {
             # Paper values (Scellier & Bengio 2017, Table 2, 784-500-10 row), set
-            # 2026-09-06 after the provenance audit (docs/model_table.md). Not
+            # 2026-09-06 after the provenance audit (docs/models/model_table.md). Not
             # paper-matchable here: the paper's hard sigmoid rho(s)=0 v s ^ 1 (the
             # class offers tanh|sigmoid; kept tanh) and its asymmetric 20 free / 4
             # clamped iterations (one budget serves both phases; set to the free
@@ -89,7 +89,7 @@ MODEL_REGISTRY = {
     # it the only arm for which the graded disambiguation sweep's `observe`
     # priming path fires at all. Every other entry here reports
     # state_primed=False, so their delay > 0 rows are protocol floors rather
-    # than model results (docs/disambiguation_design.md sec 3, C2).
+    # than model results (docs/sections/disambiguation_design.md sec 3, C2).
     #
     # kwargs follow the retired continual-chain experiment's "tpc2" precedent
     # (n_hidden=128, learning_rate=0.05). inf_iters is the relaxation budget per
@@ -128,7 +128,7 @@ MODEL_REGISTRY = {
     # Ported from the paper's equations (the repo has no license); only the
     # LOCAL rule is ported, not the BPTT-trained headline model.
     # n_hidden / learning_rate copy the tPC entry so the pair differs only where
-    # the equations differ. n_epochs sized 2026-09-08 by the docs/model_table.md
+    # the equations differ. n_epochs sized 2026-09-08 by the docs/models/model_table.md
     # rule (2x epochs-to-criterion on the canonical material, larger of the two
     # modalities): 7-item list reaches at 7 epochs, the 15-step T-maze at 64
     # (48 fails, 64 passes; ladder 1..64), so 2 x 64 = 128. Fast to criterion on
@@ -191,7 +191,7 @@ MODEL_REGISTRY = {
     # The only arm clocked by elapsed TIME rather than event ordinal: it declares
     # TemporallyClocked and TimingPredictive (memval/models/capabilities.py), so
     # it is the only one that can answer Serial order's interval questions
-    # (docs/capacity_questions.md 5.4, 5.5 -- half that capacity's weight). It
+    # (docs/capacities/capacity_questions.md 5.4, 5.5 -- half that capacity's weight). It
     # also declares OnlineTrainable. kwargs follow examples/dts_esn_*_demo.py;
     # predict_timing=True enables the timing head that 5.5 needs. The reservoir
     # is fixed; the RLS readout keeps updating across passes, and fit_sequence
@@ -372,7 +372,7 @@ def main():
         default=0.05,
         help="Standard deviation of the Gaussian ISI filler events streamed between items "
              "in the online suite (default: 0.05). Retrieval cues are clean by protocol; "
-             "cue degradation is swept only in noise_invariance / cue_masking -- see docs/probe_protocol.md."
+             "cue degradation is swept only in noise_invariance / cue_masking -- see docs/sections/probe_protocol.md."
     )
     parser.add_argument(
         "--benchmarks",

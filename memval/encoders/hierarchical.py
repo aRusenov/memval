@@ -3,7 +3,7 @@
 Builds an item x feature matrix from a branching process, following the
 generative rule in McClelland, McNaughton & Lampinen (2020): a feature may be
 introduced at any node and appear in that node's descendants, but never in
-descendants of nodes in other branches. See ``docs/schema_benchmark_design.md``.
+descendants of nodes in other branches. See ``docs/sections/schema_benchmark_design.md``.
 
 The matrix is the object whose SVD *is* the hierarchy -- one singular dimension
 per categorical split, with strength set by how much feature variance sits in
@@ -22,7 +22,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
 
 # Recognised ``kind`` values for augment() specs, ordered by increasing
-# inconsistency with the learned schema. See docs/schema_benchmark_design.md S3.
+# inconsistency with the learned schema. See docs/sections/schema_benchmark_design.md S3.
 NEW_ITEM_KINDS = ("duplicate", "within", "across", "random")
 
 
@@ -357,7 +357,7 @@ class HierarchicalEncoder:
         zero-new-dimension case: in a same-space ``predict_next`` setting items
         must be distinguishable to be predicted at all, so the weakest rung we
         can realise is "all shared structure known, identity feature new". The
-        deviation is recorded in docs/schema_benchmark_design.md S5.
+        deviation is recorded in docs/sections/schema_benchmark_design.md S5.
 
         Active-feature counts are matched to the base mean so that consistency is
         not confounded with vector sparsity or norm.

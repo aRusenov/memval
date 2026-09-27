@@ -7,7 +7,7 @@ it against the human reference band from the list-recall literature (Kahana
 key is written to ``results["metrics"]``, and the output carries the human
 signature beside the model's read-out so a reader can compare direction and
 magnitude without the section deciding for them. The point is the L0 rung of
-the correspondence ladder (docs/cognitive_phenomena_design.md): a model that
+the correspondence ladder (docs/sections/cognitive_phenomena_design.md): a model that
 declares a behavioural correspondence is obliged to these read-outs, and a
 model that does not is merely described by them.
 

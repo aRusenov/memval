@@ -151,7 +151,7 @@ def decode_floor(encoder, trajectory: np.ndarray) -> np.ndarray:
     ~0.000 along the stem (which lies on the cell grid's own axis) and ~0.05 on
     the arm, rising to 0.072 at the last position -- roughly HALF of an absolute
     ``eps=0.15`` is spent before a model contributes any error. Measured
-    2026-09-23; see docs/model_table.md.
+    2026-09-23; see docs/models/model_table.md.
     """
     t = np.asarray(trajectory, dtype=float)
     return np.linalg.norm(encoder.decode(encoder.encode(t)) - t, axis=1)

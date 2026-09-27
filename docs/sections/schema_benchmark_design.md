@@ -157,7 +157,7 @@ Open, needs a decision before spec:
 
    The capacity this ambiguity points at — continuation vs. new episode — is worth building, but not
    here: it needs a state-carrying arm, and it belongs beside Sequence disambiguation. Logged as item 18
-   of `docs/capacity_coverage_audit.md` §6.
+   of `docs/capacities/capacity_coverage_audit.md` §6.
 
 ## 6. Caveats to carry into the writeup
 
@@ -335,4 +335,4 @@ Prerequisites, in order:
 
 Until this exists, the one-shot capacity in the results intro should promise
 acquisition rate as a function of consistency, and nothing about consolidation time.
-See `docs/results_intro_capacities.md`.
+See `docs/paper/results_intro_capacities.md`.

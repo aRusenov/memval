@@ -181,7 +181,7 @@ continual learner that, at scale, both learns and retains better than the plain 
   `tests/test_output_bias_flag.py`).
 - Model flag: `OriginalEqPropSequenceNetwork(..., use_output_bias=False)` (inherited by
   DG/XdG).
-- Scripts (repo root): `standalone_ab_cosine_interference.py` (Stage 1, cosine interference
+- Scripts (retired 2026-09-27; `git show archive/pre-cleanup:<script>`): `standalone_ab_cosine_interference.py` (Stage 1, cosine interference
   matrix A vs B), `standalone_cf_interference.py` (Stage 2, layered Jaccard + split-matrix
   cosine, Original/DG/XdG), `standalone_dg_noise_sensitivity.py` (Interlude),
   `standalone_fisher_attribution.py` (Stage 3), `standalone_bo_ablation.py` (Stage 4),
@@ -192,7 +192,7 @@ continual learner that, at scale, both learns and retains better than the plain 
 
 ## Retention matrices (5 sequences × 10 items)
 
-![Continual-learning retention matrices for Original EP, DG-EP, and XdG-EP + no bias](figures/ep_retention_matrices.png)
+![Continual-learning retention matrices for Original EP, DG-EP, and XdG-EP + no bias](../figures/ep_retention_matrices.png)
 
 *Each cell is the seed-averaged noise-free recall MRR of list `i` after training through
 list `j`; the upper triangle is undefined (not yet trained). Read **down a column** for a

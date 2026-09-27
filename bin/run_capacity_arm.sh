@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run the full capacity runbook (docs/capacity_report_ahn.md sec 1) for ONE arm.
+# Run the full capacity runbook (docs/reports/capacity_report_ahn.md sec 1) for ONE arm.
 #
 #   bin/run_capacity_arm.sh <model> <ClassName> <out-dir> [n-trials] [extra args...]
 #   SKIP_SPATIAL=1 bin/run_capacity_arm.sh ...   # symbolic side only

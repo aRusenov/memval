@@ -35,7 +35,7 @@ then feed blank ticks, recording the decoder's confidence for B at every tick. S
 
 Score peak location, not thresholded emission: a respond-vs-withhold rule would need a
 response threshold or a null symbol, which is harness opinion (same reasoning as the
-explicit-context decision, docs/results_intro_capacities.md). Peak time is the
+explicit-context decision, docs/paper/results_intro_capacities.md). Peak time is the
 ideal-observer readout and mirrors how CR timing is scored in the animal literature.
 
 Metrics: `interval_peak_time_error(d)` (signed, in ticks); `interval_encoded` (is peak time
@@ -79,14 +79,14 @@ predictions from the evolving state. Two interface options:
 
 1. **Plasticity-on probing** — reuse `fit_event` during the probe, accepting that probing
    itself trains. Biologically honest and consistent with the true-online philosophy
-   (docs/true_online_learning.md), but scores then depend on probe count and order; report
+   (docs/proposals/true_online_learning.md), but scores then depend on probe count and order; report
    presentation-matched controls.
 2. **A `tick(x)` contract** — state update without weight update. Clean measurement, but a
    new interface that not all arms can implement honestly (for EP-family arms, settling and
    learning are not separable phases; the split is principled for tPC-style arms only).
 
 This is the same state-carrying-protocol prerequisite as
-docs/nonlinearity_benchmark_design.md §4 (history-dependent family) — build it once, both
+docs/proposals/nonlinearity_benchmark_design.md §4 (history-dependent family) — build it once, both
 sections use it. Decide per-arm honesty before building; do not let the interface silently
 exclude arms (cf. the `n_context` precedent).
 

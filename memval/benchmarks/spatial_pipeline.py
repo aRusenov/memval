@@ -20,7 +20,7 @@ SPATIAL_BENCHMARKS = (
     "tmaze_reversal",         # 3. T-maze reversal (place->reward overwriting)
 )
 
-# Removed 2026-09-01 (docs/capacity_coverage_audit.md D1/D3/D4):
+# Removed 2026-09-01 (docs/capacities/capacity_coverage_audit.md D1/D3/D4):
 #   spatial_sequence    -- duplicated tmaze_completion as a completion test. Its
 #                          non-saturating readouts (coverage, divergence_step)
 #                          moved onto tmaze_completion rather than being lost.
@@ -256,7 +256,7 @@ def run_spatial_pipeline(
             "model_kwargs": {k: str(v) for k, v in model_kwargs.items()},
             # The `recall()` rollout protocol this arm hardcodes. Recorded so a
             # cross-arm comparison can see when two arms were not scored under
-            # the same protocol (see docs/rollout_protocol.md).
+            # the same protocol (see docs/sections/rollout_protocol.md).
             "rollout_mode": getattr(
                 rollout_mode_of(model_class), "value", None),
         },
@@ -428,7 +428,7 @@ def run_spatial_pipeline(
         # For the record, at this route's step the 100-cell grid decodes BETTER
         # (clean-decode floor 48% of eps vs 77% at 400) because field width is
         # sigma_scale x route step and is not tied to the grid; branch accuracy was
-        # 1.000 either way and margin 0.914 -> 0.892. See docs/model_table.md and
+        # 1.000 either way and margin 0.914 -> 0.892. See docs/models/model_table.md and
         # bin/size_budgets.py. Pass `n_place_cells=100` to get the tighter decoder.
         _disamb_npc = int(benchmark_arg(benchmark_args, "tmaze_disambiguation",
                                         "n_place_cells", 400))
@@ -552,7 +552,7 @@ def run_spatial_pipeline(
                 results["metrics"][f"tmaze_disamb_{cond}_confusion"]  = float('nan')
 
         # ------------------------------------------------------------------
-        # 2b. Graded odour availability (axis A of docs/disambiguation_design.md)
+        # 2b. Graded odour availability (axis A of docs/sections/disambiguation_design.md)
         # ------------------------------------------------------------------
         # The block above is the *fully-cued* corner: the odour is present on
         # every step including the arms, so the probe re-supplies the
@@ -793,7 +793,7 @@ def run_spatial_pipeline(
     # The complement of the retention matrix: how fast does the model overwrite a
     # place->reward association that has become invalid? Runs the protocol twice,
     # with and without an explicit extinction stage, so the value of extinction is
-    # measured rather than assumed. See docs/spatial_reversal_design.md.
+    # measured rather than assumed. See docs/sections/spatial_reversal_design.md.
     if "tmaze_reversal" in selected:
         from memval.generators.t_maze_reversal import TMazeReversalGenerator
         from memval.benchmarks.spatial_reversal import SpatialReversalBenchmark

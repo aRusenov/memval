@@ -16,7 +16,7 @@ Two dials, the same two the continual-chain sweep uses
 (``bin/continual_chain_overlap_sweep.py``), each moved with the other held:
 
   within   within-list cosine rho = 1/(1 + d sigma^2), rungs set by TARGET rho
-           and inverted to sigma (docs/encoder_design.md: picking sigma by feel
+           and inverted to sigma (docs/sections/encoder_design.md: picking sigma by feel
            gives a ladder whose last rungs are the same stimulus). Lists held
            exactly orthogonal (rho_b = 0).
   between  prototype cosine rho_b, within held at sigma = 0.2 (rho = 0.20, the
@@ -95,7 +95,7 @@ def _floats(s: str) -> List[float]:
 
 
 def sigma_for(rho: float, d: int = EMBED_DIM) -> float:
-    """Invert rho = 1/(1 + d sigma^2) (docs/encoder_design.md)."""
+    """Invert rho = 1/(1 + d sigma^2) (docs/sections/encoder_design.md)."""
     return float(np.sqrt((1.0 - rho) / (rho * d)))
 
 

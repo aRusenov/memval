@@ -4,7 +4,7 @@
 `measure_recall_associative` and `measure_recall_autoregressive` both decode a
 word at every step and then discard which word it was, keeping only whether it
 was right. That single loss is what blocks three of the four Serial-order rows in
-`docs/capacity_coverage_audit.md` sec 5: `memory_span` zeroes at the first error
+`docs/capacities/capacity_coverage_audit.md` sec 5: `memory_span` zeroes at the first error
 and cannot tell a transposition from an omission from an intrusion.
 
 This probe re-runs the same cued and rollout protocols over the same length grid

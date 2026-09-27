@@ -1,9 +1,9 @@
 # Rollout protocol — what `recall()` feeds back
 
-> Companion to `docs/online_continual_benchmark.md` §1b, which covers the
+> Companion to `docs/background/online_continual_benchmark.md` §1b, which covers the
 > *ingestion* regime. This one covers the *retrieval* regime.
 > The third leg — what cue a section presents and how many times — is
-> `docs/probe_protocol.md`.
+> `docs/sections/probe_protocol.md`.
 
 There are **two** autoregressive rollout paths in MemVal, and only one of them
 was ever a declared protocol.

@@ -1,6 +1,6 @@
 """Serial order, metric time: the two sections that ask about *when*.
 
-`docs/capacity_questions.md` gives Serial order five questions. Three of them —
+`docs/capacities/capacity_questions.md` gives Serial order five questions. Three of them —
 establishment, binding, unrolling — are ordinal: they ask what order events came
 in. The remaining two, **5.4 and 5.5, carry half the capacity's weight between
 them**, and both ask about elapsed time rather than event count:

@@ -1,6 +1,6 @@
 """Scoring for symbolic overlapping sequences.
 
-Implements the metric fixes of `docs/disambiguation_design.md` sec 5 for the
+Implements the metric fixes of `docs/sections/disambiguation_design.md` sec 5 for the
 symbolic modality, including the two that the spatial section still cannot
 produce because it is capped at two episodes:
 

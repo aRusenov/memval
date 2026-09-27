@@ -115,7 +115,7 @@ def run_online_symbolic_pipeline(
             "online_equivalent": bool(getattr(model_class, "online_equivalent", False)),
             # The `recall()` rollout protocol this arm hardcodes. Recorded so a
             # cross-arm comparison can see when two arms were not scored under
-            # the same protocol (see docs/rollout_protocol.md).
+            # the same protocol (see docs/sections/rollout_protocol.md).
             "rollout_mode": getattr(
                 rollout_mode_of(model_class), "value", None),
             "probe_protocols": {

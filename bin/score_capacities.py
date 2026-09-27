@@ -14,9 +14,9 @@ but never enter a sum, and any key missing from the spec is raised loudly rather
 than silently dropped.
 
 Taxonomy sources:
-  * capacities              -- paper/capacities.md (five, post serial-order merge)
-  * material / probe split  -- docs/capacity_coverage_audit.md + manipulation taxonomy
-  * exclusion rationale     -- docs/capacity_coverage_audit.md sec 0 (C1, C2) and sec 3
+  * capacities              -- docs/capacities/capacities.md (five, post serial-order merge)
+  * material / probe split  -- docs/capacities/capacity_coverage_audit.md + manipulation taxonomy
+  * exclusion rationale     -- docs/capacities/capacity_coverage_audit.md sec 0 (C1, C2) and sec 3
 """
 from __future__ import annotations
 
@@ -189,7 +189,7 @@ add("multiple_seq_interleaved_criterion_reached", "Continual retention", "load",
 # --- 2026-09-23: tmaze_disambiguation encoder provenance. CONFIG, never scored.
 # The grid dropped 400 -> 100 place cells (120 features) because a finer grid makes
 # the centre-of-mass decoder WORSE (clean-decode floor 48% of eps at 100 cells vs
-# 77% at 400) while the route is a 1-D curve. See docs/model_table.md.
+# 77% at 400) while the route is a 1-D curve. See docs/models/model_table.md.
 add("tmaze_pc_n_cells", "Pattern completion", "cue_point", "material",
     "tmaze_completion", "spatial", None, role="config",
     note="Place cells in the completion route's encoder. Fixed per suite at 400 "
@@ -449,7 +449,7 @@ add("chain_stability_plasticity_index", "Continual retention",
          "how balanced an arm is, only the coordinates say which way it fails.")
 
 # --- Dimension: relevance (material) -----------------------------------------
-# paper/capacities.md argues that forgetting under a finite substrate is
+# docs/capacities/capacities.md argues that forgetting under a finite substrate is
 # functional rather than a failure. Every other section treats all stored
 # material as worth keeping, so that claim had no instrument. Here half the
 # chain stays in use (it is re-presented) and half does not; the question is not
@@ -894,7 +894,7 @@ add("tmaze_pc_divergence_step", "Pattern completion", "cue_point", "probe",
     ref=11.0)
 add("tmaze_pc_mse", "Pattern completion", "cue_point", "probe", "tmaze_completion",
     "spatial", None, role="diagnostic",
-    note="EXCLUDED by docs/capacity_coverage_audit.md C1: centre-of-mass decoding "
+    note="EXCLUDED by docs/capacities/capacity_coverage_audit.md C1: centre-of-mass decoding "
          "pulls a lost readout to the arena middle, so MSE saturates in the "
          "failure regime and cannot separate 'somewhat wrong' from 'lost'.")
 add("tmaze_pc_recall_len", "Pattern completion", "cue_point", "probe",
@@ -1073,7 +1073,7 @@ for tag in ("concurrent", "delay0", "delay2", "delay4", "delay6", "delay7"):
     prot = tag != "concurrent"
     role = "protocol_limited" if prot else "score"
     nte_suffix = ("" if not prot else
-                  " EXCLUDED from the capacity score by docs/capacity_coverage_audit.md "
+                  " EXCLUDED from the capacity score by docs/capacities/capacity_coverage_audit.md "
                   "C2: with the odour withdrawn, nothing in the memoryless predict_next "
                   "probe can carry the discriminator across the cue-free stretch, so a "
                   "floor here is a protocol finding, not a model ranking.")
@@ -1100,7 +1100,7 @@ for tag in ("concurrent", "delay0", "delay2", "delay4", "delay6", "delay7"):
              "ordinary rollout drift from cue loss; a control, not a score. NaN when "
              "the rung leaves no cue-free shared steps.")
 
-# Guidance-withdrawal sweep (2026-09-08, docs/disambiguation_design.md S3.4):
+# Guidance-withdrawal sweep (2026-09-08, docs/sections/disambiguation_design.md S3.4):
 # material fixed (odour on throughout), the probe walks the arm up the stem
 # with observe() to a cue point and hands the rollout to the arm's own
 # recall(), unclamped, d steps before the fork. Recall is unclamped, so an arm
@@ -1160,7 +1160,7 @@ add("similarity_effect_mrr_drop", "Sequence disambiguation", "item_similarity",
 # The symbolic section is where axes B and C actually live: the spatial
 # generator grades discriminability by rotating a one-hot vector, which is
 # capped at two discriminators, while category_variance grades it generatively
-# and supports N > 2. See docs/disambiguation_design.md sec 3.
+# and supports N > 2. See docs/sections/disambiguation_design.md sec 3.
 add("symdis_cued_divergence_accuracy", "Sequence disambiguation",
     "contextual_overlap", "material", "symbolic_disambiguation", "symbolic",
     chance, v=2, chance_level=0.25,
@@ -1568,7 +1568,7 @@ for pre, cap, dim, section, suite, what in _EXPOSURE:
              "--benchmark-args <section>:epochs=N.")
     add(f"{pre}_exposure_source", cap, dim, "material", section, suite, None,
         role="config",
-        note="Where the exposure came from: cli:section > cli:global > registry (the arm's fixed budget, control sections only) > None (criterion ladder). See docs/paper_methods_protocol.md.")
+        note="Where the exposure came from: cli:section > cli:global > registry (the arm's fixed budget, control sections only) > None (criterion ladder). See docs/paper/paper_methods_protocol.md.")
 # Ratio of each section's settled exposure to the arm's reference exposure.
 # Generated from _EXPOSURE so a section added there is covered automatically.
 # The derived spellings are the sections that train TWICE and so report one
@@ -1592,7 +1592,7 @@ for _pre, _cap, _dim, _sec, _suite, _what in _EXPOSURE:
                  "not like-for-like. Read with exposure_within_band.")
     add(f"{pre}_exposure_source", cap, dim, "material", section, suite, None,
         role="config",
-        note="Where the exposure came from: cli:section > cli:global > registry (the arm's fixed budget, control sections only) > None (criterion ladder). See docs/paper_methods_protocol.md.")
+        note="Where the exposure came from: cli:section > cli:global > registry (the arm's fixed budget, control sections only) > None (criterion ladder). See docs/paper/paper_methods_protocol.md.")
 
 for pre, extra in (("seqlen", ("epochs_to_criterion", "max_epochs_to_criterion")),
                    ("multiple_seq", ("epochs_A", "epochs_B", "epochs_interleaved")),
@@ -1662,7 +1662,7 @@ DIMENSION_WEIGHTS: Dict[str, Dict[str, float]] = {
     # sequence_length MRR proxy, which conflates order with association. It is light
     # because it is one conditional read-out off an existing curve, and because it
     # also serves as a read-before guard for `unrolling`.
-    # Rebalanced 2026-09-02. `paper/capacities.md` para 11 puts metric time on an
+    # Rebalanced 2026-09-02. `docs/capacities/capacities.md` para 11 puts metric time on an
     # equal footing with ordinal order -- "representing time is a matter of
     # preserving order AND the temporal distance between items" -- so the two
     # interval read-outs together carry HALF the capacity. The ordinal three keep

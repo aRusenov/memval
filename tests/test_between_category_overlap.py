@@ -3,7 +3,7 @@
 ``category_variance`` sets the within-category cosine; this sets the cosine
 between category prototypes, exactly. The default (``None``) must stay
 bit-identical to the construction every saved result was produced with, and
-the controlled path must obey the laws in ``docs/encoder_design.md`` §6.4:
+the controlled path must obey the laws in ``docs/sections/encoder_design.md`` §6.4:
 within ``rho = 1/(1 + d sigma^2)``, between-word ``rho * rho_b``.
 """
 import numpy as np

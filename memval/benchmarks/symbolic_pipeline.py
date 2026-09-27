@@ -59,7 +59,7 @@ SYMBOLIC_BENCHMARKS = (
 # Today only DTSESNSequenceNetwork declares either. See
 # memval/benchmarks/interval_timing.py.
 
-# Removed 2026-09-01 (docs/capacity_coverage_audit.md D5/D6):
+# Removed 2026-09-01 (docs/capacities/capacity_coverage_audit.md D5/D6):
 #   letter_noise     -- scored the vocabulary's edit-distance geometry, not the
 #                       model. Because SymbolicEncoder embeddings carry no
 #                       orthographic structure, corrupting a surface form and
@@ -807,7 +807,7 @@ def run_symbolic_pipeline(
             "model_kwargs": {k: str(v) for k, v in model_kwargs.items()},
             # The `recall()` rollout protocol this arm hardcodes. Recorded so a
             # cross-arm comparison can see when two arms were not scored under
-            # the same protocol (see docs/rollout_protocol.md).
+            # the same protocol (see docs/sections/rollout_protocol.md).
             "rollout_mode": getattr(
                 rollout_mode_of(model_class), "value", None),
             # How each section probed: clean single cue (the default), or a
@@ -1415,7 +1415,8 @@ def run_symbolic_pipeline(
         # The canonical pair is fruit->animal: near-orthogonal in a 100-d random
         # embedding (in_span ~0.23), so a linear associator's B updates land in
         # weight-space A never used and P(A) stays at ceiling (shown by the
-        # retired standalone_overlap_demo.py, at tag archive/pre-cleanup). This block holds everything fixed except the
+        # retired standalone_overlap_demo.py, at tag archive/pre-cleanup).
+        # This block holds everything fixed except the
         # DIRECTION of B relative to A: B drawn from A's own category (in_span
         # ~0.37) against a disjoint-category control, both at L=6 so the two
         # conditions share list length (only fruit and animal have 12 words).
@@ -1559,7 +1560,7 @@ def run_symbolic_pipeline(
         axR.set_title(f'Per-position margin, mean over {_n_done} pairs (band = min..max)  '
                       f'delta_margin_forgetting_lists: {np.nanmean(marg_after[1:]) - np.nanmean(marg_before[1:]):+.3f}', fontsize=10)
         axR.legend(fontsize=8)
-        fig.text(0.5, 0.005, "clean single probe; replication over LIST PAIRS, not cue noise (docs/probe_protocol.md)",
+        fig.text(0.5, 0.005, "clean single probe; replication over LIST PAIRS, not cue noise (docs/sections/probe_protocol.md)",
                  ha="center", fontsize=8, style="italic")
         plt.tight_layout(rect=(0, 0.03, 1, 1))
         plt.savefig(os.path.join(plots_dir, "multiple_seq_forgetting.png"), dpi=150)
@@ -2670,7 +2671,7 @@ def run_symbolic_pipeline(
     # 6. Schema consistency (acquisition rate vs prior knowledge)
     # ==========================================
     if "cue_masking" in selected:
-        # Structural half of pattern completion (paper/capacities.md P17): a
+        # Structural half of pattern completion (docs/capacities/capacities.md P17): a
         # graded fragment of the cue, against noise_invariance's graded
         # corruption of all of it. Deliberately NOT built on SymbolicEncoder --
         # its dimensions are a random basis, so masking them would score the
@@ -2799,7 +2800,7 @@ def run_symbolic_pipeline(
             # Deliberately NOT section_epochs(): this section measures
             # trials-to-criterion at one presentation per trial. Inheriting the
             # global --epochs would saturate every rung on trial 1 and erase the
-            # effect (docs/schema_benchmark_design.md S7, fix 2). Override it
+            # effect (docs/sections/schema_benchmark_design.md S7, fix 2). Override it
             # only per-section, and knowingly.
             epochs_per_trial=benchmark_arg(
                 benchmark_args, "schema_consistency", "epochs_per_trial", 1),
@@ -2829,7 +2830,7 @@ def run_symbolic_pipeline(
     # human reference band (Kahana 2020 sec 4). DESCRIPTIVE BY CONTRACT: the
     # section returns no scored metric, writes its own
     # cognitive_phenomena_metrics.json, and only its summary enters
-    # results["series"]. See docs/cognitive_phenomena_design.md.
+    # results["series"]. See docs/sections/cognitive_phenomena_design.md.
     if "cognitive_phenomena" in selected:
         _pn, _ps = resolve_probe("cognitive_phenomena", model_class, n_trials)  # clean single
         from memval.benchmarks.cognitive_phenomena import run_cognitive_phenomena

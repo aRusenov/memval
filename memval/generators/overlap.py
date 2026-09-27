@@ -25,7 +25,7 @@ Why N episodes rather than two: with two episodes sharing one stretch the task
 sits far below any associator's capacity, and the load finding on the symbolic
 chain was that load rather than overlap is what separates arms. N confusable
 episodes sharing a stretch is the disambiguation analogue of the load sweep.
-See docs/disambiguation_design.md sec 3, axis C.
+See docs/sections/disambiguation_design.md sec 3, axis C.
 """
 from typing import Any, Dict, List, Optional, Sequence
 

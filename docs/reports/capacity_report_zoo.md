@@ -1,15 +1,15 @@
 # MemVal capacity report — the model zoo
 
 **Run 2026-09-03.** Every arm the user named, put through the same capacity
-scorecard that `docs/capacity_report_ahn.md` established on
+scorecard that `docs/reports/capacity_report_ahn.md` established on
 `AsymmetricHopfieldNetwork`: the spatial suite, the symbolic suite, the streamed
 regime, the focused-protocol schema re-run, the serial-order probe, then
 `bin/score_capacities.py` and `bin/build_scorecard_page.py`.
 
 Read this against, in order:
-- `docs/capacity_questions.md` — the five capacities as questions, the dimension
+- `docs/capacities/capacity_questions.md` — the five capacities as questions, the dimension
   each question manipulates, and the capability tags.
-- `docs/capacity_report_ahn.md` — the reference run and the runbook this one
+- `docs/reports/capacity_report_ahn.md` — the reference run and the runbook this one
   automates.
 - `results/zoo_capacity_run/<ClassName>/capacity_scorecard.md` — the
   auto-generated per-metric scorecard for each arm.
@@ -18,6 +18,14 @@ Read this against, in order:
 fresh AHN run, so no number here is compared across code versions. The published
 AHN run in `results/ahn_capacity_run/` is left untouched as the historical
 reference; §2 says where the two disagree and why.
+
+> **Roster cut, 2026-09-27.** The spiking arms (spiking EP, Vieth STDP, BCPNN)
+> and the ca3net port were retired. Their arm sections, their results and their
+> code are at git tag `archive/pre-cleanup`. The §1 protocol fixes they prompted
+> are kept, because the fixes still apply to every arm. `_compare/` and
+> `index.html` were rebuilt over the six kept arms, which now include Chen
+> recirculation (`predictive_recirculation`, added 2026-09-08, after this report
+> was written).
 
 ---
 
@@ -29,17 +37,14 @@ reference; §2 says where the two disagree and why.
 | theta (Hasselmo) | `theta` | ran — **had to be registered first** |
 | tPC | `temporal_pc` | ran |
 | DTS-ESN reservoir | `dts_esn` | ran |
-| spiking EP | `spiking_eqprop` | ran — **had to be registered first**; see §5 and §1.11 |
-| ca3net STDP | — | **not an arm; nothing to run.** §6 |
-| Vieth & Triesch GABA-STDP *(added 2026-09-04)* | `vieth_gaba_stdp` | ran — the spiking x online arm; see §5 and §1.12 |
-| Tully et al. 2016 spiking BCPNN, columnar codec *(added 2026-09-06)* | `bcpnn_spiking_columnar` | **Continual retention only** (0.626, coverage 90%), staircases capped at 32, 10 trials; other capacities partial or unrun. Section-by-section account in `docs/capacity_report_bcpnn.md` |
+| Chen recirculation *(added 2026-09-08)* | `predictive_recirculation` | added after this report; scorecard in `results/zoo_capacity_run/PredictiveRecirculationNetwork/` |
 
 "EP" is read as `original_eqprop`, the clean EP baseline the retention work
 builds on. The toy `eqprop` variant and the DG/XdG/EWC mitigations on top of
 original EP are a different question (the mitigation ladder) and are not in
 scope here.
 
-`hopfield` (AHN) is re-run alongside as the reference line on every figure.
+`ahn` (registry key `hopfield` at the time) is re-run alongside as the reference line on every figure.
 
 ---
 
@@ -532,9 +537,9 @@ cap for the lever, and §1.10 for the bug that used to make this far worse.
 
 ## 3. The profiles
 
-![capacity radar](../results/zoo_capacity_run/_compare/zoo_radar.png)
+![capacity radar](../../results/zoo_capacity_run/_compare/zoo_radar.png)
 
-![score and coverage](../results/zoo_capacity_run/_compare/zoo_capacity_bars.png)
+![score and coverage](../../results/zoo_capacity_run/_compare/zoo_capacity_bars.png)
 
 <!-- PROFILE_TABLE -->
 | arm | Continual<br>retention | One-shot<br>learning | Pattern<br>completion | Sequence<br>disambiguation | Serial<br>order |
@@ -557,7 +562,7 @@ comparable without saying so — see §4.6.
 
 ### What each capacity score rests on
 
-![dimension status](../results/zoo_capacity_run/_compare/zoo_dimension_status.png)
+![dimension status](../../results/zoo_capacity_run/_compare/zoo_dimension_status.png)
 
 This is the figure to read before any ranking. The same capacity number rests on
 four dimensions for one arm and two for another, and the four non-scored statuses
@@ -588,7 +593,7 @@ fails the dimension above it.
 
 ### The raw metrics behind the rollups
 
-![headline metrics](../results/zoo_capacity_run/_compare/zoo_headline_metrics.png)
+![headline metrics](../../results/zoo_capacity_run/_compare/zoo_headline_metrics.png)
 
 
 ---
@@ -1039,187 +1044,11 @@ below 1.0, which looks like unrolling being *cheaper* than cued recall and is
 really the ratio being computed from the single length where both finished
 (rollout 4 epochs, cued 12). Read `rollout_criterion_reached = False` first.
 
-### spiking EP — `SpikingEqPropSequenceNetwork` (O'Connor, Gavves & Welling 2019)
-
-**Profile: 0.458 / 0.367 / 0.152 / 0.338 / 0.534.** The lowest scores in the run
-on four of five capacities — but read §1.11 first, and the control caveat below,
-before treating that as a result about spiking neurons.
-
-**It is the most plastic and the least stable arm measured.** It reverses a
-learned contingency in **1 trial** — faster than anything else, AHN and theta
-included — and then cannot hold anything: `delta_mrr_forgetting` **−0.950**
-(against EP's −0.622 and 0.000 for the linear stores), chain accuracy 0.167 with
-`chain_criterion_reached: False`, `chain_retention_ratio` 0.174, and final
-perseveration 1.000. Stability and plasticity are scored separately precisely so
-an arm can sit at opposite ends of them, and this is the clearest case in the
-run.
-
-Pattern completion 0.152 at 75% coverage is the weakest number here and rests on
-a guard: `mask_acquired` is **False** and `mask_at_floor` **True** — the clean-cue
-list was never learned inside `cue_masking`'s budget (censored at 512 epochs), so
-`cue_completeness` is `unresolved` and excluded rather than scored. `σ-tolerance`
-0.200 and `tmaze_pc_coverage` 0.000 are real, though: it completes almost
-nothing from a degraded cue.
-
-It shares with EP the distinction of making two otherwise-dead dimensions
-measurable (§4.5): `select_under_pressure` passes, and `failures_observed` is
-True with **533** cued failures, so `binding_ordinal` scores and its Serial-order
-coverage is 50%. `order_given_item` 0.510 and `establishment_break_length` 3 —
-order comes apart at a third of the length it holds for the associators.
-
-Where it is *not* worst: `symdis_max_episodes_above_chance` is **8**, matching
-every arm except tPC, and `convergence_epochs` is **16** — it acquires a simple
-list about as fast as tPC (64) and far faster than EP (censored).
-
-**The control this arm needs is missing, and it is not the other five arms.**
-`quantizer=None` swaps upstream's real-valued `SimpleLayerController` in through
-the *identical* code path at the *identical* settling budget, so any difference
-between it and `spiking_eqprop` is attributable to the spike channel alone. That
-run is not in this report. Without it, every gap between `spiking_eqprop` and
-`original_eqprop` confounds the spike channel with two different implementations,
-different hidden widths, and different input mappings. **Do not read this column
-as "what spiking costs" — it is not yet that measurement.** Adding
-`quantizer=None` as a seventh column is the single highest-value follow-up here.
-
-Two configuration notes that belong with the numbers: `random_flip_beta=False`
-departs from upstream deliberately (§1.11 — at ~100 updates the sign noise does
-not average out, where at ~75,000 it does), and `input_gain` is now
-`sqrt(n_features)` rather than 1.0, without which the arm floors at chance
-regardless of exposure. Both are properties of the *regime*, not of the paper's
-model, and both are recorded in the registry entry.
-
----
-
-### Vieth STDP — `CodecViethNetwork` (Vieth & Triesch 2025, GABA-modulated STDP)
-
-**Profile: 0.447 / 0.000 / 0.000 / 0.268 / 0.498.** The roster's spiking x
-online arm (`docs/vieth_stdp_port.md`), added after the first six. Read the
-sanity check in that document before this column: the arm reaches **1.00 cued
-and 1.00 autoregressive recall** on a 6-item sequence through the codec when
-trained as one continuous stream, and it is here at the floor on every
-symbolic section. That gap is the result.
-
-**Nothing symbolic was acquired.** Every criterion-referenced section censored
-at the 512-epoch ceiling with `reached=False`: `sequence_length`,
-`multiple_sequences`, `noise_invariance`, `semantic_similarity`,
-`symbolic_disambiguation`, `cue_masking` (`mask_at_floor` True, clean-cue recall
-0.00 against chance 0.042), `paired_associate` (AB never acquired in either
-condition), the continual chain (`chain_acquired` False, ACC 0.042), and the
-schema probe (category accuracy 0.00). `convergence_mrr` is 0.028. The streamed
-regime floors too: one pass 0.000, twenty passes 0.000. So One-shot learning
-and Pattern completion are honest zeros, not guard artefacts -- the arm was
-given the section's full exposure and learned nothing scorable from it.
-
-Why, in order of the measured evidence (`docs/vieth_stdp_port.md`): (1)
-**fenced ingestion** -- through `fit_sequence`'s fenced passes the same
-6-item material drops from 1.00 to 0.40, and that gap does not close with
-exposure from 150 to 9,600 iterations; (2) **exposure** -- its homeostat
-needed ~20,000 presentations to settle on upstream's own task, and 512 epochs
-of a 10-item list is ~6,000; (3) **the dense `SymbolicEncoder` substrate**,
-where ~25% of the codec population fires for every item (the same axis the
-Bush arm floors on), which costs it 1.00 -> 0.80/0.60 even on the hierarchical
-material. Overlap is the smallest of the three. A section wanting a non-floor
-number from this arm has to state its ingestion regime, because for this arm
-it is not a neutral condition.
-
-**Where it does score, and what that rests on.** Continual retention 0.447 is
-two things: `contingency` 0.575 from the T-maze reversal, where the arm
-*acquires* in 11 trials (AHN/theta: 2) and then reverses in **1** under the
-direct protocol with final arm accuracy 1.000 and zero perseveration (7 under
-extinction) -- a 2AFC spatial task at a scale it can learn; and `load` 0.268,
-which after §1.12 is `chain_avg_accuracy` at chance plus a genuine small loss
-on `multiple_sequences` (0.206 -> 0.000). Before §1.12 the same dimension read
-0.41 on stability credit for a chain it never learned.
-
-Serial order 0.498 at **50% coverage** is the EP pattern (§4.5): with 751 of
-900 cued probes failing, `binding_ordinal` is scorable (0.74 -- `intrusion_rate`
-0.000, `order_error_fraction` 1.000: every failure is an order error and none is
-an intrusion, so whatever it emits is *from the list*), and `establishment`
-scores at `order_given_item` 0.225 with `establishment_break_length` 0. Spans
-are 1 under raw and quantized feedback alike.
-
-**Its headline limitation is sequential ingestion.** Every multi-list section
-here -- `multiple_sequences`, `continual_chain`, `paired_associate`, the
-schema probe -- presents material one list after another, and the arm cannot
-do that at all: its paper sizes every assembly by how often its item occurs
-in the stream, so a list presented alone takes the whole population and a
-later list re-labels it (chain intact, input bindings overwritten;
-`docs/vieth_stdp_port.md`). The paper only ever trains in random block order
-and never tests blocked lists. §1.13 adds the interleaved control; on the
-suite's dense substrate the arm floors under both orders, so here the
-substrate result comes first and the ingestion limitation is established by
-the standalone, where it holds both lists interleaved and neither blocked.
-A property of the model under a protocol its paper does not use -- reported,
-not patched.
-
-**Two things this column is not.** It is not a measurement of what spiking
-costs -- like `spiking_eqprop` it lacks its control, which here would be the
-same arm on the `HierarchicalEncoder` substrate under continuous ingestion,
-where the sanity check already puts it near ceiling. And it is not a single
-seed's verdict on the arm's *upstream* behaviour, which is bimodal across seeds
-(5/10 upstream, 3/8 here reach the generating mode on upstream's own text task;
-`bin/vieth_stdp_gate.py`); the sanity-check task succeeded on every seed, so
-seed variance is not what the floor here is.
-
----
-
-## 6. ca3net: status has moved since this run was scoped
-
-When this run was scoped there was **no ca3net in the repository** — no
-wrapper, no vendored copy, nothing under `scratch/`; the 2026-08-28 evaluation
-ran in a throwaway venv and nothing was committed. The user chose to report the
-five runnable arms and document the blockers rather than build it.
-
-**That is no longer the state of the tree.** In parallel with this run,
-`docs/ca3net_port_plan.md` was executed to Phase 2: KaliLab/ca3net is vendored
-at `memval/vendor/ca3net/`, a modality-agnostic encoder/decoder exists at
-`memval/models/baselines/_ca3net_io.py` (partitions the 8,000 pyramidal cells
-into one block per feature dimension, drives each as a Poisson source, decodes
-by block spike count; round-trip cosine 0.974 at a 100 ms window against a 0.95
-gate), and the direction-control probe has run. **Its gate failed** — the
-asymmetric STDP kernel does not produce forward replay — and the plan records
-that a decision is needed before a wrapper is written. So ca3net is still not
-an arm, but for a different reason than when this report started: the
-encoder/decoder blocker is cleared, and what remains is the reverse-dominant
-replay that was flagged as landmine 2 in the original evaluation.
-
-The blockers as originally documented, for the record:
-
-1. **No commensurable read-out on the symbolic suite** — upstream's
-   `bayesian_decoding.py` decodes a 1-D scalar position. *Now addressed* by
-   `_ca3net_io.py`, though Phase 4 (symbolic) is explicitly out of scope for v1.
-2. **Direction is uncontrolled and reverse-dominant** (6/7 spontaneous, 8/10
-   cued events run backwards) — a consequence of the symmetric STDP kernel.
-   *Still open*: this is the failed Phase 2 gate.
-3. **Cost** — one cued recall per 10 s simulation (~20 s wall), ≈ 17 min per
-   condition. *Unchanged.*
-
-The `len_sim = 10000` landmine (hard-coded in three modules; any non-10 s run
-silently mis-scales event times) is handled by the vendored `_shims.py`. The
-licence question — verbatim MIT text under an unrelated party's copyright line —
-is recorded as open in the port plan.
-
-**`theta_two_weight_ca3.py` is a different thing** and remains unrunnable: the
-exploratory two-weight CA3 prototype from the EP + theta direction, not a
-`HippocampalModel`, working on binary sparse patterns through its own API.
-
-**Also arrived in parallel, and directly relevant to the spiking story in §5:**
-a population spike codec (`memval/encoders/spike_codec.py`,
-`memval/models/codec_wrapper.py`) and a Bush et al. 2010 STDP arm
-(`bush_stdp`, registered with all three modalities). The codec is the spike-train
-*interface* that `spiking_eqprop` does not have — that arm's I/O is real-valued
-and spikes exist only on its inter-layer channel — and the wrapper's transport
-control (a rate arm with every vector round-tripped through spikes) is what
-makes a spiking arm's deficit attributable. Bush is registered and gated but
-**not scored on the suites**; it is the seventh column, not yet in this report.
-
----
-
-## 7. Output layout
+## 6. Output layout
 
 ```
 results/zoo_capacity_run/
-├── <ClassName>/                       # one per arm, seven of them
+├── <ClassName>/                       # one per arm, six of them
 │   ├── spatial/metrics.json           # + plots/
 │   ├── symbolic/metrics.json          # + plots/, cue_masking_metrics.json,
 │   │                                  #   schema_consistency_metrics.json

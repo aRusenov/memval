@@ -5,7 +5,7 @@ how consistent new material is with what the model already knows. Motivated by
 McClelland, McNaughton & Lampinen (2020), which retracts the 1995 claim that
 cortical learning is slow per se: learning rate is prior-knowledge dependent, and
 interference is a matter of degree set by consistency. See
-docs/schema_benchmark_design.md for the full design rationale, including why the
+docs/sections/schema_benchmark_design.md for the full design rationale, including why the
 `duplicate` rung deviates from the paper and why the schema must be acquired
 rather than declared.
 
@@ -144,7 +144,7 @@ def _sequence_identity_available(model: Any) -> bool:
     Nothing in this benchmark passes a sequence identifier today; the flag is
     reported so a reader can see that the extended/focused distinction below is
     a statement about *what was fed*, never about what the model was told. See
-    docs/schema_benchmark_design.md §5.5 and the audit's pending item 18: doing
+    docs/sections/schema_benchmark_design.md §5.5 and the audit's pending item 18: doing
     this properly needs a nominal capability declaration alongside
     ``OnlineTrainable``, not a duck-typed check like this one.
     """

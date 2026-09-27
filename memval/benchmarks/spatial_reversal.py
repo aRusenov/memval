@@ -3,7 +3,7 @@
 Scores the opposite failure mode from the retention matrix: how fast a model
 *overwrites* an association that has become invalid, rather than how well it
 protects an old one. Motivated by Hasselmo, Bodelon & Wyble (2002); see
-docs/spatial_reversal_design.md for the full design rationale, including why the
+docs/sections/spatial_reversal_design.md for the full design rationale, including why the
 reward channel is scoped to this section and why anticipation is measured in the
 model's predictions rather than injected into the stimulus.
 """

@@ -1,7 +1,7 @@
 # Probe protocol — what cue a section presents, and how many times
 
-> Companion to `docs/rollout_protocol.md` (what `recall()` feeds back) and
-> `docs/online_continual_benchmark.md` §1b (ingestion regime). This one is the
+> Companion to `docs/sections/rollout_protocol.md` (what `recall()` feeds back) and
+> `docs/background/online_continual_benchmark.md` §1b (ingestion regime). This one is the
 > third leg: how the harness *asks*.
 
 ## What the 30 noise trials were
@@ -95,7 +95,7 @@ disjoint-category control, both at L=6 with identical budgets and variance, and
 writes the model-free `in_span` covariate, per-condition P and margin deltas, and
 `multiple_seq_overlap_cost_{prob,margin}` (same-category minus disjoint).
 `b_exposure_multiplier` (default 1) scales B's budget for the plasticity-asymmetry
-axis. `standalone_overlap_demo.py` shows the full dial.
+axis. The retired `standalone_overlap_demo.py` (git tag `archive/pre-cleanup`) shows the full dial.
 
 ## Sites that had their own copy of the legacy protocol
 

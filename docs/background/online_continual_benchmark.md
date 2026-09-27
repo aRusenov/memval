@@ -4,11 +4,13 @@
 > Model of record: `OriginalEqPropSequenceNetwork` (+ EWC variants).
 >
 > **Status (2026-09-01):** `online_continual_pipeline.py` was **removed** as a
-> suite (`docs/capacity_coverage_audit.md` D8). The retention matrix and its
+> suite (`docs/capacities/capacity_coverage_audit.md` D8). The retention matrix and its
 > summary statistics were first **extracted** into
 > `memval/metrics/retention.py` (`retention_matrix`, `retention_summary`,
 > `plot_retention_matrix`), so any suite section can now report the same
-> quantity. `bin/continual_chain_experiment.py` is the live consumer.
+> quantity. `continual_chain` in the symbolic suite is the live consumer; the
+> standalone `bin/continual_chain_experiment.py` and the EWC variants were retired
+> on 2026-09-27 (git tag `archive/pre-cleanup`).
 >
 > Two things did *not* survive the removal and are open: the
 > streaming-vs-batch **ingestion contrast** (the pipeline was the only place it
@@ -18,7 +20,7 @@
 
 This document records **what the online-continual benchmark does, why it is
 built that way, and — critically — which biological realities it abstracts
-over**. It is the "with-abstraction" companion to `docs/true_online_learning.md`,
+over**. It is the "with-abstraction" companion to `docs/proposals/true_online_learning.md`,
 which specifies the raw, un-abstracted signal and what a fully realistic
 "true online" version would have to address.
 
@@ -61,9 +63,9 @@ main thing D8 cost.
 ## 1b. How the regime is selected: `OnlineTrainable` and `ingest`
 
 > The *retrieval* counterpart of this section — what each arm's `recall()`
-> feeds back at each autoregressive step — is `docs/rollout_protocol.md`.
+> feeds back at each autoregressive step — is `docs/sections/rollout_protocol.md`.
 > How the harness *asks* — clean single cue vs a declared degradation
-> sweep — is `docs/probe_protocol.md`.
+> sweep — is `docs/sections/probe_protocol.md`.
 
 The ingestion axis is a **condition inside a suite**, never a property of the
 arm — an arm that supports both regimes must be runnable under both. So there is
@@ -194,7 +196,7 @@ Lisman; replay — Foster & Wilson.)
   necessarily the whole list. "Whole sequence per sweep" is a fine approximation
   for short (~7-item) lists and would need revisiting for long sequences.
 - The path that *does* raw-dwelling → sweeps (event segmentation, novelty-gated
-  plasticity, eligibility traces) is the subject of `docs/true_online_learning.md`.
+  plasticity, eligibility traces) is the subject of `docs/proposals/true_online_learning.md`.
 
 ---
 

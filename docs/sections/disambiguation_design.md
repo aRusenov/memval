@@ -97,7 +97,7 @@ say. The cue is never degraded here — that is what separates this capacity fro
   behind the wheel-running result the results intro currently cites through the review.
   **Not in the library.**
 - **Howard & Kahana (2002)**, J Math Psychol 46:269–299 — TCM; the drifting-context formalism
-  §4 builds on. Already an anchor of `docs/free_recall_design.md`, which is the point: one
+  §4 builds on. Already an anchor of `docs/proposals/free_recall_design.md`, which is the point: one
   mechanism, two sections. **Not in the library.**
 - **Polyn, Norman & Kahana (2009)**, Psych Review 116:129–156 — CMR; context as a source/task
   backdrop that supports *list* discrimination rather than item discrimination.
@@ -123,10 +123,10 @@ say. The cue is never degraded here — that is what separates this capacity fro
 
 **`tmaze_disambiguation`.** `TMazeDisambiguationGenerator.generate` writes the odour from step
 0 to `odour_end` and returns `zone_start: 0, zone_end: stem_end, prefix_end: 0`
-([tmaze_disambiguation.py:102](../memval/generators/tmaze_disambiguation.py):102). The shipped
+([tmaze_disambiguation.py:102](../../memval/generators/tmaze_disambiguation.py):102). The shipped
 pipeline then passes `odour_on_arms=True`, which sets `odour_end = sequence_length`, so the
 odour is present on *every step of the whole trajectory*, arms included
-([spatial_pipeline.py:380](../memval/benchmarks/spatial_pipeline.py):380). The branch decision
+([spatial_pipeline.py:380](../../memval/benchmarks/spatial_pipeline.py):380). The branch decision
 is therefore a pure function of the final stem input, which already contains the odour. The
 stem prefix is inert.
 
@@ -146,7 +146,7 @@ results show the inversion — `AsymmetricHopfieldNetwork` (linear, ReLU readout
 `OriginalEqPropSequenceNetwork` (hidden layer) 0.5, i.e. `linear_oracle_gap = −0.5`.
 
 **`semantic_similarity`.** Every item in every list is distinct, so no cue ever demands two
-successors and the task is exactly linearly solvable. [symbolic_pipeline.py:19](../memval/benchmarks/symbolic_pipeline.py):19
+successors and the task is exactly linearly solvable. [symbolic_pipeline.py:19](../../memval/benchmarks/symbolic_pipeline.py):19
 already labels it "semantic interference", which is the correct description. **Action: move it
 out of this capacity** into continual retention / pattern completion as an interference
 stressor. It becomes relevant here only as the graded-similarity axis (§3, axis B) once there
@@ -165,7 +165,7 @@ That is the whole explanation for §1. The shipped section is not an oversight; 
 point in the space the harness can reach. It follows that **adding more disambiguation sections
 under the current probe cannot help.** The temporal half of this capacity is blocked on one
 piece of infrastructure — the state-carrying ingestion path of
-`docs/nonlinearity_benchmark_design.md` §4 (prefix ingested through a state-updating call, not
+`docs/proposals/nonlinearity_benchmark_design.md` §4 (prefix ingested through a state-updating call, not
 through `predict_next`) — and that single investment unlocks all of it.
 
 The representational half (§3, axes B and C) is *not* blocked and is buildable now.
@@ -182,9 +182,9 @@ The capacity is a 3-D space. The shipped section sits at its trivial corner:
 | **C — extent** | how much is shared, and by how many episodes | shared length; shared fraction; N confusable episodes | `shared_fraction`, `shared_position`; N not implemented | no |
 
 **All three knobs already exist** in `OverlapConfig`
-([overlap_config.py](../memval/benchmarks/overlap_config.py)) and are consumed by
+([overlap_config.py](../../memval/benchmarks/overlap_config.py)) and are consumed by
 `BifurcatingRouteGenerator.generate`
-([bifurcating_route.py:19](../memval/generators/bifurcating_route.py):19). `zone_fraction` /
+([bifurcating_route.py:19](../../memval/generators/bifurcating_route.py):19). `zone_fraction` /
 `zone_offset` place the encounter (odour) zone as a *sub-interval* of the shared corridor,
 which is exactly axis A: the quantity that matters is
 
@@ -199,7 +199,7 @@ The unwired generator's default is already non-degenerate; the shipped one is at
 
 `SpatialDisambiguationBenchmark.sweep()` takes a list of `OverlapConfig` and already records
 `zone_fraction`, `zone_offset` and `encounter_similarity` per row
-([spatial_disambiguation.py:236](../memval/benchmarks/spatial_disambiguation.py):236). It is
+([spatial_disambiguation.py:236](../../memval/benchmarks/spatial_disambiguation.py):236). It is
 exercised by `tests/test_spatial_disambiguation.py:116` and called from no pipeline.
 
 **Axis A is only partly blocked.** `delay > 0` is expressible by the generator today, but under
@@ -294,7 +294,7 @@ Three payoffs, and the third is the argument for building it:
    the binary same/different an odour gives.
 3. **The same generator serves three capacities.** A drifting context vector produces (a) list
    discrimination here, (b) the contiguity gradient and lag-CRP that the serial-order binding
-   readout needs (`docs/free_recall_design.md`, whose TCM anchor is the same Howard & Kahana
+   readout needs (`docs/proposals/free_recall_design.md`, whose TCM anchor is the same Howard & Kahana
    paper), and (c) an interaction with ISI, since a context clocked by time rather than by item
    count makes spacing change contextual similarity. That converts `isi_tolerance` and this
    capacity from two unrelated sweeps into one prediction.
@@ -532,9 +532,9 @@ decoding and MSE, raw prediction fed back. Never infer an output range from
 
 The §1 numbers come from the linear-oracle audit of 2026-08-20 (rank identity, `lstsq` residual
 split by stem/branch/arm, conjunctive-feature control) and from reading the shipped call sites:
-[tmaze_disambiguation.py:102–135](../memval/generators/tmaze_disambiguation.py):102,
-[spatial_pipeline.py:368–400](../memval/benchmarks/spatial_pipeline.py):368,
-[symbolic_pipeline.py:19](../memval/benchmarks/symbolic_pipeline.py):19. The §3 claim that the
+[tmaze_disambiguation.py:102–135](../../memval/generators/tmaze_disambiguation.py):102,
+[spatial_pipeline.py:368–400](../../memval/benchmarks/spatial_pipeline.py):368,
+[symbolic_pipeline.py:19](../../memval/benchmarks/symbolic_pipeline.py):19. The §3 claim that the
 axes exist unwired was checked by grep: `BifurcatingRouteGenerator` and `.sweep(` are
 referenced only from `memval/benchmarks/spatial_disambiguation.py` and
 `tests/test_spatial_disambiguation.py`, never from a pipeline. The default-config delay of 4

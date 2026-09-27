@@ -282,7 +282,7 @@ with strong reward prediction look spatially better.
 error-driven learning rule in hippocampus and shows it beats Hebbian on capacity.
 That is structurally the same trick EP uses — two settling phases, learn from the
 contrast — published in a hippocampal setting. It is simultaneously the strongest
-support for the EP+theta direction in `docs/ep_theta_phase_exploration.md` and the
+support for the EP+theta direction in `docs/proposals/ep_theta_phase_exploration.md` and the
 clearest novelty risk. The differentiator has to be the *measurement* — retention
 and reversal scored across a common roster — which is what this section provides.
 

@@ -1,6 +1,9 @@
 # True Online Learning — The Raw Signal & What It Requires
 
-> Companion to `docs/online_continual_benchmark.md`.
+> **Note (2026-09-27):** the `standalone_*.py` scripts cited here were retired
+> from the repo; recover any of them with `git show archive/pre-cleanup:<script>`.
+
+> Companion to `docs/background/online_continual_benchmark.md`.
 > That document describes the benchmark *with* the theta abstraction. This one
 > strips the abstraction away: it specifies the **raw serial signal** as it
 > actually arrives in experiment and behavior, and enumerates the mechanisms a
@@ -144,7 +147,7 @@ model stands on its own without the pre-segmented input.
 
 The two are complementary, not competing:
 
-- **Abstracted benchmark** (`docs/online_continual_benchmark.md`): consumes the
+- **Abstracted benchmark** (`docs/background/online_continual_benchmark.md`): consumes the
   theta-compressed sequence; correct and standard for STDP-timescale plasticity;
   the right tool for measuring **retention** cleanly.
 - **True online** (this doc): consumes raw dwelling; tests whether the model can

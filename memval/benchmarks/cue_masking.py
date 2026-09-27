@@ -2,7 +2,7 @@
 
 `noise_invariance` degrades every feature of the cue a little (corruption).
 This section removes some features entirely and leaves the rest exact
-(partiality). They are the two manipulations `paper/capacities.md` ¶17 names,
+(partiality). They are the two manipulations `docs/capacities/capacities.md` ¶17 names,
 and until this section landed only the corruption half had an instrument: the
 `cue_completeness` dimension was UNBUILT and the spatial suite's fixed 30%
 prompt is a *prefix*, neither swept nor dimension-masking.

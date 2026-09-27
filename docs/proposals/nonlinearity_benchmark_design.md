@@ -1,9 +1,10 @@
 # Non-linearity benchmarks — design note
 
 **Status:** audit complete (S1–S2, measured 2026-08-20); linear oracle specified but not
-implemented (S3); benchmarks proposed, none implemented (S5). Four of the proposals already
-exist as stubs under `dashboard/docs/benchmarks/` (`context_gating`, `high_order_markov`,
-`delayed_recall`, `limit_cycle`); this note supersedes them by adding the audit that motivates
+implemented (S3); benchmarks proposed, none implemented (S5). Four of the proposals had
+stubs under `dashboard/docs/benchmarks/` (`context_gating`, `high_order_markov`,
+`delayed_recall`, `limit_cycle`), deleted with the dashboard on 2026-09-27 and
+recoverable from git tag `archive/pre-cleanup`; this note supersedes them by adding the audit that motivates
 the family split and the oracle that certifies any of them.
 
 **Motivating observation:** none of the shipped sections can dissociate a model with a learned
@@ -150,7 +151,7 @@ Two variants are worth reporting together, because their difference localises th
 
 ## 4. Two families, and why the split determines cost
 
-`dashboard/docs/benchmarks/` already names the families. The audit adds why the choice matters
+The old `dashboard/docs/benchmarks/` stubs already named the families. The audit adds why the choice matters
 for build order:
 
 | Family | Requirement | Runs under the current harness? |
@@ -230,7 +231,8 @@ the natural partner to 5.3.
 
 ### 5.5 Cyclic free-running — recurrence family
 
-Kept as specified in `dashboard/docs/benchmarks/limit_cycle.md`. Note for the oracle: a linear
+Kept as specified in `dashboard/docs/benchmarks/limit_cycle.md` (`git show
+archive/pre-cleanup:dashboard/docs/benchmarks/limit_cycle.md`). Note for the oracle: a linear
 map cannot hold a limit cycle except with eigenvalues exactly on the unit circle, so the
 linear-oracle gap is well defined here and the oracle is expected to fail outright rather than
 score thinly — a useful contrast with §2, where it passes for the wrong reason.

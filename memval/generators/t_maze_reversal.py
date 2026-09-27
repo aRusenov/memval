@@ -32,7 +32,7 @@ class TMazeReversalGenerator(SequenceGenerator):
     Note that the reward signal is stationary across trials by design: it never
     creeps earlier with experience. Anticipation is measured in the model's
     predictions (see ``SpatialReversalBenchmark``), not injected into the
-    stimulus -- see docs/spatial_reversal_design.md section 4.
+    stimulus -- see docs/sections/spatial_reversal_design.md section 4.
     """
 
     def __init__(self, seed: Optional[int] = None):
@@ -185,7 +185,7 @@ class TMazeReversalGenerator(SequenceGenerator):
         with an all-zero reward block. Used by the recovery probe: "time" for a
         deterministic model has to be operationalised as intervening experience,
         so the delay is filled with retroactive interference rather than left
-        empty (see docs/spatial_reversal_design.md section 8).
+        empty (see docs/sections/spatial_reversal_design.md section 8).
         """
         encoder = task["encoder"]
         n_place_cells = task["n_place_cells"]

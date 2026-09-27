@@ -60,7 +60,7 @@ and either would blur the line the declaration draws.
 
 Our probe is serial (each transition cued by its predecessor), so the serial-recall variants are the
 reference, not the free-recall ones. The free-recall phenomena that need an unordered output (lag-CRP,
-probability of first recall) belong to `docs/free_recall_design.md` and are not attempted here.
+probability of first recall) belong to `docs/proposals/free_recall_design.md` and are not attempted here.
 
 ## 3. Protocol
 
@@ -408,4 +408,4 @@ was trained with, and later positions have more history to lose. It is a probe a
 stateful arm and does not appear under the matched probe. **Follow-up:** the section's `cued_probe`
 uses the house cold path for every arm; the `StatePrimeable` arms (DTS-ESN, tPC, Chen) should be probed
 matched, with the cold curve kept as the reported gap. This is the same point as
-`docs/probe_protocol.md`'s "the criterion probe must match the training input", applied to L0.
+`docs/sections/probe_protocol.md`'s "the criterion probe must match the training input", applied to L0.

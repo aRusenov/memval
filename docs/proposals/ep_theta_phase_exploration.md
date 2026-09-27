@@ -1,11 +1,14 @@
 # EP + Theta Phase — Exploration Notes & Handoff
 
+> **Note (2026-09-27):** the `standalone_*.py` scripts cited here were retired
+> from the repo; recover any of them with `git show archive/pre-cleanup:<script>`.
+
 > **Purpose:** self-contained handoff so this line of thinking can continue in a
 > fresh chat. Captures the core idea, the mechanistic brainstorm, the
 > literature/novelty assessment, and prioritized next steps.
 >
-> **Reads with:** `docs/true_online_learning.md` (the raw-signal / true-online
-> spec this grows out of) and `docs/online_continual_benchmark.md` (the current
+> **Reads with:** `docs/proposals/true_online_learning.md` (the raw-signal / true-online
+> spec this grows out of) and `docs/background/online_continual_benchmark.md` (the current
 > theta-*abstracted* benchmark). Project memory: `dg-ep-retention-direction.md`.
 
 ---
@@ -200,7 +203,7 @@ Open questions:
   `memval/metrics/retention.py` (retention matrix / ACC / BWT; the
   `online_continual_pipeline.py` that used to host them was removed 2026-09-01).
 - Related model with the asymmetry tension: `memval/models/baselines/asymmetric_hopfield.py`.
-- Companion docs: `docs/online_continual_benchmark.md`, `docs/true_online_learning.md`.
+- Companion docs: `docs/background/online_continual_benchmark.md`, `docs/proposals/true_online_learning.md`.
 - Project memory: `dg-ep-retention-direction.md`.
 
 ---

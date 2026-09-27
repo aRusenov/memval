@@ -4,7 +4,7 @@
 > (`memval/encoders/symbolic.py`, `memval/encoders/hierarchical.py`). Every
 > numeric claim below is reproduced by `docs/figures/encoder_geometry.py`, which
 > also renders the two figures. **Citations follow the placeholder convention of
-> `docs/paper_intro.md` — they are anchors, not verified page references.** A
+> `docs/paper/paper_intro.md` — they are anchors, not verified page references.** A
 > verify-list is at the end.
 
 Figures:

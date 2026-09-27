@@ -2,15 +2,20 @@
 
 > Draft prose for the section that introduces the arms. Written 2026-09-04
 > against the shipped code and the zoo capacity run
-> (`docs/capacity_report_zoo.md`). **Citations follow the placeholder
-> convention of `docs/paper_intro.md` — anchors, not verified page
+> (`docs/reports/capacity_report_zoo.md`). **Citations follow the placeholder
+> convention of `docs/paper/paper_intro.md` — anchors, not verified page
 > references.** A verify-list is at the end.
 >
-> The intro (`docs/paper_intro.md`) frames the roster on two axes,
+> The intro (`docs/paper/paper_intro.md`) frames the roster on two axes,
 > substrate × schedule. This section keeps that frame and then says why it is
 > not enough: the last three arms sit in the *same* cell of that 2×2 as each
 > other, and what separates them is how the error signal is derived and what
 > persists between events.
+>
+> **Roster cut, 2026-09-27:** the spiking arms (spiking EP, Bush STDP, spiking
+> BCPNN) were retired; see git tag `archive/pre-cleanup`. Their provenance rows
+> are gone, but the draft prose still mentions them and needs a pass for the
+> six-arm roster (AHN, theta, EP, tPC, Chen, DTS-ESN).
 
 ---
 
@@ -133,13 +138,10 @@ which is which rather than "published models":
 |---|---|---|
 | asymmetric Hopfield | textbook; [Sompolinsky & Kanter 1986; Kleinfeld 1986] | written from the delta rule; **no code citation in the repo** |
 | Equilibrium Propagation | Scellier & Bengio 2017 | NumPy reimplementation, checked against the authors' Theano release (`scratch/ep_repo`) |
-| spiking EP | O'Connor et al. 2019 | authors' code **vendored verbatim** (`memval/vendor/spiking_eqprop`, only imports changed) |
 | theta phase | Hasselmo et al. 2002 | **from the published equations** (2.2, 2.3, 2.5, 2.7, 2.14); no public implementation exists |
 | temporal PC | Tang et al. 2023 | reimplementation matching the authors' reference (`C16Mftang/sequential-memory`) |
 | predictive recirculation | Chen, Zhang, Cameron & Sejnowski 2024 | **from the published equations** (Results Eq. 2; STAR Eqs. 5–11); the authors' repo (`yschen13/HCPrediction`) carries no license and is not used. Only the paper's *local* rule is ported, not its BPTT-trained headline model |
 | DTS reservoir | Tanaka et al. 2022 | **ported to NumPy** from the reference; configuration matches the paper |
-| Bush STDP *(paused)* | Bush et al. 2010 | **from the published Methods**; the paper ships no code — the load that paused it |
-| spiking BCPNN | Tully et al. 2016 | **rule reimplemented against the authors' NEST 2.2 synapse module** (transliterated as the test oracle; it no longer builds), **network from the Methods and S1 Appendix**; gains calibrated to the paper's plotted weights, not its text (`docs/bcpnn_spiking_port.md`) |
 
 So "Hasselmo is the exception" is not right: two arms are equation-derived (one
 of them now paused for exactly that cost), one is verbatim vendored, and the
@@ -161,9 +163,7 @@ is native to the substrate:
 | temporal PC | the model *is* a next-step predictor: `x̂_t = W_r f(x_{t-1})` |
 | predictive recirculation | the model *is* a next-step predictor: `h_t = tanh(W h_{t-1} + U x_{t-1})`, `x̂_t = V h_t`, scored against `x_t` |
 | Bush STDP | the causal asymmetry of the STDP window: across-item pairs potentiate, within-item pairs net-depress |
-| spiking BCPNN | the *shifted* co-activation window: presynaptic NMDA trace slow (150 ms), postsynaptic fast (5 ms), so `P_ij` credits a pattern's successor and not its predecessor; swapping the two time constants reverses recall (paper Fig 4G) |
 | Equilibrium Propagation | **not native** — the energy is symmetric; direction comes from clamping `x_t` at input and nudging `x_{t+1}` at output |
-| spiking EP | as EP |
 | DTS reservoir | **not native** — a fixed reservoir; the readout is trained to predict the next item |
 
 The selection criterion that actually did the work is the first paragraph's:
@@ -236,7 +236,7 @@ measures ingestion alone.
 
 None of the seven is **true online** — none learns from the raw dwelling stream
 in which a state persists for many steps and nothing announces a boundary
-(`docs/true_online_learning.md`). That is a fourth thing, and the roster does
+(`docs/proposals/true_online_learning.md`). That is a fourth thing, and the roster does
 not have it.
 
 ## Verify-list

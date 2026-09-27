@@ -182,8 +182,8 @@ Built from the pipeline sources, not from the design docs: section names are the
 `SPATIAL_BENCHMARKS` / `SYMBOLIC_BENCHMARKS`, and metric names are the keys actually written to
 `results["metrics"]`.
 
-> **Stale as of 2026-09-01 — read `docs/capacity_coverage_audit.md` first.**
-> Two mismatches with `paper/capacities.md`: this map's fifth capacity is
+> **Stale as of 2026-09-01 — read `docs/capacities/capacity_coverage_audit.md` first.**
+> Two mismatches with `docs/capacities/capacities.md`: this map's fifth capacity is
 > *Autonomous generation*, the paper's is *Serial order* (the merge is not
 > reflected here); and the sections `spatial_sequence`, `anchoring_few_shot`,
 > `letter_noise` and the `online_continual` suite were removed (audit D1/D3/D5/D8).
@@ -222,7 +222,7 @@ Notes for the methods text:
   discriminable from everything else, so the acquisition ladder is non-monotone at the
   unstructured end (observed EP trials-to-criterion 1.0 / 1.7 / 7.3 / 1.3). The paper's dependent
   variable is integration, ours is retrieval, and they come apart there. See
-  `docs/schema_benchmark_design.md` S7 confound 5 for the three options and S8 for the readout
+  `docs/sections/schema_benchmark_design.md` S7 confound 5 for the three options and S8 for the readout
   that would resolve it.
 - Read `schema_acquired` and `schema_resolved` before any rung comparison. If the model never
   acquired the schema, or every rung sits at ceiling or floor, the consistency manipulation is
@@ -244,14 +244,14 @@ Notes for the methods text:
   is now carried by `transposition_locality` + `transposition_asymmetry` off cued recall, at a
   fraction of the cost. Its unique remainders are the initiation curve and unconstrained-order
   recall, which no paragraph-11 row asks for. Full design retained:
-  docs/free_recall_design.md. Do not table it as if wired, and no longer describe it as the
+  docs/proposals/free_recall_design.md. Do not table it as if wired, and no longer describe it as the
   next thing to build — that is S-O2 (decoded-identity return).
 - **Interval encoding (designed, not built):** a serial-order binding extension from ordinal to
   metric time — does the model store *how long* separated two items, not merely which came
   first. Grounded in trace-conditioning CR timing (Kishimoto et al., 2006) and time-cell
   retiming (MacDonald et al., 2011). Online arms only; shares the state-carrying probe
   prerequisite with the nonlinearity doc's history-dependent family. Full design:
-  docs/interval_encoding_design.md. Do not table it as if wired.
+  docs/proposals/interval_encoding_design.md. Do not table it as if wired.
 - **Context stays implicit — deliberately, for now.** The disambiguation prose defines the
   capacity by carried context, but the harness must not *pass* context explicitly, for three
   reasons. (1) Handing the model the disambiguating signal during the shared stretch solves the
@@ -261,7 +261,7 @@ Notes for the methods text:
   an explicit context interface forces one architecture's opinion on every arm, and the existing
   `context_data` channel already shows the cost — only 4 arms implement `n_context`, so routing
   anything through it silently excludes tPC, GPT-2 and `OriginalEqProp`
-  (docs/nonlinearity_benchmark_design.md §5.1). (3) Testing *maintained* context requires
+  (docs/proposals/nonlinearity_benchmark_design.md §5.1). (3) Testing *maintained* context requires
   presenting the disambiguating cue early and withholding it during the shared stretch, which
   the memoryless probe cannot express — it needs the state-carrying ingestion protocol of
   §4 of the same doc. The upgrade path is §5.3's delayed-conjunction T-maze (`odour_duration`

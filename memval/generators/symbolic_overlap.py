@@ -2,7 +2,7 @@
 
 N item sequences that share a middle stretch and diverge afterwards, with a
 context block as the discriminator. This is the symbolic arm of
-`docs/disambiguation_design.md` (build order step 3), and it exists because the
+`docs/sections/disambiguation_design.md` (build order step 3), and it exists because the
 spatial modality cannot express the two axes that matter most:
 
 **Axis B (discriminability).** `BifurcatingRouteGenerator` grades discriminator

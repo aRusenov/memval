@@ -5,7 +5,7 @@
 
 Writes plots/cognitive_*.png next to the JSON (or into --plots-dir). Every
 figure carries a schematic human-reference panel after the Kahana (2020)
-figures; see docs/cognitive_phenomena_design.md.
+figures; see docs/sections/cognitive_phenomena_design.md.
 """
 import argparse
 import os

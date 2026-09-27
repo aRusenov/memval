@@ -77,7 +77,7 @@ class SpatialDisambiguationBenchmark(Benchmark):
         n_place_cells = encoder.n_cells
         n_encounter_dims = n_features - n_place_cells
         
-        # Probe protocol (docs/probe_protocol.md). Nothing inside a trial is
+        # Probe protocol (docs/sections/probe_protocol.md). Nothing inside a trial is
         # random: test_seq_A/B are built once below and the rollout is a
         # deterministic function of them, so for a deterministic arm every
         # trial is an identical recomputation. Repeat only when the arm's own
@@ -283,7 +283,7 @@ class SpatialDisambiguationBenchmark(Benchmark):
                 trial_margins.append(float("nan"))
                 trial_divergence_margins.append(float("nan"))
 
-            # Shared-stretch control (docs/disambiguation_design.md S5.1). The
+            # Shared-stretch control (docs/sections/disambiguation_design.md S5.1). The
             # rollout starts at the last cued step, so recalled steps
             # [0, se - ze) fall inside the shared corridor, where BOTH episodes
             # predict the same successor. Error here should be near zero for

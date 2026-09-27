@@ -7,9 +7,9 @@ read against. The interactive version of the AHN report is at
 https://claude.ai/code/artifact/8ade319a-c97c-4725-9ef4-cc0d5cd3c88f.
 
 Companion documents, read in this order:
-- `docs/capacity_questions.md` — the five capacities as questions, with the
+- `docs/capacities/capacity_questions.md` — the five capacities as questions, with the
   dimension each question manipulates and the capability tags.
-- `docs/capacity_coverage_audit.md` — which promises have instruments.
+- `docs/capacities/capacity_coverage_audit.md` — which promises have instruments.
 - `memval/benchmarks/exposure.py` — the exposure policy (module docstring).
 - `results/ahn_capacity_run/AsymmetricHopfieldNetwork/capacity_scorecard.md` —
   the auto-generated per-metric scorecard for AHN (every key, its dimension,
@@ -95,7 +95,7 @@ declarations in `memval/models/capabilities.py`:
 | `temporal_pc` | `MultilayerTemporalPCNetwork` | ✓ | — | — | ✓ | spatial, symbolic, online_symbolic |
 | `dts_esn` | `DTSESNSequenceNetwork` | ✓ | ✓ | ✓ | ✓ | spatial, symbolic, online_symbolic |
 
-What the tags decide, per `docs/capacity_questions.md`:
+What the tags decide, per `docs/capacities/capacity_questions.md`:
 - 🕐 gates question 2.3 (One-shot, `presentations_streamed`, weight 0.25).
 - ⏱ gates questions 5.4 and 5.5 (Serial order, `interval_retention` and
   `interval_generation`, weight 0.25 each — **half the capacity**).
@@ -157,7 +157,7 @@ criterion, final perseveration 0.00. Selective retention is guard-failed
 one.* The chain builds one task per category, which fixes the between-task
 cosine at ~0 (quasi-orthogonal prototypes, ±0.15 on this seed) and so holds the
 forgetting lever `x_B · x_A` at zero by construction. With the encoder's new
-`between_category_cosine` dial (`docs/encoder_design.md` §6.4) the same chain,
+`between_category_cosine` dial (`docs/sections/encoder_design.md` §6.4) the same chain,
 same protocol, same arm, trained to criterion, 5 seeds
 (`bin/continual_chain_overlap_sweep.py`; figures
 `continual_chain_overlap_matrices.png`, `continual_chain_overlap_axes.png`,
@@ -186,7 +186,7 @@ Overlap and margin interact; neither dial alone is "the" forgetting knob.
 Selective retention now has a regime where `select_under_pressure` can fire
 (`--rehearse` on the sweep), which the default chain never gave it.
 
-![Retention matrices along both overlap dials](../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_overlap_matrices.png)
+![Retention matrices along both overlap dials](../../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_overlap_matrices.png)
 
 *Figure A1. The chain's retention matrix at every rung of each overlap dial
 (mean of 5 seeds, shared 0–1 scale, grey = not yet trained). Top row:
@@ -194,7 +194,7 @@ between-task cosine ρ_b raised at the section's own within-overlap (σ = 0.2).
 Bottom row: within-task cosine raised with the categories held exactly
 orthogonal. The default chain is the σ = 0.2 panel of the bottom row.*
 
-![Plasticity and stability along the overlap dials](../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_overlap_axes.png)
+![Plasticity and stability along the overlap dials](../../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_overlap_axes.png)
 
 *Figure A2. Per rung × task: intransigence (epochs task i needed in the chain
 divided by the epochs a fresh model needs on task i alone at the same rung,
@@ -242,7 +242,7 @@ inside or between lists the runner-up is an arbitrary other item and the
 margin is at its highest (0.42), which is the encoder's chance geometry, not a
 model effect.
 
-![Intrusion source and runner-up identity along the overlap dials](../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_overlap_intrusions.png)
+![Intrusion source and runner-up identity along the overlap dials](../../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_overlap_intrusions.png)
 
 *Figure A3. Where the errors go, and who the runner-up is. Left: the error
 rate at each rung, split by the source of the intruding word (same task /
@@ -344,7 +344,7 @@ the frequently used tasks. 10 seeds.
 | same ladder, prototypes orthogonal | +0.88 ± 0.13 | −0.32 ± 0.05 | — |
 | recency, equal counts | — | — | +0.002 ± 0.037 |
 
-![Retention against future use](../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_usage.png)
+![Retention against future use](../../results/ahn_capacity_run/AsymmetricHopfieldNetwork/symbolic/plots/continual_chain_usage.png)
 
 *Figure A5. (a) Margin trajectory per use-rate level under pressure: the
 never-used task falls from 0.15 to 0.02 while the always-used one rises to
@@ -395,7 +395,7 @@ a constant 0.01. Fixed 4 passes per ingestion, 5 seeds.
 | 50 | 1.000 | 0.155 | 1.000 | 0.249 | 0.902 |
 | 100 | 1.000 | 0.051 | 1.000 | 0.202 | 0.571 |
 
-![Sparse-code capacity: cued recall vs raw autoregressive unroll](../results/sparse_capacity/AsymmetricHopfieldNetwork/sparse_capacity_curves.png)
+![Sparse-code capacity: cued recall vs raw autoregressive unroll](../../results/sparse_capacity/AsymmetricHopfieldNetwork/sparse_capacity_curves.png)
 
 *Figure A4. Cued recall (blue, left axis) and harness-controlled raw
 autoregressive unroll (red, right axis, same 0–1 scale) against items

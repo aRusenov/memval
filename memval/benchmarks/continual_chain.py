@@ -16,7 +16,7 @@ Three things the suite could not previously ask, all read off one N-task chain:
    the forgetting gradient rather than a single post-interference point.
 
 3. **Selective retention** (the rehearsal phase, ``rehearse=True``).
-   ``paper/capacities.md`` argues that forgetting under a finite substrate is
+   ``docs/capacities/capacities.md`` argues that forgetting under a finite substrate is
    functional rather than a failure, but every other section treats all stored
    material as worth keeping, so the claim had no instrument. Here a designated
    subset stays relevant — it is re-presented — and the rest is not. The
@@ -106,7 +106,7 @@ def build_chain_material(
     decoder = SymbolicDecoder(encoder)
     embeddings = {c: encoder.encode(ws) for c, ws in sequences.items()}
 
-    # Measured geometry, beside the laws (docs/encoder_design.md section 6.4).
+    # Measured geometry, beside the laws (docs/sections/encoder_design.md section 6.4).
     E = encoder.embeddings
     task_of = np.array([chain_vocab[w] for w in encoder.idx_to_word])
     G = E @ E.T

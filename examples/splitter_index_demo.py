@@ -1,4 +1,4 @@
-"""Splitter index demo (docs/disambiguation_design.md sec 5.4).
+"""Splitter index demo (docs/sections/disambiguation_design.md sec 5.4).
 
 What internal-state divergence shows that branch accuracy cannot.
 
